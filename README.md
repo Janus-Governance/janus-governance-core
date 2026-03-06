@@ -8,6 +8,21 @@ Janus is not:
 - A legal contract or a substitute for legal review
 - A guarantee of compliance or correctness
 
+## Latest Updates
+
+- Reference runtime demo (Node) demonstrating the Janus governance model
+- 60-second executable proof of the system
+- Runtime model documentation
+- "What is Janus" overview document
+- GitHub Pages section showing the executable proof
+
+Links:
+
+- [docs/janus-explained.md](docs/janus-explained.md)
+- [docs/runtime-model.md](docs/runtime-model.md)
+- [docs/demo-run.md](docs/demo-run.md)
+- [runtime/demo-node/](runtime/demo-node/)
+
 ### Repository map
 
 Normative specifications (Genesis):
