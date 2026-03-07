@@ -6,18 +6,18 @@
     <title>Janus Governance Core</title>
     <meta
       name="description"
-      content="Janus Governance Core — Computable Governance for AI-Assisted Systems. A governance model that records what happened and what was required to happen but did not occur."
+      content="Janus Governance Core — Traceable governance for AI-assisted systems."
     />
     <style>
       :root {
-        color-scheme: light;
+        color-scheme: dark;
       }
 
       body {
         margin: 0;
         padding: 0;
-        background: #fff;
-        color: #111;
+        background: #000;
+        color: #fff;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
           "Apple Color Emoji", "Segoe UI Emoji";
         line-height: 1.5;
@@ -26,12 +26,15 @@
       .container {
         max-width: 800px;
         margin: 0 auto;
-        padding: 56px 20px 40px;
+        padding: 72px 20px 64px;
+        text-align: center;
       }
 
-      header {
-        text-align: center;
-        margin-bottom: 32px;
+      .logo {
+        display: block;
+        width: 160px;
+        height: auto;
+        margin: 0 auto 18px;
       }
 
       h1 {
@@ -44,100 +47,36 @@
       .subtitle {
         font-size: 1.1rem;
         margin: 0;
-        color: #333;
-      }
-
-      .description {
-        margin: 18px auto 0;
-        max-width: 60ch;
-        color: #222;
-      }
-
-      section {
-        margin-top: 28px;
-      }
-
-      h2 {
-        font-size: 1.1rem;
-        margin: 0 0 10px;
-      }
-
-      ul {
-        margin: 0;
-        padding-left: 18px;
-      }
-
-      li {
-        margin: 6px 0;
+        color: #cfcfcf;
       }
 
       a {
-        color: inherit;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
         text-decoration: underline;
         text-underline-offset: 3px;
       }
 
-      footer {
-        margin-top: 44px;
-        padding-top: 16px;
-        border-top: 1px solid #eee;
-        text-align: center;
-        color: #333;
-        font-size: 0.95rem;
-      }
-
-      footer .tagline {
-        margin: 6px 0 0;
+      .link {
+        display: inline-block;
+        margin-top: 22px;
+        color: #cfcfcf;
+        font-size: 0.98rem;
       }
     </style>
   </head>
   <body>
     <main class="container">
-      <header>
-        <h1>Janus Governance Core</h1>
-        <p class="subtitle">Computable Governance for AI-Assisted Systems</p>
-        <p class="description">
-          Janus is a governance model that records not only what happened, but also
-          what was required to happen and did not occur.
-        </p>
-      </header>
-
-      <section aria-labelledby="core-principles">
-        <h2 id="core-principles">Core Principles</h2>
-        <ul>
-          <li>Evidence model (E+ / E−)</li>
-          <li>Omission as structured evidence</li>
-          <li>Deterministic rebuild from logs</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="project-resources">
-        <h2 id="project-resources">Project Resources</h2>
-        <ul>
-          <li>
-            Core Repository
-            <br />
-            <a href="https://github.com/janus-governance/janus-governance-core"
-              >https://github.com/janus-governance/janus-governance-core</a
-            >
-          </li>
-          <li>
-            Documentation
-            <br />
-            <a href="/docs">/docs</a>
-          </li>
-          <li>
-            Runtime demo
-            <br />
-            <a href="/runtime/demo-node">/runtime/demo-node</a>
-          </li>
-        </ul>
-      </section>
-
-      <footer>
-        <div>Janus Governance Project</div>
-        <p class="tagline">Open architecture for accountable systems.</p>
-      </footer>
+      <img class="logo" src="assets/logo/janus-logo.svg" width="160" alt="Janus logo" />
+      <h1>Janus Governance Core</h1>
+      <p class="subtitle">Traceable governance for AI-assisted systems</p>
+      <a class="link" href="https://github.com/janus-governance/janus-governance-core"
+        >https://github.com/janus-governance/janus-governance-core</a
+      >
     </main>
   </body>
 </html>
