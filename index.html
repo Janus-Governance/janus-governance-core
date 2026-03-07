@@ -95,6 +95,46 @@
         margin: 6px 0;
       }
 
+      .flow {
+        margin-top: 28px;
+      }
+
+      .flow h2 {
+        margin: 0 0 10px;
+        font-size: 1.05rem;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+        color: #fff;
+      }
+
+      .flow pre {
+        margin: 0;
+        padding: 14px 16px;
+        background: #0b0b0b;
+        border: 1px solid #1a1a1a;
+        border-radius: 12px;
+        display: inline-block;
+        text-align: left;
+        color: #cfcfcf;
+        overflow: auto;
+      }
+
+      .flow code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        background: transparent;
+        color: inherit;
+      }
+
+      .flow .caption {
+        margin: 12px auto 0;
+        color: #cfcfcf;
+        font-size: 0.98rem;
+        max-width: 720px;
+      }
+
       .principles {
         margin-top: 18px;
       }
@@ -185,6 +225,41 @@
         <div class="line">Evidence-first governance</div>
         <div class="line">Human authority validation</div>
         <div class="line">Rebuildable system state</div>
+      </section>
+      <section class="flow" aria-label="Governance Flow">
+        <h2>Governance Flow</h2>
+        <pre><code>Human Authority
+       │
+       ▼
+Governance Protocol
+       │
+       ▼
+AI Execution
+       │
+       ▼
+Evidence
+   ┌───────────┐
+   │  E+  E−   │
+   │Present /  │
+   │Missing    │
+   └───────────┘
+       │
+       ▼
+Governance Evaluation
+       │
+       ▼
+Audit Event
+(OMISSION_DETECTED /
+ HUMAN_DECISION)
+       │
+       ▼
+Rebuildable State</code></pre>
+        <p class="caption">
+          E+ indicates verifiable evidence produced by actions.<br />
+          E− represents detectable absence of evidence (omissions).<br />
+          Evidence is interpreted through governance evaluation, which may produce auditable events
+          and a rebuildable system state.
+        </p>
       </section>
         <p class="tagline">A governance layer for traceable AI-assisted systems.</p>
       <nav class="nav" aria-label="Site navigation">
