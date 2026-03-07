@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0003 — Omission Detection</title>
+    <meta name="description" content="RFC 0003 — Omission Detection — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0003 — Omission Detection</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC defines the governance mechanism used to detect and record verified omissions within Janus systems.</p>
+<p>Omission detection produces the canonical governance event:</p>
+<p>OMISSION_DETECTED</p>
+<p>The event is recorded in AUDIT_LOG when a verified absence of an expected record is observed.</p>
+<hr />
+<h2>Motivation</h2>
+<p>Governance failures often occur not through incorrect actions but through missing actions.</p>
+<p>Traditional systems frequently treat missing records as undefined states.</p>
+<p>Janus introduces a formal mechanism to detect and record verified omissions so that governance systems can reason about procedural failures and accountability gaps.</p>
+<hr />
+<h2>Specification</h2>
+<h3>Omission detection</h3>
+<p>An omission is detected when an expected record cannot be found within a deterministic search scope.</p>
+<p>Omission detection is a form of governance evaluation applied to evidence expectations and scopes.</p>
+<p>The detection process must reference:</p>
+<ul><li>the defined expectation</li><li>the deterministic search scope</li><li>the observation that the expected record is absent</li><li>the relevant schema context from SCHEMA_LOG</li></ul>
+<h3>Governance event</h3>
+<p>When omission evidence (E−) is confirmed, the system records the event:</p>
+<p>OMISSION_DETECTED</p>
+<p>The event represents the governance recording of verified omission evidence (E−).</p>
+<p>The event MUST be written to:</p>
+<p>AUDIT_LOG</p>
+<h3>Human interpretation</h3>
+<p>Detection of an omission does not automatically imply fault.</p>
+<p>Interpretation, escalation, or resolution MAY require human evaluation.</p>
+<p>When human accountability is required, the system records:</p>
+<p>HUMAN_DECISION</p>
+<hr />
+<h2>Rationale</h2>
+<p>Institutional failures frequently manifest as omissions rather than incorrect actions.</p>
+<p>By explicitly recording omissions, governance systems can detect structural failures that would otherwise remain invisible.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial omission detection specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Incorrect omission detection may occur due to:</p>
+<ul><li>incomplete search scope</li><li>inconsistent schema interpretation</li><li>corrupted logs</li><li>unauthorized audit writers</li></ul>
+<p>Implementations must ensure deterministic search scopes and reliable schema references when deriving omission evidence.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0004 — Human Authority Model</title>
+    <meta name="description" content="RFC 0004 — Human Authority Model — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0004 — Human Authority Model</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC defines the human authority model used in Janus governance systems.</p>
+<p>Janus requires that certain decisions involving accountability, interpretation, or escalation remain under explicit human authority.</p>
+<p>Such decisions are recorded using the canonical governance event:</p>
+<p>HUMAN_DECISION</p>
+<hr />
+<h2>Motivation</h2>
+<p>AI-assisted systems may produce analysis, recommendations, or automated actions.</p>
+<p>However, institutional accountability cannot be delegated to automated systems.</p>
+<p>Janus therefore defines a governance model in which human authorities retain final responsibility for decisions that require accountability.</p>
+<hr />
+<h2>Specification</h2>
+<h3>Human authority</h3>
+<p>When a governance process requires explicit human accountability, the system MUST record a governance event:</p>
+<p>HUMAN_DECISION</p>
+<p>The event represents the formal acknowledgment that a designated human authority has made, confirmed, or assumed responsibility for a decision.</p>
+<p>HUMAN_DECISION is a governance event produced by governance evaluation flows when explicit human accountability is required, regardless of whether the evaluation is based on E+ or E− evidence.</p>
+<h3>Event recording</h3>
+<p><code>HUMAN_DECISION</code> events MUST be written to:</p>
+<p>AUDIT_LOG</p>
+<p>The event SHOULD reference:</p>
+<ul><li>the triggering governance context</li><li>any supporting evidence (E+ or E−)</li><li>any relevant governance events (e.g., OMISSION_DETECTED)</li></ul>
+<h3>AI-assisted interpretation</h3>
+<p>AI systems MAY assist in analysis, detection, or recommendation.</p>
+<p>However:</p>
+<p>AI outputs MUST NOT substitute for HUMAN_DECISION when explicit accountability is required.</p>
+<hr />
+<h2>Rationale</h2>
+<p>Governance systems must maintain a clear boundary between automated analysis and accountable decision-making.</p>
+<p>The HUMAN_DECISION event ensures that final authority remains explicit and auditable.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial human authority specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Risks related to human authority include:</p>
+<ul><li>unauthorized human decision recording</li><li>ambiguous accountability assignments</li><li>automation incorrectly bypassing required human decisions</li></ul>
+<p>Implementations must ensure that governance flows correctly enforce human authority requirements.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0006 — Governance Evaluation Layer</title>
+    <meta name="description" content="RFC 0006 — Governance Evaluation Layer — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0006 — Governance Evaluation Layer</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC defines the governance evaluation layer used in Janus systems.</p>
+<p>Governance evaluation flows analyze evidence (E+ and/or E−) within a defined scope and may produce governance events recorded in AUDIT_LOG.</p>
+<hr />
+<h2>Motivation</h2>
+<p>Janus governance separates operational activity from governance evaluation.</p>
+<p>Evidence alone does not produce governance outcomes.</p>
+<p>Evaluation flows interpret evidence in context and may produce auditable governance events.</p>
+<p>Defining this layer clarifies the relationship between:</p>
+<ul><li>evidence (RFC 0002)</li><li>omission detection (RFC 0003)</li><li>human authority (RFC 0004)</li><li>governance events (RFC 0005)</li></ul>
+<hr />
+<h2>Specification</h2>
+<h3>Governance evaluation</h3>
+<p>Governance evaluation flows analyze available evidence (E+ and/or E−) within a defined scope.</p>
+<p>Evaluation flows MAY produce governance events recorded in AUDIT_LOG.</p>
+<p>Examples of governance events include:</p>
+<ul><li>OMISSION_DETECTED</li><li>HUMAN_DECISION</li></ul>
+<p>Evaluation flows themselves are not governance events.</p>
+<p>They represent the process that may generate them.</p>
+<h3>Evaluation inputs</h3>
+<p>Evaluation flows may consider:</p>
+<ul><li>explicit evidence (E+) defined in RFC 0002</li><li>omission evidence (E−) defined in RFC 0002</li><li>schema context from SCHEMA_LOG</li><li>domain context from MANAGEMENT_LOG</li></ul>
+<h3>Evaluation outputs</h3>
+<p>Evaluation flows may produce governance events defined in RFC 0005.</p>
+<p>Specific evaluation types may be defined in additional RFCs.</p>
+<p>RFC 0003 defines one such evaluation type: omission detection.</p>
+<hr />
+<h2>Rationale</h2>
+<p>Separating evidence, evaluation, and governance events ensures that Janus governance remains structurally transparent.</p>
+<p>Evidence represents observable facts.</p>
+<p>Evaluation interprets those facts.</p>
+<p>Governance events record the accountable outcomes of those evaluations.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial evaluation layer specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Risks related to governance evaluation include:</p>
+<ul><li>incorrect evaluation scope</li><li>inconsistent schema interpretation</li><li>unauthorized evaluation execution</li></ul>
+<p>Implementations must ensure that governance evaluation flows operate within authorized governance contexts.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>

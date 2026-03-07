@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0002 — Evidence Model (E+ / E−)</title>
+    <meta name="description" content="RFC 0002 — Evidence Model (E+ / E−) — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0002 — Evidence Model (E+ / E−)</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC formalizes the evidence model used by Janus Core Lite.</p>
+<p>The model distinguishes between explicit recorded evidence (E+) and verified omission evidence (E−).</p>
+<p>This distinction allows governance systems to reason not only from recorded facts but also from verified absences of expected records.</p>
+<hr />
+<h2>Motivation</h2>
+<p>Traditional systems treat missing records as undefined states.</p>
+<p>In governance contexts, however, the absence of an expected record may itself represent a meaningful signal.</p>
+<p>Janus introduces a formal distinction between:</p>
+<ul><li>explicit evidence (E+)</li><li>omission evidence (E−)</li></ul>
+<p>This allows systems to detect procedural failures, structural gaps, and governance breakdowns.</p>
+<hr />
+<h2>Specification</h2>
+<h3>Explicit evidence (E+)</h3>
+<p>E+ represents evidence explicitly recorded in a system of record.</p>
+<p>A claim supported by E+ references a recorded artifact that can be retrieved and inspected.</p>
+<h3>Omission evidence (E−)</h3>
+<p>E− represents evidence derived from a verified absence of an expected record.</p>
+<p>E− requires:</p>
+<ul><li>a defined expectation</li><li>a deterministic search scope</li><li>a reproducible observation that the expected record is missing</li><li>referenceable schema context from SCHEMA_LOG</li></ul>
+<p>Evidence is evaluated by governance flows. Evaluation may produce governance events recorded in AUDIT_LOG.</p>
+<h3>Relationship with governance events</h3>
+<p>Omission evidence may generate the governance event:</p>
+<p>OMISSION_DETECTED</p>
+<p>Interpretation of evidence may require human evaluation, which is recorded through the event:</p>
+<p>HUMAN_DECISION</p>
+<hr />
+<h2>Rationale</h2>
+<p>Governance systems must account for both presence and absence of records.</p>
+<p>Without omission evidence, structural failures may remain invisible.</p>
+<p>The E+ / E− model enables systems to reason about procedural compliance, missing actions, and institutional responsibility.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial evidence model specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Incorrect omission detection may result from:</p>
+<ul><li>incomplete search scope</li><li>inconsistent schema interpretation</li><li>corrupted or incomplete logs</li></ul>
+<p>Implementations must ensure deterministic search scopes and schema consistency when deriving E−.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>

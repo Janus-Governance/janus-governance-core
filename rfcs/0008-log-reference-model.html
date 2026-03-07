@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0008 — Log Reference Model</title>
+    <meta name="description" content="RFC 0008 — Log Reference Model — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0008 — Log Reference Model</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC defines the reference relationships between the canonical append-only logs defined in Janus Core Lite.</p>
+<p>The model ensures that governance events can be traced to the domain records, schema context, and evidence artifacts that support them.</p>
+<hr />
+<h2>Motivation</h2>
+<p>Janus governance relies on multiple append-only logs:</p>
+<ul><li>MANAGEMENT_LOG</li><li>SCHEMA_LOG</li><li>AUDIT_LOG</li></ul>
+<p>Without explicit reference rules, relationships between these logs may become ambiguous.</p>
+<p>This RFC defines the minimal reference model required to maintain traceability and deterministic reconstruction of governance outcomes.</p>
+<hr />
+<h2>Specification</h2>
+<h3>Canonical logs</h3>
+<p>Janus Core Lite defines three canonical logs:</p>
+<ul><li>MANAGEMENT_LOG</li><li>SCHEMA_LOG</li><li>AUDIT_LOG</li></ul>
+<p>Each log records a different class of information:</p>
+<ul><li>Domain activity → MANAGEMENT_LOG</li><li>Schema evolution → SCHEMA_LOG</li><li>Governance outcomes → AUDIT_LOG</li></ul>
+<hr />
+<h3>Reference relationships</h3>
+<p>Governance events recorded in AUDIT_LOG SHOULD reference relevant records that support their evaluation context.</p>
+<p>These references may include:</p>
+<ul><li>domain records from MANAGEMENT_LOG</li><li>schema definitions from SCHEMA_LOG</li><li>supporting evidence artifacts</li></ul>
+<p>References allow governance events to be interpreted and validated within the correct historical and structural context.</p>
+<hr />
+<h3>Evidence linkage</h3>
+<p>When governance events rely on explicit evidence (E+) or omission evidence (E−), the event SHOULD reference the relevant evidence artifacts or the deterministic search scope used during evaluation.</p>
+<hr />
+<h3>Rebuildability</h3>
+<p>The reference model supports the deterministic rebuildability principle defined in RFC 0001.</p>
+<p>Given:</p>
+<ul><li>canonical logs</li><li>schema definitions</li><li>referenced evidence artifacts</li></ul>
+<p>an implementation should be able to reconstruct the governance interpretation associated with a recorded event.</p>
+<hr />
+<h2>Rationale</h2>
+<p>Explicit reference relationships ensure that governance outcomes remain traceable to the domain activity and schema context from which they were derived.</p>
+<p>This model prevents governance events from becoming detached from the records required to interpret them.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial log reference model specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Risks related to log references include:</p>
+<ul><li>missing or incomplete references</li><li>inconsistent schema interpretation</li><li>evidence artifacts that cannot be retrieved</li></ul>
+<p>Implementations must ensure that governance events preserve sufficient reference context to allow later verification and reconstruction.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>

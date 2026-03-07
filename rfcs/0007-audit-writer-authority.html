@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0007 — Audit Writer Authority</title>
+    <meta name="description" content="RFC 0007 — Audit Writer Authority — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0007 — Audit Writer Authority</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC defines the minimal writer authority rule for AUDIT_LOG.</p>
+<p>Janus requires that AUDIT_LOG governance events be written only through authorized audit writer flows, to prevent unauthorized governance records and shadow authority.</p>
+<hr />
+<h2>Motivation</h2>
+<p>If any component can write to AUDIT_LOG, governance can be forged.</p>
+<p>Writer authority is therefore a minimal kernel requirement.</p>
+<p>This RFC defines the smallest rule set required to ensure that:</p>
+<ul><li>governance events are not written by unauthorized actors</li><li>human accountability is not bypassed</li><li>audit records remain trustworthy</li></ul>
+<hr />
+<h2>Specification</h2>
+<h3>Audit writer</h3>
+<p>An Audit Writer is the only authorized mechanism allowed to append governance events to AUDIT_LOG.</p>
+<p>Implementations MUST ensure that all governance events in AUDIT_LOG are produced through the Audit Writer.</p>
+<h3>Minimal authority rule</h3>
+<p>The system MUST prevent direct writes to AUDIT_LOG that bypass the Audit Writer.</p>
+<h3>Relationship with governance evaluation</h3>
+<p>Governance evaluation flows (RFC 0006) may produce governance events (RFC 0005), but those events MUST be appended to AUDIT_LOG only via the Audit Writer.</p>
+<h3>Human decision enforcement</h3>
+<p>When a governance flow requires explicit human accountability (RFC 0004), the Audit Writer MUST record HUMAN_DECISION and MUST NOT substitute it with automated inference.</p>
+<h3>Event coverage</h3>
+<p>At minimum, the Audit Writer MUST support recording:</p>
+<ul><li>OMISSION_DETECTED (RFC 0003)</li><li>HUMAN_DECISION (RFC 0004)</li></ul>
+<hr />
+<h2>Rationale</h2>
+<p>Writer authority is a kernel-level control.</p>
+<p>It creates a clear boundary between evaluation processes and the authoritative audit record.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial writer authority specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Risks addressed include:</p>
+<ul><li>unauthorized audit event injection</li><li>audit log forgery</li><li>bypass of required HUMAN_DECISION</li></ul>
+<p>Implementations must ensure that the Audit Writer authority boundary is enforced at the storage or transport surface.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>

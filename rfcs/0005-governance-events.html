@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RFC 0005 — Governance Event Model</title>
+    <meta name="description" content="RFC 0005 — Governance Event Model — Janus RFC." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; padding: 0; background: #000; color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
+      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
+      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
+        font-size: 0.98rem; text-decoration: none; }
+      .back:hover, .back:focus { color: #fff; text-decoration: underline;
+        text-underline-offset: 3px; }
+      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+        margin: 0 0 18px; text-align: left; }
+      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
+        margin: 24px 0 10px; }
+      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
+      p { margin: 0 0 12px; color: #cfcfcf; }
+      a { color: #fff; text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
+      li { margin: 6px 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
+        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
+      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
+        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
+      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
+      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
+        background: #0b0b0b; border-radius: 8px; }
+      blockquote p { margin: 0; }
+      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/rfcs/">Back to RFCs</a>
+      <h1>RFC 0005 — Governance Event Model</h1>
+<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<hr />
+<h2>Summary</h2>
+<p>This RFC defines the governance event model used by Janus systems.</p>
+<p>Governance events represent auditable records that capture evaluations, findings, and accountable decisions.</p>
+<p>These events are recorded in AUDIT_LOG.</p>
+<hr />
+<h2>Motivation</h2>
+<p>Janus governance relies on explicit records to ensure traceability and accountability.</p>
+<p>Without a defined event model, governance actions may become ambiguous or inconsistent across implementations.</p>
+<p>This RFC defines the minimal structure and purpose of governance events within the Janus model.</p>
+<hr />
+<h2>Specification</h2>
+<h3>Governance events</h3>
+<p>A governance event is a record representing a governance-relevant observation, evaluation, or decision.</p>
+<p>Governance events are outputs of governance evaluation flows applied to evidence (E+ and/or E−).</p>
+<p>Governance events are appended to <code>AUDIT_LOG</code> exclusively through the Audit Writer mechanism (RFC 0007).</p>
+<p>Governance events MUST be written to:</p>
+<p>AUDIT_LOG</p>
+<h3>Canonical governance events</h3>
+<p>Janus Core Lite defines the following canonical governance events:</p>
+<ul><li>OMISSION_DETECTED</li><li>HUMAN_DECISION</li></ul>
+<p>Future specifications MAY introduce additional governance events.</p>
+<h3>Event context</h3>
+<p>Governance events SHOULD reference the relevant operational context, including:</p>
+<ul><li>related domain events in MANAGEMENT_LOG</li><li>relevant schema context from SCHEMA_LOG</li><li>supporting evidence (E+ or E−)</li></ul>
+<h3>Event responsibility</h3>
+<p>Governance events represent accountable records.</p>
+<p>Systems MUST ensure that governance events cannot be generated outside authorized governance flows.</p>
+<hr />
+<h2>Rationale</h2>
+<p>Governance systems require explicit event records in order to reconstruct decision processes and audit institutional actions.</p>
+<p>By defining governance events explicitly, Janus ensures that evaluations, omissions, and human decisions are consistently recorded across implementations.</p>
+<hr />
+<h2>Backwards compatibility</h2>
+<p>Not applicable (initial governance event model specification).</p>
+<hr />
+<h2>Security considerations</h2>
+<p>Risks related to governance events include:</p>
+<ul><li>unauthorized event generation</li><li>incomplete event context</li><li>tampered event records</li></ul>
+<p>Implementations must ensure append-only event recording and traceable governance flows.</p>
+<hr />
+<h2>License</h2>
+<p>MIT License</p>
+    </main>
+  </body>
+</html>
