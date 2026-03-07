@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="720"
+  height="820"
+  viewBox="0 0 720 820"
+  role="img"
+  aria-label="Janus Governance Flow Diagram"
+>
+  <defs>
+    <marker
+      id="arrow"
+      viewBox="0 0 10 10"
+      refX="8"
+      refY="5"
+      markerWidth="8"
+      markerHeight="8"
+      orient="auto-start-reverse"
+    >
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" />
+    </marker>
+
+    <style>
+      .box {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2;
+        rx: 14;
+      }
+
+      .box-evidence {
+        fill: #ffffff14;
+        stroke: #ffffff;
+        stroke-width: 2;
+        rx: 14;
+      }
+
+      .label {
+        fill: #ffffff;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+
+      .connector {
+        stroke: #ffffff;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+
+  <!-- Layout constants: width=720; boxW=460; x=130; boxH=70; step=110 -->
+  <!-- Boxes -->
+  <rect class="box" x="130" y="40" width="460" height="70" />
+  <text class="label" x="360" y="75">Human Authority</text>
+
+  <rect class="box" x="130" y="150" width="460" height="70" />
+  <text class="label" x="360" y="185">Governance Protocol</text>
+
+  <rect class="box" x="130" y="260" width="460" height="70" />
+  <text class="label" x="360" y="295">AI Execution</text>
+
+  <rect class="box-evidence" x="130" y="370" width="460" height="70" />
+  <text class="label" x="360" y="405">Evidence (E+ / E−)</text>
+
+  <rect class="box" x="130" y="480" width="460" height="70" />
+  <text class="label" x="360" y="515">Governance Evaluation</text>
+
+  <rect class="box" x="130" y="590" width="460" height="70" />
+  <text class="label" x="360" y="625">Audit Event</text>
+
+  <rect class="box" x="130" y="700" width="460" height="70" />
+  <text class="label" x="360" y="735">Rebuildable State</text>
+
+  <!-- Connectors -->
+  <path class="connector" d="M 360 110 L 360 150" />
+  <path class="connector" d="M 360 220 L 360 260" />
+  <path class="connector" d="M 360 330 L 360 370" />
+  <path class="connector" d="M 360 440 L 360 480" />
+  <path class="connector" d="M 360 550 L 360 590" />
+  <path class="connector" d="M 360 660 L 360 700" />
+</svg>
