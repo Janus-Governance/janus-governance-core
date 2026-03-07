@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo/janus-logo.svg" width="160" alt="Janus logo">
+</p>
+
 ## Janus Governance Core
 
 Janus is a set of stack-agnostic specifications for management systems that require traceable decisions, explicit evidence handling, and audit-ready records. “Management” is used as a superset term for organizational contexts (e.g., government, project, education, business).
