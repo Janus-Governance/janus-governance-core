@@ -50,6 +50,12 @@
         color: #cfcfcf;
       }
 
+      .tagline {
+        margin: 10px 0 0;
+        color: #cfcfcf;
+        font-size: 1.02rem;
+      }
+
       a {
         color: #fff;
         text-decoration: none;
@@ -61,16 +67,36 @@
         text-underline-offset: 3px;
       }
 
-      .links {
-        margin-top: 22px;
+      .nav {
+        margin-top: 26px;
         display: grid;
-        gap: 10px;
-        justify-items: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .links a {
+      .nav a {
+        display: block;
+        padding: 12px 14px;
+        border: 1px solid #222;
+        border-radius: 10px;
         color: #cfcfcf;
-        font-size: 0.98rem;
+      }
+
+      .nav a:hover,
+      .nav a:focus {
+        color: #fff;
+        border-color: #333;
+        background: #111;
+        text-decoration: none;
+      }
+
+      @media (max-width: 520px) {
+        .nav {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -79,10 +105,13 @@
       <img class="logo" src="assets/logo/janus-logo.svg" width="160" alt="Janus logo" />
       <h1>Janus Governance Core</h1>
       <p class="subtitle">Traceable governance for AI-assisted systems</p>
-      <nav class="links" aria-label="Project links">
+      <p class="tagline">A governance kernel for auditable AI-assisted systems.</p>
+      <nav class="nav" aria-label="Site navigation">
+        <a href="/docs/">Documentation</a>
+        <a href="/rfcs/">RFC Series</a>
+        <a href="/runtime/">Runtime</a>
+        <a href="/demos/">Demos</a>
         <a href="https://github.com/Janus-Governance/janus-governance-core">Repository</a>
-        <a href="https://github.com/Janus-Governance/janus-governance-core/tree/main/core">Core Specification</a>
-        <a href="https://github.com/Janus-Governance/janus-governance-core/tree/main/rfcs">RFC Documents</a>
       </nav>
     </main>
   </body>
