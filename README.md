@@ -74,3 +74,11 @@ Janus defines closed-loop governance mechanics. Final authority remains with des
 
 MIT License  
 Copyright (c) 2026 Martín Nicolás Sánchez Morales
+
+## Paper Writing Protocol
+
+Technical papers in this project follow the Janus LaTeX Paper Protocol.
+
+See:
+
+docs/janus-latex-paper-protocol.md
