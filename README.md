@@ -4,6 +4,24 @@
 
 ## Janus Governance Core
 
+---
+
+## What is Janus?
+
+Janus is a minimal governance layer for human–AI development systems.
+
+It introduces three structural invariants:
+
+• append-only institutional logs  
+• dual evidence model (E+ / E−)  
+• explicit human authority decisions
+
+Together these enable development environments where actions, decisions, and system states remain traceable, auditable, and deterministically reconstructible.
+
+Read the Foundational Paper → `paper/janus-foundational-paper-v1.0.pdf`
+
+---
+
 Janus is a set of stack-agnostic specifications for management systems that require traceable decisions, explicit evidence handling, and audit-ready records. “Management” is used as a superset term for organizational contexts (e.g., government, project, education, business).
 
 Janus is not:
