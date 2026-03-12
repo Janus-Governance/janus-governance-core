@@ -18,7 +18,7 @@ It introduces three structural invariants:
 
 Together these enable development environments where actions, decisions, and system states remain traceable, auditable, and deterministically reconstructible.
 
-Read the Foundational Paper → `paper/janus-foundational-paper-v1.0.pdf`
+Read the Foundational Paper → `docs/paper/janus-foundational-paper-v1.0.pdf`
 
 ---
 

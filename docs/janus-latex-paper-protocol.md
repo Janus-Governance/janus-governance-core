@@ -16,7 +16,7 @@ Produce and maintain IEEE-style technical papers with:
 - zero LaTeX warnings whenever possible
 - simple TikZ diagrams
 - numbered equations
-- controlled versioning in /paper
+- controlled versioning in /docs/paper
 - publication-ready PDF
 
 --------------------------------
@@ -131,7 +131,7 @@ REPOSITORY RULES
 
 Paper directory standard:
 
-/paper
+/docs/paper
   paper-name.tex
   paper-name-v1.0.pdf
   README.md
@@ -143,9 +143,9 @@ Versioning:
 
 Publication workflow:
 1. freeze clean version
-2. move assets into /paper
+2. move assets into /docs/paper
 3. rename final PDF with version
-4. add /paper/README.md
+4. add /docs/paper/README.md
 5. commit
 6. tag
 7. push
