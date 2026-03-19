@@ -1,5 +1,7 @@
 [![DOI](https://zenodo.org/badge/1174000167.svg)](https://doi.org/10.5281/zenodo.18974356)
 
+License: MIT
+
 <p align="center">
   <img src="assets/logo/janus-logo.svg" width="160" alt="Janus logo">
 </p>
