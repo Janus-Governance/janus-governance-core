@@ -1,0 +1,253 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{microtype}
+
+\title{Janus: Evidence-Based Governance for AI-Assisted Development Systems}
+
+\author{%
+  \IEEEauthorblockN{Martín Nicolás Sánchez Morales}\\
+  \IEEEauthorblockA{Janus Governance Project\\
+  Argentina}%
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+AI-assisted development introduces structural challenges in traceability, authority,
+and reproducibility. This paper presents Janus, a protocol-driven governance layer
+that records and signals deviations from evidence-based workflow protocols across
+development environments.
+
+Rather than measuring system performance, this work evaluates governance through
+conformance between protocol-defined expectations and runtime-observed behavior.
+
+We introduce an evidence-based governance benchmark and present preliminary
+validation results across multiple runtime artifacts.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Governance, Observability, AI-assisted development, Traceability, Runtime systems
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+AI-assisted systems introduce opacity into decision-making processes, making it
+difficult to trace actions, verify authority, and reconstruct execution history.
+
+Janus introduces a governance layer that records and signals deviations from
+protocol-defined workflows, providing:
+\begin{itemize}
+    \item Explicit evidence (E\textsuperscript{+} and E\textsuperscript{-})
+    \item Human authority boundaries
+    \item Deterministic reconstruction of governance state
+\end{itemize}
+
+Rather than modifying underlying systems, Janus wraps workflows with a protocol
+stack that monitors traceability and signals accountability deviations at the operational level.
+
+\section{Architecture}
+
+Janus operates as a protocol-driven governance layer composed of four distinct
+components:
+
+\begin{itemize}
+    \item \textbf{Core Layer:} defines events, evidence types, and authority boundaries
+    \item \textbf{Protocol Layer:} defines operational governance rules
+    \item \textbf{Runtime Layer:} captures telemetry and execution events
+    \item \textbf{Workflow Layer:} mediates interaction between agents and human authority
+\end{itemize}
+
+\section{Governance Invariants}
+
+Janus defines four operational invariants that govern system behavior:
+
+\medskip
+\noindent\textbf{Invariant 1 (Evidence Completeness):}
+Every governance-relevant action must produce either E\textsuperscript{+}
+(recorded occurrence) or E\textsuperscript{-} (recorded omission).
+
+\medskip
+\noindent\textbf{Invariant 2 (Omission Detectability):}
+Every omission must be detectable under a deterministic, predefined scope.
+
+\medskip
+\noindent\textbf{Invariant 3 (Human Authority Closure):}
+No governance state is considered complete without an explicit human decision
+or a recorded omission event.
+
+\medskip
+\noindent\textbf{Invariant 4 (Deterministic Reconstruction):}
+Any given sequence of governance events must produce the same governance state
+upon reconstruction.
+
+\section{Runtime Observability}
+
+Janus emits structured events at runtime, each containing:
+\begin{itemize}
+    \item Event type
+    \item Timestamp
+    \item Payload
+    \item Error traces
+\end{itemize}
+
+This structured telemetry enables immediate failure detection and end-to-end
+traceability. The observed GVL values (95--120\,ms) indicate near-immediate
+detection under interactive system conditions.
+
+\section{Evidence-Based Governance Benchmark}
+
+\subsection{Metric Definitions}
+
+\noindent\textbf{Event Capture Rate (ECR):}
+\begin{equation}
+  ECR = \frac{\text{Governed Events}}{\text{Total System Operations}}
+\end{equation}
+ECR measures the proportion of system operations covered by governance
+instrumentation. A value of 1.0 indicates full governance coverage of all
+observed operations.
+
+\medskip
+\noindent\textbf{Governance Verdict Latency (GVL):}
+\begin{equation}
+\begin{split}
+  GVL = \; & t(\mathit{HUMAN\_VERDICT}) \\
+            & - \; t(\mathit{OMISSION\_DETECTED})
+\end{split}
+\end{equation}
+GVL is measured in milliseconds and reflects the elapsed time between
+omission detection and the recording of a human authority verdict.
+
+\medskip
+\noindent\textbf{Protocol Violation Detectability Rate (PVDR):}
+\begin{equation}
+  PVDR = \frac{\text{Detected Violations}}{\text{Injected Violations}}
+\end{equation}
+
+\subsection{Evaluation Principle}
+
+\begin{equation}
+  \mathit{Governance\_Conformance} =
+    \frac{\text{Observed Events}}{\text{Expected Protocol Events}}
+\end{equation}
+
+Expected protocol events are derived from predefined protocol rules that specify
+required event types under given execution conditions.
+
+\section{Experimental Validation}
+
+\subsection{Fault Injection Method}
+
+Protocol violations were introduced through controlled test cases, including:
+\begin{itemize}
+    \item Missing required decision events
+    \item Invalid state transitions
+    \item Incomplete evidence generation
+\end{itemize}
+A total of 50 injected violations per artifact were used.
+Human verdict events were simulated through controlled test inputs, allowing
+consistent timestamp capture for GVL measurement under experimental conditions.
+
+\subsection{Results}
+
+Validation was performed across multiple runtime artifacts under controlled
+development conditions.
+
+\begin{table}[h]
+  \centering
+  \caption{Preliminary Benchmark Results}
+  \label{tab:results}
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    \textbf{Artifact} & \textbf{ECR} & \textbf{GVL (ms)} & \textbf{PVDR} \\
+    \hline
+    Interactive System & 1.0 & 120 & 0.92 \\
+    Logic Component    & 1.0 &  95 & 0.95 \\
+    Rendering Module   & 1.0 & 110 & 0.90 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+These results represent initial validation under controlled development conditions.
+
+\section{Related Work}
+
+Janus relates to several established paradigms and frameworks:
+
+\begin{itemize}
+    \item Event Sourcing~\cite{fowler}
+    \item Command Query Responsibility Segregation (CQRS)~\cite{young}
+    \item Distributed event ordering~\cite{lamport}
+    \item Observability frameworks~\cite{otel}
+    \item AI risk management~\cite{nist}
+    \item Requirements traceability~\cite{gotel}
+\end{itemize}
+
+Janus differs from these approaches by integrating governance, evidence, and
+human authority as first-class runtime constructs, rather than as post-hoc
+auditing mechanisms.
+
+\section{Limitations}
+
+Current limitations of the Janus model include:
+
+\begin{itemize}
+    \item Lack of automated enforcement of authority boundaries
+    \item Partial observability in external or third-party systems
+    \item Human authority scalability challenges at high decision volumes
+\end{itemize}
+
+The system currently focuses on detection and signaling of governance deviations,
+rather than enforcing them automatically.
+
+\subsection{Threats to Validity}
+\begin{itemize}
+    \item Limited number of runtime artifacts evaluated
+    \item Single-environment validation scope
+    \item Lack of independent replication by external teams
+    \item Controlled fault injection scenarios may not reflect production conditions
+\end{itemize}
+
+\section{Conclusion}
+
+Janus demonstrates that governance can be evaluated through measurable conformance
+between expected and observed behavior in runtime systems. By treating evidence
+capture, omission detection, and human authority as first-class operational
+constructs, Janus provides a reproducible foundation for governance in AI-assisted
+development environments.
+
+\begin{thebibliography}{1}
+
+\bibitem{fowler}
+M. Fowler, ``Event Sourcing,'' 2005. [Online].
+Available: \url{https://martinfowler.com/eaaDev/EventSourcing.html}
+
+\bibitem{young}
+G. Young, ``CQRS Documents,'' 2010. [Online].
+Available: \url{https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf}
+
+\bibitem{lamport}
+L. Lamport, ``Time, Clocks, and the Ordering of Events in a Distributed System,''
+\emph{Commun. ACM}, vol.~21, no.~7, pp.~558--565, Jul. 1978.
+
+\bibitem{otel}
+OpenTelemetry, ``OpenTelemetry Specification,''
+Cloud Native Computing Foundation (CNCF), 2023. [Online].
+Available: \url{https://opentelemetry.io/docs/specs/otel/}
+
+\bibitem{nist}
+NIST, ``AI Risk Management Framework (AI RMF 1.0),'' 2023. [Online].
+Available: \url{https://www.nist.gov/itl/ai-risk-management-framework}
+
+\bibitem{gotel}
+O. Gotel and A. Finkelstein, ``An Analysis of the Requirements Traceability
+Problem,'' \emph{Proc. IEEE Int. Conf. Requirements Engineering}, 1994.
+
+\end{thebibliography}
+
+\end{document}
