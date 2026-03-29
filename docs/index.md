@@ -10,6 +10,8 @@ Janus Governance Core defines stack-agnostic specifications for systems that req
 - 🧭 [Architecture Overview](./architecture/janus-stack.md)
 - ⚙️ [Governance Pipeline](./governance/governance-pipeline.md)
 
+- 🔄 [Runtime Model (operational flow)](./runtime-model.md)
+
 ---
 
 ## Core specification
