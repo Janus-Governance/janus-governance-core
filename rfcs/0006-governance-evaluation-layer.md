@@ -103,6 +103,18 @@ within authorized governance contexts.
 
 ---
 
+## Event structure reference
+
+The canonical conceptual structure of governance events produced by
+evaluation flows is defined in:
+
+docs/architecture/governance-event-structure.md
+
+The governance event model and AUDIT_LOG recording requirements are
+defined in RFC 0005.
+
+---
+
 ## License
 
 MIT License

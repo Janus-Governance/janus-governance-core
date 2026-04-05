@@ -94,3 +94,12 @@ This structure allows governance events to remain:
 - reconstructable
 
 without constraining implementation technologies.
+
+## Related specifications
+
+The governance event model is defined in RFC 0005.
+
+Governance events are produced by evaluation flows defined in RFC 0006.
+
+Governance events are appended to AUDIT_LOG through the Audit Writer
+mechanism defined in RFC 0007.
