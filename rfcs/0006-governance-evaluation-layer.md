@@ -118,3 +118,21 @@ defined in RFC 0005.
 ## License
 
 MIT License
+
+## Detection vs Human Decision (clarification)
+
+Governance evaluation flows may produce structural signals such as
+`OMISSION_DETECTED`, which represent detectable conditions within the system.
+
+These signals are not equivalent to human accountability decisions.
+
+`HUMAN_DECISION` represents an explicit act of human responsibility,
+recorded when accountability must be asserted.
+
+This separation ensures that:
+- system-detectable conditions remain distinct from human responsibility
+- evaluation outputs do not imply accountability without explicit human action
+- governance traces preserve both detection and decision as independent events
+
+This section is explanatory only and does not modify the canonical definitions
+of governance events.
