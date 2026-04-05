@@ -136,3 +136,25 @@ This separation ensures that:
 
 This section is explanatory only and does not modify the canonical definitions
 of governance events.
+
+## Semantic drift (audit guidance)
+
+Governance evaluation may surface conditions where conceptual usage
+diverges from the canonical definitions established in the core model.
+
+This form of divergence can be understood as semantic drift: a gradual
+misalignment between how terms are used and how they are defined.
+
+Semantic drift may be observed when:
+- new terms appear without canonical definition
+- existing terms are used with inconsistent meaning across contexts
+- implementation layers introduce concepts not present in the core model
+
+Such conditions do not automatically imply incorrect behavior, but they
+indicate a need for audit attention and possible clarification.
+
+Detection of semantic drift is distinct from omission detection and does
+not imply accountability. When required, human evaluation may interpret
+these conditions and decide whether action is needed.
+
+This section is explanatory and does not introduce new governance events.
