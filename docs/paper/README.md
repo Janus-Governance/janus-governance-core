@@ -1,15 +1,26 @@
-# Janus Foundational Paper
 
-This document presents the initial formal description of the Janus governance kernel.
+## Papers
 
-Janus defines a minimal governance layer for AI-assisted development environments based on three structural invariants:
+### Janus Foundational Paper
 
-• append-only institutional logs  
-• dual evidence model (E+ / E−)  
-• explicit human authority boundary  
-
-These elements allow hybrid human–AI workflows to become traceable, auditable, and deterministically reconstructible.
-
-The paper describes the conceptual model, governance kernel, and reconstruction principles underlying the Janus system.
+Presents the formal description of the Janus governance kernel and its core invariants: append-only institutional logs, dual evidence model (E+ / E−), and explicit human authority boundary.
 
 Version: v1.0
+DOI: https://doi.org/10.5281/zenodo.18974356
+janus-foundational-paper-v1.0.pdf
+
+### Janus Framework Paper
+
+Presents the operational stack of Janus, including protocol layer, runtime structure, observability, and governed AI-assisted development workflows.
+
+Version: v1.0
+DOI: https://doi.org/10.5281/zenodo.19239183
+janus-framework-paper-v1.0.pdf
+
+### Janus Origin Case Paper
+
+Documents the structural systems failure that motivated Janus: systems record state changes but not the human decisions that authorize them. It provides longitudinal institutional evidence and positions the governance kernel as a minimal structural response.
+
+Version: v1.0
+DOI: https://doi.org/10.5281/zenodo.19709093
+janus-origin-case-v1.0-en.pdf
