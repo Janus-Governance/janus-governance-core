@@ -4,7 +4,7 @@ Janus is a governance kernel and layered architecture for auditable systems oper
 
 This document defines the conceptual separation of layers in the Janus-Governance-Core repository.
 
-Normative note: where this document uses MUST/SHOULD/MAY, those statements apply to repository organization and interpretation rules. Core protocol requirements live under `core/`.
+Normative note: this document is informative under the normative hierarchy defined in the Core (Core Lite §2, "Normative authority"). Where it uses MUST/SHOULD/MAY, those statements describe repository organization conventions and do not override the Core. Core protocol requirements live under `core/`.
 
 ## Layer separation
 
@@ -65,20 +65,22 @@ SDKs:
 
 The repository separates normative specifications from supporting material.
 
-- `docs/`: Working documentation for this repository. The glossary is normative for term meanings.
+- `docs/`: Working documentation for this repository. The glossary fixes the meaning of Core terms, subordinate to the Core; other documents in `docs/` are informative.
 - `papers/`: Background analysis and research notes. Non-normative by default.
 - `studies/`: Experiments, logs, and results. Non-normative by default.
 - `philosophy/`: Canon and essays. Non-normative by default.
 
-If a document outside `core/` or `docs/` is intended to be normative, it MUST explicitly declare its normative scope.
+A document other than the Core, the glossary, or an accepted RFC is normative only if the Core expressly incorporates it.
 
-## Semantic stability rule (glossary-first)
+## Semantic stability rule
 
-`docs/glossary.md` is the source of semantic truth for named terms used across layers.
+`docs/glossary.md` fixes the meaning of named terms used across layers, subordinate to the Core.
 
 Rules:
 1) A term used in Core, Framework, Runtimes, Adapters, or SDK text MUST have a stable meaning anchored in the glossary.
 2) Changing a glossary definition MUST trigger review of dependent documents.
-3) When meaning conflicts are discovered, the glossary MUST be updated first, then dependent specifications updated to match.
+3) When meanings conflict, the hierarchy defined in the Core applies: the higher level prevails and the divergence is recorded, without silently rewriting the lower-level source.
+
+Informative documents in this repository may still diverge from the active Core. Such divergences are recorded and do not override the Core.
 
 This rule is intended to keep semantics stable while allowing implementations to evolve independently.
