@@ -166,7 +166,7 @@ demos/node/outputs/janus-validation-suite.json
 
 ## Status
 
-Core Lite: v0.1 Draft
+Core Lite: v0.2 Draft
 
 ---
 

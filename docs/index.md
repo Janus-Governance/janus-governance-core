@@ -16,8 +16,8 @@ Janus Governance Core defines stack-agnostic specifications for systems that req
 
 ## Core specification
 
-- Core Lite v0.1  
-  `core/lite/JANUS_CORE_LITE_v0.1.md`
+- Core Lite v0.2  
+  `core/lite/JANUS_CORE_LITE_v0.2.md`
 
 ---
 

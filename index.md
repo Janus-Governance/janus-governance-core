@@ -7,7 +7,7 @@ Official documentation entry point.
 ---
 
 ## Core specification
-- Core Lite v0.1: `core/lite/JANUS_CORE_LITE_v0.1.md`
+- Core Lite v0.2: `core/lite/JANUS_CORE_LITE_v0.2.md`
 
 ## RFCs
 - RFC 0001–0008: see `rfcs/`
