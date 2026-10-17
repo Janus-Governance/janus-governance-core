@@ -141,24 +141,26 @@
       <h2>1. Core Idea</h2>
 <p>Most systems record what happened. Janus also records what should have happened but did not.</p>
 <p>In Janus, omission is not silence. Omission is structured evidence.</p>
+<p>This document is informative. Janus Core Lite v0.2 is the normative source and defines the conditions for E−.</p>
 <h2>2. Classical Model vs Janus Model</h2>
 <p>Classical systems:</p>
 <ul><li>positive event recorded</li><li>absence remains silent</li></ul>
 <p>Janus:</p>
-<ul><li>E+ = event occurred</li><li>E- = required event missing</li><li>governance outcome must be expressible as evidence</li></ul>
+<ul><li>E+ = evidence explicitly recorded in a system of record</li><li>E− = evidence derived from a verified absence that satisfies the expectation, scope, observation, and schema-context requirements in Core §5</li><li>governance evaluation uses evidence without redefining the Core evidence classes</li></ul>
 <h2>3. Why This Matters</h2>
 <p>Omissions are often the most critical failures in socio-technical systems. Examples:</p>
 <ul><li>missing validation</li><li>missing human decision</li><li>missing required review</li><li>missing protocol step</li></ul>
 <h2>4. Canonical Janus Expression</h2>
-<p>E+ = positive evidence E- = omission evidence</p>
+<p>E+ = explicit evidence E− = verified omission evidence under Core §5</p>
 <p>For governance-required activity:</p>
-<p>governance outcome = E+ or E-</p>
-<p>If a required event is missing, the system must emit structured omission evidence.</p>
+<p>E+ and E− are evidence classes, not interchangeable verdict labels.</p>
+<p>A missing event supports E− only when every condition in Core §5 is met. A conforming omission record uses the Core-defined <code>OMISSION_DETECTED</code> governance event.</p>
 <h2>5. Runtime Demonstration</h2>
-<p>The reference runtime demo (Node) validates omission detection by emitting explicit audit events when a governance-required event is missing. A stress test (many proposals with random omission vs decision) validates the same principle under scale.</p>
+<p>The Node demo illustrates a simplified omission-detection flow by emitting audit events when a governance-required event is missing. Its implementation-specific labels and counts do not establish conformity or validate the Core under scale.</p>
 <p>Use this example:</p>
-<p>1000 CHANGE_PROPOSED → 464 HUMAN_DECISION_REGISTERED (E+) → 536 OMISSION_DETECTED (E-)</p>
-<p>Consistency: E+ + E- = governance outcomes</p>
+<p>1000 CHANGE_PROPOSED → 464 HUMAN_DECISION_REGISTERED → 536 OMISSION_DETECTED (E−)</p>
+<p>The arithmetic is a property of this generated example, not a normative Core equation.</p>
+<p><code>HUMAN_DECISION_REGISTERED</code> is a runtime-specific label associated with the open technical divergence R1-011. The only canonical human-authority event is <code>HUMAN_DECISION</code>.</p>
 <h2>6. Principle</h2>
 <p>What did not happen, when it was required to happen, is part of system truth.</p>
     </main>

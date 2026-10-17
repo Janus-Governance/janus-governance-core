@@ -12,9 +12,11 @@ Official documentation entry point.
 ## RFCs
 - RFC 0001–0008: see `rfcs/`
 
-<h2>Executable Proof</h2>
+<h2>Executable Demonstration</h2>
 
 <p>Janus includes a minimal executable runtime demonstrating:</p>
+
+<p>The runtime is a technical illustration. It does not redefine Core Lite v0.2 and does not establish conformity.</p>
 <ul>
 	<li>governance evaluation</li>
 	<li>omission detection</li>
@@ -24,7 +26,7 @@ Official documentation entry point.
 </ul>
 
 <p>
-	<a href="https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/demo-run.md">60-second demo proof</a>
+	<a href="https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/demo-run.md">60-second demo walkthrough</a>
 	·
 	<a href="https://github.com/Janus-Governance/janus-governance-core/tree/main/runtimes/demo-node">Reference runtime</a>
 </p>

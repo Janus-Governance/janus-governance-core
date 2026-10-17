@@ -139,13 +139,14 @@
       <a class="back" href="/docs/">Back to docs</a>
       <h1>Janus Runtime Model</h1>
       <h2>1. Purpose</h2>
-<p>Janus defines a governance core; runtimes execute the model in concrete environments.</p>
+<p>Janus Core Lite v0.2 is the normative source. Runtimes are technical implementations that execute the model in concrete environments; they do not redefine the Core.</p>
 <h2>2. Reference Runtime</h2>
-<p>The current Node demo runtime is a reference implementation proving:</p>
-<ul><li>governance evaluation</li><li>omission detection</li><li>evidence model (E+ / E-)</li><li>audit writer boundary</li><li>deterministic rebuild</li></ul>
+<p>The current Node demo runtime is an illustrative implementation demonstrating:</p>
+<ul><li>governance evaluation</li><li>omission detection</li><li>evidence model (E+ / E−)</li><li>audit writer boundary</li><li>deterministic rebuild</li></ul>
 <p>Location:</p>
 <p>runtimes/demo-node/</p>
 <p>It is intentionally minimal and designed for demonstration.</p>
+<p>Its output does not by itself establish conformity with Janus Core Lite v0.2.</p>
 <h2>3. Future Runtimes</h2>
 <p>Production runtimes may implement the same model in different environments, for example:</p>
 <ul><li>Node runtime</li><li>Python runtime</li><li>Apps Script runtime</li><li>Database-backed runtime</li></ul>

@@ -1,13 +1,15 @@
-# Janus Demo — 60 Second Proof
+# Janus Demo — 60 Second Walkthrough
 
-## 1. What this proves
+## 1. What this illustrates
 
-This demo validates:
+This demo illustrates:
 - governance evaluation
 - omission detection
 - human authority registration
 - audit writing
 - deterministic rebuild
+
+It does not establish conformity with Janus Core Lite v0.2. The demo is an illustrative technical artifact and does not redefine the Core.
 
 ## 2. Run
 
