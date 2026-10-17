@@ -84,25 +84,25 @@ This repository defines the **Janus Core**:
 - canonical governance definitions  
 - RFC specifications  
 - architecture and glossary  
-- deterministic validation suite  
+- deterministic automated consistency checks
 
 It is **stack-agnostic** and does not depend on any runtime or implementation.
 
 ---
 
-## Deterministic Validation Suite (Node)
+## Deterministic Automated Consistency Checks (Node)
 
-This repository includes a minimal deterministic validation suite demonstrating reproducible Janus Core Lite cases and executable proofs of the system.
+This repository includes a minimal deterministic suite with reproducible, illustrative Janus Core Lite cases. Its output does not establish conformity.
 
 ---
 
 ## Latest Updates
 
-- Deterministic validation suite (Node) demonstrating reproducible Janus Core Lite cases
-- 60-second executable proof of the system
+- Deterministic automated consistency checks (Node) demonstrating reproducible Janus Core Lite cases
+- 60-second executable walkthrough
 - Runtime model documentation
 - "What is Janus" overview document
-- GitHub Pages section showing the executable proof
+- GitHub Pages section showing the illustrative walkthrough
 
 Links:
 
@@ -131,6 +131,8 @@ Output:
 demos/node/outputs/janus-validation-suite.json
 ```
 
+The output filename retains a legacy implementation label; it does not denote semantic validation or certification.
+
 ---
 
 
@@ -139,10 +141,10 @@ demos/node/outputs/janus-validation-suite.json
 - `rfcs/` — RFC 0001–0008  
 - `docs/` — architecture and governance documentation  
 
-### Validation and demos
+### Checks and demonstrations
 
 - `runtimes/demo-node/` — reference runtime  
-- `demos/node/` — validation datasets and outputs  
+- `demos/node/` — consistency-check datasets and outputs
 
 ### Non-normative material
 

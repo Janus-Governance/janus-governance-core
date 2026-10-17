@@ -18,7 +18,7 @@ This becomes critical in systems involving automation and AI, where omissions an
 
 Key ideas:
 - governance events
-- evidence model (E+ / E-)
+- evidence model (E+ / E−)
 - human authority
 - audit writer boundary
 - deterministic rebuild
@@ -43,7 +43,7 @@ activity → evaluation → governance event → audit log → rebuildable state
 
 runtimes/demo-node/
 
-It demonstrates the model with a minimal executable implementation.
+It illustrates selected model behavior with a minimal executable implementation. It does not establish conformity and does not redefine Janus Core Lite v0.2.
 
 ## 7. Principle
 
