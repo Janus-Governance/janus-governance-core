@@ -6,7 +6,7 @@ This addendum aligns the informative v1.0 paper with Janus Core Lite v0.2. It do
 
 This is independent research by the author. It does not represent an official position, endorsement, or institutional assessment by the Dirección General de Cultura y Educación, any district-level authority, or any other public body.
 
-Janus was developed independently by the author, informed in part by longitudinal professional experience across multiple institutional and technical contexts. The identified institutional descriptions, exact public-service role, internal procedures, access mechanisms, and specific vulnerability claims in v1.0 are superseded and are not repeated here. The v1.1 candidate uses a de-identified case description and reproduces no confidential administrative records or identifiable personal data.
+Janus was developed independently by the author, informed in part by longitudinal professional experience across multiple institutional and technical contexts. The identified institutional descriptions, exact public-service role, internal procedures, access mechanisms, and specific vulnerability claims in v1.0 are superseded and are not repeated here. Version 1.1 uses a de-identified case description and reproduces no confidential administrative records or identifiable personal data.
 
 The historical label “Origin Case” refers only to v1.0. The public academic identity of the successor is *The Missing Decision Layer: Structural Failure in Information Systems and the Case for a Minimal Governance Kernel* v1.1.
 
