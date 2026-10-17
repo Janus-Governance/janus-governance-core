@@ -1,6 +1,6 @@
 # Glossary (Normative)
 
-This glossary defines canonical meanings for terms used by Janus specifications in this repository. It is subordinate to the Core (`core/lite/JANUS_CORE_LITE_v0.1.md`), which is the primary normative authority.
+This glossary defines canonical meanings for terms used by Janus specifications in this repository. It is subordinate to the Core (`core/lite/JANUS_CORE_LITE_v0.2.md`), which is the primary normative authority.
 
 Semantic stability rule: when a term in this glossary is changed, any dependent specification text MUST be reviewed and updated accordingly.
 
