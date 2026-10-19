@@ -2,159 +2,81 @@
 
 Status: Draft  
 Author: Martín Nicolás Sánchez Morales  
-Created: 2026
+Created: 2026  
+Aligned with: Core Lite v0.2  
+Canonical specification: `core/lite/JANUS_CORE_LITE_v0.2.md`
+
+---
+
+## Authority and scope
+
+Core Lite v0.2 is the primary normative authority. This Draft describes
+evaluation without redefining Core. Other RFC Drafts and architecture documents
+are informative navigation, not constitutive authority.
 
 ---
 
 ## Summary
 
-This RFC defines the governance evaluation layer used in Janus systems.
-
-Governance evaluation flows analyze evidence (E+ and/or E−) within a
-defined scope and may produce governance events recorded in AUDIT_LOG.
-
----
-
-## Motivation
-
-Janus governance separates operational activity from governance
-evaluation.
-
-Evidence alone does not produce governance outcomes.
-
-Evaluation flows interpret evidence in context and may produce
-auditable governance events.
-
-Defining this layer clarifies the relationship between:
-
-- evidence (RFC 0002)
-- omission detection (RFC 0003)
-- human authority (RFC 0004)
-- governance events (RFC 0005)
+Governance evaluation analyzes E+ and/or E− within a declared context. It may
+produce `OMISSION_DETECTED` when every Core condition is met. It does not
+produce, simulate, or originate `HUMAN_DECISION`.
 
 ---
 
 ## Specification
 
-### Governance evaluation
-
-Governance evaluation flows analyze available evidence (E+ and/or E−)
-within a defined scope.
-
-Evaluation flows MAY produce governance events recorded in AUDIT_LOG.
-
-Examples of governance events include:
-
-- OMISSION_DETECTED
-- HUMAN_DECISION
-
-Evaluation flows themselves are not governance events.
-
-They represent the process that may generate them.
-
 ### Evaluation inputs
 
-Evaluation flows may consider:
+Evaluation may consider:
 
-- explicit evidence (E+) defined in RFC 0002
-- omission evidence (E−) defined in RFC 0002
-- schema context from SCHEMA_LOG
-- domain context from MANAGEMENT_LOG
+- resolvably referenced immutable E+ artifacts;
+- E− only after every cumulative condition in Core §5 is satisfied;
+- applicable `SCHEMA_LOG` context;
+- relevant `MANAGEMENT_LOG` domain context; and
+- prior `AUDIT_LOG` history up to the declared cutoff.
 
 ### Evaluation outputs
 
-Evaluation flows may produce governance events defined in RFC 0005.
+Evaluation may produce `OMISSION_DETECTED` when a verified omission satisfies
+the canonical contract. A deterministic reevaluation that only changes a
+derived view is not itself a canonical event.
 
-Specific evaluation types may be defined in additional RFCs.
+Evaluation, recommendation, detection, escalation, and decision are distinct
+stages. When accountability requires judgment, evaluation may identify the
+need for human action or present evidence to a human authority. Only the human
+act may later be represented by `HUMAN_DECISION`; the flow does not originate
+that act.
 
-RFC 0003 defines one such evaluation type: omission detection.
+### Event recording
 
----
+Canonical events are appended to `AUDIT_LOG` exclusively through an authorized
+Audit Writer. Evaluation does not write directly to `AUDIT_LOG` and does not
+modify `MANAGEMENT_LOG` or `SCHEMA_LOG`.
 
-## Rationale
+### Informative architecture material
 
-Separating evidence, evaluation, and governance events ensures that
-Janus governance remains structurally transparent.
+`docs/architecture/governance-event-structure.md` may illustrate an
+implementation-oriented event shape. It is informative and does not define the
+canonical contracts, which remain in Core Lite v0.2.
 
-Evidence represents observable facts.
+### Semantic drift
 
-Evaluation interprets those facts.
-
-Governance events record the accountable outcomes of those evaluations.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial evaluation layer specification).
+An implementation may flag inconsistent terminology for audit attention. That
+flag is not E− unless the Core omission conditions are met, is not a new
+canonical event, and does not imply accountability. Human review may decide
+whether later action is authorized, without altering prior evidence or events.
 
 ---
 
 ## Security considerations
 
-Risks related to governance evaluation include:
-
-- incorrect evaluation scope
-- inconsistent schema interpretation
-- unauthorized evaluation execution
-
-Implementations must ensure that governance evaluation flows operate
-within authorized governance contexts.
-
----
-
-## Event structure reference
-
-The canonical conceptual structure of governance events produced by
-evaluation flows is defined in:
-
-docs/architecture/governance-event-structure.md
-
-The governance event model and AUDIT_LOG recording requirements are
-defined in RFC 0005.
+Evaluation must not use incomplete scope or schema context, claim human
+authority, bypass the Audit Writer, mutate history, or treat a suite result as
+semantic conformity.
 
 ---
 
 ## License
 
 MIT License
-
-## Detection vs Human Decision (clarification)
-
-Governance evaluation flows may produce structural signals such as
-`OMISSION_DETECTED`, which represent detectable conditions within the system.
-
-These signals are not equivalent to human accountability decisions.
-
-`HUMAN_DECISION` represents an explicit act of human responsibility,
-recorded when accountability must be asserted.
-
-This separation ensures that:
-- system-detectable conditions remain distinct from human responsibility
-- evaluation outputs do not imply accountability without explicit human action
-- governance traces preserve both detection and decision as independent events
-
-This section is explanatory only and does not modify the canonical definitions
-of governance events.
-
-## Semantic drift (audit guidance)
-
-Governance evaluation may surface conditions where conceptual usage
-diverges from the canonical definitions established in the core model.
-
-This form of divergence can be understood as semantic drift: a gradual
-misalignment between how terms are used and how they are defined.
-
-Semantic drift may be observed when:
-- new terms appear without canonical definition
-- existing terms are used with inconsistent meaning across contexts
-- implementation layers introduce concepts not present in the core model
-
-Such conditions do not automatically imply incorrect behavior, but they
-indicate a need for audit attention and possible clarification.
-
-Detection of semantic drift is distinct from omission detection and does
-not imply accountability. When required, human evaluation may interpret
-these conditions and decide whether action is needed.
-
-This section is explanatory and does not introduce new governance events.

@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RFC 0002 — Evidence Model (E+ / E−)</title>
-    <meta name="description" content="RFC 0002 — Evidence Model (E+ / E−) — Janus RFC." />
+    <meta name="description" content="RFC 0002 — Evidence Model (E+ /
+E−) — Janus RFC." />
     <style>
       :root { color-scheme: dark; }
       body { margin: 0; padding: 0; background: #000; color: #fff;
@@ -40,50 +41,70 @@
   <body>
     <main class="container">
       <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0002 — Evidence Model (E+ / E−)</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<h1 id="rfc-0002--evidence-model-e--e">RFC 0002 — Evidence Model (E+ /
+E−)</h1>
+<p>Status: Draft<br />
+Author: Martín Nicolás Sánchez Morales<br />
+Created: 2026<br />
+Aligned with: Core Lite v0.2<br />
+Canonical specification:
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code></p>
 <hr />
-<h2>Summary</h2>
-<p>This RFC formalizes the evidence model used by Janus Core Lite.</p>
-<p>The model distinguishes between explicit recorded evidence (E+) and verified omission evidence (E−).</p>
-<p>This distinction allows governance systems to reason not only from recorded facts but also from verified absences of expected records.</p>
+<h2 id="authority-and-scope">Authority and scope</h2>
+<p>Core Lite v0.2 is the primary normative authority. This Draft
+explains its evidence model and neither replaces nor extends it. If the
+texts differ, the canonical Core prevails. Frameworks, runtimes, demos,
+HTML, and suites do not redefine the Core.</p>
 <hr />
-<h2>Motivation</h2>
-<p>Traditional systems treat missing records as undefined states.</p>
-<p>In governance contexts, however, the absence of an expected record may itself represent a meaningful signal.</p>
-<p>Janus introduces a formal distinction between:</p>
-<ul><li>explicit evidence (E+)</li><li>omission evidence (E−)</li></ul>
-<p>This allows systems to detect procedural failures, structural gaps, and governance breakdowns.</p>
+<h2 id="summary">Summary</h2>
+<p>E+ and E− are classes of evidence. They are not Boolean labels, event
+types, verdicts, or references. Governance events invoke evidence
+through resolvable references to immutable versions of supporting
+artifacts.</p>
 <hr />
-<h2>Specification</h2>
-<h3>Explicit evidence (E+)</h3>
-<p>E+ represents evidence explicitly recorded in a system of record.</p>
-<p>A claim supported by E+ references a recorded artifact that can be retrieved and inspected.</p>
-<h3>Omission evidence (E−)</h3>
-<p>E− represents evidence derived from a verified absence of an expected record.</p>
-<p>E− requires:</p>
-<ul><li>a defined expectation</li><li>a deterministic search scope</li><li>a reproducible observation that the expected record is missing</li><li>referenceable schema context from SCHEMA_LOG</li></ul>
-<p>Evidence is evaluated by governance flows. Evaluation may produce governance events recorded in AUDIT_LOG.</p>
-<h3>Relationship with governance events</h3>
-<p>Omission evidence may generate the governance event:</p>
-<p>OMISSION_DETECTED</p>
-<p>Interpretation of evidence may require human evaluation, which is recorded through the event:</p>
-<p>HUMAN_DECISION</p>
+<h2 id="specification">Specification</h2>
+<h3 id="explicit-evidence-e">Explicit evidence (E+)</h3>
+<p>E+ is evidence explicitly recorded in a system of record. A claim
+supported by E+ requires an explicitly recorded artifact that can be
+retrieved and inspected. A governance event that invokes E+ references
+an immutable version of that artifact through a resolvable evidence
+reference.</p>
+<h3 id="omission-evidence-e">Omission evidence (E−)</h3>
+<p>E− is evidence derived from a verified absence of an expected record
+or event. A simple absence, failed lookup, or missing value is not
+E−.</p>
+<p>E− requires all of the following cumulative conditions:</p>
+<ol type="1">
+<li>a defined, referenceable expectation whose version was recorded
+before the observation and declares provenance, temporal applicability,
+and when it becomes due;</li>
+<li>a deterministic scope identifying sources, subject, filters, window,
+cutoff (<code>as-of</code>), and the evaluation procedure with its
+version;</li>
+<li>a cutoff that does not precede the due time, with due status
+determinable from the material consulted up to that cutoff;</li>
+<li>the <code>SCHEMA_LOG</code> context applicable to every record or
+event considered up to the cutoff; and</li>
+<li>a reproducible observation relative to that scope and cutoff.</li>
+</ol>
+<p>E− is not counter-argumentation. It is a verified omission relative
+to an explicit expectation.</p>
+<h3 id="relationship-with-governance-events">Relationship with
+governance events</h3>
+<p>Evaluation may use E+ and/or E−. An instance of E− that satisfies the
+Core conditions may produce <code>OMISSION_DETECTED</code>. Neither E+
+nor E− automatically produces a human decision.</p>
+<p><code>HUMAN_DECISION</code> represents a prior human act when
+explicit human accountability is required. Evaluation does not originate
+it, and evidence does not substitute for it.</p>
 <hr />
-<h2>Rationale</h2>
-<p>Governance systems must account for both presence and absence of records.</p>
-<p>Without omission evidence, structural failures may remain invisible.</p>
-<p>The E+ / E− model enables systems to reason about procedural compliance, missing actions, and institutional responsibility.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>Implementations must prevent mutable or unresolved evidence
+references, incomplete scopes, retroactively defined expectations,
+inconsistent schema contexts, and irreproducible observations from being
+treated as valid E−.</p>
 <hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial evidence model specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Incorrect omission detection may result from:</p>
-<ul><li>incomplete search scope</li><li>inconsistent schema interpretation</li><li>corrupted or incomplete logs</li></ul>
-<p>Implementations must ensure deterministic search scopes and schema consistency when deriving E−.</p>
-<hr />
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>MIT License</p>
     </main>
   </body>

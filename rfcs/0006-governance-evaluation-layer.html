@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RFC 0006 — Governance Evaluation Layer</title>
-    <meta name="description" content="RFC 0006 — Governance Evaluation Layer — Janus RFC." />
+    <meta name="description" content="RFC 0006 — Governance Evaluation
+Layer — Janus RFC." />
     <style>
       :root { color-scheme: dark; }
       body { margin: 0; padding: 0; background: #000; color: #fff;
@@ -40,51 +41,71 @@
   <body>
     <main class="container">
       <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0006 — Governance Evaluation Layer</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<h1 id="rfc-0006--governance-evaluation-layer">RFC 0006 — Governance
+Evaluation Layer</h1>
+<p>Status: Draft<br />
+Author: Martín Nicolás Sánchez Morales<br />
+Created: 2026<br />
+Aligned with: Core Lite v0.2<br />
+Canonical specification:
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code></p>
 <hr />
-<h2>Summary</h2>
-<p>This RFC defines the governance evaluation layer used in Janus systems.</p>
-<p>Governance evaluation flows analyze evidence (E+ and/or E−) within a defined scope and may produce governance events recorded in AUDIT_LOG.</p>
+<h2 id="authority-and-scope">Authority and scope</h2>
+<p>Core Lite v0.2 is the primary normative authority. This Draft
+describes evaluation without redefining Core. Other RFC Drafts and
+architecture documents are informative navigation, not constitutive
+authority.</p>
 <hr />
-<h2>Motivation</h2>
-<p>Janus governance separates operational activity from governance evaluation.</p>
-<p>Evidence alone does not produce governance outcomes.</p>
-<p>Evaluation flows interpret evidence in context and may produce auditable governance events.</p>
-<p>Defining this layer clarifies the relationship between:</p>
-<ul><li>evidence (RFC 0002)</li><li>omission detection (RFC 0003)</li><li>human authority (RFC 0004)</li><li>governance events (RFC 0005)</li></ul>
+<h2 id="summary">Summary</h2>
+<p>Governance evaluation analyzes E+ and/or E− within a declared
+context. It may produce <code>OMISSION_DETECTED</code> when every Core
+condition is met. It does not produce, simulate, or originate
+<code>HUMAN_DECISION</code>.</p>
 <hr />
-<h2>Specification</h2>
-<h3>Governance evaluation</h3>
-<p>Governance evaluation flows analyze available evidence (E+ and/or E−) within a defined scope.</p>
-<p>Evaluation flows MAY produce governance events recorded in AUDIT_LOG.</p>
-<p>Examples of governance events include:</p>
-<ul><li>OMISSION_DETECTED</li><li>HUMAN_DECISION</li></ul>
-<p>Evaluation flows themselves are not governance events.</p>
-<p>They represent the process that may generate them.</p>
-<h3>Evaluation inputs</h3>
-<p>Evaluation flows may consider:</p>
-<ul><li>explicit evidence (E+) defined in RFC 0002</li><li>omission evidence (E−) defined in RFC 0002</li><li>schema context from SCHEMA_LOG</li><li>domain context from MANAGEMENT_LOG</li></ul>
-<h3>Evaluation outputs</h3>
-<p>Evaluation flows may produce governance events defined in RFC 0005.</p>
-<p>Specific evaluation types may be defined in additional RFCs.</p>
-<p>RFC 0003 defines one such evaluation type: omission detection.</p>
+<h2 id="specification">Specification</h2>
+<h3 id="evaluation-inputs">Evaluation inputs</h3>
+<p>Evaluation may consider:</p>
+<ul>
+<li>resolvably referenced immutable E+ artifacts;</li>
+<li>E− only after every cumulative condition in Core §5 is
+satisfied;</li>
+<li>applicable <code>SCHEMA_LOG</code> context;</li>
+<li>relevant <code>MANAGEMENT_LOG</code> domain context; and</li>
+<li>prior <code>AUDIT_LOG</code> history up to the declared cutoff.</li>
+</ul>
+<h3 id="evaluation-outputs">Evaluation outputs</h3>
+<p>Evaluation may produce <code>OMISSION_DETECTED</code> when a verified
+omission satisfies the canonical contract. A deterministic reevaluation
+that only changes a derived view is not itself a canonical event.</p>
+<p>Evaluation, recommendation, detection, escalation, and decision are
+distinct stages. When accountability requires judgment, evaluation may
+identify the need for human action or present evidence to a human
+authority. Only the human act may later be represented by
+<code>HUMAN_DECISION</code>; the flow does not originate that act.</p>
+<h3 id="event-recording">Event recording</h3>
+<p>Canonical events are appended to <code>AUDIT_LOG</code> exclusively
+through an authorized Audit Writer. Evaluation does not write directly
+to <code>AUDIT_LOG</code> and does not modify
+<code>MANAGEMENT_LOG</code> or <code>SCHEMA_LOG</code>.</p>
+<h3 id="informative-architecture-material">Informative architecture
+material</h3>
+<p><code>docs/architecture/governance-event-structure.md</code> may
+illustrate an implementation-oriented event shape. It is informative and
+does not define the canonical contracts, which remain in Core Lite
+v0.2.</p>
+<h3 id="semantic-drift">Semantic drift</h3>
+<p>An implementation may flag inconsistent terminology for audit
+attention. That flag is not E− unless the Core omission conditions are
+met, is not a new canonical event, and does not imply accountability.
+Human review may decide whether later action is authorized, without
+altering prior evidence or events.</p>
 <hr />
-<h2>Rationale</h2>
-<p>Separating evidence, evaluation, and governance events ensures that Janus governance remains structurally transparent.</p>
-<p>Evidence represents observable facts.</p>
-<p>Evaluation interprets those facts.</p>
-<p>Governance events record the accountable outcomes of those evaluations.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>Evaluation must not use incomplete scope or schema context, claim
+human authority, bypass the Audit Writer, mutate history, or treat a
+suite result as semantic conformity.</p>
 <hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial evaluation layer specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Risks related to governance evaluation include:</p>
-<ul><li>incorrect evaluation scope</li><li>inconsistent schema interpretation</li><li>unauthorized evaluation execution</li></ul>
-<p>Implementations must ensure that governance evaluation flows operate within authorized governance contexts.</p>
-<hr />
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>MIT License</p>
     </main>
   </body>

@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RFC 0003 — Omission Detection</title>
-    <meta name="description" content="RFC 0003 — Omission Detection — Janus RFC." />
+    <meta name="description" content="RFC 0003 — Omission
+Detection — Janus RFC." />
     <style>
       :root { color-scheme: dark; }
       body { margin: 0; padding: 0; background: #000; color: #fff;
@@ -40,51 +41,84 @@
   <body>
     <main class="container">
       <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0003 — Omission Detection</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<h1 id="rfc-0003--omission-detection">RFC 0003 — Omission Detection</h1>
+<p>Status: Draft<br />
+Author: Martín Nicolás Sánchez Morales<br />
+Created: 2026<br />
+Aligned with: Core Lite v0.2<br />
+Canonical specification:
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code></p>
 <hr />
-<h2>Summary</h2>
-<p>This RFC defines the governance mechanism used to detect and record verified omissions within Janus systems.</p>
-<p>Omission detection produces the canonical governance event:</p>
-<p>OMISSION_DETECTED</p>
-<p>The event is recorded in AUDIT_LOG when a verified absence of an expected record is observed.</p>
+<h2 id="authority-and-scope">Authority and scope</h2>
+<p>Core Lite v0.2 is the primary normative authority. This Draft
+explains omission detection without adding Core requirements. Any
+divergence is resolved in favor of the canonical Core and recorded
+rather than silently rewritten.</p>
 <hr />
-<h2>Motivation</h2>
-<p>Governance failures often occur not through incorrect actions but through missing actions.</p>
-<p>Traditional systems frequently treat missing records as undefined states.</p>
-<p>Janus introduces a formal mechanism to detect and record verified omissions so that governance systems can reason about procedural failures and accountability gaps.</p>
+<h2 id="summary">Summary</h2>
+<p><code>OMISSION_DETECTED</code> records an instance of E− that
+satisfies every condition in Core Lite v0.2 §5. It records a verified
+omission; it is not a human decision and is not evidence that an
+implementation is semantically conformant.</p>
 <hr />
-<h2>Specification</h2>
-<h3>Omission detection</h3>
-<p>An omission is detected when an expected record cannot be found within a deterministic search scope.</p>
-<p>Omission detection is a form of governance evaluation applied to evidence expectations and scopes.</p>
-<p>The detection process must reference:</p>
-<ul><li>the defined expectation</li><li>the deterministic search scope</li><li>the observation that the expected record is absent</li><li>the relevant schema context from SCHEMA_LOG</li></ul>
-<h3>Governance event</h3>
-<p>When omission evidence (E−) is confirmed, the system records the event:</p>
-<p>OMISSION_DETECTED</p>
-<p>The event represents the governance recording of verified omission evidence (E−).</p>
-<p>The event MUST be written to:</p>
-<p>AUDIT_LOG</p>
-<h3>Human interpretation</h3>
-<p>Detection of an omission does not automatically imply fault.</p>
-<p>Interpretation, escalation, or resolution MAY require human evaluation.</p>
-<p>When human accountability is required, the system records:</p>
-<p>HUMAN_DECISION</p>
+<h2 id="specification">Specification</h2>
+<h3 id="omission-detection">Omission detection</h3>
+<p>A missing record alone is not E−. Omission detection requires,
+cumulatively:</p>
+<ul>
+<li>a referenceable expectation version recorded before observation,
+including provenance, temporal applicability, and the due time or
+condition;</li>
+<li>a deterministic scope containing sources, subject, filters, window,
+cutoff, and the versioned evaluation procedure;</li>
+<li>a cutoff no earlier than the expectation's due time, with due status
+determinable from the consulted material;</li>
+<li>applicable <code>SCHEMA_LOG</code> context for every record or event
+considered; and</li>
+<li>a reproducible observation relative to the scope and cutoff.</li>
+</ul>
+<h3 id="omission_detected-contract"><code>OMISSION_DETECTED</code>
+contract</h3>
+<p>When the cumulative conditions are met, evaluation may produce an
+<code>OMISSION_DETECTED</code> event. The event must include:</p>
+<ul>
+<li><code>event_type</code>;</li>
+<li><code>event_id</code>;</li>
+<li><code>expectation_ref</code>, identifying the expectation version
+evaluated;</li>
+<li><code>scope_ref</code>, identifying the deterministic search scope
+and cutoff;</li>
+<li><code>schema_ref</code>;</li>
+<li><code>evidence_refs</code>, containing at least one reference;
+and</li>
+<li><code>recorded_at</code>, the event's only own time.</li>
+</ul>
+<p><code>management_refs</code> is optional. Search execution time
+belongs in the observation artifact. The event asserts absence only
+within the recorded scope and up to the recorded cutoff. It is appended
+to <code>AUDIT_LOG</code> exclusively through an authorized Audit
+Writer.</p>
+<h3 id="later-evidence-correction-and-resolution">Later evidence,
+correction, and resolution</h3>
+<p>Later evidence or corrective action does not overwrite, delete, or
+modify the historical event. Its effect appears in the deterministically
+rebuilt view and must be supported by referenceable evidence.</p>
+<p>An omission is resolved only by a later evaluation of the same
+expectation version, using a later cutoff and corresponding evidence.
+Evaluation of a different expectation version does not resolve it. A
+later action satisfying the expectation is not a supersession of the
+historical event.</p>
+<p><code>OMISSION_DETECTED</code> is distinct from
+<code>HUMAN_DECISION</code>. Evaluation does not originate a human
+decision. A human decision about an omission modifies neither the event
+nor its evidence and constitutes neither E+ nor E−.</p>
 <hr />
-<h2>Rationale</h2>
-<p>Institutional failures frequently manifest as omissions rather than incorrect actions.</p>
-<p>By explicitly recording omissions, governance systems can detect structural failures that would otherwise remain invisible.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>Incomplete search scope, retroactive expectations, inconsistent
+schemas, corrupted logs, unresolved references, or unauthorized writers
+must not be accepted as omission detection.</p>
 <hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial omission detection specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Incorrect omission detection may occur due to:</p>
-<ul><li>incomplete search scope</li><li>inconsistent schema interpretation</li><li>corrupted logs</li><li>unauthorized audit writers</li></ul>
-<p>Implementations must ensure deterministic search scopes and reliable schema references when deriving omission evidence.</p>
-<hr />
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>MIT License</p>
     </main>
   </body>

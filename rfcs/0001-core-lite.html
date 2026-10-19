@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RFC 0001 — Janus Core Lite v0.1</title>
-    <meta name="description" content="RFC 0001 — Janus Core Lite v0.1 — Janus RFC." />
+    <title>RFC 0001 — Janus Core Lite</title>
+    <meta name="description" content="RFC 0001 — Janus Core
+Lite — Janus RFC." />
     <style>
       :root { color-scheme: dark; }
       body { margin: 0; padding: 0; background: #000; color: #fff;
@@ -40,41 +41,80 @@
   <body>
     <main class="container">
       <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0001 — Janus Core Lite v0.1</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<h1 id="rfc-0001--janus-core-lite">RFC 0001 — Janus Core Lite</h1>
+<p>Status: Draft<br />
+Author: Martín Nicolás Sánchez Morales<br />
+Created: 2026<br />
+Current revision: v0.2<br />
+Canonical specification:
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code></p>
 <hr />
-<h2>Summary</h2>
-<p>This RFC defines the minimal governance core for AI-assisted systems.</p>
-<p>Janus Core Lite introduces a stack-agnostic governance model based on append-only logs, explicit evidence handling, and traceable human authority.</p>
+<h2 id="summary">Summary</h2>
+<p>This RFC identifies the Janus Core Lite proposal and records its
+evolution. The active revision is Core Lite v0.2.</p>
+<p>The canonical specification is
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code>. This Draft RFC is
+explanatory and is not accepted normative authority. If this RFC differs
+from the canonical specification, the canonical specification prevails
+and the divergence must be recorded rather than silently resolved.</p>
 <hr />
-<h2>Motivation</h2>
-<p>AI-assisted systems increasingly participate in decision processes.</p>
-<p>Without explicit governance primitives, systems risk:</p>
-<ul><li>opaque decisions</li><li>untraceable omissions</li><li>shadow sources of truth</li><li>autonomous authority violations</li></ul>
-<p>Janus Core Lite provides the minimal ontology required to make governance auditable and reconstructable.</p>
+<h2 id="revision-history">Revision history</h2>
+<ul>
+<li><strong>v0.1</strong> — initial formulation of the minimal
+governance core.</li>
+<li><strong>v0.2</strong> — clarification of evidence, omission, human
+authority, canonical logs, governance evaluation, event contracts, and
+deterministic reconstruction.</li>
+</ul>
+<p>The v0.1 formulation remains traceable through Git history and
+archived material. Revision v0.2 evolves the same RFC proposal; it does
+not assert that v0.1 disappeared or was silently rewritten.</p>
 <hr />
-<h2>Specification</h2>
-<p>This RFC formalizes the following components:</p>
-<ul><li>Three canonical append-only logs:</li><li>MANAGEMENT_LOG</li><li>SCHEMA_LOG</li><li>AUDIT_LOG</li></ul>
-<ul><li>Evidence model:</li><li>E+ explicit evidence</li><li>E− omission evidence</li></ul>
-<ul><li>Governance events:</li><li>HUMAN_DECISION</li><li>OMISSION_DETECTED</li></ul>
-<ul><li>Core invariants:</li><li>append-only logs</li><li>separation of domain and governance</li><li>deterministic rebuildability</li></ul>
-<p>Normative definitions are specified in:</p>
-<p>core/lite/JANUS_CORE_LITE_v0.1.md</p>
+<h2 id="motivation">Motivation</h2>
+<p>AI-assisted systems increasingly participate in workflows whose
+evidence, omissions, and accountable human acts must remain traceable.
+Core Lite provides a stack-agnostic governance ontology without defining
+runtime architecture, identity systems, distributed audit hubs, user
+interfaces, or framework methodologies.</p>
 <hr />
-<h2>Rationale</h2>
-<p>Core Lite intentionally limits scope to governance primitives.</p>
-<p>It does not define runtimes, identity systems, or distributed audit architectures.</p>
-<p>Those concerns are addressed in the framework and runtime layers.</p>
+<h2 id="specification">Specification</h2>
+<p>Core Lite v0.2 is defined only by the canonical specification cited
+above. Its scope includes:</p>
+<ul>
+<li>three canonical append-only logs: <code>MANAGEMENT_LOG</code>,
+<code>SCHEMA_LOG</code>, and <code>AUDIT_LOG</code>;</li>
+<li>evidence classes E+ and E−;</li>
+<li>the canonical events <code>OMISSION_DETECTED</code> and
+<code>HUMAN_DECISION</code>;</li>
+<li>stable record identity and append-only correction rules;</li>
+<li>separation of domain activity from governance evaluations and
+findings;</li>
+<li>exclusive <code>AUDIT_LOG</code> writing through an authorized Audit
+Writer; and</li>
+<li>deterministic reconstruction of governance-relevant views and
+findings from history, schemas, and referenced evidence up to a
+cutoff.</li>
+</ul>
+<p>This summary does not replace, reduce, or extend the canonical
+requirements. An RFC becomes normative only if accepted and only insofar
+as it develops the Core without contradicting it. Frameworks, runtimes,
+demos, HTML representations, and test suites are informative or
+implementation evidence; they do not redefine Core Lite.</p>
 <hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial specification).</p>
+<h2 id="compatibility-and-history">Compatibility and history</h2>
+<p>The RFC number identifies the proposal; the revision identifies its
+evolution. RFC 0001 therefore continues to represent Janus Core Lite at
+revision v0.2. Historical v0.1 paths and commits remain available for
+traceability but do not prevail over the active canonical Core.</p>
 <hr />
-<h2>Security considerations</h2>
-<p>Threats addressed in Core Lite include:</p>
-<ul><li>log tampering</li><li>shadow sources of truth</li><li>schema drift</li><li>silent failure</li><li>unauthorized audit writers</li><li>autonomous authority violations</li></ul>
+<h2 id="security-considerations">Security considerations</h2>
+<p>The canonical specification addresses log tampering, shadow sources
+of truth, schema drift, silent failure, unauthorized audit writing, and
+autonomous authority violations. Implementations must consult the
+canonical specification rather than infer complete security requirements
+from this summary.</p>
 <hr />
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>MIT License</p>
     </main>
   </body>

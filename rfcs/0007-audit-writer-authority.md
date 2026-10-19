@@ -2,93 +2,69 @@
 
 Status: Draft  
 Author: Martín Nicolás Sánchez Morales  
-Created: 2026
+Created: 2026  
+Aligned with: Core Lite v0.2  
+Canonical specification: `core/lite/JANUS_CORE_LITE_v0.2.md`
+
+---
+
+## Authority and scope
+
+Core Lite v0.2 is the primary normative authority. This Draft explains the
+exclusive technical writer boundary. References to other Draft RFCs are
+informative and do not define the writer's authority.
 
 ---
 
 ## Summary
 
-This RFC defines the minimal writer authority rule for AUDIT_LOG.
-
-Janus requires that AUDIT_LOG governance events be written only through
-authorized audit writer flows, to prevent unauthorized governance records
-and shadow authority.
-
----
-
-## Motivation
-
-If any component can write to AUDIT_LOG, governance can be forged.
-
-Writer authority is therefore a minimal kernel requirement.
-
-This RFC defines the smallest rule set required to ensure that:
-
-- governance events are not written by unauthorized actors
-- human accountability is not bypassed
-- audit records remain trustworthy
+An authorized Audit Writer is the exclusive mechanism for appending governance
+events to `AUDIT_LOG`. It records and validates events; it does not decide,
+originate human authority, or write to the other canonical logs.
 
 ---
 
 ## Specification
 
-### Audit writer
+### Exclusive writer
 
-An Audit Writer is the only authorized mechanism allowed to append
-governance events to AUDIT_LOG.
+All governance events appended to `AUDIT_LOG` must be written exclusively
+through an authorized Audit Writer. Direct writes that bypass it must be
+prevented.
 
-Implementations MUST ensure that all governance events in AUDIT_LOG are
-produced through the Audit Writer.
+The Audit Writer validates the applicable canonical event contract, stable
+identity, mandatory references, and append-only conditions before
+incorporation. A rejected write is a technical rejection; it is not a
+`HUMAN_DECISION` and does not create human authority.
 
-### Minimal authority rule
+### Human decision boundary
 
-The system MUST prevent direct writes to AUDIT_LOG that bypass the Audit Writer.
+For `HUMAN_DECISION`, the Audit Writer validates and incorporates a record of a
+prior human act. It must not originate, infer, simulate, or substitute for that
+act. The responsible authority is identified by `actor_ref`, not by the
+technical writer.
 
-### Relationship with governance evaluation
+If mandatory `object_refs` do not resolve against already incorporated history,
+the Audit Writer prevents incorporation. It does not repair the decision by
+inventing objects or evidence.
 
-Governance evaluation flows (RFC 0006) may produce governance events (RFC 0005),
-but those events MUST be appended to AUDIT_LOG only via the Audit Writer.
+### Log boundary and append-only behavior
 
-### Human decision enforcement
+The Audit Writer appends only to `AUDIT_LOG`; it does not modify
+`MANAGEMENT_LOG` or `SCHEMA_LOG`. Corrections to domain activity are appended to
+`MANAGEMENT_LOG`; schema corrections or evolution are appended to
+`SCHEMA_LOG`; governance corrections are appended to `AUDIT_LOG` with a
+resolvable backward reference.
 
-When a governance flow requires explicit human accountability (RFC 0004),
-the Audit Writer MUST record HUMAN_DECISION and MUST NOT substitute it with
-automated inference.
-
-### Event coverage
-
-At minimum, the Audit Writer MUST support recording:
-
-- OMISSION_DETECTED (RFC 0003)
-- HUMAN_DECISION (RFC 0004)
-
----
-
-## Rationale
-
-Writer authority is a kernel-level control.
-
-It creates a clear boundary between evaluation processes and the
-authoritative audit record.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial writer authority specification).
+Prior events are never overwritten or deleted.
 
 ---
 
 ## Security considerations
 
-Risks addressed include:
-
-- unauthorized audit event injection
-- audit log forgery
-- bypass of required HUMAN_DECISION
-
-Implementations must ensure that the Audit Writer authority boundary is
-enforced at the storage or transport surface.
+The authority boundary must be enforced at the storage or transport surface and
+must prevent bypass, event forgery, unresolved mandatory references, mutation
+of history, and autonomous creation of human authority.
 
 ---
 
