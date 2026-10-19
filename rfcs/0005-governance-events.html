@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RFC 0005 — Governance Event Model</title>
-    <meta name="description" content="RFC 0005 — Governance Event Model — Janus RFC." />
+    <meta name="description" content="RFC 0005 — Governance Event
+Model — Janus RFC." />
     <style>
       :root { color-scheme: dark; }
       body { margin: 0; padding: 0; background: #000; color: #fff;
@@ -40,50 +41,70 @@
   <body>
     <main class="container">
       <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0005 — Governance Event Model</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<h1 id="rfc-0005--governance-event-model">RFC 0005 — Governance Event
+Model</h1>
+<p>Status: Draft<br />
+Author: Martín Nicolás Sánchez Morales<br />
+Created: 2026<br />
+Aligned with: Core Lite v0.2<br />
+Canonical specification:
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code></p>
 <hr />
-<h2>Summary</h2>
-<p>This RFC defines the governance event model used by Janus systems.</p>
-<p>Governance events represent auditable records that capture evaluations, findings, and accountable decisions.</p>
-<p>These events are recorded in AUDIT_LOG.</p>
+<h2 id="authority-and-scope">Authority and scope</h2>
+<p>Core Lite v0.2 is the primary normative authority. This Draft
+explains its governance events. Cross-references to other Draft RFCs are
+informative navigation only and do not create normative
+dependencies.</p>
 <hr />
-<h2>Motivation</h2>
-<p>Janus governance relies on explicit records to ensure traceability and accountability.</p>
-<p>Without a defined event model, governance actions may become ambiguous or inconsistent across implementations.</p>
-<p>This RFC defines the minimal structure and purpose of governance events within the Janus model.</p>
+<h2 id="summary">Summary</h2>
+<p>Governance events are append-only <code>AUDIT_LOG</code> records
+concerning observation, evaluation, findings, or accountable human acts.
+Core Lite v0.2 defines two canonical event types:
+<code>OMISSION_DETECTED</code> and <code>HUMAN_DECISION</code>.</p>
 <hr />
-<h2>Specification</h2>
-<h3>Governance events</h3>
-<p>A governance event is a record representing a governance-relevant observation, evaluation, or decision.</p>
-<p>Governance events are outputs of governance evaluation flows applied to evidence (E+ and/or E−).</p>
-<p>Governance events are appended to <code>AUDIT_LOG</code> exclusively through the Audit Writer mechanism (RFC 0007).</p>
-<p>Governance events MUST be written to:</p>
-<p>AUDIT_LOG</p>
-<h3>Canonical governance events</h3>
-<p>Janus Core Lite defines the following canonical governance events:</p>
-<ul><li>OMISSION_DETECTED</li><li>HUMAN_DECISION</li></ul>
-<p>Future specifications MAY introduce additional governance events.</p>
-<h3>Event context</h3>
-<p>Governance events SHOULD reference the relevant operational context, including:</p>
-<ul><li>related domain events in MANAGEMENT_LOG</li><li>relevant schema context from SCHEMA_LOG</li><li>supporting evidence (E+ or E−)</li></ul>
-<h3>Event responsibility</h3>
-<p>Governance events represent accountable records.</p>
-<p>Systems MUST ensure that governance events cannot be generated outside authorized governance flows.</p>
+<h2 id="specification">Specification</h2>
+<h3 id="common-event-rules">Common event rules</h3>
+<p>Every canonical <code>AUDIT_LOG</code> event carries
+<code>event_type</code> and <code>event_id</code>. <code>event_id</code>
+is stable, unique within the log, never reused, and persistent under
+compaction. Events are appended exclusively through an authorized Audit
+Writer.</p>
+<p>An event that corrects, supersedes, or voids an earlier event is
+appended as a new event with a resolvable backward reference. Existing
+governance events are never overwritten or deleted.</p>
+<h3 id="canonical-event-types">Canonical event types</h3>
+<ul>
+<li><code>OMISSION_DETECTED</code> is produced by evaluation only when
+E− satisfies every condition of Core §5. Its required fields are defined
+by Core §6.</li>
+<li><code>HUMAN_DECISION</code> represents a prior human act.
+Evaluation, evidence, detection, agents, and runtimes do not originate
+it. Its required fields and reference-resolution rules are defined by
+Core §4.</li>
+</ul>
+<p>The two event types are not interchangeable. Evidence is referenced
+by events; it does not automatically become an event or a human
+decision.</p>
+<p>This Draft does not expand the canonical event set. Any future
+canonical event requires an accepted normative change compatible with
+Core; a Draft RFC cannot introduce one unilaterally.</p>
+<h3 id="log-boundary">Log boundary</h3>
+<p>Domain events and actions belong in <code>MANAGEMENT_LOG</code>.
+Structural definitions and schema evolution used to interpret records
+belong in <code>SCHEMA_LOG</code>. Governance events, accountability
+records, and audit findings belong in <code>AUDIT_LOG</code>. An E−
+expectation must be a defined, referenceable, versioned artifact
+recorded before the observation; Core Lite v0.2 does not prescribe the
+log or store in which that expectation is recorded. The applicable
+<code>SCHEMA_LOG</code> supplies structural and schema context only.
+<code>AUDIT_LOG</code> is not the primary domain record.</p>
 <hr />
-<h2>Rationale</h2>
-<p>Governance systems require explicit event records in order to reconstruct decision processes and audit institutional actions.</p>
-<p>By defining governance events explicitly, Janus ensures that evaluations, omissions, and human decisions are consistently recorded across implementations.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>Implementations must prevent unauthorized event insertion, unstable
+identity, unresolved mandatory references, mutation of prior events, and
+automated substitution for required human authority.</p>
 <hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial governance event model specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Risks related to governance events include:</p>
-<ul><li>unauthorized event generation</li><li>incomplete event context</li><li>tampered event records</li></ul>
-<p>Implementations must ensure append-only event recording and traceable governance flows.</p>
-<hr />
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>MIT License</p>
     </main>
   </body>

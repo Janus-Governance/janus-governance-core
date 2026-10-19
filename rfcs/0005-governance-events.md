@@ -2,103 +2,73 @@
 
 Status: Draft  
 Author: Martín Nicolás Sánchez Morales  
-Created: 2026
+Created: 2026  
+Aligned with: Core Lite v0.2  
+Canonical specification: `core/lite/JANUS_CORE_LITE_v0.2.md`
+
+---
+
+## Authority and scope
+
+Core Lite v0.2 is the primary normative authority. This Draft explains its
+governance events. Cross-references to other Draft RFCs are informative
+navigation only and do not create normative dependencies.
 
 ---
 
 ## Summary
 
-This RFC defines the governance event model used by Janus systems.
-
-Governance events represent auditable records that capture
-evaluations, findings, and accountable decisions.
-
-These events are recorded in AUDIT_LOG.
-
----
-
-## Motivation
-
-Janus governance relies on explicit records to ensure traceability
-and accountability.
-
-Without a defined event model, governance actions may become
-ambiguous or inconsistent across implementations.
-
-This RFC defines the minimal structure and purpose of governance
-events within the Janus model.
+Governance events are append-only `AUDIT_LOG` records concerning observation,
+evaluation, findings, or accountable human acts. Core Lite v0.2 defines two
+canonical event types: `OMISSION_DETECTED` and `HUMAN_DECISION`.
 
 ---
 
 ## Specification
 
-### Governance events
+### Common event rules
 
-A governance event is a record representing a governance-relevant
-observation, evaluation, or decision.
+Every canonical `AUDIT_LOG` event carries `event_type` and `event_id`.
+`event_id` is stable, unique within the log, never reused, and persistent under
+compaction. Events are appended exclusively through an authorized Audit Writer.
 
-Governance events are outputs of governance evaluation flows applied to evidence (E+ and/or E−).
+An event that corrects, supersedes, or voids an earlier event is appended as a
+new event with a resolvable backward reference. Existing governance events are
+never overwritten or deleted.
 
-Governance events are appended to `AUDIT_LOG` exclusively through the Audit Writer mechanism (RFC 0007).
+### Canonical event types
 
-Governance events MUST be written to:
+- `OMISSION_DETECTED` is produced by evaluation only when E− satisfies every
+  condition of Core §5. Its required fields are defined by Core §6.
+- `HUMAN_DECISION` represents a prior human act. Evaluation, evidence,
+  detection, agents, and runtimes do not originate it. Its required fields and
+  reference-resolution rules are defined by Core §4.
 
-AUDIT_LOG
+The two event types are not interchangeable. Evidence is referenced by events;
+it does not automatically become an event or a human decision.
 
-### Canonical governance events
+This Draft does not expand the canonical event set. Any future canonical event
+requires an accepted normative change compatible with Core; a Draft RFC cannot
+introduce one unilaterally.
 
-Janus Core Lite defines the following canonical governance events:
+### Log boundary
 
-- OMISSION_DETECTED
-- HUMAN_DECISION
-
-Future specifications MAY introduce additional governance events.
-
-### Event context
-
-Governance events SHOULD reference the relevant operational context,
-including:
-
-- related domain events in MANAGEMENT_LOG
-- relevant schema context from SCHEMA_LOG
-- supporting evidence (E+ or E−)
-
-### Event responsibility
-
-Governance events represent accountable records.
-
-Systems MUST ensure that governance events cannot be generated
-outside authorized governance flows.
-
----
-
-## Rationale
-
-Governance systems require explicit event records in order to
-reconstruct decision processes and audit institutional actions.
-
-By defining governance events explicitly, Janus ensures that
-evaluations, omissions, and human decisions are consistently
-recorded across implementations.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial governance event model specification).
+Domain events and actions belong in `MANAGEMENT_LOG`. Structural definitions
+and schema evolution used to interpret records belong in `SCHEMA_LOG`.
+Governance events, accountability records, and audit findings belong in
+`AUDIT_LOG`. An E− expectation must be a defined, referenceable, versioned
+artifact recorded before the observation; Core Lite v0.2 does not prescribe
+the log or store in which that expectation is recorded. The applicable
+`SCHEMA_LOG` supplies structural and schema context only. `AUDIT_LOG` is not
+the primary domain record.
 
 ---
 
 ## Security considerations
 
-Risks related to governance events include:
-
-- unauthorized event generation
-- incomplete event context
-- tampered event records
-
-Implementations must ensure append-only event recording and
-traceable governance flows.
+Implementations must prevent unauthorized event insertion, unstable identity,
+unresolved mandatory references, mutation of prior events, and automated
+substitution for required human authority.
 
 ---
 

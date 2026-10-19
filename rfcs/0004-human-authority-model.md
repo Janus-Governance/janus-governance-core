@@ -2,99 +2,79 @@
 
 Status: Draft  
 Author: Martín Nicolás Sánchez Morales  
-Created: 2026
+Created: 2026  
+Aligned with: Core Lite v0.2  
+Canonical specification: `core/lite/JANUS_CORE_LITE_v0.2.md`
+
+---
+
+## Authority and scope
+
+Core Lite v0.2 is the primary normative authority. This Draft explains the
+human-authority boundary. Identity resolution and evaluation of competence
+belong to the Framework; neither Framework nor this Draft may redefine Core.
 
 ---
 
 ## Summary
 
-This RFC defines the human authority model used in Janus governance systems.
-
-Janus requires that certain decisions involving accountability,
-interpretation, or escalation remain under explicit human authority.
-
-Such decisions are recorded using the canonical governance event:
-
-HUMAN_DECISION
-
----
-
-## Motivation
-
-AI-assisted systems may produce analysis, recommendations, or automated
-actions.
-
-However, institutional accountability cannot be delegated to automated
-systems.
-
-Janus therefore defines a governance model in which human authorities
-retain final responsibility for decisions that require accountability.
+`HUMAN_DECISION` is the only canonical human-authority event. It represents an
+explicit prior human act and is required when an outcome requires explicit
+human accountability. No agent, runtime, evaluation, or automated flow may
+originate it.
 
 ---
 
 ## Specification
 
-### Human authority
+### Human act and technical recording
 
-When a governance process requires explicit human accountability,
-the system MUST record a governance event:
+Automated systems may analyze evidence, detect conditions, or recommend an
+action. Those stages are distinct from the accountable human act.
 
-HUMAN_DECISION
+`HUMAN_DECISION` represents a prior human act by which a designated human
+authority made or confirmed a decision over identified objects. The event
+records that decision. No agent, runtime, evaluation, or automated flow may
+originate that human act. The Audit Writer may validate and incorporate the
+event but must not originate the human act. The technical writer is not the
+responsible human authority.
 
-The event represents the formal acknowledgment that a designated human
-authority has made, confirmed, or assumed responsibility for a decision.
+### Event contract
 
-HUMAN_DECISION is a governance event produced by governance evaluation flows when explicit human accountability is required, regardless of whether the evaluation is based on E+ or E− evidence.
+A `HUMAN_DECISION` must include:
 
-### Event recording
+- `event_type` and stable `event_id`;
+- `actor_ref`, identifying the responsible human authority;
+- `scope_ref`, declaring the competence invoked;
+- `object_refs`, a non-empty unordered set identifying exclusively the records
+  or events decided;
+- `occurred_at`, the time of the human act; and
+- `recorded_at`, the time of incorporation into `AUDIT_LOG`.
 
-`HUMAN_DECISION` events MUST be written to:
+It may include `evidence_refs`, `management_refs`, and `schema_ref` as evidence
+or context. None substitutes for `object_refs`. External artifacts and derived
+views are not admissible decision objects.
 
-AUDIT_LOG
+Each `object_refs` entry identifies its origin log and stable target identity,
+contains no duplicate target, resolves against history already incorporated in
+that log, and never self-references. The Audit Writer prevents incorporation if
+an object reference does not resolve. A constitutive decision references the
+previously recorded proposal, draft, or version that it constitutes.
 
-The event SHOULD reference:
+### Append-only effect
 
-- the triggering governance context
-- any supporting evidence (E+ or E−)
-- any relevant governance events (e.g., OMISSION_DETECTED)
-
-### AI-assisted interpretation
-
-AI systems MAY assist in analysis, detection, or recommendation.
-
-However:
-
-AI outputs MUST NOT substitute for HUMAN_DECISION when explicit
-accountability is required.
-
----
-
-## Rationale
-
-Governance systems must maintain a clear boundary between automated
-analysis and accountable decision-making.
-
-The HUMAN_DECISION event ensures that final authority remains explicit
-and auditable.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial human authority specification).
+A human decision does not rewrite events, evidence, or domain records. Later
+interpretation, authorization, or declaration about a governance event is
+appended as a new `HUMAN_DECISION`. Corrections remain append-only in the
+canonical log to which they belong.
 
 ---
 
 ## Security considerations
 
-Risks related to human authority include:
-
-- unauthorized human decision recording
-- ambiguous accountability assignments
-- automation incorrectly bypassing required human decisions
-
-Implementations must ensure that governance flows correctly enforce
-human authority requirements.
+Implementations must prevent automated origin, unresolved decision objects,
+identity substitution, ambiguous scope, and direct writes that bypass the Audit
+Writer.
 
 ---
 

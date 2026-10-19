@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RFC 0007 — Audit Writer Authority</title>
-    <meta name="description" content="RFC 0007 — Audit Writer Authority — Janus RFC." />
+    <meta name="description" content="RFC 0007 — Audit Writer
+Authority — Janus RFC." />
     <style>
       :root { color-scheme: dark; }
       body { margin: 0; padding: 0; background: #000; color: #fff;
@@ -40,46 +41,61 @@
   <body>
     <main class="container">
       <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0007 — Audit Writer Authority</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
+<h1 id="rfc-0007--audit-writer-authority">RFC 0007 — Audit Writer
+Authority</h1>
+<p>Status: Draft<br />
+Author: Martín Nicolás Sánchez Morales<br />
+Created: 2026<br />
+Aligned with: Core Lite v0.2<br />
+Canonical specification:
+<code>core/lite/JANUS_CORE_LITE_v0.2.md</code></p>
 <hr />
-<h2>Summary</h2>
-<p>This RFC defines the minimal writer authority rule for AUDIT_LOG.</p>
-<p>Janus requires that AUDIT_LOG governance events be written only through authorized audit writer flows, to prevent unauthorized governance records and shadow authority.</p>
+<h2 id="authority-and-scope">Authority and scope</h2>
+<p>Core Lite v0.2 is the primary normative authority. This Draft
+explains the exclusive technical writer boundary. References to other
+Draft RFCs are informative and do not define the writer's authority.</p>
 <hr />
-<h2>Motivation</h2>
-<p>If any component can write to AUDIT_LOG, governance can be forged.</p>
-<p>Writer authority is therefore a minimal kernel requirement.</p>
-<p>This RFC defines the smallest rule set required to ensure that:</p>
-<ul><li>governance events are not written by unauthorized actors</li><li>human accountability is not bypassed</li><li>audit records remain trustworthy</li></ul>
+<h2 id="summary">Summary</h2>
+<p>An authorized Audit Writer is the exclusive mechanism for appending
+governance events to <code>AUDIT_LOG</code>. It records and validates
+events; it does not decide, originate human authority, or write to the
+other canonical logs.</p>
 <hr />
-<h2>Specification</h2>
-<h3>Audit writer</h3>
-<p>An Audit Writer is the only authorized mechanism allowed to append governance events to AUDIT_LOG.</p>
-<p>Implementations MUST ensure that all governance events in AUDIT_LOG are produced through the Audit Writer.</p>
-<h3>Minimal authority rule</h3>
-<p>The system MUST prevent direct writes to AUDIT_LOG that bypass the Audit Writer.</p>
-<h3>Relationship with governance evaluation</h3>
-<p>Governance evaluation flows (RFC 0006) may produce governance events (RFC 0005), but those events MUST be appended to AUDIT_LOG only via the Audit Writer.</p>
-<h3>Human decision enforcement</h3>
-<p>When a governance flow requires explicit human accountability (RFC 0004), the Audit Writer MUST record HUMAN_DECISION and MUST NOT substitute it with automated inference.</p>
-<h3>Event coverage</h3>
-<p>At minimum, the Audit Writer MUST support recording:</p>
-<ul><li>OMISSION_DETECTED (RFC 0003)</li><li>HUMAN_DECISION (RFC 0004)</li></ul>
+<h2 id="specification">Specification</h2>
+<h3 id="exclusive-writer">Exclusive writer</h3>
+<p>All governance events appended to <code>AUDIT_LOG</code> must be
+written exclusively through an authorized Audit Writer. Direct writes
+that bypass it must be prevented.</p>
+<p>The Audit Writer validates the applicable canonical event contract,
+stable identity, mandatory references, and append-only conditions before
+incorporation. A rejected write is a technical rejection; it is not a
+<code>HUMAN_DECISION</code> and does not create human authority.</p>
+<h3 id="human-decision-boundary">Human decision boundary</h3>
+<p>For <code>HUMAN_DECISION</code>, the Audit Writer validates and
+incorporates a record of a prior human act. It must not originate,
+infer, simulate, or substitute for that act. The responsible authority
+is identified by <code>actor_ref</code>, not by the technical
+writer.</p>
+<p>If mandatory <code>object_refs</code> do not resolve against already
+incorporated history, the Audit Writer prevents incorporation. It does
+not repair the decision by inventing objects or evidence.</p>
+<h3 id="log-boundary-and-append-only-behavior">Log boundary and
+append-only behavior</h3>
+<p>The Audit Writer appends only to <code>AUDIT_LOG</code>; it does not
+modify <code>MANAGEMENT_LOG</code> or <code>SCHEMA_LOG</code>.
+Corrections to domain activity are appended to
+<code>MANAGEMENT_LOG</code>; schema corrections or evolution are
+appended to <code>SCHEMA_LOG</code>; governance corrections are appended
+to <code>AUDIT_LOG</code> with a resolvable backward reference.</p>
+<p>Prior events are never overwritten or deleted.</p>
 <hr />
-<h2>Rationale</h2>
-<p>Writer authority is a kernel-level control.</p>
-<p>It creates a clear boundary between evaluation processes and the authoritative audit record.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>The authority boundary must be enforced at the storage or transport
+surface and must prevent bypass, event forgery, unresolved mandatory
+references, mutation of history, and autonomous creation of human
+authority.</p>
 <hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial writer authority specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Risks addressed include:</p>
-<ul><li>unauthorized audit event injection</li><li>audit log forgery</li><li>bypass of required HUMAN_DECISION</li></ul>
-<p>Implementations must ensure that the Audit Writer authority boundary is enforced at the storage or transport surface.</p>
-<hr />
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>MIT License</p>
     </main>
   </body>

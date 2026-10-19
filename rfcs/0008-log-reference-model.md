@@ -2,121 +2,84 @@
 
 Status: Draft  
 Author: Martín Nicolás Sánchez Morales  
-Created: 2026
+Created: 2026  
+Aligned with: Core Lite v0.2  
+Canonical specification: `core/lite/JANUS_CORE_LITE_v0.2.md`
 
 ---
 
-## Summary
+## Authority and scope
 
-This RFC defines the reference relationships between the canonical
-append-only logs defined in Janus Core Lite.
-
-The model ensures that governance events can be traced to the domain
-records, schema context, and evidence artifacts that support them.
+Core Lite v0.2 is the primary normative authority. This Draft explains
+references among canonical records and artifacts. It does not weaken mandatory
+Core references or make another Draft constitutive authority.
 
 ---
 
-## Motivation
+## Canonical logs
 
-Janus governance relies on multiple append-only logs:
+- `MANAGEMENT_LOG` records domain events, actions, and their domain
+  corrections.
+- `SCHEMA_LOG` records structural definitions and schema evolution used to
+  interpret records.
+- `AUDIT_LOG` records governance events, accountability records, and audit
+  findings.
 
-- MANAGEMENT_LOG
-- SCHEMA_LOG
-- AUDIT_LOG
+All three logs are append-only. Corrections are appended to the corresponding
+log with a resolvable backward reference. `AUDIT_LOG` does not replace the
+primary domain record.
 
-Without explicit reference rules, relationships between these logs may
-become ambiguous.
-
-This RFC defines the minimal reference model required to maintain
-traceability and deterministic reconstruction of governance outcomes.
-
----
-
-## Specification
-
-### Canonical logs
-
-Janus Core Lite defines three canonical logs:
-
-- MANAGEMENT_LOG
-- SCHEMA_LOG
-- AUDIT_LOG
-
-Each log records a different class of information:
-
-- Domain activity → MANAGEMENT_LOG
-- Schema evolution → SCHEMA_LOG
-- Governance outcomes → AUDIT_LOG
+An E− expectation must be a defined, referenceable, versioned artifact recorded
+before the observation. Core Lite v0.2 does not prescribe the log or store in
+which that expectation is recorded. `SCHEMA_LOG` supplies only the applicable
+structural and schema context used to interpret records.
 
 ---
 
-### Reference relationships
+## Reference contracts
 
-Governance events recorded in AUDIT_LOG SHOULD reference relevant
-records that support their evaluation context.
+References required by a canonical event are mandatory, not optional context.
+They identify their origin and a stable target identity and must obey the
+specific Core contract:
 
-These references may include:
+- evidence invoked as E+ or E− uses resolvable references to immutable artifact
+  versions;
+- `OMISSION_DETECTED` includes `expectation_ref`, `scope_ref`, `schema_ref`, and
+  at least one `evidence_refs` entry;
+- `HUMAN_DECISION` includes a non-empty, duplicate-free `object_refs` set whose
+  targets resolve against history already incorporated in their origin logs;
+  and
+- optional `management_refs`, `evidence_refs`, or `schema_ref` retain their
+  contextual roles and do not substitute for `object_refs`.
 
-- domain records from MANAGEMENT_LOG
-- schema definitions from SCHEMA_LOG
-- supporting evidence artifacts
-
-References allow governance events to be interpreted and validated
-within the correct historical and structural context.
-
----
-
-### Evidence linkage
-
-When governance events rely on explicit evidence (E+) or omission
-evidence (E−), the event SHOULD reference the relevant evidence
-artifacts or the deterministic search scope used during evaluation.
+References assert neither causality nor evidentiary sufficiency merely by being
+present. Derived views and external artifacts are not admissible
+`HUMAN_DECISION` objects.
 
 ---
 
-### Rebuildability
+## Deterministic reconstruction
 
-The reference model supports the deterministic rebuildability
-principle defined in RFC 0001.
+Given all log records, relevant `SCHEMA_LOG` schemas, and referenced evidence
+artifacts up to the same cutoff, an implementation should be able to rebuild
+the same governance-relevant views and findings deterministically.
 
-Given:
+The current view is derived from history, schemas, and referenced artifacts up
+to that cutoff. It is not recorded as a mutation of history. Reevaluation may
+change a derived view but is not itself a canonical event unless it produces an
+existing canonical event under its Core contract.
 
-- canonical logs
-- schema definitions
-- referenced evidence artifacts
-
-an implementation should be able to reconstruct the governance
-interpretation associated with a recorded event.
-
----
-
-## Rationale
-
-Explicit reference relationships ensure that governance outcomes remain
-traceable to the domain activity and schema context from which they
-were derived.
-
-This model prevents governance events from becoming detached from the
-records required to interpret them.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial log reference model specification).
+Reconstruction is limited to governance-relevant views and findings supported
+by the available records, schemas, and evidence. It does not assert that
+arbitrary operational state is reconstructible from `AUDIT_LOG`.
 
 ---
 
 ## Security considerations
 
-Risks related to log references include:
-
-- missing or incomplete references
-- inconsistent schema interpretation
-- evidence artifacts that cannot be retrieved
-
-Implementations must ensure that governance events preserve sufficient
-reference context to allow later verification and reconstruction.
+Implementations must detect missing, mutable, duplicated, or unresolved
+references; preserve origin-log identity; apply schema context at the relevant
+cutoff; and prevent reconstructed views from overwriting history.
 
 ---
 
