@@ -1,0 +1,457 @@
+% Traducción candidata es-419 del Foundational Paper v1.0.2.
+% El original inglés canónico permanece en DOI 10.5281/zenodo.23460644.
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage[final]{microtype}
+\usepackage{xurl,url,tabularx,tikz,amsmath,amssymb,cuted}
+\usepackage[pdfencoding=auto,unicode=true,hidelinks]{hyperref}
+\usetikzlibrary{arrows.meta,positioning,babel}
+\urlstyle{same}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\hypersetup{
+  pdftitle={Janus: un núcleo mínimo de gobernanza para sistemas de desarrollo humano-IA con reconstrucción determinista},
+  pdfauthor={Martín Nicolás Sánchez Morales},
+  pdfsubject={Traducción candidata es-419; revisión humana pendiente},
+  pdfkeywords={gobernanza de IA, sistemas humano-IA, reconstrucción determinista}
+}
+% R-01: omitir fechas PDF volátiles para compilaciones byte-reproducibles.
+\pdfinfoomitdate=1
+% ID fijo para compilaciones reproducibles del candidato.
+\pdftrailerid{<44313031455334313943414E4449444154><44313031455334313943414E4449444154>}
+% SEG: TITLE-001
+\title{Janus: un núcleo mínimo de gobernanza para\\
+sistemas de desarrollo humano--IA\\
+con reconstrucción determinista\\[2mm]
+\large Traducción al español latinoamericano (es-419)}
+\author{\IEEEauthorblockN{Lic. Martín Nicolás Sánchez Morales}\\
+\IEEEauthorblockA{Founder, Janus Governance Project\\Argentina\\
+\url{https://janusgovernance.org}\\[1mm]
+\textbf{v1.0.2-es-419 --- Traducción candidata --- Pendiente de revisión humana}}}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Nota editorial de traducción.} Esta traducción candidata reproduce fielmente el cuerpo histórico del Foundational Paper y consolida únicamente las correcciones publicadas en su errata. La adenda se mantiene completa y exclusivamente como sección separada, explícitamente identificada; ninguna de sus aclaraciones se incorpora al cuerpo histórico. El original inglés y sus registros publicados permanecen inalterados. Esta traducción no sustituye al original. DOI fuente: \href{https://doi.org/10.5281/zenodo.23460644}{10.5281/zenodo.23460644}. La traducción fue autorizada por el autor, preparada con asistencia técnica y permanece pendiente de revisión humana final.
+
+% SEG: ABS-001..005
+\begin{abstract}
+La rápida adopción de herramientas de desarrollo asistidas por inteligencia artificial ha transformado de manera significativa los flujos de trabajo de la ingeniería de software. Sin embargo, los marcos actuales de gobernanza tecnológica operan principalmente en los niveles organizacional o regulatorio---con foco en el cumplimiento, la ética y la gestión de riesgos---, mientras dejan en gran medida indefinida la gobernanza cotidiana de las interacciones entre desarrolladores humanos y sistemas generativos de código.
+
+Este artículo presenta \textbf{Janus}, un núcleo mínimo de gobernanza para entornos de desarrollo asistidos por IA. Janus define un conjunto reducido de invariantes fundacionales de gobernanza que permiten que los flujos de trabajo híbridos humano--IA sean \textbf{trazables, auditables y reconstruibles de forma determinista}.
+
+El modelo se basa en tres elementos fundacionales: registros de solo anexado (\textit{append-only logs}) que preservan la historia institucional del sistema; un modelo dual explícito de evidencia ($E^{+}$ / $E^{-}$) capaz de representar tanto acciones registradas como omisiones verificables; y una frontera formal de autoridad humana que mantiene la rendición de cuentas sobre las decisiones que requieren responsabilidad.
+
+A diferencia de metodologías de desarrollo como Agile, DevOps o ITIL, Janus no redefine los procesos organizacionales. En cambio, introduce \textbf{invariantes operacionales mínimos} que estabilizan la interacción entre seres humanos y sistemas generativos sin aumentar de manera significativa la complejidad del sistema.
+
+El resultado es una intervención microestructural que puede integrarse con distintas pilas tecnológicas y reducir la deriva silenciosa, la ambigüedad de autoridad y la pérdida de trazabilidad en sistemas de desarrollo de software asistidos por IA.
+\end{abstract}
+
+\begin{IEEEkeywords}
+gobernanza de IA, sistemas humano--IA, gobernanza de software, reconstrucción determinista, sistemas sociotécnicos, gobernanza del desarrollo
+\end{IEEEkeywords}
+
+\section{INTRODUCCIÓN}
+% SEG: SEC-01-P001
+Las herramientas modernas de generación de código basadas en IA---incluidos los asistentes conversacionales integrados en entornos de desarrollo, los copilotos automatizados y las plataformas de automatización low-code---han introducido un nuevo paradigma de producción en la ingeniería de software.
+
+% SEG: SEC-01-P002
+Este paradigma se caracteriza por:
+\begin{itemize}
+  \item generación externa de artefactos técnicos;
+  \item ciclos de iteración acelerados;
+  \item menor fricción sintáctica;
+  \item dependencia parcial del razonamiento automatizado.
+\end{itemize}
+
+% SEG: SEC-01-P003
+Sin embargo, esta transformación introduce un problema estructural que continúa en gran medida inexplorado:
+
+\textbf{¿Cómo se gobierna la interacción humano--IA en el nivel microoperacional del desarrollo de software?}
+
+% SEG: SEC-01-P004
+Las metodologías tradicionales regulan procesos organizacionales, pipelines de despliegue y coordinación de flujos de trabajo, pero no formalizan explícitamente la relación entre la generación automatizada de código y la validación humana.
+
+% SEG: SEC-01-P005
+Esta brecha introduce riesgos estructurales como:
+\begin{itemize}
+  \item autoridad difusa;
+  \item deriva de versiones no detectada;
+  \item validación basada en plausibilidad;
+  \item ausencia de evidencia estructural verificable.
+\end{itemize}
+
+% SEG: SEC-01-P006
+Janus surge como respuesta a esta brecha de gobernanza.
+
+\subsection{Contribuciones}
+% SEG: SEC-01-P007
+Este artículo realiza tres contribuciones principales:
+\begin{enumerate}
+  \item Propone un \textbf{núcleo mínimo de gobernanza} para entornos de desarrollo asistidos por IA.
+  \item Introduce un \textbf{modelo dual de evidencia ($E^{+}$ / $E^{-}$)} capaz de representar tanto acciones registradas como omisiones estructuralmente detectables.
+  \item Define un \textbf{modelo de reconstrucción determinista} que permite reconstruir estados de gobernanza a partir de eventos gobernados.
+\end{enumerate}
+Estas contribuciones buscan formalizar la gobernanza microoperacional en sistemas híbridos humano--IA sin introducir complejidad organizacional adicional.
+
+\subsection{Hipótesis de investigación}
+% SEG: SEC-01-P008
+Este trabajo se apoya en la siguiente hipótesis:
+
+\textbf{En los sistemas de desarrollo asistidos por IA, la ausencia de evidencia estructural verificable genera deriva operacional, incoherencia y ambigüedad de responsabilidad. Introducir un conjunto mínimo de invariantes de gobernanza---basado en registros de solo anexado, modelos explícitos de evidencia ($E^{+}$ / $E^{-}$) y decisiones humanas auditables---transforma los flujos de trabajo basados en plausibilidad en sistemas reconstruibles de forma determinista.}
+
+% SEG: SEC-01-P009
+En otras palabras, la distinción crítica no se da únicamente entre automatización y supervisión humana, sino entre \textbf{creer que algo ocurrió dentro de un sistema y poder demostrar, mediante evidencia estructural, qué ocurrió realmente}.
+
+% SEG: SEC-01-P010
+Janus propone una intervención microestructural destinada a reducir esta brecha epistémica dentro de sistemas híbridos humano--IA. La premisa subyacente es que \textbf{pequeñas intervenciones estructurales pueden producir mejoras desproporcionadas en la estabilidad de sistemas complejos}, en particular cuando actores humanos y máquinas comparten responsabilidad operacional.
+
+\section{ANTECEDENTES TEÓRICOS}
+\subsection{Sistemas sociotécnicos}
+% SEG: SEC-02-P001
+La teoría de sistemas sociotécnicos sostiene que la introducción de nuevas tecnologías altera la organización del trabajo y exige redefinir las estructuras de coordinación y autoridad~\cite{trist1951}.
+
+% SEG: SEC-02-P002
+En entornos de desarrollo asistidos por IA, la herramienta no reemplaza al desarrollador; introduce, en cambio, un agente generativo intermedio cuyo rol y autoridad deben definirse estructuralmente. Cuando los sistemas generativos participan de manera directa en la producción técnica, los mecanismos de gobernanza deben definir explícitamente cómo se ejercen la autoridad, la validación y la responsabilidad a través de la frontera humano--IA.
+
+% SEG: SEC-02-P003
+En este contexto, el modelo de reconstrucción determinista propuesto por Janus también permite preservar la \textbf{memoria institucional} en sistemas sociotécnicos híbridos. Como los eventos de gobernanza, los registros de evidencia y las decisiones de autoridad humana se almacenan en estructuras de solo anexado, la historia operacional del sistema puede reconstruirse a lo largo del tiempo sin depender de recuerdos informales ni documentación fragmentaria. En este sentido, los registros de gobernanza funcionan no solo como artefactos de auditoría, sino también como un registro duradero del conocimiento institucional y de la historia de decisiones.
+
+\subsection{Gobernanza y responsabilidad}
+% SEG: SEC-02-P004; ERR-05
+La gobernanza implica definir explícitamente reglas, responsabilidades y mecanismos de validación dentro de sistemas complejos~\cite{kooi2003}. En la literatura de ingeniería de software, la gobernanza también ha sido examinada en el nivel arquitectónico, donde la gobernanza arquitectónica define cómo se supervisan y validan la evolución del sistema y las decisiones de diseño en una organización. La referencia bibliográfica originalmente citada para esta última afirmación fue retirada por la errata publicada porque no se encontró una fuente local verificable.
+
+% SEG: SEC-02-P005
+En entornos híbridos humano--IA, la ausencia de reglas operacionales claras puede conducir a depender de confianza informal o autoridad implícita.
+
+% SEG: SEC-02-P006
+Janus no propone un marco ético general, sino un modelo operacional de gobernanza técnica.
+
+\subsection{Arquitectura independiente de la infraestructura}
+% SEG: SEC-02-P007
+Los principios de arquitectura limpia proponen separar las reglas del sistema de las tecnologías de implementación~\cite{martin2017}.
+
+% SEG: SEC-02-P008
+Janus adopta este enfoque mediante la separación de tres componentes:
+\begin{itemize}
+  \item núcleo normativo;
+  \item runtime ejecutable;
+  \item protocolos de interacción.
+\end{itemize}
+Esta arquitectura permite que las reglas de gobernanza permanezcan independientes de cualquier tecnología específica.
+
+\section{BRECHA DE GOBERNANZA EN EL DESARROLLO ASISTIDO POR IA}
+% SEG: SEC-03-P001
+En los flujos de trabajo asistidos por IA es común observar el siguiente ciclo:
+\begin{enumerate}
+  \item solicitar código a un sistema de IA;
+  \item insertar el código generado en el entorno de desarrollo;
+  \item iterar mediante prueba y error;
+  \item declarar éxito a partir de la funcionalidad observable.
+\end{enumerate}
+% SEG: SEC-03-P002
+Este modelo puede producir:
+\begin{itemize}
+  \item deriva estructural silenciosa;
+  \item fragmentación de versiones;
+  \item pérdida de trazabilidad;
+  \item validación implícita no documentada.
+\end{itemize}
+
+% SEG: SEC-03-P003
+La inteligencia artificial no crea por sí sola estos problemas; más bien, amplifica debilidades estructurales preexistentes.
+
+\section{JANUS: GOBERNANZA MICROOPERACIONAL}
+% SEG: SEC-04-P001
+Janus propone una capa mínima de gobernanza basada en los siguientes principios:
+\begin{itemize}
+  \item autoridad explícita;
+  \item congelamiento de baseline;
+  \item gates de validación;
+  \item telemetría estructurada;
+  \item validación de identidad estructural;
+  \item reconstrucción determinista.
+\end{itemize}
+
+% SEG: SEC-04-P002
+Janus no impone una metodología organizacional. En cambio, define \textbf{invariantes estructurales mínimos}.
+
+\subsection{Núcleo de gobernanza}
+% SEG: SEC-04-P003
+Janus puede entenderse como un \textbf{núcleo mínimo de gobernanza} para sistemas híbridos humano--IA. Este núcleo define únicamente los invariantes fundacionales de gobernanza necesarios para mantener trazabilidad, auditabilidad y responsabilidad explícita.
+
+\subsubsection{Registros de solo anexado}
+% SEG: SEC-04-P004
+Tres registros canónicos almacenan la historia institucional del sistema:
+\begin{itemize}
+  \item \texttt{MANAGEMENT\_LOG};
+  \item \texttt{SCHEMA\_LOG};
+  \item \texttt{AUDIT\_LOG}.
+\end{itemize}
+
+\subsubsection{Modelo de evidencia}
+% SEG: SEC-04-P005
+El sistema distingue dos tipos de evidencia:
+\begin{itemize}
+  \item \textbf{$E^{+}$} --- evidencia registrada explícitamente;
+  \item \textbf{$E^{-}$} --- evidencia derivada de la ausencia verificable de un registro esperado.
+\end{itemize}
+
+\subsubsection{Evaluación de gobernanza}
+% SEG: SEC-04-P006
+Los procesos de evaluación interpretan evidencia dentro de un alcance definido para determinar si deben generarse eventos de gobernanza.
+
+\subsubsection{Eventos de gobernanza}
+% SEG: SEC-04-P007
+Janus define dos eventos canónicos:
+\begin{itemize}
+  \item \texttt{OMISSION\_DETECTED};
+  \item \texttt{HUMAN\_DECISION}.
+\end{itemize}
+
+\subsubsection{Frontera de autoridad}
+% SEG: SEC-04-P008
+Los eventos de gobernanza solo pueden escribirse mediante un mecanismo autorizado denominado \textbf{Audit Writer}.
+
+\subsubsection{Reconstrucción determinista}
+% SEG: SEC-04-P009
+El estado de gobernanza puede reconstruirse a partir de:
+\begin{itemize}
+  \item registros históricos;
+  \item contexto de esquema;
+  \item referencias de evidencia.
+\end{itemize}
+
+\section{MODELO DE EVIDENCIA (\texorpdfstring{$E^{+}$ / $E^{-}$}{E+ / E-})}
+% SEG: SEC-05-P001
+Una contribución central de Janus es la introducción de un modelo dual de evidencia.
+
+\subsection{Evidencia positiva (\texorpdfstring{$E^{+}$}{E+})}
+% SEG: ERR-01; SEC-05-P002
+Evidencia registrada explícitamente en un sistema de registro; indica que una afirmación o un evento está respaldado por un artefacto registrado.
+
+\subsection{Evidencia negativa (\texorpdfstring{$E^{-}$}{E-})}
+% SEG: ERR-02; SEC-05-P003
+Evidencia derivada de la ausencia verificada de un registro esperado, con relación a una expectativa definida, un alcance determinista de búsqueda, el contexto aplicable de \texttt{SCHEMA\_LOG} y una observación reproducible.
+
+% SEG: SEC-05-P004
+Este modelo permite representar no solo eventos que ocurrieron, sino también \textbf{ausencias estructuralmente relevantes}.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=1.15cm,every node/.style={draw,rectangle,align=center,minimum width=2.55cm,font=\footnotesize},arrow/.style={->,thick}]
+\node (domain) {Actividad de dominio};
+\node (evidence) [below=of domain] {Evidencia\\($E+$ / $E-$)};
+\node (evaluation) [below=of evidence] {Evaluación\\de gobernanza};
+\node (human) [below=of evaluation] {\texttt{HUMAN\_DECISION}};
+\node (audit) [below=of human] {Audit Writer};
+\node (log) [below=of audit] {\texttt{AUDIT\_LOG}};
+\draw[arrow] (domain)--(evidence); \draw[arrow] (evidence)--(evaluation);
+\draw[arrow] (evaluation)--(human); \draw[arrow] (human)--(audit); \draw[arrow] (audit)--(log);
+\end{tikzpicture}
+% SEG: FIG-01-CAPTION
+\caption{Pipeline del núcleo de gobernanza Janus. La actividad de dominio genera evidencia ($E+$ / $E-$), que es interpretada por flujos de evaluación de gobernanza. Cuando se requiere rendición de cuentas, la autoridad humana explícita produce un evento \texttt{HUMAN\_DECISION}. Los resultados de gobernanza se registran mediante el Audit Writer autorizado en \texttt{AUDIT\_LOG}, lo que permite la reconstrucción determinista del estado de gobernanza.}
+\label{fig:janus_pipeline}
+\end{figure}
+
+\subsection{Formalización conceptual}
+% SEG: SEC-05-P005
+\begin{equation}
+\begin{split}
+\mathrm{GovernanceState}=f(&\mathrm{Event},\,\mathrm{Evidence},\\
+&\mathrm{HumanDecision})
+\end{split}
+\end{equation}
+donde \textbf{Event} representa eventos de dominio que ocurren en el sistema; \textbf{Evidence} representa evidencia generada bajo el modelo $E^{+}$ / $E^{-}$; y \textbf{HumanDecision} representa decisiones explícitas de autoridad humana.
+
+% SEG: SEC-05-P006
+Una segunda relación representa la reconstrucción determinista:
+\begin{equation}
+\begin{split}
+\mathrm{GovernanceState}_{t}=g(&\mathrm{MANAGEMENT\_LOG}_{\le t},\\
+&\mathrm{SCHEMA\_LOG}_{\le t},\\
+&\mathrm{AUDIT\_LOG}_{\le t})
+\end{split}
+\end{equation}
+Esta ecuación expresa que el estado de gobernanza en el tiempo \textbf{$t$} puede reconstruirse \textbf{de forma determinista} a partir de los registros canónicos del sistema.
+
+% SEG: SEC-05-P007
+La evidencia puede definirse como:
+\begin{equation}
+\mathrm{Evidence}=E^{+}\cup E^{-}
+\end{equation}
+En conjunto, estas relaciones muestran que la gobernanza en Janus no depende de estados implícitos, sino de funciones reconstruibles derivadas de registros observables.
+
+% SEG: SEC-05-P008
+\begin{equation}
+\mathrm{SystemState}=h(\mathrm{GovernanceState})
+\end{equation}
+Esta relación expresa que, cuando los eventos de gobernanza describen por completo la actividad autorizada del sistema, el estado operacional del sistema se vuelve derivable del propio estado de gobernanza. En otras palabras, la reconstrucción determinista supone que los eventos de gobernanza capturan el conjunto de transiciones operacionales autorizadas dentro del sistema.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=0.68cm,every node/.style={draw,rectangle,align=center,minimum width=2.7cm,font=\footnotesize},arrow/.style={->,thick}]
+\node (events) {Eventos de dominio};
+\node (evidence) [below=of events] {Evidencia ($E+$ / $E-$)};
+\node (evaluation) [below=of evidence] {Evaluación de gobernanza};
+\node (human) [below=of evaluation] {\texttt{HUMAN\_DECISION}\\cuando se requiere rendición de cuentas};
+\node (writer) [below=of human] {Audit Writer};
+\node (audit) [below=of writer] {\texttt{AUDIT\_LOG}};
+\node (gov) [below=of audit] {GovernanceState};
+\node (system) [below=of gov] {SystemState};
+\node (finalnote) [below=0.42cm of system,draw,rounded corners,text width=7.3cm,font=\scriptsize] {La transición final es una hipótesis condicional del artículo, no un invariante de Janus Core.};
+\draw[arrow] (events)--(evidence); \draw[arrow] (evidence)--(evaluation);
+\draw[arrow] (evaluation)--(human); \draw[arrow] (human)--(writer);
+\draw[arrow] (writer)--(audit); \draw[arrow] (audit)--(gov); \draw[arrow] (gov)--(system);
+\end{tikzpicture}
+% SEG: ERR-03; FIG-02-CAPTION
+\caption{Modelo de reconstrucción de sistemas sociotécnicos implicado por el núcleo de gobernanza Janus. Los eventos de dominio generan evidencia ($E+$ / $E-$), que se evalúa mediante procesos de gobernanza. Las decisiones de autoridad humana y el registro controlado por auditoría producen un estado de gobernanza a partir del cual el estado operacional del sistema se vuelve derivable. \texttt{HUMAN\_DECISION} ocurre cuando se requiere rendición de cuentas. La transición final es una hipótesis condicional del artículo, no un invariante de Janus Core.}
+\label{fig:janus_reconstruction}
+\end{figure}
+
+\section{VALIDACIÓN EMPÍRICA INICIAL}
+% SEG: SEC-06-P001
+Una característica metodológica relevante del proyecto es que el desarrollo de Janus---incluidos el núcleo conceptual, los repositorios de código, el entorno de documentación y los runtimes experimentales---se realizó bajo los mismos protocolos de gobernanza propuestos por el sistema.
+
+% SEG: SEC-06-P002
+En este sentido, el proyecto funcionó como un caso inicial de \textbf{autogobernanza estructural (dogfooding)}, en el cual se aplicaron reglas de trazabilidad, registro de eventos y decisiones humanas durante la construcción del propio sistema.
+
+% SEG: SEC-06-P003
+Este enfoque permitió evaluar la coherencia interna del modelo en condiciones reales de desarrollo asistido por IA.
+
+% SEG: SEC-06-P004
+En términos metodológicos, \textbf{Janus fue desarrollado bajo sus propias restricciones de gobernanza}, lo que refuerza la alineación entre el modelo propuesto y su implementación experimental.
+
+% SEG: SEC-06-P005
+El modelo se probó mediante:
+\begin{itemize}
+  \item la definición de un núcleo independiente del runtime;
+  \item una implementación en un runtime de Apps Script;
+  \item una implementación en un runtime de Node;
+  \item pruebas de telemetría estructurada orientadas a verificar la reconstrucción determinista del estado de gobernanza desde registros de solo anexado y a detectar inconsistencias estructurales mediante el modelo de evidencia $E^{+}$ / $E^{-}$.
+\end{itemize}
+
+% SEG: SEC-06-P006
+Los resultados observados incluyen:
+\begin{itemize}
+  \item estabilidad estructural;
+  \item coherencia contractual;
+  \item detección estructural de inconsistencias;
+  \item reproducibilidad controlada.
+\end{itemize}
+
+\section{DISCUSIÓN}
+% SEG: SEC-07-P001
+Aunque Janus se presenta principalmente como un \textbf{núcleo mínimo de gobernanza}, su diseño permite que capas superiores evolucionen hacia un \textbf{marco de gobernanza para entornos de desarrollo asistidos por IA} más amplio.
+
+% SEG: SEC-07-P002
+Este artículo no afirma la existencia de tal marco; describe los \textbf{invariantes fundacionales mínimos de gobernanza} que podrían sostener extensiones futuras. En consonancia con este objetivo, el núcleo de Janus está destinado a distribuirse como un \textbf{núcleo de gobernanza de código abierto}, para permitir que investigadores independientes y equipos de ingeniería reproduzcan experimentos, auditen el modelo de gobernanza e implementen runtimes alternativos preservando los invariantes canónicos definidos en este trabajo.
+
+% SEG: SEC-07-P003
+En este sentido, Janus puede entenderse como una infraestructura conceptual sobre la que podrían construirse políticas, herramientas y runtimes de gobernanza, preservando a la vez la simplicidad del núcleo propuesto.
+
+% SEG: SEC-07-P004
+Janus no compite con marcos de gobernanza organizacional ni intenta sustituir metodologías ágiles o modelos de gobernanza arquitectónica descritos en la literatura. Opera en otro nivel: la \textbf{capa microoperacional de interacción humano--IA}. En este nivel, la reconstrucción determinista también implica que los registros de gobernanza funcionan como memoria institucional persistente del sistema y preservan la historia trazable de decisiones, evidencia y autoridad.
+
+\subsection{Comparación conceptual}
+% SEG: SEC-07-P005
+Un aspecto central de Janus es cómo se diferencia de los modelos existentes.
+
+La mayoría de los marcos utilizados en ingeniería de software operan en niveles diferentes del problema abordado por este trabajo. Metodologías como \textbf{Agile, DevOps e ITIL} regulan procesos organizacionales y ciclos de entrega. Sistemas como \textbf{Git} proporcionan integridad histórica del código fuente. Los marcos contemporáneos de \textbf{gobernanza de IA} suelen centrarse en dimensiones éticas, regulatorias o institucionales, como el NIST AI Risk Management Framework~\cite{nist2023}.
+
+% SEG: SEC-07-P006
+Janus opera, en cambio, en el \textbf{nivel microoperacional de la interacción humano--IA durante la producción técnica}. Sus características distintivas incluyen:
+\begin{enumerate}
+  \item \textbf{gobernanza basada en evidencia} mediante el modelo $E^{+}$ / $E^{-}$;
+  \item \textbf{reconstrucción determinista del estado de gobernanza} mediante registros canónicos de solo anexado;
+  \item \textbf{separación explícita entre generación técnica y autoridad humana} mediante eventos de decisión auditables.
+\end{enumerate}
+
+\begin{strip}
+% SEG: ERR-04; TAB-01
+\refstepcounter{table}
+\begin{center}
+\textbf{Tabla \thetable}\\
+\textsc{Comparación conceptual}
+\end{center}
+\label{tab:comparison}
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth} X X X@{}}
+\hline
+Concepto & Sistemas de control de versiones & Gobernanza organizacional & Janus \\
+\hline
+Historia del sistema & commits & documentación de procesos & registros de solo anexado \\
+Integridad & hashes & auditoría institucional & escritura de auditoría controlada \\
+Autorización / rendición de cuentas & pull requests & aprobación jerárquica & \texttt{HUMAN\_\allowbreak DECISION} \\
+Evidencia & historial de commits & informes & $E+$ / $E-$ \\
+Reconstrucción & checkout & reconstrucción documental & reconstrucción determinista \\
+Nivel operacional & código & organización & interacción humano--IA \\
+\hline
+\end{tabularx}
+\end{strip}
+
+\section{LIMITACIONES}
+% SEG: SEC-08-P001
+Janus no garantiza la seguridad del sistema, no sustituye el cumplimiento regulatorio, no elimina el error humano y no reemplaza marcos éticos organizacionales. Su alcance es deliberadamente limitado.
+
+\section{CONCLUSIÓN}
+% SEG: SEC-09-P001
+La integración de inteligencia artificial en el desarrollo de software introduce nuevas ambigüedades sobre autoridad, responsabilidad y validación.
+
+% SEG: SEC-09-P002
+Mientras los marcos de gobernanza existentes operan principalmente en niveles institucionales, la interacción cotidiana entre desarrolladores humanos y sistemas generativos continúa en gran medida subformalizada.
+
+% SEG: SEC-09-P003
+Janus propone una capa de microgobernanza diseñada para abordar esta brecha operacional. En lugar de introducir infraestructuras complejas, Janus define un conjunto reducido de invariantes fundacionales de gobernanza capaces de estabilizar sistemas híbridos humano--IA.
+
+% SEG: SEC-09-P004
+La hipótesis central es que \textbf{pequeñas intervenciones estructurales pueden producir mejoras desproporcionadas en la estabilidad de sistemas complejos}.
+
+% SEG: SEC-09-P005
+De manera similar a como el control de versiones distribuido, las prácticas de revisión de código y la integración continua reformularon la cultura de la ingeniería de software, una capa mínima de gobernanza puede ayudar a reducir la deriva silenciosa, la ambigüedad de responsabilidad y la pérdida de trazabilidad en el desarrollo asistido por IA.
+
+% SEG: SEC-09-P006
+Por lo tanto, Janus no busca reemplazar los marcos de gobernanza existentes, sino complementarlos abordando la capa microoperacional donde ocurre realmente la colaboración entre seres humanos y máquinas.
+
+% SEG: SEC-09-P007
+Si los eventos de gobernanza describen por completo la actividad autorizada del sistema, el estado operacional se vuelve derivable del estado de gobernanza. En este sentido, los registros de gobernanza no son meros artefactos de auditoría, sino que pueden funcionar como una descripción estructural reconstruible de la operación del sistema.
+
+% SEG: SEC-09-P008
+Esta interpretación resalta una implicación más amplia del modelo: la infraestructura de gobernanza también puede operar como mecanismo duradero para preservar memoria institucional en sistemas sociotécnicos. Al registrar eventos de gobernanza, estructuras de evidencia y decisiones humanas explícitas, el sistema preserva una historia reconstruible del conocimiento institucional y la responsabilidad operacional.
+
+\begin{thebibliography}{00}
+\bibitem{trist1951} E.~L. Trist y K.~W. Bamforth, ``Some Social and Psychological Consequences of the Longwall Method of Coal-Getting,'' \emph{Human Relations}, vol.~4, no.~1, pp.~3--38, 1951.
+\bibitem{kooi2003} J. Kooiman, \emph{Governing as Governance}. Sage Publications, 2003.
+\bibitem{martin2017} R.~C. Martin, \emph{Clean Architecture: A Craftsman's Guide to Software Structure and Design}. Prentice Hall, 2017.
+\bibitem{nist2023} National Institute of Standards and Technology, ``AI Risk Management Framework (AI RMF 1.0),'' NIST, 2023.
+\end{thebibliography}
+
+\section*{ADENDA PUBLICADA}
+% SEG: ADD-01
+Esta adenda alinea el artículo informativo v1.0 con Janus Core Lite v0.2. No altera el depósito DOI inmutable.
+
+\subsection*{Registros canónicos y correcciones}
+% SEG: ADD-02-P001
+\texttt{MANAGEMENT\_LOG} registra la actividad de dominio y sus correcciones. \texttt{SCHEMA\_LOG} registra definiciones estructurales y evolución de esquemas utilizadas para interpretar registros. \texttt{AUDIT\_LOG} registra eventos de gobernanza, registros de rendición de cuentas y hallazgos de auditoría. Las correcciones se anexan en el registro correspondiente; una interpretación, autorización o declaración posterior sobre un evento de gobernanza se registra únicamente mediante \texttt{HUMAN\_DECISION}.
+
+\subsection*{Evidencia y autoridad}
+% SEG: ADD-03-P001..002
+Según Core Lite v0.2, $E+$ y $E-$ son clases de evidencia, no etiquetas booleanas ni tipos de evento. $E-$ requiere una expectativa versionada registrada antes de la observación, un alcance y cutoff deterministas, el contexto aplicable de \texttt{SCHEMA\_LOG} y una observación reproducible. En la Figura~1, \texttt{HUMAN\_DECISION} se requiere únicamente cuando un resultado exige rendición de cuentas humana explícita. Los flujos de evaluación pueden producir \texttt{OMISSION\_DETECTED}; no originan \texttt{HUMAN\_DECISION}.
+
+\subsection*{Afirmaciones de reconstrucción}
+% SEG: ADD-04-P001..002
+La Ecuación (2) es un modelo conceptual. Core Lite v0.2 establece que una implementación \textbf{SHOULD} poder reconstruir vistas y hallazgos relevantes para la gobernanza a partir de todos los registros, los esquemas relevantes y los artefactos de evidencia referenciados hasta un cutoff. Core no define el eje temporal representado por $t$. La Ecuación (4) y la transición final de la Figura~2 son una hipótesis condicional externa a Janus Core. No convierten a \texttt{AUDIT\_LOG} en el registro primario del dominio ni afirman que un estado operacional arbitrario sea reconstruible desde el estado de gobernanza.
+
+\subsection*{Perfil operacional}
+% SEG: ADD-05-P001
+El congelamiento de baseline, los gates de validación, la telemetría estructurada y la validación de identidad estructural son opciones de framework o implementación. No son invariantes adicionales de Core.
+
+\subsection*{Estado de la validación informada}
+% SEG: ADD-06-P001
+La Sección VI describe una autoaplicación interna preliminar, no una evaluación empírica controlada. Existe localmente un artefacto fechado de validación de seis casos, pero fue introducido el 13 de marzo de 2026, después del tag del paper v1.0 fechado el 10 de marzo de 2026. Por ello no fundamenta de manera independiente los resultados tal como fueron informados en la publicación inmutable. Hasta que se produzcan y revisen artefactos contemporáneos, las expresiones ``estabilidad estructural'', ``coherencia contractual'', ``detección estructural de inconsistencias'' y ``reproducibilidad controlada'' deben leerse como observaciones de práctica y no como resultados empíricos validados.
+
+\end{document}
