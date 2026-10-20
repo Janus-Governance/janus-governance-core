@@ -4,12 +4,12 @@
 ## Traducción al español latinoamericano (es-419)
 
 **Versión:** v1.0.2-es-419  
-**Estado:** Traducción candidata — Pendiente de revisión humana  
+**Estado:** Traducción publicada  
 **Autor:** Lic. Martín Nicolás Sánchez Morales  
 **Proyecto:** Janus Governance Project, Argentina  
 **Original inglés canónico:** https://doi.org/10.5281/zenodo.23460644
 
-> **Nota editorial de traducción.** Esta traducción candidata reproduce fielmente el cuerpo histórico del Foundational Paper y consolida únicamente las correcciones publicadas en su errata. La adenda se mantiene completa y exclusivamente como sección separada, explícitamente identificada; ninguna de sus aclaraciones se incorpora al cuerpo histórico. El original inglés y sus registros publicados permanecen inalterados. Esta traducción no sustituye al original. La traducción fue autorizada por el autor, preparada con asistencia técnica y permanece pendiente de revisión humana final.
+> **Nota editorial de traducción.** Esta traducción reproduce fielmente el cuerpo histórico del Foundational Paper y consolida únicamente las correcciones publicadas en su errata. La adenda se mantiene completa y exclusivamente como sección separada, explícitamente identificada; ninguna de sus aclaraciones se incorpora al cuerpo histórico. El original inglés y sus registros publicados permanecen inalterados. Esta traducción no sustituye al original. La traducción fue autorizada por el autor, aprobada para publicación y preparada con asistencia técnica.
 
 <!-- ABS-001 -->
 ## Resumen
