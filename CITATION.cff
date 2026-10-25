@@ -1,10 +1,11 @@
 cff-version: 1.2.0
 title: "Janus: A Minimal Governance Kernel for Human–AI Development Systems"
+version: "1.0.2"
 message: If you use this work, please cite it as follows.
 authors:
   - family-names: Sánchez Morales
     given-names: Martín Nicolás
-doi: 10.5281/zenodo.18974356
-date-released: "2026-03-10"
+doi: 10.5281/zenodo.23460644
+date-released: "2026-10-18"
 license: MIT
 repository-code: https://github.com/Janus-Governance/janus-governance-core
