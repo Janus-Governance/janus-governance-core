@@ -11,7 +11,7 @@ If you are new:
 3. Explore Runtimes → see real execution
 ---
 
-[![DOI](https://zenodo.org/badge/1174000167.svg)](https://doi.org/10.5281/zenodo.18974356)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23460644.svg)](https://doi.org/10.5281/zenodo.23460644)
 
 License: MIT
 
@@ -33,25 +33,34 @@ Minimal governance kernel for AI-assisted systems.
 
 Presents the formal description of the Janus governance kernel and its core invariants: append-only institutional logs, dual evidence model (E+ / E−), and explicit human authority boundary.
 
-Version: v1.0
-DOI: https://doi.org/10.5281/zenodo.18974356
-docs/paper/janus-foundational-paper-v1.0.pdf
+Version: v1.0.2
+DOI: https://doi.org/10.5281/zenodo.23460644
 
 ### Janus Framework Paper
 
 Presents the operational stack of Janus, including protocol layer, runtime structure, observability, and governed AI-assisted development workflows.
 
-Version: v1.0
-DOI: https://doi.org/10.5281/zenodo.19239183
-docs/paper/janus-framework-paper-v1.0.pdf
+Version: v1.1
+DOI: https://doi.org/10.5281/zenodo.23459840
 
-### Janus Origin Case Paper
+### The Missing Decision Layer
 
 Documents the structural systems failure that motivated Janus: systems record state changes but not the human decisions that authorize them. It provides longitudinal institutional evidence and positions the governance kernel as a minimal structural response.
 
-Version: v1.0
-DOI: https://doi.org/10.5281/zenodo.19709093
-docs/paper/janus-origin-case-v1.0-en.pdf
+Version: v1.1
+DOI: https://doi.org/10.5281/zenodo.23459866
+
+### Spanish translation of the Janus Foundational Paper
+
+Version: v1.0.2-es-419
+
+- [Markdown](docs/paper/janus-foundational-paper-v1.0.2-es-419.md)
+- [LaTeX](docs/paper/janus-foundational-paper-v1.0.2-es-419.tex)
+- [PDF](docs/paper/janus-foundational-paper-v1.0.2-es-419.pdf)
+
+This translation does not yet have a DOI; an independent Zenodo record has not been published.
+
+Version v1.0, its errata, and its addenda remain preserved in this repository as historical material.
 
 ---
 
