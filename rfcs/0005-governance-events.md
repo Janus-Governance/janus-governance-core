@@ -4,104 +4,21 @@ Status: Draft
 Author: Martín Nicolás Sánchez Morales  
 Created: 2026
 
----
+This nonnormative Draft is subordinate to Core Lite v0.2.
 
-## Summary
+## Canonical set
 
-This RFC defines the governance event model used by Janus systems.
+Core Lite v0.2 defines two canonical governance event types:
 
-Governance events represent auditable records that capture
-evaluations, findings, and accountable decisions.
+- `OMISSION_DETECTED`
+- `HUMAN_DECISION`
 
-These events are recorded in AUDIT_LOG.
+Names used by implementations, including registration events, gate outcomes, verdicts, or workflow statuses, are not canonical merely because they are recorded. A future canonical event requires explicit adoption by a later normative Core version, not an RFC Draft alone.
 
----
+## Distinct origins
 
-## Motivation
+Evaluation may originate a structural `OMISSION_DETECTED` candidate after the E− conditions are met. `HUMAN_DECISION` instead records a prior human authority act and cannot be originated by evaluation, AI, or the Audit Writer.
 
-Janus governance relies on explicit records to ensure traceability
-and accountability.
+## Recording
 
-Without a defined event model, governance actions may become
-ambiguous or inconsistent across implementations.
-
-This RFC defines the minimal structure and purpose of governance
-events within the Janus model.
-
----
-
-## Specification
-
-### Governance events
-
-A governance event is a record representing a governance-relevant
-observation, evaluation, or decision.
-
-Governance events are outputs of governance evaluation flows applied to evidence (E+ and/or E−).
-
-Governance events are appended to `AUDIT_LOG` exclusively through the Audit Writer mechanism (RFC 0007).
-
-Governance events MUST be written to:
-
-AUDIT_LOG
-
-### Canonical governance events
-
-Janus Core Lite defines the following canonical governance events:
-
-- OMISSION_DETECTED
-- HUMAN_DECISION
-
-Future specifications MAY introduce additional governance events.
-
-### Event context
-
-Governance events SHOULD reference the relevant operational context,
-including:
-
-- related domain events in MANAGEMENT_LOG
-- relevant schema context from SCHEMA_LOG
-- supporting evidence (E+ or E−)
-
-### Event responsibility
-
-Governance events represent accountable records.
-
-Systems MUST ensure that governance events cannot be generated
-outside authorized governance flows.
-
----
-
-## Rationale
-
-Governance systems require explicit event records in order to
-reconstruct decision processes and audit institutional actions.
-
-By defining governance events explicitly, Janus ensures that
-evaluations, omissions, and human decisions are consistently
-recorded across implementations.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial governance event model specification).
-
----
-
-## Security considerations
-
-Risks related to governance events include:
-
-- unauthorized event generation
-- incomplete event context
-- tampered event records
-
-Implementations must ensure append-only event recording and
-traceable governance flows.
-
----
-
-## License
-
-MIT License
+Both profiles are appended exclusively through the Audit Writer and must fulfill their event-specific requirements. Core requires `HUMAN_DECISION.object_refs` to resolve before incorporation; evidence uses immutable, resolvable artifact references where Core requires them. Other resolution duties depend on the applicable event or implementation profile, and no event may reference itself. Derived current views do not replace historical events.

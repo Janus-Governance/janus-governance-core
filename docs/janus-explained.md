@@ -1,51 +1,24 @@
 # What is Janus?
 
-## 1. Overview
+Janus is a governance core for systems where humans, software, and AI participate in decision processes. It governs how relevant activity, evidence, omissions, and accountable human acts are recorded and reconstructed; it does not execute business logic.
 
-Janus is a governance core for systems where humans, software, and AI participate in decision processes.
+## Evidence and events
 
-Janus does not execute business logic.
-It governs how system evolution is evaluated, recorded, and reconstructed.
+- E+ is the class of explicit recorded evidence.
+- E− is the class of evidence derived from a verified absence under the full Core v0.2 conditions.
+- `OMISSION_DETECTED` records a qualified instance of E−; it is not itself E−.
+- `HUMAN_DECISION` records a prior decision by a designated human authority. It is not E+, a system verdict, or an event that AI or evaluation can originate.
 
-## 2. The Problem
+E+ and E− are evidence classes, not Boolean values, exhaustive outcomes, or automatic verdicts. A missing record is not automatically E−.
 
-Most systems record what happened.
-Very few systems record what should have happened but did not.
+## Separation of responsibilities
 
-This becomes critical in systems involving automation and AI, where omissions and missing validations can create risk.
+Governance evaluation may inspect evidence and originate a structural finding such as `OMISSION_DETECTED`. The Audit Writer is the exclusive mechanism for appending governance events to `AUDIT_LOG`. For `HUMAN_DECISION`, it rejects incorporation when canonical `object_refs` do not resolve and otherwise incorporates a record of the prior human act; it cannot constitute that act or evaluate human competence.
 
-## 3. The Janus Approach
+## Reconstruction
 
-Key ideas:
-- governance events
-- evidence model (E+ / E-)
-- human authority
-- audit writer boundary
-- deterministic rebuild
+Append-only history and typed, resolvable references support reconstruction of event context. A current view is derived from history, schemas, and referenced artifacts up to a cutoff; it is not a replacement for the historical records. Deterministic re-evaluation is not itself a canonical event unless it produces an existing canonical event type.
 
-Janus evaluates governance conditions rather than application logic.
+## Runtime material
 
-## 4. What Janus Is Not
-
-Janus is not:
-- a framework
-- a workflow engine
-- an orchestration system
-- an application platform
-
-Janus is a governance layer that can operate above many different systems.
-
-## 5. How It Works
-
-activity → evaluation → governance event → audit log → rebuildable state
-
-## 6. Reference Runtime
-
-runtimes/demo-node/
-
-It demonstrates the model with a minimal executable implementation.
-
-## 7. Principle
-
-Janus governs system evolution.  
-Runtimes execute governance evaluation.
+`runtimes/demo-node/` is illustrative implementation material pending Gate 3 runtime evaluation. It does not establish actual runtime behavior, Core conformance, or proof of the model.

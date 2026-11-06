@@ -1,74 +1,24 @@
 # Deterministic Rebuild Model
 
-This document describes the deterministic rebuild model used in
-Janus governance systems.
+This informative model explains how an implementation can reconstruct governance context from preserved history. Core Lite v0.2 uses requirements such as SHOULD for reconstruction support; it does not guarantee recovery in every deployment.
 
-The rebuild model explains how governance conclusions can be
-reconstructed from recorded system history.
+## Inputs
 
-Deterministic rebuildability ensures that governance outcomes remain
-observable even after system failures, migrations, or infrastructure
-changes.
+- append-only `MANAGEMENT_LOG`, `SCHEMA_LOG`, and `AUDIT_LOG`
+- typed, resolvable references from governance events
+- referenced evidence artifacts and versioned observation procedures
+- preserved temporal and schema context
 
-## Rebuild principle
+## Process
 
-A governance state should be reconstructable using only the recorded
-system history and referenced context.
+1. Read domain history from `MANAGEMENT_LOG`.
+2. Resolve the versioned schema context in `SCHEMA_LOG`.
+3. Resolve typed event references and supporting evidence.
+4. Interpret canonical event history without rewriting it.
+5. Derive a current view from history, schemas, and referenced artifacts up to a declared cutoff.
 
-Rebuildability relies on:
+A derived current view is not the history itself and, under Core v0.2, cannot erase or silently replace earlier events. Deterministic re-evaluation may change the view but is not by itself a canonical event unless it produces one of the existing canonical event types.
 
-- append-only logs
-- referenced schema definitions
-- referenced evidence artifacts
+## Limits
 
-## Required inputs
-
-A deterministic rebuild requires access to:
-
-- `MANAGEMENT_LOG`
-- `AUDIT_LOG`
-- relevant schema definitions from `SCHEMA_LOG`
-- referenced evidence artifacts or omission observations
-
-These inputs represent the observable historical record of the system.
-
-## Rebuild process
-
-A rebuild process conceptually consists of:
-
-1. Reading domain activity from `MANAGEMENT_LOG`
-2. Interpreting records using schema definitions from `SCHEMA_LOG`
-3. Re-evaluating governance evidence when necessary
-4. Interpreting governance events recorded in `AUDIT_LOG`
-
-The rebuild process reconstructs the governance interpretation
-associated with recorded events.
-
-## Event reference model
-
-Governance events SHOULD reference the domain records, schema
-context, and evidence artifacts required to interpret the event.
-
-This reference model is defined in RFC 0008 (Log Reference Model).
-
-These references allow rebuild processes to reproduce the reasoning
-context associated with governance outcomes.
-
-## Failure tolerance
-
-Because the system relies on append-only logs and referenced context,
-governance conclusions remain reconstructable even if operational
-systems fail.
-
-This property allows institutional truth to remain observable.
-
-## Purpose
-
-The deterministic rebuild model ensures that Janus governance systems
-preserve:
-
-- traceability
-- auditability
-- institutional memory
-
-without constraining implementation technologies.
+Reconstruction depends on availability, integrity, and resolvability of the referenced records. The model supports traceability and reproducibility; it is not a proof of correctness, completeness, or operational conformance.

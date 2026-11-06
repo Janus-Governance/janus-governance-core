@@ -2,13 +2,22 @@
 
 Reference Runtime: v0.1.0
 
-This minimal demo proves:
+Status: `LEGACY_NONCONFORMING_PENDING_GATE_3`
 
-1) Append domain activity to `MANAGEMENT_LOG`
-2) Read `SCHEMA_LOG` as reference
-3) Form evidence as `E+` / `E-`
-4) Run a governance evaluation layer (beyond omission detection)
-5) Write canonical governance events to `AUDIT_LOG` only through an Audit Writer boundary
+This legacy demo illustrates an earlier implementation. It does not prove or establish Core Lite v0.2 conformance.
+
+## Known semantic divergences
+
+The current JavaScript source:
+
+- emits the noncanonical event label `HUMAN_DECISION_REGISTERED`
+- treats the presence of a human decision as E+
+- reads human authority from `MANAGEMENT_LOG` instead of recording canonical `HUMAN_DECISION` in `AUDIT_LOG`
+- originates a shadow human-authority registration event from evaluation
+- uses simplified, effectively exhaustive E+/E− presence-or-absence semantics
+- does not implement or prove the complete Core v0.2 event, evidence, reference, or Audit Writer requirements
+
+Source-code migration and validation are deferred to Gate 3. Until that transaction is completed, this directory must be treated only as legacy nonconforming material.
 
 ## Run
 
@@ -20,10 +29,10 @@ From repo root:
 
 - `node runtimes/demo-node/demo.js`
 
-## Expected behavior
+## Current legacy behavior
 
-- Flow A (omission): appends `CHANGE_PROPOSED`, evaluates, emits `OMISSION_DETECTED` with `E-` into `AUDIT_LOG`
-- Flow B (approved): appends `CHANGE_PROPOSED` + `HUMAN_DECISION`, evaluates, emits `HUMAN_DECISION_REGISTERED` with `E+` into `AUDIT_LOG`
-- Flow C (rebuild): rebuilds a minimal state only from logs and prints a summary object
+- Flow A appends `CHANGE_PROPOSED` and emits the legacy omission representation.
+- Flow B appends a management-side `HUMAN_DECISION` and emits noncanonical `HUMAN_DECISION_REGISTERED`.
+- Flow C prints a simplified reconstructed summary.
 
-This runtime is a reference proof of the Janus Core Lite model, not a production runtime.
+These descriptions disclose existing behavior; they are not approval, proof, or a conformance claim.

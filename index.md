@@ -2,34 +2,21 @@
 
 Official documentation entry point.
 
-➡ Start here: [Documentation Index](docs/index.md)
+## Primary specification
 
----
+- [Core Lite v0.2](core/lite/JANUS_CORE_LITE_v0.2.md) — primary internal normative baseline (Status: Draft)
+- [Documentation index](docs/index.md)
 
-## Core specification
-- Core Lite v0.2: `core/lite/JANUS_CORE_LITE_v0.2.md`
+## Draft RFCs
 
-## RFCs
-- RFC 0001–0008: see `rfcs/`
+RFC 0001–0008 are Draft, nonnormative proposals subordinate to Core Lite v0.2. See `rfcs/`.
 
-<h2>Executable Proof</h2>
+## Illustrative runtime material
 
-<p>Janus includes a minimal executable runtime demonstrating:</p>
-<ul>
-	<li>governance evaluation</li>
-	<li>omission detection</li>
-	<li>human authority registration</li>
-	<li>audit events</li>
-	<li>deterministic rebuild</li>
-</ul>
+The [demo walkthrough](docs/demo-run.md) is illustrative. The [Node demo](runtimes/demo-node/README.md) is classified `LEGACY_NONCONFORMING_PENDING_GATE_3`; neither surface is executable proof or establishes Core conformance.
 
-<p>
-	<a href="https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/demo-run.md">60-second demo proof</a>
-	·
-	<a href="https://github.com/Janus-Governance/janus-governance-core/tree/main/runtimes/demo-node">Reference runtime</a>
-</p>
-
-<pre><code>node runtimes/demo-node/demo.js</code></pre>
+Tracked HTML remains unreconciled with these Markdown corrections. Publication is blocked pending separate HTML reconciliation and review.
 
 ## Repository
+
 https://github.com/Janus-Governance/janus-governance-core

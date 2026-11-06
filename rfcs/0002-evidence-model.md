@@ -4,102 +4,32 @@ Status: Draft
 Author: Martín Nicolás Sánchez Morales  
 Created: 2026
 
----
+This nonnormative Draft is subordinate to Core Lite v0.2.
 
-## Summary
+## Evidence classes
 
-This RFC formalizes the evidence model used by Janus Core Lite.
+E+ is explicit evidence retrievable from a system of record. E− is evidence derived from a verified absence. They are evidence classes, not Boolean complements, verdicts, event types, or an exhaustive outcome space. `HUMAN_DECISION` is not E+.
 
-The model distinguishes between explicit recorded evidence (E+) and
-verified omission evidence (E−).
-
-This distinction allows governance systems to reason not only from
-recorded facts but also from verified absences of expected records.
-
----
-
-## Motivation
-
-Traditional systems treat missing records as undefined states.
-
-In governance contexts, however, the absence of an expected record may
-itself represent a meaningful signal.
-
-Janus introduces a formal distinction between:
-
-- explicit evidence (E+)
-- omission evidence (E−)
-
-This allows systems to detect procedural failures, structural gaps,
-and governance breakdowns.
-
----
-
-## Specification
-
-### Explicit evidence (E+)
-
-E+ represents evidence explicitly recorded in a system of record.
-
-A claim supported by E+ references a recorded artifact that can be
-retrieved and inspected.
-
-### Omission evidence (E−)
-
-E− represents evidence derived from a verified absence of an expected record.
+## Minimum basis for E−
 
 E− requires:
 
-- a defined expectation
-- a deterministic search scope
-- a reproducible observation that the expected record is missing
-- referenceable schema context from SCHEMA_LOG
+- a versioned, referenceable expectation that declares provenance and temporal applicability
+- evidence that the expectation version was recorded before observation
+- the time or condition at which the expectation becomes due
+- deterministic sources, subject, filters, window, and cutoff
+- a cutoff at or after the due condition
+- due status determinable from what was consulted up to the cutoff
+- a versioned observation procedure
+- applicable `SCHEMA_LOG` context for every record or event considered up to the cutoff
+- a reproducible observation of the declared scope
 
-Evidence is evaluated by governance flows. Evaluation may produce governance events recorded in AUDIT_LOG.
+Missing data without this basis is not automatically E−.
 
-### Relationship with governance events
+## Relationship to events
 
-Omission evidence may generate the governance event:
-
-OMISSION_DETECTED
-
-Interpretation of evidence may require human evaluation, which is
-recorded through the event:
-
-HUMAN_DECISION
-
----
-
-## Rationale
-
-Governance systems must account for both presence and absence of records.
-
-Without omission evidence, structural failures may remain invisible.
-
-The E+ / E− model enables systems to reason about procedural compliance,
-missing actions, and institutional responsibility.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial evidence model specification).
-
----
+`OMISSION_DETECTED` records a qualified E− observation and references its basis; the event is not itself E−. Evidence may inform a human, but neither E+ nor E− constitutes `HUMAN_DECISION`.
 
 ## Security considerations
 
-Incorrect omission detection may result from:
-
-- incomplete search scope
-- inconsistent schema interpretation
-- corrupted or incomplete logs
-
-Implementations must ensure deterministic search scopes and schema
-consistency when deriving E−.
-
----
-
-## License
-
-MIT License
+Incomplete scope, premature cutoff, schema ambiguity, mutable procedures, or inaccessible sources can invalidate an omission claim.

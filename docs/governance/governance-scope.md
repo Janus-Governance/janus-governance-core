@@ -1,82 +1,25 @@
 # Governance Scope Model
 
-This document defines the concept of governance scope used during
-governance evaluation flows in Janus systems.
+A governance scope is a referenceable, deterministic boundary for an observation or evaluation. Its meaning depends on the event profile; in `HUMAN_DECISION`, `scope_ref` denotes competence, while in `OMISSION_DETECTED` it denotes the search scope.
 
-A governance scope defines the bounded context within which evidence
-is evaluated and governance conclusions are produced.
+## Deterministic omission scope
 
-Governance scopes ensure that evaluation remains deterministic,
-traceable, and reproducible.
+An E− observation requires all of the following:
 
-## Scope definition
+- a versioned, referenceable expectation that declares its provenance and temporal applicability
+- evidence that the expectation version was recorded before the observation
+- the time or condition at which the expectation becomes due
+- deterministic sources, subject, filters, search window, and cutoff
+- a cutoff at or after the due condition
+- due status determinable from what was consulted up to the cutoff
+- a versioned evaluation or observation procedure
+- the applicable `SCHEMA_LOG` context for every record or event considered up to the cutoff
+- a reproducible observation over the declared bytes or records
 
-A governance scope represents a defined subset of observable system
-state used during governance evaluation.
+Core requires the scope to identify what was searched, where, for which subject, under which filters and schema, and through what cutoff. These elements must be resolvable later. A missing record outside this complete envelope is not automatically E−.
 
-A scope typically includes:
+## Other scopes
 
-- a defined time window
-- a defined set of domain records
-- relevant schema context
-- a defined evaluation boundary
+Evaluation scopes may identify time windows, record sets, schemas, and evaluation boundaries. `HUMAN_DECISION.scope_ref` instead identifies the authority's competence over the objects in `object_refs`; it cannot substitute for those objects.
 
-## Temporal scope
-
-Governance evaluations may operate over a defined time interval.
-
-Example:
-
-- start_time
-- end_time
-
-Temporal scope ensures that evaluations remain reproducible and that
-observations correspond to a clearly defined period.
-
-## Record scope
-
-A governance scope may restrict the set of domain records considered
-during evaluation.
-
-Example:
-
-- records belonging to a specific project
-- records associated with a particular workflow
-- records matching a defined query boundary
-
-This constraint ensures that evaluation operates over a well-defined
-subset of MANAGEMENT_LOG.
-
-## Schema scope
-
-Governance evaluations may depend on schema definitions that interpret
-records.
-
-A governance scope SHOULD reference the relevant schema context from
-SCHEMA_LOG.
-
-This ensures that evaluations remain interpretable even as schemas
-evolve over time.
-
-## Deterministic search scope
-
-When omission evidence (E−) is produced, the search scope used to
-verify the absence of an expected record MUST be deterministic.
-
-The scope must define:
-
-- where the system searched
-- what records were considered
-- the schema context used during interpretation
-
-This requirement ensures that omission evidence remains verifiable.
-
-## Purpose
-
-Governance scopes ensure that governance evaluation remains:
-
-- deterministic
-- reproducible
-- auditable
-
-without constraining implementation technologies.
+Scopes support reproducibility and audit. They do not themselves establish a verdict or human authority.

@@ -1,87 +1,31 @@
 # Janus Core Lite — Architecture Overview
 
-Janus Core Lite defines a minimal governance kernel for auditable systems.
+This informative overview is subordinate to the primary normative specification, `core/lite/JANUS_CORE_LITE_v0.2.md`.
 
-The architecture separates operational activity from governance
-evaluation and accountability.
+## Canonical logs
 
-The system is structured around five core components.
-
----
-
-## Append-only logs
-
-Janus defines three canonical logs:
-
-- MANAGEMENT_LOG
-- SCHEMA_LOG
-- AUDIT_LOG
-
-These logs form the historical backbone of the system.
-
-Operational activity is recorded in MANAGEMENT_LOG, while governance
-findings and accountability records are written to AUDIT_LOG.
-
-SCHEMA_LOG provides the structural context required to interpret records.
-
----
+- `MANAGEMENT_LOG` records domain activity.
+- `SCHEMA_LOG` records versioned schema context.
+- `AUDIT_LOG` records canonical governance events through the exclusive Audit Writer boundary.
 
 ## Evidence model
 
-Janus distinguishes two forms of evidence:
+E+ and E− are evidence classes. E+ identifies explicit recorded evidence. E− identifies evidence of a verified absence only when the complete conditions in Core v0.2 §5 are satisfied; the detailed restatement appears in `docs/governance/governance-scope.md`. Neither class is a Boolean, verdict, event type, or exhaustive outcome set.
 
-- **E+ (explicit evidence)** — recorded artifacts in a system of record
-- **E− (omission evidence)** — verified absence of an expected record
-
-This model allows governance processes to reason about both recorded
-facts and structural omissions.
-
----
+`OMISSION_DETECTED` records E− and references its basis; it is not itself E−. `HUMAN_DECISION` records a prior human authority act and is not E+.
 
 ## Governance evaluation
 
-Evidence is interpreted through governance evaluation flows.
-
-Evaluation processes analyze available evidence and contextual data
-in order to determine whether governance events should be produced.
-
-Evaluation flows themselves are not recorded as events.
-
----
-
-## Governance events
-
-Evaluation processes may produce governance events.
-
-Core Lite defines two canonical events:
-
-- `OMISSION_DETECTED`
-- `HUMAN_DECISION`
-
-These events represent auditable governance outcomes.
-
----
+Evaluation interprets evidence within a defined scope. It may originate a structural finding such as `OMISSION_DETECTED`. It may request or identify the need for a human decision, but it cannot originate `HUMAN_DECISION`.
 
 ## Human authority
 
-When accountability is required, governance decisions must be recorded
-explicitly through `HUMAN_DECISION`.
+`HUMAN_DECISION` is the sole canonical human-authority event in Core v0.2. AI systems may analyze or recommend, and the Audit Writer may incorporate the already-existing record, but only a designated human authority can perform the represented act. Resolution of `actor_ref` and evaluation of competence belong to Framework.
 
-Automated systems may assist in analysis but cannot substitute for
-explicit human responsibility.
+## Audit Writer boundary
 
----
+All canonical governance events enter `AUDIT_LOG` through the Audit Writer, which prevents bypass. For `HUMAN_DECISION`, the writer rejects incorporation when canonical `object_refs` do not resolve against previously incorporated history. Broader field or reference validation may be assigned by a noncanonical Framework profile, but Core v0.2 does not assign the writer universal validation duties. The writer does not originate authority, competence, or human judgment.
 
-## Audit writer boundary
+## Reconstruction
 
-All governance events must be written to `AUDIT_LOG` through an
-authorized audit writer mechanism.
-
-This prevents unauthorized event injection and preserves the integrity
-of governance records.
-
----
-
-Janus Core Lite therefore establishes a minimal governance kernel that
-supports traceability, accountability, and deterministic reconstruction
-of institutional decisions.
+Append-only logs plus the references required by each applicable event profile support reconstruction. Core v0.2 says an implementation SHOULD be able to rebuild governance-relevant views from the specified inputs; this attributed requirement is not a claim of proof or guaranteed recovery in every environment.

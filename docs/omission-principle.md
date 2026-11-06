@@ -1,57 +1,18 @@
 # Omission as Structured Evidence
 
-## 1. Core Idea
+This pedagogical note is informative and subordinate to Core Lite v0.2.
 
-Most systems record what happened.
-Janus also records what should have happened but did not.
+## Core idea
 
-In Janus, omission is not silence.
-Omission is structured evidence.
+Absence is not automatically evidence. E− exists only under the complete requirements restated in `governance/governance-scope.md`: the expectation version is recorded before observation and declares provenance, temporal applicability, and due condition; due status is determinable at a compliant cutoff; the scope, versioned procedure, schema context for all considered records, and observation are reproducible.
 
-## 2. Classical Model vs Janus Model
+When those conditions are met, `OMISSION_DETECTED` may record the E− observation in `AUDIT_LOG`. The event is not itself E− and does not automatically establish fault, accountability, noncompliance, or a human decision.
 
-Classical systems:
-- positive event recorded
-- absence remains silent
+## Distinctions
 
-Janus:
-- E+ = event occurred
-- E- = required event missing
-- governance outcome must be expressible as evidence
+- E+ and E− are evidence classes, not Boolean values or exhaustive outcomes.
+- `HUMAN_DECISION` records a prior human authority act and is not E+.
+- a current view derived from omission records does not replace historical events
+- illustrative runtime output does not prove Core conformance
 
-## 3. Why This Matters
-
-Omissions are often the most critical failures in socio-technical systems.
-Examples:
-- missing validation
-- missing human decision
-- missing required review
-- missing protocol step
-
-## 4. Canonical Janus Expression
-
-E+ = positive evidence  
-E- = omission evidence
-
-For governance-required activity:
-
-governance outcome = E+ or E-
-
-If a required event is missing, the system must emit structured omission evidence.
-
-## 5. Runtime Demonstration
-
-The reference runtime demo (Node) validates omission detection by emitting explicit audit events when a governance-required event is missing. A stress test (many proposals with random omission vs decision) validates the same principle under scale.
-
-Use this example:
-
-1000 CHANGE_PROPOSED
-→ 464 HUMAN_DECISION_REGISTERED (E+)
-→ 536 OMISSION_DETECTED (E-)
-
-Consistency:
-E+ + E- = governance outcomes
-
-## 6. Principle
-
-What did not happen, when it was required to happen, is part of system truth.
+The practical principle is narrower than “all silence is evidence”: a qualified, reproducible absence relative to a prior expectation can be preserved as evidence.

@@ -1,111 +1,57 @@
-# Glossary (Normative)
+# Glossary (Normative, Subordinate)
 
-This glossary defines canonical meanings for terms used by Janus specifications in this repository. It is subordinate to the Core (`core/lite/JANUS_CORE_LITE_v0.2.md`), which is the primary normative authority.
+This glossary is normative only within its subordinate role. `core/lite/JANUS_CORE_LITE_v0.2.md` is the primary normative authority and controls any conflict.
 
-Semantic stability rule: when a term in this glossary is changed, any dependent specification text MUST be reviewed and updated accordingly.
+When a subordinate glossary definition changes, dependent active specifications, documentation, and derived surfaces MUST be reviewed. Any remaining divergence MUST be recorded under the Core hierarchy. This review safeguard does not give the glossary authority to amend or override Core Lite v0.2.
 
-## Conventions
+## Audit Writer
 
-- Capitalized tokens (e.g., `AUDIT_LOG`, `OMISSION_DETECTED`) denote canonical identifiers.
-- RFC 2119 keywords (MUST, SHOULD, MAY) are used for normative requirements.
+The exclusive mechanism authorized to append canonical governance events to `AUDIT_LOG`. It prevents bypass and incorporates records under the applicable canonical event rules. For `HUMAN_DECISION`, it rejects incorporation when canonical `object_refs` are not resolvable against previously incorporated history. It cannot originate authority, competence, human judgment, or the human act represented by `HUMAN_DECISION`. Broader structural validation belongs only to an applicable noncanonical Framework or implementation profile.
 
-## Canonical terms
+## `AUDIT_LOG`
 
-### Adapter
+The append-only log for governance events, accountability records, and audit findings. Derived views and noncanonical gate results may be associated with audit processing but do not become canonical Core event types merely by being stored or referenced.
 
-A component that maps between Janus runtime interfaces and an external storage or transport surface.
+## E+ (explicit evidence)
 
-Adapters do not define Core semantics; they implement a mapping.
+The class of evidence explicitly recorded in a system of record. It is not a Boolean value, verdict, event type, or exhaustive outcome. `HUMAN_DECISION` is not E+.
 
-### `AUDIT_LOG`
+## E− (omission evidence)
 
-An append-only log that records audit-relevant events, evaluations, and attestations needed to support review.
+The class of evidence derived from a verified absence only when all Core v0.2 expectation, provenance, prior-observation, timing, deterministic-scope, cutoff, procedure, schema, and reproducibility conditions are met. Missing data alone is not E−.
 
-`AUDIT_LOG` entries MAY reference records from `MANAGEMENT_LOG` and `SCHEMA_LOG` when relevant, and MAY also represent governance events that do not originate in those logs (e.g., `OMISSION_DETECTED`).
+## Gate result
 
-An `AUDIT_LOG` entry MAY record:
-- gate outcomes and their explanations (`gates`)
-- risk classifications (e.g., R2) and escalation/handling outcomes
-- explicit human accountability events (`HUMAN_DECISION`)
-- omission findings (`OMISSION_DETECTED`) and their supporting omission evidence (E−)
+An implementation- or framework-level result such as allow, block, escalate, pass, or fail. A gate result is noncanonical under Core Lite v0.2 unless a later Core version explicitly adopts an event type for it.
 
-`AUDIT_LOG` entries SHOULD preserve linkability to the originating expectations, scopes, and referenced artifacts.
+## `HUMAN_DECISION`
 
-### contractRef
+The sole canonical human-authority event under Core Lite v0.2. It records a prior act by a designated human authority and requires `event_type`, `event_id`, `actor_ref`, `scope_ref`, nonempty `object_refs`, `occurred_at`, and `recorded_at`. AI, evaluation, and the Audit Writer cannot originate the represented act.
 
-A stable reference to an external rule source that is outside the Janus repository (e.g., policy text, contract clause, regulation section, internal procedure).
+## `MANAGEMENT_LOG`
 
-`contractRef` is a reference mechanism only. It does not import external text into Core semantics.
+The append-only log of domain activity. `HUMAN_DECISION` is a governance event in `AUDIT_LOG`, not a `MANAGEMENT_LOG` event.
 
-### E+ (explicit evidence)
+## `object_refs`
 
-The class of evidence explicitly recorded in a system of record.
+The unordered, duplicate-free, nonempty typed references identifying exactly what a `HUMAN_DECISION` decided. Each target is a previously incorporated record or event in one of the three canonical logs, identified by origin log and stable identity; external artifacts and derived views are inadmissible. They are distinct from actor, competence, evidence, schema, and general domain context.
 
-E+ indicates that a claim or event is supported by a recorded artifact.
+## `OMISSION_DETECTED`
 
-### E− (omission evidence)
+The canonical event that records a qualified instance of E−. The event is not itself E− and requires `event_type`, `event_id`, a versioned expectation reference, deterministic scope with cutoff, schema reference, nonempty evidence references, and `recorded_at` as its only own time.
 
-The class of evidence derived from a verified absence of an expected record or event.
+## Reference resolution
 
-E− exists only when the conditions defined in Core §5 are met.
+The rule by which a typed reference identifies and retrieves its target in the applicable log or artifact system. Core requires `HUMAN_DECISION.object_refs` to resolve before incorporation. Evidence supporting E+ or E− uses immutable, resolvable artifact references where Core requires them. Resolution of `actor_ref` and evaluation of competence belong to Framework; other resolution duties depend on the applicable event or implementation profile. References with different roles are not interchangeable, and no event may reference itself.
 
-E− is not counter-argumentation.
-It represents a verified omission relative to an explicit expectation.
+## Runtime
 
-### gates
+An execution environment implementing Janus semantics. Runtime behavior and conformance require separate validation; documentation or a demo does not establish them.
 
-Framework-defined checks that mediate state transitions or outputs.
+## `SCHEMA_LOG`
 
-A gate consumes inputs (e.g., proposed actions, evidence sets, risk flags) and produces a decision (allow, block, require escalation) plus an auditable explanation.
+The append-only log of versioned schema declarations used to interpret records.
 
-### `HUMAN_DECISION`
+## `scope_ref`
 
-A canonical event indicating that a designated human authority has made or confirmed a decision.
-
-It is the only canonical human-authority event. It is recorded in `AUDIT_LOG` and represents a prior human act. Its required content is defined in Core §4.
-
-When a specification requires human accountability, the system MUST record a `HUMAN_DECISION` and MUST NOT substitute it with an automated inference.
-
-### Management
-
-The superset organizational context in which decisions, actions, and accountability occur.
-
-Examples include government, project, education, and business contexts.
-
-### `MANAGEMENT_LOG`
-
-An append-only log of management-relevant events.
-
-Typical entries include proposals, actions, domain decisions, assignments, exceptions, corrections to domain activity, and references to evidence artifacts. The canonical event `HUMAN_DECISION` is a governance event and is recorded in `AUDIT_LOG`, not in `MANAGEMENT_LOG`.
-
-### `object_refs`
-
-The reference in a `HUMAN_DECISION` that identifies exclusively what was decided: records or events of `MANAGEMENT_LOG`, `AUDIT_LOG`, or `SCHEMA_LOG`. It is distinct from domain context (`management_refs`), evidence (`evidence_refs`), interpretive context (`schema_ref`), and competence (`scope_ref`). Its requirements are defined in Core §4.
-
-### `OMISSION_DETECTED`
-
-The canonical governance event type that records an instance of E− meeting the conditions defined in Core §5.
-
-An `OMISSION_DETECTED` event MUST include enough context to support E− (omission evidence), through the fields required by Core §6.
-
-### R2
-
-A risk classification indicating that a matter requires heightened controls.
-
-At minimum, R2 handling MUST require explicit escalation rules and MUST support human final authority where accountability is required.
-
-### Runtime
-
-An execution environment that runs a Janus workflow or protocol implementation.
-
-Runtimes implement the Core and Framework specifications but do not redefine their semantics.
-
-### `SCHEMA_LOG`
-
-An append-only log that defines schema declarations and schema versions used to interpret other logs.
-
-If an event format or meaning depends on a schema version, the relevant `SCHEMA_LOG` entry MUST be referencable from the consuming record.
-
-### `scope_ref`
-
-A reference whose meaning depends on the event type: in `HUMAN_DECISION` it declares the competence invoked over the objects decided; in `OMISSION_DETECTED` it is the deterministic search scope of E−. It never identifies the object decided or the evidence.
+A typed reference whose role depends on the event profile: competence for `HUMAN_DECISION`, deterministic search scope for `OMISSION_DETECTED`. It does not identify the decision object or substitute for evidence.

@@ -1,200 +1,50 @@
-
----
-Janus is not a framework or a tool.
-
-It is a governance layer for AI-assisted systems.
-
-If you are new:
-
-1. Read the Core → understand the rules
-2. Use the Framework → apply the rules
-3. Explore Runtimes → see real execution
----
-
-[![DOI](https://zenodo.org/badge/1174000167.svg)](https://doi.org/10.5281/zenodo.18974356)
-
-License: MIT
-
-<p align="center">
-  <img src="assets/logo/janus-logo.svg" width="160" alt="Janus logo">
-</p>
-
 # Janus Governance Core
 
-Minimal governance kernel for AI-assisted systems.
+Janus is a stack-agnostic governance layer for AI-assisted systems. It is not a framework, workflow engine, or runtime.
 
-→ Start here: https://janusgovernance.org  
-→ Framework stack: https://framework.janusgovernance.org  
+## Normative hierarchy
 
+The primary internal normative baseline is [Core Lite v0.2](core/lite/JANUS_CORE_LITE_v0.2.md), whose document status remains Draft. The [glossary](docs/glossary.md) is subordinate to it. RFC 0001–0008 remain Draft, nonnormative proposals; architecture, explanatory, demo, and runtime documents are informative.
+
+Core defines canonical semantics. Framework owns operational profiles and runtimes that apply approved Core contracts. Runtimes and demos may illustrate an implementation but do not redefine or prove Core conformance.
+
+## Core model
+
+- append-only `MANAGEMENT_LOG`, `SCHEMA_LOG`, and `AUDIT_LOG`
+- E+ explicit-evidence and E− omission-evidence classes
+- canonical `OMISSION_DETECTED` and `HUMAN_DECISION` events
+- exclusive Audit Writer boundary for `AUDIT_LOG`
+- referenceable context sufficient to support later reconstruction
+
+`HUMAN_DECISION` records a prior act of a designated human authority. AI and evaluation may analyze or prepare non-authoritative material. Only a record of an already-performed human act can become `HUMAN_DECISION`; the Audit Writer is the exclusive canonical appender, rejects incorporation when canonical `object_refs` do not resolve, and cannot originate the act, competence, or human judgment.
+
+## Reading order
+
+1. `core/lite/JANUS_CORE_LITE_v0.2.md`
+2. `docs/glossary.md`
+3. `docs/architecture/` and `docs/governance/`
+4. Draft RFCs in `rfcs/`
+5. illustrative demos and runtime material
+
+## Repository contents
+
+- `core/lite/` — primary normative Core Lite specification
+- `docs/` — subordinate glossary and informative documentation
+- `rfcs/` — Draft, nonnormative proposals
+- `runtimes/` and `demos/` — illustrative implementation material; the current Node demo is legacy and nonconforming pending Gate 3 source migration
+- `archive/` — historical and out-of-scope material
 
 ## Papers
 
-### Janus Foundational Paper
-
-Presents the formal description of the Janus governance kernel and its core invariants: append-only institutional logs, dual evidence model (E+ / E−), and explicit human authority boundary.
-
-Version: v1.0
-DOI: https://doi.org/10.5281/zenodo.18974356
-docs/paper/janus-foundational-paper-v1.0.pdf
-
-### Janus Framework Paper
-
-Presents the operational stack of Janus, including protocol layer, runtime structure, observability, and governed AI-assisted development workflows.
-
-Version: v1.0
-DOI: https://doi.org/10.5281/zenodo.19239183
-docs/paper/janus-framework-paper-v1.0.pdf
-
-### Janus Origin Case Paper
-
-Documents the structural systems failure that motivated Janus: systems record state changes but not the human decisions that authorize them. It provides longitudinal institutional evidence and positions the governance kernel as a minimal structural response.
-
-Version: v1.0
-DOI: https://doi.org/10.5281/zenodo.19709093
-docs/paper/janus-origin-case-v1.0-en.pdf
-
----
-
-## 🚀 Quick Orientation
-
-- Understand the system → `docs/janus-explained.md`  
-- Explore the architecture → `docs/architecture/janus-stack.md`  
-- Run the deterministic demo → `docs/demo-run.md`  
-
----
-
-## What is Janus
-
-Janus is a minimal governance layer for human–AI development systems.
-
-It introduces three structural invariants:
-
-- append-only institutional logs  
-- dual evidence model (E+ / E−)  
-- explicit human authority decisions  
-
-Together these enable development environments where actions, decisions, and system states remain traceable, auditable, and deterministically reconstructible.
-
----
-
-## What this repository contains
-
-This repository defines the **Janus Core**:
-
-- canonical governance definitions  
-- RFC specifications  
-- architecture and glossary  
-- deterministic validation suite  
-
-It is **stack-agnostic** and does not depend on any runtime or implementation.
-
----
-
-## Deterministic Validation Suite (Node)
-
-This repository includes a minimal deterministic validation suite demonstrating reproducible Janus Core Lite cases and executable proofs of the system.
-
----
-
-## Latest Updates
-
-- Deterministic validation suite (Node) demonstrating reproducible Janus Core Lite cases
-- 60-second executable proof of the system
-- Runtime model documentation
-- "What is Janus" overview document
-- GitHub Pages section showing the executable proof
-
-Links:
-
-- [docs/janus-explained.md](docs/janus-explained.md)
-- [docs/runtime-model.md](docs/runtime-model.md)
-- [docs/demo-run.md](docs/demo-run.md)
-- [runtimes/demo-node/](runtimes/demo-node/)
-
----
-
-Run:
-
-```bash
-node runtimes/demo-node/demo.js
-```
-
-Suite:
-
-```bash
-node demos/node/src/run-suite.js
-```
-
-Output:
-
-```
-demos/node/outputs/janus-validation-suite.json
-```
-
----
-
-
-
-- `core/lite/` — Core Lite canonical specification  
-- `rfcs/` — RFC 0001–0008  
-- `docs/` — architecture and governance documentation  
-
-### Validation and demos
-
-- `runtimes/demo-node/` — reference runtime  
-- `demos/node/` — validation datasets and outputs  
-
-### Non-normative material
-
-
-- `archive/` — historical and out-of-scope material  
-
----
-
-
-
-## High-level principles
-
-- Stack-agnostic Core  
-- Glossary-first semantic stability  
-- Append-only records  
-- Separation of concerns  
-- Closed-loop governance  
-- Human final authority (`HUMAN_DECISION`)  
-
----
+- Janus Foundational Paper v1.0 — DOI: https://doi.org/10.5281/zenodo.18974356
+- Janus Framework Paper v1.0 — DOI: https://doi.org/10.5281/zenodo.19239183
+- Janus Origin Case Paper v1.0 — DOI: https://doi.org/10.5281/zenodo.19709093
 
 ## Status
 
-Core Lite: v0.2 Draft
-
----
-
-## Reading order
-1. `docs/glossary.md`  
-2. `docs/architecture/janus-stack.md`  
-3. `core/` specifications  
-
----
-
-## Governance note
-
-Janus defines closed-loop governance mechanics.  
-Final authority remains with designated humans and is explicitly recorded as `HUMAN_DECISION`.
-
----
+Core Lite v0.2 (Status: Draft) is the current internal normative baseline. Tracked HTML remains unreconciled and publication remains blocked. This Markdown reconciliation does not establish repository-wide, public-surface, runtime, standards, or publication alignment.
 
 ## License
 
 MIT License  
 Copyright (c) 2026 Martín Nicolás Sánchez Morales
-
----
-
-## Paper Writing Protocol
-
-Technical papers in this project follow the Janus LaTeX Paper Protocol.
-
-See:
-- docs/janus-latex-paper-protocol.md
-

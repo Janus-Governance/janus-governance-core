@@ -4,105 +4,26 @@ Status: Draft
 Author: Martín Nicolás Sánchez Morales  
 Created: 2026
 
----
+This nonnormative Draft is subordinate to Core Lite v0.2.
 
-## Summary
+## Detection conditions
 
-This RFC defines the governance mechanism used to detect and record
-verified omissions within Janus systems.
+Omission detection applies a versioned procedure to deterministic sources, subject, filters, window, and cutoff. It requires an expectation version recorded before observation that declares provenance, temporal applicability, and due condition; a cutoff at or after that condition with due status determinable from what was consulted up to the cutoff; applicable `SCHEMA_LOG` context for every record or event considered; and a reproducible absence observation.
 
-Omission detection produces the canonical governance event:
+## Event profile
 
-OMISSION_DETECTED
+When the full E− conditions are met, an `OMISSION_DETECTED` candidate may be prepared with:
 
-The event is recorded in AUDIT_LOG when a verified absence of an
-expected record is observed.
+- `event_type` and `event_id`
+- `expectation_ref`
+- `scope_ref`, including the deterministic cutoff
+- `schema_ref`
+- nonempty `evidence_refs`
+- `recorded_at`, the event's only own time
+- optional `management_refs`
 
----
+The candidate is submitted through the exclusive Audit Writer boundary for incorporation into `AUDIT_LOG` under the applicable event rules. Search-execution time belongs in the observation artifact. The event records E−; it is not itself E− and does not by itself establish fault, noncompliance, or human accountability.
 
-## Motivation
+## Historical treatment
 
-Governance failures often occur not through incorrect actions but
-through missing actions.
-
-Traditional systems frequently treat missing records as undefined states.
-
-Janus introduces a formal mechanism to detect and record verified
-omissions so that governance systems can reason about procedural
-failures and accountability gaps.
-
----
-
-## Specification
-
-### Omission detection
-
-An omission is detected when an expected record cannot be found within
-a deterministic search scope.
-
-Omission detection is a form of governance evaluation applied to evidence expectations and scopes.
-
-The detection process must reference:
-
-- the defined expectation
-- the deterministic search scope
-- the observation that the expected record is absent
-- the relevant schema context from SCHEMA_LOG
-
-### Governance event
-
-When omission evidence (E−) is confirmed, the system records the event:
-
-OMISSION_DETECTED
-
-The event represents the governance recording of verified omission evidence (E−).
-
-The event MUST be written to:
-
-AUDIT_LOG
-
-### Human interpretation
-
-Detection of an omission does not automatically imply fault.
-
-Interpretation, escalation, or resolution MAY require human evaluation.
-
-When human accountability is required, the system records:
-
-HUMAN_DECISION
-
----
-
-## Rationale
-
-Institutional failures frequently manifest as omissions rather than
-incorrect actions.
-
-By explicitly recording omissions, governance systems can detect
-structural failures that would otherwise remain invisible.
-
----
-
-## Backwards compatibility
-
-Not applicable (initial omission detection specification).
-
----
-
-## Security considerations
-
-Incorrect omission detection may occur due to:
-
-- incomplete search scope
-- inconsistent schema interpretation
-- corrupted logs
-- unauthorized audit writers
-
-Implementations must ensure deterministic search scopes and reliable
-schema references when deriving omission evidence.
-
----
-
-## License
-
-MIT License
+Later evidence, action, or a derived current view does not erase the historical omission event. Resolution requires a later evaluation of the same expectation version, with a later cutoff and corresponding evidence; evaluation against another expectation version does not resolve it. A `HUMAN_DECISION` about the omission changes neither the event nor its evidence and constitutes neither E+ nor E−.

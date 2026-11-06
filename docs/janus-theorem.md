@@ -1,57 +1,15 @@
-# The Janus Governance Completeness Property
+# Historical Note — Governance Coverage Intuition
 
-## 1. Context
+This document preserves a pedagogical intuition formerly described as a “completeness property.” It is nonnormative and does not assert a theorem, exhaustive outcome algebra, runtime proof, or measurable conformance result.
 
-Janus is a governance evaluation model where actions that require oversight must produce structured evidence.
+## Evidence classes
 
-Janus distinguishes two types of evidence:
+E+ classifies explicit recorded evidence. E− classifies evidence derived from a verified absence under the full Core v0.2 conditions. They are neither Boolean complements nor mutually exhaustive outcomes, and they are not event types or verdicts.
 
-E+ = positive evidence (required event occurred)  
-E− = omission evidence (required event missing)
+`HUMAN_DECISION` is a canonical event recording a prior human act; it is not E+. `OMISSION_DETECTED` records a qualified E− observation; it is not itself E−.
 
-## 2. Governance Requirement
+## Limited intuition
 
-If an action requires governance validation, the system must evaluate whether the required event occurred.
+A governance design can reduce silent failure by declaring versioned expectations and observing both available records and qualified absences. That design goal does not imply that every activity resolves into exactly one of E+ or E−, that every missing record is E−, or that the resulting system is complete.
 
-Example:
-
-CHANGE_PROPOSED requires HUMAN_DECISION.
-
-## 3. The Janus Completeness Property
-
-For governance-required actions:
-
-E+ ∪ E− = governance truth
-
-Every governance-relevant action must produce exactly one evaluable outcome:
-
-- E+ : the required event occurred  
-- E− : the required event did not occur and omission is recorded
-
-Therefore governance evaluation cannot remain silent.
-
-## 4. Deterministic Consequence
-
-Because every action produces either E+ or E−:
-
-governance outcomes = E+ + E−
-
-No governance-required action disappears from the system state.
-
-## 5. Runtime Validation
-
-The reference runtime demonstrates the property.
-
-Example:
-
-1000 CHANGE_PROPOSED  
-→ 464 HUMAN_DECISION_REGISTERED (E+)  
-→ 536 OMISSION_DETECTED (E−)
-
-Consistency:
-
-464 + 536 = 1000
-
-## 6. Principle
-
-A governance system is complete when every required action resolves into positive evidence or omission evidence.
+Any historical counts or stress-test examples belong to illustrative runtime material and provide no normative or statistical claim about Core Lite v0.2.
