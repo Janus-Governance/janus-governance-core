@@ -1,0 +1,19 @@
+{
+  "name": "@janus/html-site-generator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.13.1"
+  },
+  "packageManager": "npm@11.8.0",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "check": "node check.mjs",
+    "test": "node --test test/site.test.mjs"
+  },
+  "dependencies": {
+    "markdown-it": "14.3.3",
+    "parse5": "7.3.0"
+  }
+}

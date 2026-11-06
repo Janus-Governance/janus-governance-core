@@ -1,0 +1,51 @@
+{
+  "contract_version": "janus-html-generator-v1",
+  "generator_version": "1.0.0",
+  "manifest_contract_version": "janus-html-source-authority-v1",
+  "markdown_engine": {
+    "name": "markdown-it",
+    "version": "14.3.3",
+    "options": {
+      "html": false,
+      "linkify": false,
+      "typographer": false,
+      "breaks": false
+    },
+    "plugins": []
+  },
+  "safe_external_schemes": [
+    "https:",
+    "mailto:"
+  ],
+  "repository_source_base": "https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/",
+  "repository_source_targets": [
+    "CONTRIBUTING.md",
+    "core/lite/JANUS_CORE_LITE_v0.2.md",
+    "docs/architecture/core-lite-overview.md",
+    "docs/architecture/governance-event-structure.md",
+    "docs/architecture/rebuild-model.md",
+    "docs/governance/governance-pipeline.md",
+    "docs/governance/governance-scope.md",
+    "runtimes/demo-node/README.md"
+  ],
+  "chrome_text": {
+    "site_name": "Janus Governance Core",
+    "skip_link": "Skip to main content",
+    "blocked_banner": "Publication blocked",
+    "primary_navigation_label": "Primary",
+    "breadcrumb_label": "Breadcrumb",
+    "breadcrumb_home": "Home",
+    "document_status_prefix": "Document status:",
+    "authority_prefix": "Governing authority:",
+    "authority_name": "Core Lite v0.2",
+    "contract_label": "Contract:",
+    "generator_label": "Generator:",
+    "source_hash_label": "Source SHA-256:",
+    "repository_source_indicator_visible": "[repository source]",
+    "repository_source_indicator_aria": "Repository source",
+    "alias_continue_prefix": "Continue to",
+    "alias_continue_suffix": "."
+  },
+  "robots": "noindex,nofollow",
+  "language": "en"
+}

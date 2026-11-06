@@ -1,0 +1,28 @@
+{
+  "ROOT_NAVIGATION": [
+    { "label": "Home", "route": "/" },
+    { "label": "Documentation", "route": "/docs/" },
+    { "label": "Demos", "route": "/demos/" },
+    { "label": "RFCs", "route": "/rfcs/" },
+    { "label": "Runtimes", "route": "/runtimes/" }
+  ],
+  "DEMOS_NAVIGATION": [
+    { "label": "Home", "route": "/" },
+    { "label": "Demos", "route": "/demos/" }
+  ],
+  "DOCS_NAVIGATION": [
+    { "label": "Home", "route": "/" },
+    { "label": "Documentation", "route": "/docs/" },
+    { "label": "What is Janus?", "route": "/docs/janus-explained.html" },
+    { "label": "Runtime model", "route": "/docs/runtime-model.html" }
+  ],
+  "RFCS_NAVIGATION": [
+    { "label": "Home", "route": "/" },
+    { "label": "RFCs", "route": "/rfcs/" }
+  ],
+  "RUNTIMES_NAVIGATION": [
+    { "label": "Home", "route": "/" },
+    { "label": "Runtimes", "route": "/runtimes/" },
+    { "label": "Demos", "route": "/demos/" }
+  ]
+}

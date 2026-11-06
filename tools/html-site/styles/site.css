@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
+
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+
+.site-name {
+  font-weight: 700;
+}
+
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
