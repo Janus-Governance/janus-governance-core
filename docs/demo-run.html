@@ -1,155 +1,104 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Janus Demo — 60 Second Proof</title>
-    <meta name="description" content="Demo run — Janus docs." />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Informative walkthrough of the bounded demonstration context.">
+<title>Janus Demo — Illustrative Walkthrough</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 56px 20px 64px;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      .back {
-        display: inline-block;
-        margin-bottom: 18px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-        text-decoration: none;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      .back:hover,
-      .back:focus {
-        color: #fff;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 18px;
-        text-align: left;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        margin: 24px 0 10px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      h3 {
-        font-size: 1.1rem;
-        font-weight: 650;
-        margin: 18px 0 8px;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      p {
-        margin: 0 0 12px;
-        color: #cfcfcf;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      ul,
-      ol {
-        margin: 0 0 14px;
-        padding-left: 22px;
-        color: #cfcfcf;
-      }
-
-      li {
-        margin: 6px 0;
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          "Courier New", monospace;
-        font-size: 0.95em;
-        color: #fff;
-        background: #111;
-        padding: 0.15em 0.35em;
-        border-radius: 6px;
-      }
-
-      pre {
-        margin: 0 0 14px;
-        padding: 12px 14px;
-        background: #0b0b0b;
-        border: 1px solid #1a1a1a;
-        border-radius: 10px;
-        overflow: auto;
-      }
-
-      pre code {
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        color: #cfcfcf;
-      }
-
-      blockquote {
-        margin: 0 0 14px;
-        padding: 10px 14px;
-        border-left: 3px solid #222;
-        background: #0b0b0b;
-        border-radius: 8px;
-      }
-
-      blockquote p {
-        margin: 0;
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid #111;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/docs/">Back to docs</a>
-      <h1>Janus Demo — 60 Second Proof</h1>
-      <h2>1. What this proves</h2>
-<p>This demo validates:</p>
-<ul><li>governance evaluation</li><li>omission detection</li><li>human authority registration</li><li>audit writing</li><li>deterministic rebuild</li></ul>
-<h2>2. Run</h2>
-<p>node runtimes/demo-node/demo.js</p>
-<h2>3. Expected output</h2>
-<p>FLOW A — omission case { "requiredEvent": "HUMAN_DECISION", "proposedChanges": 1, "humanDecisionPresent": false, "auditEventsWritten": [ "OMISSION_DETECTED" ] }</p>
-<p>REBUILD STATE { "proposedChanges": 1, "humanDecisionPresent": false, "omissionsDetected": 1, "auditEvents": 1 }</p>
-<p>FLOW B — approved case { "requiredEvent": "HUMAN_DECISION", "proposedChanges": 1, "humanDecisionPresent": true, "auditEventsWritten": [ "HUMAN_DECISION_REGISTERED" ] }</p>
-<p>FLOW C — rebuild { "proposedChanges": 1, "humanDecisionPresent": true, "omissionsDetected": 0, "auditEvents": 1 }</p>
-<h2>4. Interpretation</h2>
-<ul><li>Janus does not only log activity</li><li>it evaluates governance conditions</li><li>records omission as structured evidence</li><li>preserves human authority</li><li>rebuilds state from logs</li></ul>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/docs/janus-explained.html">What is Janus?</a></li><li><a href="/docs/runtime-model.html">Runtime model</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Janus Demo — Illustrative Walkthrough</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">INFORMATIVE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="docs/demo-run.md">
+<h1 id="janus-demo-illustrative-walkthrough">Janus Demo — Illustrative Walkthrough</h1>
+<p>This document describes an illustrative scenario. It is not executable proof, does not claim actual runtime behavior, and does not establish Core conformance. Runtime reconciliation and testing remain pending Gate 3 evaluation.</p>
+<h2 id="scenario-a-qualified-omission">Scenario A — qualified omission</h2>
+<p>Assume the complete E− conditions restated in <code>governance/governance-scope.md</code> are met for a versioned expectation requiring a human decision record. Only then may an <code>OMISSION_DETECTED</code> candidate be prepared.</p>
+<p>The candidate references the expectation, deterministic scope, schema, and nonempty evidence set. It is submitted through the exclusive Audit Writer boundary for incorporation into <code>AUDIT_LOG</code> under the applicable event rules.</p>
+<h2 id="scenario-b-prior-human-decision">Scenario B — prior human decision</h2>
+<p>A designated human authority performs a decision within an identified competence. A <code>HUMAN_DECISION</code> record candidate identifies the actor, competence, nonempty objects decided, time of the human act, and recording time. The Audit Writer rejects incorporation if canonical <code>object_refs</code> do not resolve and never makes the decision or evaluates competence.</p>
+<h2 id="scenario-c-reconstruction">Scenario C — reconstruction</h2>
+<p>An implementation resolves typed references across preserved logs and evidence to derive a current view. The derived view does not replace append-only history.</p>
+<p>The current Node source is legacy and nonconforming pending Gate 3. Its implementation-only label <code>HUMAN_DECISION_REGISTERED</code> must not be interpreted as a canonical Core event. <code>HUMAN_DECISION</code> remains the sole canonical human-authority event under Core Lite v0.2.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> d6d1967d23d9455713fdcf93fba5cc40853759e23df01eaecebd32b8ad951a72</span></p></footer>
+</body>
 </html>

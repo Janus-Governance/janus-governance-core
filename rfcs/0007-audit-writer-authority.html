@@ -1,86 +1,108 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RFC 0007 — Audit Writer Authority</title>
-    <meta name="description" content="RFC 0007 — Audit Writer Authority — Janus RFC." />
-    <style>
-      :root { color-scheme: dark; }
-      body { margin: 0; padding: 0; background: #000; color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
-      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
-      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
-        font-size: 0.98rem; text-decoration: none; }
-      .back:hover, .back:focus { color: #fff; text-decoration: underline;
-        text-underline-offset: 3px; }
-      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
-        margin: 0 0 18px; text-align: left; }
-      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
-        margin: 24px 0 10px; }
-      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
-      p { margin: 0 0 12px; color: #cfcfcf; }
-      a { color: #fff; text-decoration: none; }
-      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
-      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
-      li { margin: 6px 0; }
-      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
-        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
-      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
-        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
-      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
-      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
-        background: #0b0b0b; border-radius: 8px; }
-      blockquote p { margin: 0; }
-      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0007 — Audit Writer Authority</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
-<hr />
-<h2>Summary</h2>
-<p>This RFC defines the minimal writer authority rule for AUDIT_LOG.</p>
-<p>Janus requires that AUDIT_LOG governance events be written only through authorized audit writer flows, to prevent unauthorized governance records and shadow authority.</p>
-<hr />
-<h2>Motivation</h2>
-<p>If any component can write to AUDIT_LOG, governance can be forged.</p>
-<p>Writer authority is therefore a minimal kernel requirement.</p>
-<p>This RFC defines the smallest rule set required to ensure that:</p>
-<ul><li>governance events are not written by unauthorized actors</li><li>human accountability is not bypassed</li><li>audit records remain trustworthy</li></ul>
-<hr />
-<h2>Specification</h2>
-<h3>Audit writer</h3>
-<p>An Audit Writer is the only authorized mechanism allowed to append governance events to AUDIT_LOG.</p>
-<p>Implementations MUST ensure that all governance events in AUDIT_LOG are produced through the Audit Writer.</p>
-<h3>Minimal authority rule</h3>
-<p>The system MUST prevent direct writes to AUDIT_LOG that bypass the Audit Writer.</p>
-<h3>Relationship with governance evaluation</h3>
-<p>Governance evaluation flows (RFC 0006) may produce governance events (RFC 0005), but those events MUST be appended to AUDIT_LOG only via the Audit Writer.</p>
-<h3>Human decision enforcement</h3>
-<p>When a governance flow requires explicit human accountability (RFC 0004), the Audit Writer MUST record HUMAN_DECISION and MUST NOT substitute it with automated inference.</p>
-<h3>Event coverage</h3>
-<p>At minimum, the Audit Writer MUST support recording:</p>
-<ul><li>OMISSION_DETECTED (RFC 0003)</li><li>HUMAN_DECISION (RFC 0004)</li></ul>
-<hr />
-<h2>Rationale</h2>
-<p>Writer authority is a kernel-level control.</p>
-<p>It creates a clear boundary between evaluation processes and the authoritative audit record.</p>
-<hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial writer authority specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Risks addressed include:</p>
-<ul><li>unauthorized audit event injection</li><li>audit log forgery</li><li>bypass of required HUMAN_DECISION</li></ul>
-<p>Implementations must ensure that the Audit Writer authority boundary is enforced at the storage or transport surface.</p>
-<hr />
-<h2>License</h2>
-<p>MIT License</p>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Draft nonnormative RFC subordinate to Core Lite v0.2.">
+<title>RFC 0007 — Audit Writer Authority</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
+
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+
+.site-name {
+  font-weight: 700;
+}
+
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/rfcs/">RFCs</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">RFC 0007 — Audit Writer Authority</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">DRAFT</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="rfcs/0007-audit-writer-authority.md">
+<h1 id="rfc-0007-audit-writer-authority">RFC 0007 — Audit Writer Authority</h1>
+<p>Status: Draft<br>
+Author: Martín Nicolás Sánchez Morales<br>
+Created: 2026</p>
+<p>This nonnormative Draft is subordinate to Core Lite v0.2.</p>
+<h2 id="exclusive-writer">Exclusive writer</h2>
+<p>The Audit Writer is the only mechanism authorized to append canonical governance events to <code>AUDIT_LOG</code>. Implementations must prevent direct or alternate writes that bypass it.</p>
+<h2 id="core-responsibilities">Core responsibilities</h2>
+<p>The writer prevents bypass and is the exclusive canonical appender. It incorporates accepted records into append-only history under the applicable canonical event rules.</p>
+<p>For <code>HUMAN_DECISION</code>, the writer rejects incorporation when canonical <code>object_refs</code> do not resolve against previously incorporated history. It otherwise incorporates a record of a prior human act. It does not originate the decision, resolve competence, infer authority, or substitute automation for the human.</p>
+<h2 id="draft-framework-extension">Draft Framework extension</h2>
+<p>A noncanonical Framework profile may assign broader structural checks for event-specific fields, timestamps, reference sets, or qualified E− support. Those proposed checks are not universal Audit Writer duties under Core Lite v0.2, and they cannot turn an unqualified absence into E− or create human authority.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>Controls should address bypass, unauthorized injection, ambiguous authority, unresolved references, and post-write mutation.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> 37209b0157b0fe2ce8e5847c641b86861004929d265e9e11d1eec593c613f011</span></p></footer>
+</body>
 </html>

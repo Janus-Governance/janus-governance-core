@@ -1,192 +1,123 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Glossary (Normative)</title>
-    <meta name="description" content="Glossary — Janus docs." />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Subordinate glossary for terminology used by the governing specification.">
+<title>Glossary (Normative, Subordinate)</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 56px 20px 64px;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      .back {
-        display: inline-block;
-        margin-bottom: 18px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-        text-decoration: none;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      .back:hover,
-      .back:focus {
-        color: #fff;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 18px;
-        text-align: left;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        margin: 24px 0 10px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      h3 {
-        font-size: 1.1rem;
-        font-weight: 650;
-        margin: 18px 0 8px;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      p {
-        margin: 0 0 12px;
-        color: #cfcfcf;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      ul,
-      ol {
-        margin: 0 0 14px;
-        padding-left: 22px;
-        color: #cfcfcf;
-      }
-
-      li {
-        margin: 6px 0;
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          "Courier New", monospace;
-        font-size: 0.95em;
-        color: #fff;
-        background: #111;
-        padding: 0.15em 0.35em;
-        border-radius: 6px;
-      }
-
-      pre {
-        margin: 0 0 14px;
-        padding: 12px 14px;
-        background: #0b0b0b;
-        border: 1px solid #1a1a1a;
-        border-radius: 10px;
-        overflow: auto;
-      }
-
-      pre code {
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        color: #cfcfcf;
-      }
-
-      blockquote {
-        margin: 0 0 14px;
-        padding: 10px 14px;
-        border-left: 3px solid #222;
-        background: #0b0b0b;
-        border-radius: 8px;
-      }
-
-      blockquote p {
-        margin: 0;
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid #111;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/docs/">Back to docs</a>
-      <h1>Glossary (Normative)</h1>
-      <p>This glossary defines canonical meanings for terms used by Janus specifications in this repository.</p>
-<p>Semantic stability rule: when a term in this glossary is changed, any dependent specification text MUST be reviewed and updated accordingly.</p>
-<h2>Conventions</h2>
-<ul><li>Capitalized tokens (e.g., <code>AUDIT_LOG</code>, <code>OMISSION_DETECTED</code>) denote canonical identifiers.</li><li>RFC 2119 keywords (MUST, SHOULD, MAY) are used for normative requirements.</li></ul>
-<h2>Canonical terms</h2>
-<h3>Adapter</h3>
-<p>A component that maps between Janus runtime interfaces and an external storage or transport surface.</p>
-<p>Adapters do not define Core semantics; they implement a mapping.</p>
-<h3><code>AUDIT_LOG</code></h3>
-<p>An append-only log that records audit-relevant events, evaluations, and attestations needed to support review.</p>
-<p><code>AUDIT_LOG</code> entries MAY reference records from <code>MANAGEMENT_LOG</code> and <code>SCHEMA_LOG</code> when relevant, and MAY also represent governance events that do not originate in those logs (e.g., <code>OMISSION_DETECTED</code>).</p>
-<p>An <code>AUDIT_LOG</code> entry MAY record:</p>
-<ul><li>gate outcomes and their explanations (<code>gates</code>)</li><li>risk classifications (e.g., R2) and escalation/handling outcomes</li><li>explicit human accountability events (<code>HUMAN_DECISION</code>)</li><li>omission findings (<code>OMISSION_DETECTED</code>) and their supporting omission evidence (E−)</li></ul>
-<p><code>AUDIT_LOG</code> entries SHOULD preserve linkability to the originating expectations, scopes, and referenced artifacts.</p>
-<h3>contractRef</h3>
-<p>A stable reference to an external rule source that is outside the Janus repository (e.g., policy text, contract clause, regulation section, internal procedure).</p>
-<p><code>contractRef</code> is a reference mechanism only. It does not import external text into Core semantics.</p>
-<h3>E+ (explicit evidence)</h3>
-<p>Evidence explicitly recorded in a system of record.</p>
-<p>E+ indicates that a claim or event is supported by a recorded artifact.</p>
-<h3>E− (omission evidence)</h3>
-<p>Evidence derived from a verified absence of an expected record.</p>
-<p>E− requires:</p>
-<ul><li>a defined expectation</li><li>a deterministic search scope</li><li>a reproducible observation showing the record is missing.</li></ul>
-<p>E− is not counter-argumentation. It represents a verified omission relative to an explicit expectation.</p>
-<h3>gates</h3>
-<p>Framework-defined checks that mediate state transitions or outputs.</p>
-<p>A gate consumes inputs (e.g., proposed actions, evidence sets, risk flags) and produces a decision (allow, block, require escalation) plus an auditable explanation.</p>
-<h3><code>HUMAN_DECISION</code></h3>
-<p>A canonical event indicating that a designated human authority has made or confirmed a decision.</p>
-<p>When a specification requires human accountability, the system MUST record a <code>HUMAN_DECISION</code> and MUST NOT substitute it with an automated inference.</p>
-<h3>Management</h3>
-<p>The superset organizational context in which decisions, actions, and accountability occur.</p>
-<p>Examples include government, project, education, and business contexts.</p>
-<h3><code>MANAGEMENT_LOG</code></h3>
-<p>An append-only log of management-relevant events.</p>
-<p>Typical entries include proposals, actions, decisions (including <code>HUMAN_DECISION</code>), assignments, exceptions, and references to evidence artifacts.</p>
-<h3><code>OMISSION_DETECTED</code></h3>
-<p>A canonical event type indicating that an expected record, state, or linkage is missing.</p>
-<p>An <code>OMISSION_DETECTED</code> event MUST include enough context to support E− (omission evidence), including: the expectation definition, the deterministic search scope, the reproducible observation that the expected record is absent, and the scope/time window to which the omission applies.</p>
-<h3>R2</h3>
-<p>A risk classification indicating that a matter requires heightened controls.</p>
-<p>At minimum, R2 handling MUST require explicit escalation rules and MUST support human final authority where accountability is required.</p>
-<h3>Runtime</h3>
-<p>An execution environment that runs a Janus workflow or protocol implementation.</p>
-<p>Runtimes implement the Core and Framework specifications but do not redefine their semantics.</p>
-<h3><code>SCHEMA_LOG</code></h3>
-<p>An append-only log that defines schema declarations and schema versions used to interpret other logs.</p>
-<p>If an event format or meaning depends on a schema version, the relevant <code>SCHEMA_LOG</code> entry MUST be referencable from the consuming record.</p>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/docs/janus-explained.html">What is Janus?</a></li><li><a href="/docs/runtime-model.html">Runtime model</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Glossary (Normative, Subordinate)</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">SUBORDINATE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="docs/glossary.md">
+<h1 id="glossary-normative-subordinate">Glossary (Normative, Subordinate)</h1>
+<p>This glossary is normative only within its subordinate role. <code>core/lite/JANUS_CORE_LITE_v0.2.md</code> is the primary normative authority and controls any conflict.</p>
+<p>When a subordinate glossary definition changes, dependent active specifications, documentation, and derived surfaces MUST be reviewed. Any remaining divergence MUST be recorded under the Core hierarchy. This review safeguard does not give the glossary authority to amend or override Core Lite v0.2.</p>
+<h2 id="audit-writer">Audit Writer</h2>
+<p>The exclusive mechanism authorized to append canonical governance events to <code>AUDIT_LOG</code>. It prevents bypass and incorporates records under the applicable canonical event rules. For <code>HUMAN_DECISION</code>, it rejects incorporation when canonical <code>object_refs</code> are not resolvable against previously incorporated history. It cannot originate authority, competence, human judgment, or the human act represented by <code>HUMAN_DECISION</code>. Broader structural validation belongs only to an applicable noncanonical Framework or implementation profile.</p>
+<h2 id="audit-log"><code>AUDIT_LOG</code></h2>
+<p>The append-only log for governance events, accountability records, and audit findings. Derived views and noncanonical gate results may be associated with audit processing but do not become canonical Core event types merely by being stored or referenced.</p>
+<h2 id="e-explicit-evidence">E+ (explicit evidence)</h2>
+<p>The class of evidence explicitly recorded in a system of record. It is not a Boolean value, verdict, event type, or exhaustive outcome. <code>HUMAN_DECISION</code> is not E+.</p>
+<h2 id="e-omission-evidence">E− (omission evidence)</h2>
+<p>The class of evidence derived from a verified absence only when all Core v0.2 expectation, provenance, prior-observation, timing, deterministic-scope, cutoff, procedure, schema, and reproducibility conditions are met. Missing data alone is not E−.</p>
+<h2 id="gate-result">Gate result</h2>
+<p>An implementation- or framework-level result such as allow, block, escalate, pass, or fail. A gate result is noncanonical under Core Lite v0.2 unless a later Core version explicitly adopts an event type for it.</p>
+<h2 id="human-decision"><code>HUMAN_DECISION</code></h2>
+<p>The sole canonical human-authority event under Core Lite v0.2. It records a prior act by a designated human authority and requires <code>event_type</code>, <code>event_id</code>, <code>actor_ref</code>, <code>scope_ref</code>, nonempty <code>object_refs</code>, <code>occurred_at</code>, and <code>recorded_at</code>. AI, evaluation, and the Audit Writer cannot originate the represented act.</p>
+<h2 id="management-log"><code>MANAGEMENT_LOG</code></h2>
+<p>The append-only log of domain activity. <code>HUMAN_DECISION</code> is a governance event in <code>AUDIT_LOG</code>, not a <code>MANAGEMENT_LOG</code> event.</p>
+<h2 id="object-refs"><code>object_refs</code></h2>
+<p>The unordered, duplicate-free, nonempty typed references identifying exactly what a <code>HUMAN_DECISION</code> decided. Each target is a previously incorporated record or event in one of the three canonical logs, identified by origin log and stable identity; external artifacts and derived views are inadmissible. They are distinct from actor, competence, evidence, schema, and general domain context.</p>
+<h2 id="omission-detected"><code>OMISSION_DETECTED</code></h2>
+<p>The canonical event that records a qualified instance of E−. The event is not itself E− and requires <code>event_type</code>, <code>event_id</code>, a versioned expectation reference, deterministic scope with cutoff, schema reference, nonempty evidence references, and <code>recorded_at</code> as its only own time.</p>
+<h2 id="reference-resolution">Reference resolution</h2>
+<p>The rule by which a typed reference identifies and retrieves its target in the applicable log or artifact system. Core requires <code>HUMAN_DECISION.object_refs</code> to resolve before incorporation. Evidence supporting E+ or E− uses immutable, resolvable artifact references where Core requires them. Resolution of <code>actor_ref</code> and evaluation of competence belong to Framework; other resolution duties depend on the applicable event or implementation profile. References with different roles are not interchangeable, and no event may reference itself.</p>
+<h2 id="runtime">Runtime</h2>
+<p>An execution environment implementing Janus semantics. Runtime behavior and conformance require separate validation; documentation or a demo does not establish them.</p>
+<h2 id="schema-log"><code>SCHEMA_LOG</code></h2>
+<p>The append-only log of versioned schema declarations used to interpret records.</p>
+<h2 id="scope-ref"><code>scope_ref</code></h2>
+<p>A typed reference whose role depends on the event profile: competence for <code>HUMAN_DECISION</code>, deterministic search scope for <code>OMISSION_DETECTED</code>. It does not identify the decision object or substitute for evidence.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> 9e0ac1b2aec4e5f97af30a4a419a959f4c811ea100160cff0164d57282440143</span></p></footer>
+</body>
 </html>

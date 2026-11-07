@@ -1,151 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Janus Governance Core — Roadmap</title>
-    <meta name="description" content="Roadmap — Janus docs." />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Informative project sequence with historical, current, and pending states.">
+<title>Janus Governance Core — Roadmap</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 56px 20px 64px;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      .back {
-        display: inline-block;
-        margin-bottom: 18px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-        text-decoration: none;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      .back:hover,
-      .back:focus {
-        color: #fff;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 18px;
-        text-align: left;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        margin: 24px 0 10px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      h3 {
-        font-size: 1.1rem;
-        font-weight: 650;
-        margin: 18px 0 8px;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      p {
-        margin: 0 0 12px;
-        color: #cfcfcf;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      ul,
-      ol {
-        margin: 0 0 14px;
-        padding-left: 22px;
-        color: #cfcfcf;
-      }
-
-      li {
-        margin: 6px 0;
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          "Courier New", monospace;
-        font-size: 0.95em;
-        color: #fff;
-        background: #111;
-        padding: 0.15em 0.35em;
-        border-radius: 6px;
-      }
-
-      pre {
-        margin: 0 0 14px;
-        padding: 12px 14px;
-        background: #0b0b0b;
-        border: 1px solid #1a1a1a;
-        border-radius: 10px;
-        overflow: auto;
-      }
-
-      pre code {
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        color: #cfcfcf;
-      }
-
-      blockquote {
-        margin: 0 0 14px;
-        padding: 10px 14px;
-        border-left: 3px solid #222;
-        background: #0b0b0b;
-        border-radius: 8px;
-      }
-
-      blockquote p {
-        margin: 0;
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid #111;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/docs/">Back to docs</a>
-      <h1>Janus Governance Core — Roadmap</h1>
-      <h2>Phase 1 — Genesis (completed)</h2>
-<ul><li>Core Lite v0.1</li><li>RFC 0001–0008</li><li>Public repository</li><li>GitHub Pages documentation</li></ul>
-<h2>Phase 2 — Stabilization</h2>
-<ul><li>RFC review cycle</li><li>Core Lite v0.2</li><li>Reference runtime examples</li><li>Governance evaluation layer</li></ul>
-<h2>Phase 3 — Ecosystem</h2>
-<ul><li>SDK prototypes</li><li>Storage adapters</li><li>Governance event validator</li></ul>
-<h2>Phase 4 — Adoption</h2>
-<ul><li>Institutional implementations</li><li>Compliance integrations</li><li>Audit tooling</li></ul>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/docs/janus-explained.html">What is Janus?</a></li><li><a href="/docs/runtime-model.html">Runtime model</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Janus Governance Core — Roadmap</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">INFORMATIVE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="docs/roadmap.md">
+<h1 id="janus-governance-core-roadmap">Janus Governance Core — Roadmap</h1>
+<blockquote>
+<p><strong>Status:</strong> Informative. This roadmap is subordinate to <a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/core/lite/JANUS_CORE_LITE_v0.2.md" data-janus-link-kind="repository-source">Core Lite v0.2</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span>, which remains <strong>Draft</strong>.</p>
+</blockquote>
+<p>Roadmap milestones describe project sequencing only. No milestone constitutes a HEAD decision, release, promotion, conformance determination, or authorization to publish.</p>
+<h2 id="phase-1-genesis-historical-record">Phase 1 — Genesis (historical record)</h2>
+<ul>
+<li>Core Lite v0.1 and RFC 0001–0008 were introduced.</li>
+<li>Repository and documentation surfaces were established.</li>
+<li>This phase is historical context, not certification or evidence of current conformance.</li>
+</ul>
+<h2 id="phase-2-stabilization-in-progress">Phase 2 — Stabilization (<code>IN_PROGRESS</code>)</h2>
+<ul>
+<li>Core Lite v0.2 status: <strong>Draft</strong>.</li>
+<li>Markdown source semantic reconciliation: locally committed.</li>
+<li>HTML source authority: defined by the versioned source manifest under HEAD authorization; generator implementation, deterministic HTML output, and rendered-output review remain pending.</li>
+<li>Runtime migration and validation: deferred to Gate 3.</li>
+<li>Contract tests and CI enforcement: pending.</li>
+<li>Publication: <strong>BLOCKED</strong> pending Gate 1 HTML reconciliation and later authorization.</li>
+</ul>
+<h2 id="phase-3-ecosystem-pending">Phase 3 — Ecosystem (pending)</h2>
+<ul>
+<li>Runtime conformance profile and migration work.</li>
+<li>SDK prototypes and storage adapters.</li>
+<li>Governance event validation work.</li>
+</ul>
+<h2 id="phase-4-adoption-pending">Phase 4 — Adoption (pending)</h2>
+<ul>
+<li>Institutional implementation work.</li>
+<li>Integration and audit tooling exploration.</li>
+</ul>
+<p>These future phases are planning labels only and do not assert implementation, acceptance, conformance, release, or publication.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> 59f70ebc054c091a020c14acca7ee3ef60ab90faa782e0820575b31b43490788</span></p></footer>
+</body>
 </html>

@@ -1,94 +1,115 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RFC 0008 — Log Reference Model</title>
-    <meta name="description" content="RFC 0008 — Log Reference Model — Janus RFC." />
-    <style>
-      :root { color-scheme: dark; }
-      body { margin: 0; padding: 0; background: #000; color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
-      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
-      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
-        font-size: 0.98rem; text-decoration: none; }
-      .back:hover, .back:focus { color: #fff; text-decoration: underline;
-        text-underline-offset: 3px; }
-      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
-        margin: 0 0 18px; text-align: left; }
-      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
-        margin: 24px 0 10px; }
-      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
-      p { margin: 0 0 12px; color: #cfcfcf; }
-      a { color: #fff; text-decoration: none; }
-      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
-      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
-      li { margin: 6px 0; }
-      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
-        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
-      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
-        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
-      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
-      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
-        background: #0b0b0b; border-radius: 8px; }
-      blockquote p { margin: 0; }
-      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0008 — Log Reference Model</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
-<hr />
-<h2>Summary</h2>
-<p>This RFC defines the reference relationships between the canonical append-only logs defined in Janus Core Lite.</p>
-<p>The model ensures that governance events can be traced to the domain records, schema context, and evidence artifacts that support them.</p>
-<hr />
-<h2>Motivation</h2>
-<p>Janus governance relies on multiple append-only logs:</p>
-<ul><li>MANAGEMENT_LOG</li><li>SCHEMA_LOG</li><li>AUDIT_LOG</li></ul>
-<p>Without explicit reference rules, relationships between these logs may become ambiguous.</p>
-<p>This RFC defines the minimal reference model required to maintain traceability and deterministic reconstruction of governance outcomes.</p>
-<hr />
-<h2>Specification</h2>
-<h3>Canonical logs</h3>
-<p>Janus Core Lite defines three canonical logs:</p>
-<ul><li>MANAGEMENT_LOG</li><li>SCHEMA_LOG</li><li>AUDIT_LOG</li></ul>
-<p>Each log records a different class of information:</p>
-<ul><li>Domain activity → MANAGEMENT_LOG</li><li>Schema evolution → SCHEMA_LOG</li><li>Governance outcomes → AUDIT_LOG</li></ul>
-<hr />
-<h3>Reference relationships</h3>
-<p>Governance events recorded in AUDIT_LOG SHOULD reference relevant records that support their evaluation context.</p>
-<p>These references may include:</p>
-<ul><li>domain records from MANAGEMENT_LOG</li><li>schema definitions from SCHEMA_LOG</li><li>supporting evidence artifacts</li></ul>
-<p>References allow governance events to be interpreted and validated within the correct historical and structural context.</p>
-<hr />
-<h3>Evidence linkage</h3>
-<p>When governance events rely on explicit evidence (E+) or omission evidence (E−), the event SHOULD reference the relevant evidence artifacts or the deterministic search scope used during evaluation.</p>
-<hr />
-<h3>Rebuildability</h3>
-<p>The reference model supports the deterministic rebuildability principle defined in RFC 0001.</p>
-<p>Given:</p>
-<ul><li>canonical logs</li><li>schema definitions</li><li>referenced evidence artifacts</li></ul>
-<p>an implementation should be able to reconstruct the governance interpretation associated with a recorded event.</p>
-<hr />
-<h2>Rationale</h2>
-<p>Explicit reference relationships ensure that governance outcomes remain traceable to the domain activity and schema context from which they were derived.</p>
-<p>This model prevents governance events from becoming detached from the records required to interpret them.</p>
-<hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial log reference model specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Risks related to log references include:</p>
-<ul><li>missing or incomplete references</li><li>inconsistent schema interpretation</li><li>evidence artifacts that cannot be retrieved</li></ul>
-<p>Implementations must ensure that governance events preserve sufficient reference context to allow later verification and reconstruction.</p>
-<hr />
-<h2>License</h2>
-<p>MIT License</p>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Draft nonnormative RFC subordinate to Core Lite v0.2.">
+<title>RFC 0008 — Log Reference Model</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
+
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+
+.site-name {
+  font-weight: 700;
+}
+
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/rfcs/">RFCs</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">RFC 0008 — Log Reference Model</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">DRAFT</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="rfcs/0008-log-reference-model.md">
+<h1 id="rfc-0008-log-reference-model">RFC 0008 — Log Reference Model</h1>
+<p>Status: Draft<br>
+Author: Martín Nicolás Sánchez Morales<br>
+Created: 2026</p>
+<p>This nonnormative Draft is subordinate to Core Lite v0.2.</p>
+<h2 id="typed-references">Typed references</h2>
+<p>Reference roles are distinct:</p>
+<ul>
+<li><code>actor_ref</code> identifies the human authority</li>
+<li><code>scope_ref</code> identifies competence for <code>HUMAN_DECISION</code> or deterministic search scope for <code>OMISSION_DETECTED</code></li>
+<li><code>object_refs</code> identify exactly what was decided</li>
+<li><code>expectation_ref</code> identifies the prior versioned expectation</li>
+<li><code>schema_ref</code> identifies interpretive schema context</li>
+<li><code>evidence_refs</code> identify supporting observations or artifacts</li>
+<li><code>management_refs</code> optionally identify additional domain context</li>
+</ul>
+<p>One role cannot silently substitute for another. Core requires <code>HUMAN_DECISION.object_refs</code> to be nonempty and resolvable against previously incorporated history before incorporation. Evidence supporting E+ or E− uses immutable, resolvable artifact references where Core requires them. Resolution of <code>actor_ref</code> and evaluation of competence belong to Framework; other resolution duties depend on the applicable event or implementation profile. No event reference may resolve to the event itself.</p>
+<h2 id="reconstruction">Reconstruction</h2>
+<p>Typed, resolvable references support reconstruction of event context from append-only history. A derived current view is not the source history and cannot erase or rewrite it. Reconstruction support is not a guarantee of correctness, availability, conformance, or compliance.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<p>Implementations should detect missing targets, type confusion, mutable targets, cycles, self-reference, and schema-version ambiguity.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> c405690f1c73d736a10e856066c39aca810e8e2bd0c5ed3035fc819e83cb7c37</span></p></footer>
+</body>
 </html>

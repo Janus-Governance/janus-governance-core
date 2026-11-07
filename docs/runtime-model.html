@@ -1,162 +1,118 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Janus Runtime Model</title>
-    <meta name="description" content="Runtime model — Janus docs." />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Informative description of the runtime model and its boundaries.">
+<title>Janus Runtime Model</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 56px 20px 64px;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      .back {
-        display: inline-block;
-        margin-bottom: 18px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-        text-decoration: none;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      .back:hover,
-      .back:focus {
-        color: #fff;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 18px;
-        text-align: left;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        margin: 24px 0 10px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      h3 {
-        font-size: 1.1rem;
-        font-weight: 650;
-        margin: 18px 0 8px;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      p {
-        margin: 0 0 12px;
-        color: #cfcfcf;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      ul,
-      ol {
-        margin: 0 0 14px;
-        padding-left: 22px;
-        color: #cfcfcf;
-      }
-
-      li {
-        margin: 6px 0;
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          "Courier New", monospace;
-        font-size: 0.95em;
-        color: #fff;
-        background: #111;
-        padding: 0.15em 0.35em;
-        border-radius: 6px;
-      }
-
-      pre {
-        margin: 0 0 14px;
-        padding: 12px 14px;
-        background: #0b0b0b;
-        border: 1px solid #1a1a1a;
-        border-radius: 10px;
-        overflow: auto;
-      }
-
-      pre code {
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        color: #cfcfcf;
-      }
-
-      blockquote {
-        margin: 0 0 14px;
-        padding: 10px 14px;
-        border-left: 3px solid #222;
-        background: #0b0b0b;
-        border-radius: 8px;
-      }
-
-      blockquote p {
-        margin: 0;
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid #111;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/docs/">Back to docs</a>
-      <h1>Janus Runtime Model</h1>
-      <h2>1. Purpose</h2>
-<p>Janus defines a governance core; runtimes execute the model in concrete environments.</p>
-<h2>2. Reference Runtime</h2>
-<p>The current Node demo runtime is a reference implementation proving:</p>
-<ul><li>governance evaluation</li><li>omission detection</li><li>evidence model (E+ / E-)</li><li>audit writer boundary</li><li>deterministic rebuild</li></ul>
-<p>Location:</p>
-<p>runtimes/demo-node/</p>
-<p>It is intentionally minimal and designed for demonstration.</p>
-<h2>3. Future Runtimes</h2>
-<p>Production runtimes may implement the same model in different environments, for example:</p>
-<ul><li>Node runtime</li><li>Python runtime</li><li>Apps Script runtime</li><li>Database-backed runtime</li></ul>
-<p>These runtimes must respect the Janus Core invariants.</p>
-<h2>4. Adapters</h2>
-<p>Runtimes may use adapters for:</p>
-<ul><li>storage</li><li>databases</li><li>message systems</li><li>APIs</li></ul>
-<p>Examples:</p>
-<p>filesystem adapter postgres adapter event-stream adapter</p>
-<h2>5. Principle</h2>
-<p>Janus governs system evolution. Runtimes execute governance evaluation.</p>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/docs/janus-explained.html">What is Janus?</a></li><li><a href="/docs/runtime-model.html">Runtime model</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Janus Runtime Model</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">INFORMATIVE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="docs/runtime-model.md">
+<h1 id="janus-runtime-model">Janus Runtime Model</h1>
+<p>This document is informative. Core defines semantics; Framework owns runtimes and operational profiles that apply pinned, approved contracts. The present Node material is classified <code>LEGACY_NONCONFORMING_PENDING_GATE_3</code>; no statement here establishes actual behavior or conformance.</p>
+<h2 id="implementation-responsibilities">Implementation responsibilities</h2>
+<p>A conforming claim would require separate validation. A runtime intended to implement Core should:</p>
+<ul>
+<li>preserve the three canonical append-only logs</li>
+<li>distinguish E+ and qualified E− from events and verdicts</li>
+<li>prevent direct <code>AUDIT_LOG</code> writes outside the Audit Writer</li>
+<li>allow evaluation to originate structural findings but not human authority</li>
+<li>incorporate <code>HUMAN_DECISION</code> only as a record of a prior human act</li>
+<li>preserve the reference duties of each applicable event or implementation profile and preserve historical events</li>
+<li>treat derived current views and gate results as noncanonical outputs</li>
+</ul>
+<h2 id="adapters">Adapters</h2>
+<p>Storage, database, messaging, and API adapters may map runtime interfaces to external systems. They do not redefine Core semantics.</p>
+<h2 id="illustrative-flow">Illustrative flow</h2>
+<ol>
+<li>Observe records and declared expectations in a bounded scope.</li>
+<li>Classify supporting evidence only when the applicable conditions are met.</li>
+<li>Prepare a structural event candidate or receive a record of a prior human act.</li>
+<li>Apply the event-specific checks and incorporate canonical events through the Audit Writer without assigning it authority or competence judgments.</li>
+<li>Derive current views from history, schemas, and referenced artifacts up to a cutoff without rewriting history; re-evaluation alone is not a canonical event.</li>
+</ol>
+<p>These steps describe an intended model, not a tested claim about the repository's current runtime.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> 7ed2d0fab805ad391c55b8e2b44b5447926bbd6e0d387fdc91f36582990e67a6</span></p></footer>
+</body>
 </html>

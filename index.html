@@ -1,324 +1,108 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Janus Governance Core</title>
-    <meta
-      name="description"
-      content="Janus Governance Core — Traceable governance for AI-assisted systems."
-    />
-    <link rel="canonical" href="https://janusgovernance.org/" />
-    <meta property="og:title" content="Janus Governance Core" />
-    <meta
-      property="og:description"
-      content="Janus Governance Core — Traceable governance for AI-assisted systems."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://janusgovernance.org/" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Janus Governance Core",
-        "url": "https://janusgovernance.org/",
-        "description": "Janus Governance Core — Traceable governance for AI-assisted systems."
-      }
-    </script>
-    <style>
-      :root {
-        color-scheme: dark;
-        --accent: #ff6a00;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Repository landing page derived from the approved Markdown source and subordinate metadata.">
+<title>Janus Governance Core</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.5;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 72px 20px 64px;
-        text-align: center;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      .logo {
-        display: block;
-        width: 160px;
-        height: auto;
-        margin: 0 auto 18px;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 8px;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      .subtitle {
-        font-size: 1.1rem;
-        margin: 0;
-        color: #cfcfcf;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      .tagline {
-        margin: 10px 0 0;
-        color: #cfcfcf;
-        font-size: 1.02rem;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      .content {
-        max-width: 820px;
-        margin: 30px auto 0;
-        text-align: left;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      .content h2 {
-        margin: 0 0 12px;
-        font-size: 1.05rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        color: #fff;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      .content p {
-        margin: 0;
-        color: #cfcfcf;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      .content p + p {
-        margin-top: 10px;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      .content ul {
-        margin: 10px 0 0;
-        padding-left: 18px;
-        color: #cfcfcf;
-      }
-
-      .content li {
-        margin: 6px 0;
-      }
-
-      .flow {
-        margin-top: 28px;
-      }
-
-      .flow h2 {
-        margin: 0 0 10px;
-        font-size: 1.05rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        color: #fff;
-      }
-
-      .flow pre {
-        margin: 0;
-        padding: 14px 16px;
-        background: #0b0b0b;
-        border: 1px solid #1a1a1a;
-        border-radius: 12px;
-        display: inline-block;
-        text-align: left;
-        color: #cfcfcf;
-        overflow: auto;
-      }
-
-      .flow code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace;
-        font-size: 0.95rem;
-        line-height: 1.4;
-        background: transparent;
-        color: inherit;
-      }
-
-      .flow .caption {
-        margin: 12px auto 0;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-        max-width: 720px;
-      }
-
-      .principles {
-        margin-top: 18px;
-      }
-
-      .principles h2 {
-        margin: 0 0 10px;
-        font-size: 1.05rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        color: #fff;
-      }
-
-      .principles .line {
-        color: #cfcfcf;
-        margin: 4px 0;
-      }
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      a:hover,
-      a:focus {
-        color: var(--accent);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-
-      .nav {
-        margin-top: 26px;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        max-width: 520px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .nav a {
-        display: block;
-        padding: 12px 14px;
-        border: 1px solid #222;
-        border-radius: 10px;
-        color: #cfcfcf;
-      }
-
-      .nav a:hover,
-      .nav a:focus {
-        color: #fff;
-        border-color: #333;
-        background: #111;
-        text-decoration: none;
-      }
-
-      @media (max-width: 520px) {
-        .nav {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a
-        href="https://janusgovernance.org"
-        style="display: inline-block; margin-bottom: 14px; color: #cfcfcf; font-size: 0.95rem"
-        >Back to Janus → janusgovernance.org</a
-      <img class="logo" src="assets/logo/janus-logo.svg" width="160" alt="Janus logo" />
-      <h1>Janus Governance Core</h1>
-      <p class="subtitle">A governance layer for traceable AI-assisted systems</p>
-      <a href="https://framework.janusgovernance.org" style="display:inline-block; margin-top:16px; color:#fff; font-size:1rem;">
-        Use Janus in a real system →
-      </a>
-
-      <section class="content" aria-label="What is Janus Core">
-        <h2>What is Janus Core</h2>
-        <p>
-          Janus Governance Core defines stack-agnostic specifications for systems that require
-          traceable decisions, explicit evidence handling, and audit-ready records.
-        </p>
-        <p>Janus is not a runtime, platform, hosted service, or a guarantee of compliance.</p>
-        <ul aria-label="Core specification links">
-          <li>
-            <a href="https://github.com/Janus-Governance/janus-governance-core/blob/main/core/lite/JANUS_CORE_LITE_v0.1.md"
-              >Read full document → core/lite/JANUS_CORE_LITE_v0.1.md (GitHub rendered)</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/glossary.md"
-              >Read full document → docs/glossary.md (GitHub rendered)</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <section class="principles" aria-label="Core Principles">
-        <h2>Core Principles</h2>
-        <div class="line">Evidence-first governance</div>
-        <div class="line">Human authority validation</div>
-        <div class="line">Rebuildable system state</div>
-      </section>
-
-      <section class="content" aria-label="Architecture Overview">
-        <h2>Architecture Overview</h2>
-        <p>
-          Janus is structured as a layered architecture: Core defines canonical meanings and log
-          types; runtimes execute governance evaluation without redefining Core semantics.
-        </p>
-        <ul aria-label="Architecture links">
-          <li>
-            <a
-              href="https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/architecture/janus-stack.md"
-              >Read full document → docs/architecture/janus-stack.md (GitHub rendered)</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/architecture/core-lite-overview.md"
-              >Read full document → docs/architecture/core-lite-overview.md (GitHub rendered)</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <section class="flow" aria-label="Governance Flow">
-        <h2>Governance Flow</h2>
-        <div style="max-width:360px; width:100%; margin:2rem auto;">
-          <img
-            src="/assets/diagrams/janus-governance-flow.svg"
-            alt="Janus Governance Flow Diagram"
-            style="width:100%; height:auto; display:block;"
-          />
-        </div>
-        <p class="caption">
-          <a href="/docs/paper/janus-foundational-paper-v1.0.pdf">Read the Foundational Paper →</a><br />
-          E+ indicates verifiable evidence produced by actions.<br />
-          E− represents detectable absence of evidence (omissions).<br />
-          Evidence is interpreted through governance evaluation, which may produce auditable events
-          and a rebuildable system state.
-        </p>
-      </section>
-
-      <section class="content" aria-label="Links">
-        <h2>Links to RFC and Runtime</h2>
-        <ul aria-label="Cross-site links">
-          <li><a href="https://rfc.janusgovernance.org">RFC Series site → rfc.janusgovernance.org</a></li>
-          <li><a href="https://runtime.janusgovernance.org">Runtime site → runtime.janusgovernance.org</a></li>
-          <li>
-            <a href="https://github.com/Janus-Governance/janus-demo">Deterministic Governance Demo Suite</a>
-          </li>
-        </ul>
-      </section>
-
-      <nav class="nav" aria-label="Site navigation">
-        <a href="/docs/">Documentation</a>
-        <a href="/docs/what-is-janus.html">What is Janus</a>
-        <a href="/rfcs/">RFC Series</a>
-        <a href="/runtimes/">Runtime</a>
-        <a href="/demos.html" aria-label="Demos">
-          <div style="color: #fff; font-weight: 650; margin-bottom: 2px">Demos</div>
-          <div style="color: #cfcfcf; font-size: 0.95rem; margin-bottom: 6px">
-            Deterministic validation suite for Janus Core
-          </div>
-          <div style="color: #cfcfcf; font-size: 0.95rem; line-height: 1.45">
-            Reproducible cases demonstrating evidence tracking, omission detection, authority override,
-            schema drift and deterministic rebuild.
-          </div>
-          <div style="margin-top: 10px; color: #fff">Explore demos →</div>
-        </a>
-        <a href="https://github.com/Janus-Governance/janus-governance-core">Repository</a>
-      </nav>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/demos/">Demos</a></li><li><a href="/rfcs/">RFCs</a></li><li><a href="/runtimes/">Runtimes</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Janus Governance Core</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">CURATED</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="index.md">
+<h1 id="janus-governance-core">Janus Governance Core</h1>
+<p>Official documentation entry point.</p>
+<h2 id="primary-specification">Primary specification</h2>
+<ul>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/core/lite/JANUS_CORE_LITE_v0.2.md" data-janus-link-kind="repository-source">Core Lite v0.2</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span> — primary internal normative baseline (Status: Draft)</li>
+<li><a href="/docs/" data-janus-link-kind="rendered-route">Documentation index</a></li>
+</ul>
+<h2 id="draft-rfcs">Draft RFCs</h2>
+<p>RFC 0001–0008 are Draft, nonnormative proposals subordinate to Core Lite v0.2. See <code>rfcs/</code>.</p>
+<h2 id="illustrative-runtime-material">Illustrative runtime material</h2>
+<p>The <a href="/docs/demo-run.html" data-janus-link-kind="rendered-route">demo walkthrough</a> is illustrative. The <a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/runtimes/demo-node/README.md" data-janus-link-kind="repository-source">Node demo</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span> is classified <code>LEGACY_NONCONFORMING_PENDING_GATE_3</code>; neither surface is executable proof or establishes Core conformance.</p>
+<p>Tracked HTML remains unreconciled with these Markdown corrections. Publication is blocked pending separate HTML reconciliation and review.</p>
+<h2 id="repository">Repository</h2>
+<p>https://github.com/Janus-Governance/janus-governance-core</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> 26aae66d2f7761aeb82cca00214cf71ad573f83b5cdfec09b93be964e7d0262e</span></p></footer>
+</body>
 </html>

@@ -1,120 +1,109 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RFC Series</title>
-    <meta
-      name="description"
-      content="RFC Series — Janus governance RFC specifications."
-    />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Informative index of the eight Draft RFC sources and their subordinate status.">
+<title>RFC Series</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.5;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 72px 20px 64px;
-        text-align: center;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 10px;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      p {
-        margin: 0;
-        color: #cfcfcf;
-        font-size: 1.02rem;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      .back {
-        display: inline-block;
-        margin-top: 22px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      .contents-section {
-        margin: 22px auto 0;
-        max-width: 520px;
-        text-align: left;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      .contents-title {
-        margin: 0 0 10px;
-        font-size: 1.05rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        color: #fff;
-        text-align: center;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      .contents-list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      .contents-list li {
-        padding: 6px 0;
-        border-bottom: 1px solid #111;
-      }
-
-      .contents-list a {
-        color: #cfcfcf;
-      }
-
-      .contents-list a:hover,
-      .contents-list a:focus {
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <h1>RFC Series</h1>
-      <p>Janus governance RFC specifications.</p>
-      <section class="contents-section" aria-label="RFC contents">
-        <h2 class="contents-title">Contents</h2>
-        <ul class="contents-list">
-          <li><a href="0001-core-lite.md">0001-core-lite.md</a></li>
-          <li><a href="0002-evidence-model.md">0002-evidence-model.md</a></li>
-          <li><a href="0003-omission-detection.md">0003-omission-detection.md</a></li>
-          <li><a href="0004-human-authority-model.md">0004-human-authority-model.md</a></li>
-          <li><a href="0005-governance-events.md">0005-governance-events.md</a></li>
-          <li><a href="0006-governance-evaluation-layer.md">0006-governance-evaluation-layer.md</a></li>
-          <li><a href="0007-audit-writer-authority.md">0007-audit-writer-authority.md</a></li>
-          <li><a href="0008-log-reference-model.md">0008-log-reference-model.md</a></li>
-        </ul>
-      </section>
-      <a class="back" href="/">Back to home</a>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/rfcs/">RFCs</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">RFC Series</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">INFORMATIVE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="rfcs/index.md">
+<h1 id="rfc-series">RFC Series</h1>
+<blockquote>
+<p><strong>Status:</strong> Informative. All RFCs listed here are Draft, nonnormative, and subordinate to <a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/core/lite/JANUS_CORE_LITE_v0.2.md" data-janus-link-kind="repository-source">Core Lite v0.2</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span>.</p>
+</blockquote>
+<ul>
+<li><a href="/rfcs/0001-core-lite.html" data-janus-link-kind="rendered-route">RFC 0001 — Core Lite</a> — Draft</li>
+<li><a href="/rfcs/0002-evidence-model.html" data-janus-link-kind="rendered-route">RFC 0002 — Evidence Model (E+ / E−)</a> — Draft</li>
+<li><a href="/rfcs/0003-omission-detection.html" data-janus-link-kind="rendered-route">RFC 0003 — Omission Detection</a> — Draft</li>
+<li><a href="/rfcs/0004-human-authority-model.html" data-janus-link-kind="rendered-route">RFC 0004 — Human Authority Model</a> — Draft</li>
+<li><a href="/rfcs/0005-governance-events.html" data-janus-link-kind="rendered-route">RFC 0005 — Governance Event Model</a> — Draft</li>
+<li><a href="/rfcs/0006-governance-evaluation-layer.html" data-janus-link-kind="rendered-route">RFC 0006 — Governance Evaluation Layer</a> — Draft</li>
+<li><a href="/rfcs/0007-audit-writer-authority.html" data-janus-link-kind="rendered-route">RFC 0007 — Audit Writer Authority</a> — Draft</li>
+<li><a href="/rfcs/0008-log-reference-model.html" data-janus-link-kind="rendered-route">RFC 0008 — Log Reference Model</a> — Draft</li>
+</ul>
+<p>No RFC is accepted or promoted, and no RFC has independent normative authority. Publication is <strong>BLOCKED</strong> pending Gate 1 HTML reconciliation and later authorization.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> eabfc3ba634df3f907533486c2e39d24ff49b94bad5c059315e028643084b89d</span></p></footer>
+</body>
 </html>

@@ -1,89 +1,114 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RFC 0004 — Human Authority Model</title>
-    <meta name="description" content="RFC 0004 — Human Authority Model — Janus RFC." />
-    <style>
-      :root { color-scheme: dark; }
-      body { margin: 0; padding: 0; background: #000; color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; }
-      .container { max-width: 800px; margin: 0 auto; padding: 56px 20px 64px; }
-      .back { display: inline-block; margin-bottom: 18px; color: #cfcfcf;
-        font-size: 0.98rem; text-decoration: none; }
-      .back:hover, .back:focus { color: #fff; text-decoration: underline;
-        text-underline-offset: 3px; }
-      h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
-        margin: 0 0 18px; text-align: left; }
-      h2 { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em;
-        margin: 24px 0 10px; }
-      h3 { font-size: 1.1rem; font-weight: 650; margin: 18px 0 8px; }
-      p { margin: 0 0 12px; color: #cfcfcf; }
-      a { color: #fff; text-decoration: none; }
-      a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
-      ul, ol { margin: 0 0 14px; padding-left: 22px; color: #cfcfcf; }
-      li { margin: 6px 0; }
-      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace; font-size: 0.95em;
-        color: #fff; background: #111; padding: 0.15em 0.35em; border-radius: 6px; }
-      pre { margin: 0 0 14px; padding: 12px 14px; background: #0b0b0b;
-        border: 1px solid #1a1a1a; border-radius: 10px; overflow: auto; }
-      pre code { padding: 0; background: transparent; border-radius: 0; color: #cfcfcf; }
-      blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid #222;
-        background: #0b0b0b; border-radius: 8px; }
-      blockquote p { margin: 0; }
-      hr { border: 0; border-top: 1px solid #111; margin: 20px 0; }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/rfcs/">Back to RFCs</a>
-      <h1>RFC 0004 — Human Authority Model</h1>
-<p>Status: Draft Author: Martín Nicolás Sánchez Morales Created: 2026</p>
-<hr />
-<h2>Summary</h2>
-<p>This RFC defines the human authority model used in Janus governance systems.</p>
-<p>Janus requires that certain decisions involving accountability, interpretation, or escalation remain under explicit human authority.</p>
-<p>Such decisions are recorded using the canonical governance event:</p>
-<p>HUMAN_DECISION</p>
-<hr />
-<h2>Motivation</h2>
-<p>AI-assisted systems may produce analysis, recommendations, or automated actions.</p>
-<p>However, institutional accountability cannot be delegated to automated systems.</p>
-<p>Janus therefore defines a governance model in which human authorities retain final responsibility for decisions that require accountability.</p>
-<hr />
-<h2>Specification</h2>
-<h3>Human authority</h3>
-<p>When a governance process requires explicit human accountability, the system MUST record a governance event:</p>
-<p>HUMAN_DECISION</p>
-<p>The event represents the formal acknowledgment that a designated human authority has made, confirmed, or assumed responsibility for a decision.</p>
-<p>HUMAN_DECISION is a governance event produced by governance evaluation flows when explicit human accountability is required, regardless of whether the evaluation is based on E+ or E− evidence.</p>
-<h3>Event recording</h3>
-<p><code>HUMAN_DECISION</code> events MUST be written to:</p>
-<p>AUDIT_LOG</p>
-<p>The event SHOULD reference:</p>
-<ul><li>the triggering governance context</li><li>any supporting evidence (E+ or E−)</li><li>any relevant governance events (e.g., OMISSION_DETECTED)</li></ul>
-<h3>AI-assisted interpretation</h3>
-<p>AI systems MAY assist in analysis, detection, or recommendation.</p>
-<p>However:</p>
-<p>AI outputs MUST NOT substitute for HUMAN_DECISION when explicit accountability is required.</p>
-<hr />
-<h2>Rationale</h2>
-<p>Governance systems must maintain a clear boundary between automated analysis and accountable decision-making.</p>
-<p>The HUMAN_DECISION event ensures that final authority remains explicit and auditable.</p>
-<hr />
-<h2>Backwards compatibility</h2>
-<p>Not applicable (initial human authority specification).</p>
-<hr />
-<h2>Security considerations</h2>
-<p>Risks related to human authority include:</p>
-<ul><li>unauthorized human decision recording</li><li>ambiguous accountability assignments</li><li>automation incorrectly bypassing required human decisions</li></ul>
-<p>Implementations must ensure that governance flows correctly enforce human authority requirements.</p>
-<hr />
-<h2>License</h2>
-<p>MIT License</p>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Draft nonnormative RFC subordinate to Core Lite v0.2.">
+<title>RFC 0004 — Human Authority Model</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
+
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+
+.site-name {
+  font-weight: 700;
+}
+
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/rfcs/">RFCs</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">RFC 0004 — Human Authority Model</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">DRAFT</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="rfcs/0004-human-authority-model.md">
+<h1 id="rfc-0004-human-authority-model">RFC 0004 — Human Authority Model</h1>
+<p>Status: Draft<br>
+Author: Martín Nicolás Sánchez Morales<br>
+Created: 2026</p>
+<p>This nonnormative Draft is subordinate to Core Lite v0.2.</p>
+<h2 id="human-authority">Human authority</h2>
+<p><code>HUMAN_DECISION</code> is the sole canonical human-authority event under Core Lite v0.2. It records a prior act by a designated human authority. AI may analyze or recommend; evaluation may identify a need for review; the Audit Writer may incorporate the already-existing record. None of them can originate or constitute the represented act, competence, or human judgment.</p>
+<h2 id="required-profile">Required profile</h2>
+<p>A <code>HUMAN_DECISION</code> record requires:</p>
+<ul>
+<li><code>event_type</code> and <code>event_id</code></li>
+<li><code>actor_ref</code> identifying the human authority</li>
+<li><code>scope_ref</code> identifying invoked competence</li>
+<li>nonempty <code>object_refs</code> identifying exactly what was decided</li>
+<li><code>occurred_at</code> for the human act</li>
+<li><code>recorded_at</code> for incorporation into <code>AUDIT_LOG</code></li>
+</ul>
+<p><code>object_refs</code> is an unordered, duplicate-free, nonempty set of previously incorporated records or events in <code>MANAGEMENT_LOG</code>, <code>AUDIT_LOG</code>, or <code>SCHEMA_LOG</code>; each reference identifies origin log and stable target identity, while external artifacts and derived views are inadmissible. Core requires these canonical <code>object_refs</code> to resolve before incorporation. Resolution of <code>actor_ref</code> and evaluation of competence belong to Framework; other reference duties depend on the applicable profile. No event reference may resolve to the event itself.</p>
+<h2 id="recording-boundary">Recording boundary</h2>
+<p>The Audit Writer is the exclusive canonical appender and prevents bypass. It rejects incorporation when canonical <code>object_refs</code> do not resolve, but it does not resolve human competence, infer authority, or decide on behalf of the human. Broader structural validation may be proposed by a noncanonical Framework profile.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> ab832d5eb937884cd9890ba653a7f1ec48ce1c7a8ce05e9192c91910541531c7</span></p></footer>
+</body>
 </html>

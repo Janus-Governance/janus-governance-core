@@ -1,122 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Docs</title>
-    <meta
-      name="description"
-      content="Docs — Janus technical documentation."
-    />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Informative index of documentation sources and their hierarchy.">
+<title>Janus Governance Core Documentation</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.5;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 72px 20px 64px;
-        text-align: center;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 10px;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      p {
-        margin: 0;
-        color: #cfcfcf;
-        font-size: 1.02rem;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      .back {
-        display: inline-block;
-        margin-top: 22px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      .contents-section {
-        margin: 22px auto 0;
-        max-width: 520px;
-        text-align: left;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      .contents-title {
-        margin: 0 0 10px;
-        font-size: 1.05rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        color: #fff;
-        text-align: center;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      .contents-list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      .contents-list li {
-        padding: 6px 0;
-        border-bottom: 1px solid #111;
-      }
-
-      .contents-list a {
-        color: #cfcfcf;
-      }
-
-      .contents-list a:hover,
-      .contents-list a:focus {
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <h1>Docs</h1>
-      <p>Janus technical documentation.</p>
-      <section class="contents-section" aria-label="Docs contents">
-        <h2 class="contents-title">Contents</h2>
-        <ul class="contents-list">
-          <li><a href="glossary.md">glossary.md</a></li>
-          <li><a href="janus-explained.md">janus-explained.md</a></li>
-          <li><a href="runtime-model.md">runtime-model.md</a></li>
-          <li><a href="demo-run.md">demo-run.md</a></li>
-          <li><a href="omission-principle.md">omission-principle.md</a></li>
-          <li><a href="janus-theorem.md">janus-theorem.md</a></li>
-          <li><a href="roadmap.md">roadmap.md</a></li>
-          <li><a href="architecture/janus-stack.md">architecture/janus-stack.md</a></li>
-          <li><a href="governance/governance-pipeline.md">governance/governance-pipeline.md</a></li>
-          <li><a href="governance/governance-scope.md">governance/governance-scope.md</a></li>
-        </ul>
-      </section>
-      <a class="back" href="/">Back to home</a>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/docs/janus-explained.html">What is Janus?</a></li><li><a href="/docs/runtime-model.html">Runtime model</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Janus Governance Core Documentation</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">INFORMATIVE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="docs/index.md">
+<h1 id="janus-governance-core-documentation">Janus Governance Core Documentation</h1>
+<h2 id="normative-entry-point">Normative entry point</h2>
+<p><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/core/lite/JANUS_CORE_LITE_v0.2.md" data-janus-link-kind="repository-source">Core Lite v0.2</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span> is the primary internal normative authority and remains Status: Draft. The <a href="/docs/glossary.html" data-janus-link-kind="rendered-route">glossary</a> is subordinate to it.</p>
+<h2 id="informative-documentation">Informative documentation</h2>
+<ul>
+<li><a href="/docs/janus-explained.html" data-janus-link-kind="rendered-route">What is Janus?</a></li>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/docs/architecture/core-lite-overview.md" data-janus-link-kind="repository-source">Core Lite architecture</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span></li>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/docs/architecture/governance-event-structure.md" data-janus-link-kind="repository-source">Governance event structure</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span></li>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/docs/governance/governance-pipeline.md" data-janus-link-kind="repository-source">Governance pipeline</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span></li>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/docs/governance/governance-scope.md" data-janus-link-kind="repository-source">Governance scope</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span></li>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/docs/architecture/rebuild-model.md" data-janus-link-kind="repository-source">Rebuild model</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span></li>
+<li><a href="/docs/runtime-model.html" data-janus-link-kind="rendered-route">Runtime model</a></li>
+</ul>
+<h2 id="draft-rfc-system">Draft RFC system</h2>
+<p>RFC 0001–0008 are Draft, nonnormative proposals. They may explain or propose implementation detail but cannot override Core Lite v0.2.</p>
+<ul>
+<li><a href="/rfcs/0001-core-lite.html" data-janus-link-kind="rendered-route">RFC 0001 – Core Lite</a></li>
+<li><a href="/rfcs/0002-evidence-model.html" data-janus-link-kind="rendered-route">RFC 0002 – Evidence Model</a></li>
+<li><a href="/rfcs/0003-omission-detection.html" data-janus-link-kind="rendered-route">RFC 0003 – Omission Detection</a></li>
+<li><a href="/rfcs/0004-human-authority-model.html" data-janus-link-kind="rendered-route">RFC 0004 – Human Authority Model</a></li>
+<li><a href="/rfcs/0005-governance-events.html" data-janus-link-kind="rendered-route">RFC 0005 – Governance Events</a></li>
+<li><a href="/rfcs/0006-governance-evaluation-layer.html" data-janus-link-kind="rendered-route">RFC 0006 – Governance Evaluation Layer</a></li>
+<li><a href="/rfcs/0007-audit-writer-authority.html" data-janus-link-kind="rendered-route">RFC 0007 – Audit Writer Authority</a></li>
+<li><a href="/rfcs/0008-log-reference-model.html" data-janus-link-kind="rendered-route">RFC 0008 – Log Reference Model</a></li>
+</ul>
+<h2 id="project">Project</h2>
+<ul>
+<li><a href="/docs/roadmap.html" data-janus-link-kind="rendered-route">Roadmap</a></li>
+<li><a href="https://github.com/Janus-Governance/janus-governance-core/blob/f01f56a66730624c58f31232e39d5eda999fa922/CONTRIBUTING.md" data-janus-link-kind="repository-source">Contributing</a><span class="repository-source-indicator" aria-label="Repository source"> [repository source]</span></li>
+</ul>
+<h2 id="publication-boundary">Publication boundary</h2>
+<p>Tracked HTML mirrors remain unreconciled with these Markdown sources. Publication is blocked pending separate HTML reconciliation and review.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> 7ea8c5837151d0d83f3b1b0cc833081c64d2312f3463d2c2e29dce67a2f4c6c8</span></p></footer>
+</body>
 </html>

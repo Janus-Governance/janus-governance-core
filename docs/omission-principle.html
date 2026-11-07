@@ -1,166 +1,107 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Omission as Structured Evidence</title>
-    <meta name="description" content="Omission principle — Janus docs." />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Informative discussion of omission as structured evidence.">
+<title>Omission as Structured Evidence</title>
+<style data-janus-template-style>
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-      }
+body {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0 1rem 2rem;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 56px 20px 64px;
-      }
+.skip-link {
+  left: -10000px;
+  position: absolute;
+}
 
-      .back {
-        display: inline-block;
-        margin-bottom: 18px;
-        color: #cfcfcf;
-        font-size: 0.98rem;
-        text-decoration: none;
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      .back:hover,
-      .back:focus {
-        color: #fff;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+.site-header,
+.technical-footer {
+  border-block: 1px solid currentColor;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 18px;
-        text-align: left;
-      }
+.site-name {
+  font-weight: 700;
+}
 
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-        margin: 24px 0 10px;
-      }
+.publication-block {
+  border: 2px solid currentColor;
+  font-weight: 700;
+  padding: 0.5rem;
+}
 
-      h3 {
-        font-size: 1.1rem;
-        font-weight: 650;
-        margin: 18px 0 8px;
-      }
+.primary-navigation ul,
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
 
-      p {
-        margin: 0 0 12px;
-        color: #cfcfcf;
-      }
+.document-status,
+.authority-badge,
+.repository-source-indicator {
+  font-weight: 600;
+}
 
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
+pre {
+  overflow-x: auto;
+}
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+table {
+  border-collapse: collapse;
+}
 
-      ul,
-      ol {
-        margin: 0 0 14px;
-        padding-left: 22px;
-        color: #cfcfcf;
-      }
-
-      li {
-        margin: 6px 0;
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          "Courier New", monospace;
-        font-size: 0.95em;
-        color: #fff;
-        background: #111;
-        padding: 0.15em 0.35em;
-        border-radius: 6px;
-      }
-
-      pre {
-        margin: 0 0 14px;
-        padding: 12px 14px;
-        background: #0b0b0b;
-        border: 1px solid #1a1a1a;
-        border-radius: 10px;
-        overflow: auto;
-      }
-
-      pre code {
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        color: #cfcfcf;
-      }
-
-      blockquote {
-        margin: 0 0 14px;
-        padding: 10px 14px;
-        border-left: 3px solid #222;
-        background: #0b0b0b;
-        border-radius: 8px;
-      }
-
-      blockquote p {
-        margin: 0;
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid #111;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <a class="back" href="/docs/">Back to docs</a>
-      <h1>Omission as Structured Evidence</h1>
-      <h2>1. Core Idea</h2>
-<p>Most systems record what happened. Janus also records what should have happened but did not.</p>
-<p>In Janus, omission is not silence. Omission is structured evidence.</p>
-<h2>2. Classical Model vs Janus Model</h2>
-<p>Classical systems:</p>
-<ul><li>positive event recorded</li><li>absence remains silent</li></ul>
-<p>Janus:</p>
-<ul><li>E+ = event occurred</li><li>E- = required event missing</li><li>governance outcome must be expressible as evidence</li></ul>
-<h2>3. Why This Matters</h2>
-<p>Omissions are often the most critical failures in socio-technical systems. Examples:</p>
-<ul><li>missing validation</li><li>missing human decision</li><li>missing required review</li><li>missing protocol step</li></ul>
-<h2>4. Canonical Janus Expression</h2>
-<p>E+ = positive evidence E- = omission evidence</p>
-<p>For governance-required activity:</p>
-<p>governance outcome = E+ or E-</p>
-<p>If a required event is missing, the system must emit structured omission evidence.</p>
-<h2>5. Runtime Demonstration</h2>
-<p>The reference runtime demo (Node) validates omission detection by emitting explicit audit events when a governance-required event is missing. A stress test (many proposals with random omission vs decision) validates the same principle under scale.</p>
-<p>Use this example:</p>
-<p>1000 CHANGE_PROPOSED → 464 HUMAN_DECISION_REGISTERED (E+) → 536 OMISSION_DETECTED (E-)</p>
-<p>Consistency: E+ + E- = governance outcomes</p>
-<h2>6. Principle</h2>
-<p>What did not happen, when it was required to happen, is part of system truth.</p>
-    </main>
-  </body>
+th,
+td {
+  border: 1px solid currentColor;
+  padding: 0.35rem;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<p class="site-name">Janus Governance Core</p>
+<p class="publication-block" role="status">Publication blocked</p>
+<nav class="primary-navigation" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/docs/">Documentation</a></li><li><a href="/docs/janus-explained.html">What is Janus?</a></li><li><a href="/docs/runtime-model.html">Runtime model</a></li></ul></nav>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Omission as Structured Evidence</li></ol></nav>
+<main id="main-content">
+<section class="status-panel"><p class="document-status"><span class="document-status-prefix">Document status:</span> <span class="document-status-value">INFORMATIVE</span></p><p class="authority-badge"><span class="authority-prefix">Governing authority:</span> <span class="authority-name">Core Lite v0.2</span> <span class="authority-status">DRAFT</span></p></section>
+<article data-janus-source-content="docs/omission-principle.md">
+<h1 id="omission-as-structured-evidence">Omission as Structured Evidence</h1>
+<p>This pedagogical note is informative and subordinate to Core Lite v0.2.</p>
+<h2 id="core-idea">Core idea</h2>
+<p>Absence is not automatically evidence. E− exists only under the complete requirements restated in <code>governance/governance-scope.md</code>: the expectation version is recorded before observation and declares provenance, temporal applicability, and due condition; due status is determinable at a compliant cutoff; the scope, versioned procedure, schema context for all considered records, and observation are reproducible.</p>
+<p>When those conditions are met, <code>OMISSION_DETECTED</code> may record the E− observation in <code>AUDIT_LOG</code>. The event is not itself E− and does not automatically establish fault, accountability, noncompliance, or a human decision.</p>
+<h2 id="distinctions">Distinctions</h2>
+<ul>
+<li>E+ and E− are evidence classes, not Boolean values or exhaustive outcomes.</li>
+<li><code>HUMAN_DECISION</code> records a prior human authority act and is not E+.</li>
+<li>a current view derived from omission records does not replace historical events</li>
+<li>illustrative runtime output does not prove Core conformance</li>
+</ul>
+<p>The practical principle is narrower than “all silence is evidence”: a qualified, reproducible absence relative to a prior expectation can be preserved as evidence.</p>
+</article>
+</main>
+<footer class="technical-footer"><p><span class="contract-version"><span class="technical-label">Contract:</span> janus-html-source-authority-v1</span> <span class="generator-version"><span class="technical-label">Generator:</span> 1.0.0</span> <span class="source-hash"><span class="technical-label">Source SHA-256:</span> f725746a15ede2495b9583f86765d27d1db40c31bdb6af1082d1d0c5b6d9cefa</span></p></footer>
+</body>
 </html>
