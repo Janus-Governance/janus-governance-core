@@ -407,7 +407,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-001",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A01",
@@ -429,16 +433,14 @@
       "atomic_predicate": "preserve append-only history",
       "governed_object": "MANAGEMENT_LOG",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Storage representation is intentionally unspecified.",
       "explicit_non_goals": [
@@ -448,8 +450,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-management-record"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-reset"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A02",
@@ -471,16 +488,14 @@
       "atomic_predicate": "preserve append-only history",
       "governed_object": "SCHEMA_LOG",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Storage representation is intentionally unspecified.",
       "explicit_non_goals": [
@@ -490,8 +505,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-schema-record"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-reset"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A03",
@@ -513,16 +543,14 @@
       "atomic_predicate": "preserve append-only history",
       "governed_object": "AUDIT_LOG",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Storage representation is intentionally unspecified.",
       "explicit_non_goals": [
@@ -532,8 +560,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-reset"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A01",
@@ -555,16 +598,14 @@
       "atomic_predicate": "provide a stable identity",
       "governed_object": "canonical record or event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Identity representation is intentionally unspecified.",
       "explicit_non_goals": [
@@ -575,8 +616,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-management-record"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-identity"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A02",
@@ -598,16 +654,14 @@
       "atomic_predicate": "provide an identity unique within its log",
       "governed_object": "canonical record or event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Identity representation is intentionally unspecified.",
       "explicit_non_goals": [
@@ -618,8 +672,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "same-token-isolated-across-logs"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-identity"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A03",
@@ -641,16 +710,14 @@
       "atomic_predicate": "never reuse the identity",
       "governed_object": "canonical record or event identity",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Identity representation is intentionally unspecified.",
       "explicit_non_goals": [
@@ -661,8 +728,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "rejected-identity-remains-available"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-identity"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A04",
@@ -705,7 +787,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L004-A01",
@@ -727,16 +813,14 @@
       "atomic_predicate": "be appended as a new record or event",
       "governed_object": "correction record or event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Applies only when the record declares one of the named relations.",
       "explicit_non_goals": [
@@ -746,8 +830,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-004",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-replace"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L005-A01",
@@ -769,16 +868,14 @@
       "atomic_predicate": "keep a resolvable backward reference",
       "governed_object": "antecedent record or event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Reference asserts no causality by itself.",
       "explicit_non_goals": [
@@ -789,8 +886,25 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-005",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-revision-without-back-reference",
+        "reject-revision-unresolved-antecedent",
+        "reject-revision-future-antecedent"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L006-A01",
@@ -831,7 +945,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-006",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A01",
@@ -873,7 +991,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A02",
@@ -915,7 +1037,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A03",
@@ -957,7 +1083,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L008-A01",
@@ -1000,7 +1130,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-008",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L008-A02",
@@ -1044,7 +1178,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-008",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L009-A01",
@@ -1085,7 +1223,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-009",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L010-A01",
@@ -1126,7 +1268,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-010",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L011-A01",
@@ -1168,7 +1314,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-011",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A01",
@@ -1220,7 +1370,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A02",
@@ -1271,7 +1425,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A03",
@@ -1322,7 +1480,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A04",
@@ -1373,7 +1535,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A05",
@@ -1427,7 +1593,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A06",
@@ -1478,7 +1648,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A07",
@@ -1529,7 +1703,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L013-A01",
@@ -1551,16 +1729,14 @@
       "atomic_predicate": "resolve every object_refs target against history already incorporated in its origin log",
       "governed_object": "object_refs",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "No temporal relationship with occurred_at is asserted.",
       "explicit_non_goals": [
@@ -1571,8 +1747,24 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-013",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-unresolved-reference",
+        "reject-missing-alias"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L014-A01",
@@ -1594,16 +1786,14 @@
       "atomic_predicate": "reject HUMAN_DECISION with unresolved object_refs",
       "governed_object": "HUMAN_DECISION incorporation",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "The Audit Writer prevents incorporation.",
       "explicit_non_goals": [
@@ -1613,8 +1803,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-014",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-audit-writer-unresolved-reference"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L015-A01",
@@ -1636,7 +1841,7 @@
       "atomic_predicate": "be written exclusively through an authorized Audit Writer mechanism",
       "governed_object": "AUDIT_LOG write",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
@@ -1655,8 +1860,22 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-015",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-unauthorized-audit-writer"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L016-A01",
@@ -1678,7 +1897,7 @@
       "atomic_predicate": "prevent direct writes that bypass the Audit Writer",
       "governed_object": "AUDIT_LOG direct write",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
@@ -1697,8 +1916,22 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-016",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-direct-audit-writer-bypass"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L017-A01",
@@ -1740,7 +1973,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-017",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L018-A01",
@@ -1782,7 +2019,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-018",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L019-A01",
@@ -1824,7 +2065,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-019",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A01",
@@ -1874,7 +2119,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A02",
@@ -1923,7 +2172,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A03",
@@ -1972,7 +2225,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A04",
@@ -2021,7 +2278,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A05",
@@ -2070,7 +2331,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A06",
@@ -2120,7 +2385,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A07",
@@ -2169,7 +2438,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A01",
@@ -2211,7 +2484,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-021",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A02",
@@ -2253,7 +2530,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-021",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L022-A01",
@@ -2294,7 +2575,11 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-022",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D001",
@@ -2335,7 +2620,11 @@
       ],
       "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D002",
@@ -2376,7 +2665,11 @@
       ],
       "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D003",
@@ -2417,7 +2710,11 @@
       ],
       "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D004",
@@ -2458,7 +2755,11 @@
       ],
       "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D005",
@@ -2499,7 +2800,11 @@
       ],
       "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D006",
@@ -2540,7 +2845,11 @@
       ],
       "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D007",
@@ -2581,7 +2890,11 @@
       ],
       "constraint_family": "CANONICAL_LOG_ONTOLOGY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D008",
@@ -2622,7 +2935,11 @@
       ],
       "constraint_family": "CANONICAL_LOG_ONTOLOGY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D009",
@@ -2663,7 +2980,11 @@
       ],
       "constraint_family": "CANONICAL_LOG_ONTOLOGY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D010",
@@ -2705,7 +3026,11 @@
       ],
       "constraint_family": "STORAGE_INDEPENDENCE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D011",
@@ -2746,7 +3071,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D003",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D012",
@@ -2787,7 +3116,11 @@
       ],
       "constraint_family": "SCHEMA_LOG_CONTENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D013",
@@ -2828,7 +3161,11 @@
       ],
       "constraint_family": "SCHEMA_LOG_CONTENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D014",
@@ -2869,7 +3206,11 @@
       ],
       "constraint_family": "AUDIT_LOG_CONTENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D015",
@@ -2910,7 +3251,11 @@
       ],
       "constraint_family": "AUDIT_LOG_CONTENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D016",
@@ -2951,7 +3296,11 @@
       ],
       "constraint_family": "AUDIT_LOG_CONTENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D017",
@@ -2991,7 +3340,11 @@
       "explicit_non_goals": [],
       "constraint_family": "COMPACTION_EQUIVALENT_APPEND_ONLY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D018",
@@ -3031,7 +3384,11 @@
       "explicit_non_goals": [],
       "constraint_family": "COMPACTION_GOVERNANCE_VERIFIABILITY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D019",
@@ -3078,7 +3435,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D020",
@@ -3125,7 +3486,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D021",
@@ -3165,7 +3530,11 @@
       ],
       "constraint_family": "DOMAIN_GOVERNANCE_SEPARATION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D022",
@@ -3205,7 +3574,11 @@
       ],
       "constraint_family": "DOMAIN_GOVERNANCE_SEPARATION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D023",
@@ -3230,22 +3603,35 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "constraint_family": "GOVERNANCE_EVENT_NEVER_DELETED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-delete"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D024",
@@ -3270,22 +3656,35 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "constraint_family": "GOVERNANCE_EVENT_NEVER_OVERWRITTEN",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-replace"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D025",
@@ -3327,7 +3726,11 @@
       ],
       "constraint_family": "EVIDENCE_CLASS_MEANING",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D026",
@@ -3369,7 +3772,11 @@
       ],
       "constraint_family": "EVIDENCE_CLASS_MEANING",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D027",
@@ -3411,7 +3818,11 @@
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D028",
@@ -3453,7 +3864,11 @@
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D029",
@@ -3495,7 +3910,11 @@
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D030",
@@ -3537,7 +3956,11 @@
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D031",
@@ -3577,7 +4000,11 @@
       "explicit_non_goals": [],
       "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D032",
@@ -3617,7 +4044,11 @@
       "explicit_non_goals": [],
       "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D033",
@@ -3639,16 +4070,14 @@
       "atomic_predicate": "be recorded in AUDIT_LOG",
       "governed_object": "AUDIT_LOG placement",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Audit Writer validates but does not originate it.",
       "explicit_non_goals": [
@@ -3659,8 +4088,23 @@
         "STATEFUL"
       ],
       "constraint_family": "HUMAN_DECISION_AUDIT_LOG_PLACEMENT",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-human-decision-wrong-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D034",
@@ -3702,7 +4146,11 @@
       ],
       "constraint_family": "HUMAN_DECISION_CANONICAL_UNIQUENESS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D035",
@@ -3746,7 +4194,11 @@
       ],
       "constraint_family": "HUMAN_DECISION_PRIOR_HUMAN_ACT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D036-A",
@@ -3791,7 +4243,11 @@
       ],
       "constraint_family": "ACTOR_REF_RESPONSIBLE_HUMAN_AUTHORITY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D036-B",
@@ -3836,7 +4292,11 @@
       ],
       "constraint_family": "ACTOR_REF_AUTHORITY_ROLE_NOT_WRITER_ROLE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D037",
@@ -3879,7 +4339,11 @@
       ],
       "constraint_family": "ACTOR_COMPETENCE_FRAMEWORK_BOUNDARY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D038",
@@ -3922,7 +4386,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D012",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D039",
@@ -3965,7 +4433,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D013",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D040",
@@ -4012,7 +4484,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D041",
@@ -4055,7 +4531,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D015",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D042",
@@ -4077,16 +4557,14 @@
       "atomic_predicate": "be a record or event in MANAGEMENT_LOG, AUDIT_LOG, or SCHEMA_LOG",
       "governed_object": "admissible decided object",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -4094,8 +4572,23 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D016",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "same-token-isolated-across-logs"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-wrong-origin-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D043-A",
@@ -4117,16 +4610,14 @@
       "atomic_predicate": "identify the canonical origin log of its target",
       "governed_object": "canonical origin log",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [
         "TYPED_REFERENCE_RESOLVER_OR_ADAPTER_REQUIRED"
       ],
@@ -4139,8 +4630,24 @@
         "STATEFUL"
       ],
       "constraint_family": "OBJECT_REF_CANONICAL_ORIGIN_LOG",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference",
+        "resolve-valid-alias"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-wrong-origin-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D043-B",
@@ -4162,16 +4669,14 @@
       "atomic_predicate": "identify its target through an identity stable within the origin log",
       "governed_object": "stable target identity",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [
         "TYPED_REFERENCE_RESOLVER_OR_ADAPTER_REQUIRED"
       ],
@@ -4184,8 +4689,24 @@
         "STATEFUL"
       ],
       "constraint_family": "OBJECT_REF_STABLE_TARGET_IDENTITY",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference",
+        "resolve-valid-alias"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-wrong-origin-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D044",
@@ -4207,16 +4728,14 @@
       "atomic_predicate": "hold when two references resolve to the same target",
       "governed_object": "reference equality",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -4224,8 +4743,24 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D018",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-target-aliases",
+        "reject-audit-writer-duplicate-target-aliases"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D045",
@@ -4247,16 +4782,14 @@
       "atomic_predicate": "contain no target more than once",
       "governed_object": "target uniqueness",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -4264,8 +4797,24 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D019",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-target-aliases",
+        "reject-audit-writer-duplicate-target-aliases"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D046",
@@ -4304,7 +4853,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D020",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D047",
@@ -4344,7 +4897,11 @@
       ],
       "constraint_family": "OBJECT_REFS_DERIVED_VIEW_EXCLUSION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D048",
@@ -4384,7 +4941,11 @@
       ],
       "constraint_family": "OBJECT_REFS_EXTERNAL_EXCLUSION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D049",
@@ -4425,7 +4986,11 @@
       ],
       "constraint_family": "REFERENCE_ROLE_EVIDENCE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D050",
@@ -4466,7 +5031,11 @@
       ],
       "constraint_family": "REFERENCE_ROLE_MANAGEMENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-A",
@@ -4508,7 +5077,11 @@
       ],
       "constraint_family": "CONTEXT_REFS_DO_NOT_IDENTIFY_DECIDED_OBJECT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-B",
@@ -4550,7 +5123,11 @@
       ],
       "constraint_family": "CONTEXT_REFS_DO_NOT_SUBSTITUTE_OBJECT_REFS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D052",
@@ -4591,7 +5168,11 @@
       ],
       "constraint_family": "REFERENCE_ROLE_SCHEMA",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D053",
@@ -4631,7 +5212,11 @@
       ],
       "constraint_family": "REFERENCE_DUAL_ROLE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D054",
@@ -4670,7 +5255,11 @@
       ],
       "constraint_family": "REFERENCE_DUAL_ROLE_NO_SUFFICIENCY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D055",
@@ -4695,22 +5284,36 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "constraint_family": "EVENT_NO_SELF_REFERENCE",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-self-reference",
+        "reject-audit-writer-self-reference"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D056",
@@ -4754,7 +5357,11 @@
       ],
       "constraint_family": "REFERENCE_NO_CAUSALITY",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D057",
@@ -4798,7 +5405,11 @@
       ],
       "constraint_family": "REFERENCE_NO_OCCURRED_AT_RELATION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D058",
@@ -4838,7 +5449,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D026",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D059-A",
@@ -4883,7 +5498,11 @@
       ],
       "constraint_family": "ACTOR_REF_RESOLUTION_FRAMEWORK_OWNED",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D059-B",
@@ -4928,7 +5547,11 @@
       ],
       "constraint_family": "COMPETENCE_EVALUATION_FRAMEWORK_OWNED",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D060",
@@ -4968,7 +5591,11 @@
       "explicit_non_goals": [],
       "constraint_family": "REEVALUATION_EXISTING_EVENT_TYPE_EXCEPTION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D061",
@@ -5008,7 +5635,11 @@
       "explicit_non_goals": [],
       "constraint_family": "REEVALUATION_NOT_CANONICAL_EVENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D062",
@@ -5048,7 +5679,11 @@
       ],
       "constraint_family": "E_MINUS_EXPECTATION_DEFINED",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D063",
@@ -5088,7 +5723,11 @@
       ],
       "constraint_family": "E_MINUS_EXPECTATION_REFERENCEABLE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D064",
@@ -5128,7 +5767,11 @@
       ],
       "constraint_family": "E_MINUS_EXPECTATION_VERSION_PRIOR_TO_OBSERVATION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D065",
@@ -5168,7 +5811,11 @@
       ],
       "constraint_family": "E_MINUS_EXPECTATION_VERSION_RECORDED",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D066",
@@ -5219,7 +5866,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D067",
@@ -5270,7 +5921,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D068",
@@ -5323,7 +5978,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D069",
@@ -5374,7 +6033,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D070",
@@ -5425,7 +6088,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D071",
@@ -5476,7 +6143,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D072",
@@ -5527,7 +6198,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D073",
@@ -5578,7 +6253,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D074",
@@ -5629,7 +6308,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D075",
@@ -5680,7 +6363,11 @@
       "coverage_markers": [
         "PROJECTION_COVERED"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D076",
@@ -5720,7 +6407,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D038",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D077",
@@ -5760,7 +6451,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D039",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D078",
@@ -5803,7 +6498,11 @@
       ],
       "constraint_family": "OMISSION_CANONICAL_EVENT_TYPE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D079",
@@ -5845,7 +6544,11 @@
       ],
       "constraint_family": "OMISSION_RECORDS_E_MINUS_INSTANCE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D080",
@@ -5887,7 +6590,11 @@
       ],
       "constraint_family": "OMISSION_REQUIRES_FULL_E_MINUS_QUALIFICATION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D081",
@@ -5928,7 +6635,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D041",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D082",
@@ -5969,7 +6680,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D042",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D083",
@@ -6016,7 +6731,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D084",
@@ -6059,7 +6778,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D044",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D085",
@@ -6105,7 +6828,11 @@
         "STRUCTURAL_SCHEMA_COVERED",
         "REQUIREMENT_COMPLETE"
       ],
-      "fixture_polarity_requirement": "POSITIVE_ONLY_NOT_REJECTABLE"
+      "fixture_polarity_requirement": "POSITIVE_ONLY_NOT_REJECTABLE",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D086",
@@ -6146,7 +6873,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D046",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D087",
@@ -6186,7 +6917,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D047",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D088",
@@ -6226,7 +6961,11 @@
       ],
       "constraint_family": "LATER_EVIDENCE_NO_MODIFICATION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D089",
@@ -6266,7 +7005,11 @@
       ],
       "constraint_family": "LATER_EVIDENCE_NO_REMOVAL",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D090",
@@ -6306,7 +7049,11 @@
       ],
       "constraint_family": "LATER_EVIDENCE_REBUILT_VIEW_EFFECT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D091",
@@ -6346,7 +7093,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D049",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D092",
@@ -6386,7 +7137,11 @@
       ],
       "constraint_family": "OMISSION_RESOLUTION_CORRESPONDING_EVIDENCE",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D093",
@@ -6426,7 +7181,11 @@
       ],
       "constraint_family": "OMISSION_RESOLUTION_LATER_CUTOFF",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D094",
@@ -6466,7 +7225,11 @@
       ],
       "constraint_family": "OMISSION_RESOLUTION_SAME_EXPECTATION_VERSION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D095",
@@ -6506,7 +7269,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D051",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D096",
@@ -6549,7 +7316,11 @@
       ],
       "constraint_family": "HUMAN_DECISION_NOT_E_MINUS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D097",
@@ -6592,7 +7363,11 @@
       ],
       "constraint_family": "HUMAN_DECISION_NOT_E_PLUS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D098",
@@ -6636,7 +7411,11 @@
       ],
       "constraint_family": "HUMAN_DECISION_OMISSION_EVENT_UNCHANGED",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D099",
@@ -6680,7 +7459,11 @@
       ],
       "constraint_family": "HUMAN_DECISION_OMISSION_EVIDENCE_UNCHANGED",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D100",
@@ -6721,7 +7504,11 @@
       ],
       "constraint_family": "TRUTH_CONDITION_E_MINUS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D101",
@@ -6762,7 +7549,11 @@
       ],
       "constraint_family": "TRUTH_CONDITION_E_PLUS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D102",
@@ -6802,7 +7593,11 @@
       ],
       "constraint_family": "EVIDENCE_EVALUATION_THROUGH_GOVERNANCE_FLOWS",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D103",
@@ -6842,7 +7637,11 @@
       ],
       "constraint_family": "OPTIONAL_OMISSION_AUDIT_LOG_PLACEMENT",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D104",
@@ -6880,7 +7679,11 @@
       ],
       "constraint_family": "OPTIONAL_OMISSION_PRODUCTION",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D105",
@@ -6920,7 +7723,11 @@
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D055",
       "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH"
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     }
   ],
   "anti_reinterpretation_rules": [

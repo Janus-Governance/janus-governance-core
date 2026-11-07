@@ -52,5 +52,29 @@
     "structurally_complete_requirements": 19,
     "projection_covered_requirements": 10,
     "conformance_claimed": false
+  },
+  "stateful_history_reference_foundation": {
+    "status": "DETERMINISTIC_IN_MEMORY_TEST_PROFILE",
+    "canonical_serialization": false,
+    "runtime_implementation": false,
+    "logs": [
+      "MANAGEMENT_LOG",
+      "SCHEMA_LOG",
+      "AUDIT_LOG"
+    ],
+    "operations": [
+      "APPEND",
+      "RESET",
+      "REPLACE",
+      "DELETE",
+      "CHECK_OBJECT_REFS",
+      "ORIGINATE_HUMAN_DECISION"
+    ],
+    "statefully_complete_requirements": 19,
+    "projection_covered_requirements": 2,
+    "human_decision_origin": "NOT_MODELED_UNSUPPORTED_OPERATION",
+    "audit_writer_authorization": "IMMUTABLE_EXTERNAL_TEST_PRECONDITION_ONLY",
+    "human_identity_authority_or_competence_inference": false,
+    "conformance_claimed": false
   }
 }

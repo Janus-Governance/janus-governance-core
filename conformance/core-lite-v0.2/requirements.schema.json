@@ -75,13 +75,44 @@
           "positive_fixture_refs",
           "negative_fixture_refs",
           "test_refs",
+          "stateful_positive_scenario_refs",
+          "stateful_negative_scenario_refs",
+          "stateful_test_refs",
+          "stateful_coverage_markers",
           "coverage_status",
           "dependencies_adapters",
           "ambiguity_notes",
           "explicit_non_goals",
           "verification_classes",
           "constraint_family"
-        ]
+        ],
+        "properties": {
+          "stateful_positive_scenario_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "stateful_negative_scenario_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "stateful_test_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "stateful_coverage_markers": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "STATEFUL_SCENARIO_COVERED",
+                "STATEFUL_PROJECTION_COVERED"
+              ]
+            }
+          }
+        }
       }
     },
     "anti_reinterpretation_rules": {

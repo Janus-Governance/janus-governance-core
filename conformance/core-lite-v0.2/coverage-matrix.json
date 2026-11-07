@@ -15,21 +15,25 @@
   "allowed_coverage_markers": [
     "STRUCTURAL_SCHEMA_COVERED",
     "PROJECTION_COVERED",
+    "STATEFUL_SCENARIO_COVERED",
+    "STATEFUL_PROJECTION_COVERED",
     "REQUIREMENT_COMPLETE"
   ],
   "finding_counts": {
-    "HUMAN_REVIEW_REQUIRED": 28,
-    "MISSING_TEST": 132,
-    "MISSING_POSITIVE_FIXTURE": 104,
-    "MISSING_NEGATIVE_FIXTURE": 104,
     "MISSING_SCHEMA": 29,
+    "MISSING_POSITIVE_FIXTURE": 85,
+    "MISSING_NEGATIVE_FIXTURE": 85,
+    "MISSING_TEST": 113,
+    "HUMAN_REVIEW_REQUIRED": 28,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 1
   },
   "coverage_marker_counts": {
     "STRUCTURAL_SCHEMA_COVERED": 19,
-    "REQUIREMENT_COMPLETE": 19,
-    "PROJECTION_COVERED": 10
+    "PROJECTION_COVERED": 10,
+    "STATEFUL_SCENARIO_COVERED": 19,
+    "STATEFUL_PROJECTION_COVERED": 2,
+    "REQUIREMENT_COMPLETE": 38
   },
   "entries": [
     {
@@ -50,7 +54,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A01",
@@ -58,20 +66,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-management-record"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-reset"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A02",
@@ -79,20 +100,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-schema-record"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-reset"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A03",
@@ -100,20 +134,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-reset"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A01",
@@ -121,20 +168,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-management-record"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-identity"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A02",
@@ -142,20 +202,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "same-token-isolated-across-logs"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-identity"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A03",
@@ -163,20 +236,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "rejected-identity-remains-available"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-identity"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A04",
@@ -197,7 +283,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L004-A01",
@@ -205,20 +295,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-replace"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L005-A01",
@@ -226,20 +329,35 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-revision-without-back-reference",
+        "reject-revision-unresolved-antecedent",
+        "reject-revision-future-antecedent"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L006-A01",
@@ -259,7 +377,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A01",
@@ -280,7 +402,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A02",
@@ -301,7 +427,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A03",
@@ -322,7 +452,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L008-A01",
@@ -344,7 +478,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L008-A02",
@@ -366,7 +504,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L009-A01",
@@ -386,7 +528,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L010-A01",
@@ -406,7 +552,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L011-A01",
@@ -427,7 +577,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A01",
@@ -457,7 +611,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A02",
@@ -486,7 +644,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A03",
@@ -515,7 +677,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A04",
@@ -544,7 +710,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A05",
@@ -576,7 +746,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A06",
@@ -605,7 +779,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A07",
@@ -634,7 +812,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L013-A01",
@@ -642,20 +824,34 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-unresolved-reference",
+        "reject-missing-alias"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L014-A01",
@@ -663,20 +859,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-audit-writer-unresolved-reference"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L015-A01",
@@ -684,10 +893,12 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
+      "coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ],
       "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
@@ -697,7 +908,19 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-unauthorized-audit-writer"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L016-A01",
@@ -705,10 +928,12 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
+      "coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ],
       "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
@@ -718,7 +943,19 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-direct-audit-writer-bypass"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_PROJECTION_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L017-A01",
@@ -739,7 +976,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L018-A01",
@@ -760,7 +1001,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L019-A01",
@@ -781,7 +1026,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A01",
@@ -810,7 +1059,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A02",
@@ -838,7 +1091,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A03",
@@ -866,7 +1123,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A04",
@@ -894,7 +1155,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A05",
@@ -922,7 +1187,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A06",
@@ -951,7 +1220,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A07",
@@ -979,7 +1252,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A01",
@@ -1000,7 +1277,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A02",
@@ -1021,7 +1302,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L022-A01",
@@ -1041,7 +1326,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D001",
@@ -1061,7 +1350,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D002",
@@ -1081,7 +1374,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D003",
@@ -1101,7 +1398,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D004",
@@ -1121,7 +1422,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D005",
@@ -1141,7 +1446,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D006",
@@ -1161,7 +1470,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D007",
@@ -1181,7 +1494,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D008",
@@ -1201,7 +1518,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D009",
@@ -1221,7 +1542,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D010",
@@ -1242,7 +1567,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D011",
@@ -1264,7 +1593,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D012",
@@ -1286,7 +1619,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D013",
@@ -1308,7 +1645,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D014",
@@ -1330,7 +1671,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D015",
@@ -1352,7 +1697,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D016",
@@ -1374,7 +1723,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D017",
@@ -1395,7 +1748,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D018",
@@ -1416,7 +1773,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D019",
@@ -1444,7 +1805,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D020",
@@ -1472,7 +1837,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D021",
@@ -1493,7 +1862,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D022",
@@ -1514,7 +1887,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D023",
@@ -1522,20 +1899,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-delete"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D024",
@@ -1543,20 +1933,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-correction-with-back-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-replace"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D025",
@@ -1577,7 +1980,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D026",
@@ -1598,7 +2005,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D027",
@@ -1619,7 +2030,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D028",
@@ -1640,7 +2055,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D029",
@@ -1661,7 +2080,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D030",
@@ -1682,7 +2105,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D031",
@@ -1703,7 +2130,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D032",
@@ -1724,7 +2155,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D033",
@@ -1732,20 +2167,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-human-decision-wrong-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D034",
@@ -1765,7 +2213,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D035",
@@ -1787,7 +2239,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D036-A",
@@ -1809,7 +2265,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D036-B",
@@ -1831,7 +2291,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D037",
@@ -1853,7 +2317,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D038",
@@ -1875,7 +2343,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D039",
@@ -1897,7 +2369,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D040",
@@ -1925,7 +2401,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D041",
@@ -1947,7 +2427,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D042",
@@ -1955,20 +2439,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "same-token-isolated-across-logs"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-wrong-origin-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D043-A",
@@ -1976,20 +2473,34 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference",
+        "resolve-valid-alias"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-wrong-origin-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D043-B",
@@ -1997,20 +2508,34 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference",
+        "resolve-valid-alias"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-wrong-origin-log"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D044",
@@ -2018,20 +2543,34 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-target-aliases",
+        "reject-audit-writer-duplicate-target-aliases"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D045",
@@ -2039,20 +2578,34 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-duplicate-target-aliases",
+        "reject-audit-writer-duplicate-target-aliases"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D046",
@@ -2072,7 +2625,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D047",
@@ -2093,7 +2650,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D048",
@@ -2114,7 +2675,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D049",
@@ -2136,7 +2701,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D050",
@@ -2158,7 +2727,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-A",
@@ -2179,7 +2752,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-B",
@@ -2200,7 +2777,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D052",
@@ -2222,7 +2803,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D053",
@@ -2243,7 +2828,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D054",
@@ -2263,7 +2852,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D055",
@@ -2271,20 +2864,34 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_positive_scenario_refs": [
+        "resolve-prior-object-reference"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-self-reference",
+        "reject-audit-writer-self-reference"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D056",
@@ -2304,7 +2911,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D057",
@@ -2324,7 +2935,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D058",
@@ -2345,7 +2960,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D059-A",
@@ -2367,7 +2986,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D059-B",
@@ -2389,7 +3012,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D060",
@@ -2410,7 +3037,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D061",
@@ -2431,7 +3062,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D062",
@@ -2452,7 +3087,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D063",
@@ -2473,7 +3112,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D064",
@@ -2494,7 +3137,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D065",
@@ -2515,7 +3162,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D066",
@@ -2547,7 +3198,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D067",
@@ -2579,7 +3234,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D068",
@@ -2613,7 +3272,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D069",
@@ -2645,7 +3308,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D070",
@@ -2677,7 +3344,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D071",
@@ -2709,7 +3380,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D072",
@@ -2741,7 +3416,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D073",
@@ -2773,7 +3452,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D074",
@@ -2805,7 +3488,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D075",
@@ -2837,7 +3524,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D076",
@@ -2858,7 +3549,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D077",
@@ -2879,7 +3574,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D078",
@@ -2901,7 +3600,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D079",
@@ -2922,7 +3625,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D080",
@@ -2943,7 +3650,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D081",
@@ -2965,7 +3676,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D082",
@@ -2987,7 +3702,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D083",
@@ -3015,7 +3734,11 @@
       ],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D084",
@@ -3037,7 +3760,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D085",
@@ -3064,7 +3791,11 @@
       "negative_fixture_refs": [],
       "test_refs": [
         "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
-      ]
+      ],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D086",
@@ -3086,7 +3817,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D087",
@@ -3107,7 +3842,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D088",
@@ -3128,7 +3867,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D089",
@@ -3149,7 +3892,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D090",
@@ -3170,7 +3917,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D091",
@@ -3191,7 +3942,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D092",
@@ -3212,7 +3967,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D093",
@@ -3233,7 +3992,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D094",
@@ -3254,7 +4017,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D095",
@@ -3275,7 +4042,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D096",
@@ -3295,7 +4066,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D097",
@@ -3315,7 +4090,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D098",
@@ -3336,7 +4115,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D099",
@@ -3357,7 +4140,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D100",
@@ -3377,7 +4164,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D101",
@@ -3397,7 +4188,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D102",
@@ -3418,7 +4213,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D103",
@@ -3439,7 +4238,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D104",
@@ -3458,7 +4261,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D105",
@@ -3479,7 +4286,11 @@
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     }
   ]
 }
