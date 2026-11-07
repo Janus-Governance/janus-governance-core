@@ -1,0 +1,15 @@
+{
+  "name": "janus-core-conformance",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.13.1"
+  },
+  "scripts": {
+    "baseline": "node run.mjs",
+    "test": "node --test test/baseline.test.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,2791 @@
+{
+  "schema_version": "janus-core-conformance-coverage-matrix-v1",
+  "matrix_id": "JN-CORE-LITE-0_2-COVERAGE-BASELINE-001",
+  "catalog_id": "JN-CORE-LITE-0_2-REQUIREMENTS-001",
+  "classification": "EXPECTED_INCOMPLETE",
+  "allowed_findings": [
+    "MISSING_SCHEMA",
+    "MISSING_POSITIVE_FIXTURE",
+    "MISSING_NEGATIVE_FIXTURE",
+    "MISSING_TEST",
+    "HUMAN_REVIEW_REQUIRED",
+    "FRAMEWORK_PROFILE_REQUIRED",
+    "NON_GATING_CAPABILITY"
+  ],
+  "finding_counts": {
+    "HUMAN_REVIEW_REQUIRED": 28,
+    "MISSING_TEST": 151,
+    "MISSING_POSITIVE_FIXTURE": 123,
+    "MISSING_NEGATIVE_FIXTURE": 123,
+    "MISSING_SCHEMA": 48,
+    "FRAMEWORK_PROFILE_REQUIRED": 5,
+    "NON_GATING_CAPABILITY": 1
+  },
+  "entries": [
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L001-A01",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L002-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L002-A02",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L002-A03",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L003-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L003-A02",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L003-A03",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L003-A04",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L004-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L005-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L006-A01",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L007-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L007-A02",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L007-A03",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L008-A01",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L008-A02",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L009-A01",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L010-A01",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L011-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A01",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A02",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A03",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A04",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A05",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A06",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L012-A07",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L013-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L014-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L015-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L016-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L017-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L018-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L019-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A01",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A02",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A03",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A04",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A05",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A06",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L020-A07",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L021-A01",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L021-A02",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-L022-A01",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D001",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D002",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D003",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D004",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D005",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D006",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D007",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D008",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D009",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D010",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D011",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D012",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D013",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D014",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D015",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D016",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D017",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D018",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D019",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D020",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D021",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D022",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D023",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D024",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D025",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D026",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D027",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D028",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D029",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D030",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D031",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D032",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D033",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D034",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D035",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL",
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D036-A",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW",
+        "FRAMEWORK_PROFILE_REQUIRED"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "FRAMEWORK_PROFILE_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D036-B",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW",
+        "FRAMEWORK_PROFILE_REQUIRED"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "FRAMEWORK_PROFILE_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D037",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW",
+        "FRAMEWORK_PROFILE_REQUIRED"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST",
+        "FRAMEWORK_PROFILE_REQUIRED"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D038",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D039",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D040",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D041",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D042",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D043-A",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D043-B",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D044",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D045",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D046",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D047",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D048",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D049",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D050",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D051-A",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D051-B",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D052",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D053",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D054",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D055",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D056",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D057",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D058",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D059-A",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW",
+        "FRAMEWORK_PROFILE_REQUIRED"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "FRAMEWORK_PROFILE_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D059-B",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW",
+        "FRAMEWORK_PROFILE_REQUIRED"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "FRAMEWORK_PROFILE_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D060",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D061",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D062",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D063",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D064",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D065",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D066",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D067",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D068",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D069",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D070",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D071",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D072",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D073",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D074",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D075",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D076",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D077",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D078",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D079",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D080",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D081",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D082",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D083",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D084",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D085",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D086",
+      "verification_class": "SCHEMA",
+      "verification_classes": [
+        "SCHEMA"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_SCHEMA",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D087",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D088",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D089",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D090",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D091",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D092",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D093",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D094",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D095",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D096",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D097",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D098",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D099",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D100",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D101",
+      "verification_class": "HUMAN_REVIEW",
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D102",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D103",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D104",
+      "verification_class": "NON_GATING_CAPABILITY",
+      "verification_classes": [
+        "NON_GATING_CAPABILITY"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": false,
+      "findings": [
+        "NON_GATING_CAPABILITY"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D105",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": []
+    }
+  ]
+}

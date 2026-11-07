@@ -1,0 +1,38 @@
+{
+  "schema_version": "janus-core-conformance-profile-v1",
+  "profile_id": "JN-CORE-LITE-0_2-GATE_2-BASELINE-001",
+  "core": {
+    "path": "core/lite/JANUS_CORE_LITE_v0.2.md",
+    "commit": "8aae702a1bb11032f86a8a32e164e3a68fc961da",
+    "sha256": "709279f32abe18d792c68299b080c349e1ed0c45780775581aacf32484e78b0b",
+    "status": "Draft"
+  },
+  "node_version": "24.13.1",
+  "module_system": "ESM",
+  "dependencies": [],
+  "inventory": {
+    "lexical_must_occurrences": 22,
+    "lexical_atomic_requirements": 43,
+    "declarative_constraints": 109,
+    "atomic_requirements_total": 152,
+    "non_gating_capabilities": 1
+  },
+  "gate_state": {
+    "gate": 2,
+    "lifecycle": "IN_PROGRESS",
+    "technical_verdict": "NOT_EVALUATED"
+  },
+  "baseline_expected": {
+    "classification": "EXPECTED_INCOMPLETE",
+    "exit_code": 1
+  },
+  "excluded": [
+    "CONFORMANCE_EVENT_SCHEMAS",
+    "CONFORMANCE_FIXTURES",
+    "RUNTIME_EXECUTION",
+    "DEMO_EXECUTION",
+    "CI",
+    "CONFORMANCE_CLAIM",
+    "PUBLICATION"
+  ]
+}

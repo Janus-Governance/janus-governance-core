@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://janus.invalid/conformance/catalog-structure-v1.schema.json",
+  "title": "Janus Core conformance requirements inventory structure",
+  "description": "Validates only the inventory/catalog structure. It is not a Core event schema, not a universal serialization, not proof of conformance, and not the future schema/fixture suite required to complete Gate 2. Critical invariants are manually checked by the dependency-free runner; no external JSON Schema engine execution is claimed.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "catalog_id",
+    "catalog_scope",
+    "normative_source",
+    "lexical_must_occurrence_count",
+    "parent_occurrences",
+    "declarative_constraint_count",
+    "lexical_atomic_requirement_count",
+    "atomic_requirement_count",
+    "requirements",
+    "anti_reinterpretation_rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "janus-core-conformance-requirements-v1"
+    },
+    "catalog_id": {
+      "type": "string"
+    },
+    "catalog_scope": {
+      "const": "GATE_2_INVENTORY_AND_COVERAGE_BASELINE"
+    },
+    "normative_source": {
+      "type": "object"
+    },
+    "lexical_must_occurrence_count": {
+      "const": 22
+    },
+    "parent_occurrences": {
+      "type": "array",
+      "minItems": 22,
+      "maxItems": 22
+    },
+    "declarative_constraint_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "lexical_atomic_requirement_count": {
+      "type": "integer",
+      "minimum": 22
+    },
+    "atomic_requirement_count": {
+      "type": "integer",
+      "minimum": 23
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 23,
+      "items": {
+        "type": "object",
+        "required": [
+          "requirement_id",
+          "source_path",
+          "core_commit",
+          "core_sha256",
+          "section_anchor",
+          "exact_quote",
+          "line_span",
+          "clause_sha256",
+          "modality",
+          "subject",
+          "condition",
+          "atomic_predicate",
+          "governed_object",
+          "verification_class",
+          "implementation_status",
+          "schema_refs",
+          "positive_fixture_refs",
+          "negative_fixture_refs",
+          "test_refs",
+          "coverage_status",
+          "dependencies_adapters",
+          "ambiguity_notes",
+          "explicit_non_goals",
+          "verification_classes",
+          "constraint_family"
+        ]
+      }
+    },
+    "anti_reinterpretation_rules": {
+      "type": "array",
+      "minItems": 13
+    }
+  }
+}
