@@ -12,14 +12,24 @@
     "FRAMEWORK_PROFILE_REQUIRED",
     "NON_GATING_CAPABILITY"
   ],
+  "allowed_coverage_markers": [
+    "STRUCTURAL_SCHEMA_COVERED",
+    "PROJECTION_COVERED",
+    "REQUIREMENT_COMPLETE"
+  ],
   "finding_counts": {
     "HUMAN_REVIEW_REQUIRED": 28,
-    "MISSING_TEST": 151,
-    "MISSING_POSITIVE_FIXTURE": 123,
-    "MISSING_NEGATIVE_FIXTURE": 123,
-    "MISSING_SCHEMA": 48,
+    "MISSING_TEST": 132,
+    "MISSING_POSITIVE_FIXTURE": 104,
+    "MISSING_NEGATIVE_FIXTURE": 104,
+    "MISSING_SCHEMA": 29,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 1
+  },
+  "coverage_marker_counts": {
+    "STRUCTURAL_SCHEMA_COVERED": 19,
+    "REQUIREMENT_COMPLETE": 19,
+    "PROJECTION_COVERED": 10
   },
   "entries": [
     {
@@ -30,6 +40,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -47,6 +60,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -65,6 +81,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -83,6 +102,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -101,6 +123,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -119,6 +144,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -137,6 +165,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -155,6 +186,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -173,6 +207,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -191,6 +228,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -209,6 +249,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -226,6 +269,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -244,6 +290,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -262,6 +311,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -280,6 +332,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -299,6 +354,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -318,6 +376,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -335,6 +396,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -352,6 +416,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -368,18 +435,28 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-event-type",
+        "human-decision-wrong-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A02",
@@ -387,18 +464,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-event-id"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A03",
@@ -406,18 +492,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-actor-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A04",
@@ -425,18 +520,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-scope-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A05",
@@ -444,18 +548,29 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-object-refs-order-a",
+        "human-decision-valid-object-refs-order-b"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-object-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A06",
@@ -463,18 +578,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-occurred-at"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A07",
@@ -482,18 +606,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-recorded-at"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L013-A01",
@@ -503,6 +636,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -521,6 +657,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -539,6 +678,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -557,6 +699,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -575,6 +720,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -593,6 +741,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -611,6 +762,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -627,18 +781,28 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-event-type",
+        "omission-detected-wrong-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A02",
@@ -646,18 +810,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-event-id"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A03",
@@ -665,18 +838,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-expectation-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A04",
@@ -684,18 +866,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-scope-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A05",
@@ -703,18 +894,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-schema-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A06",
@@ -722,18 +922,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-evidence-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A07",
@@ -741,18 +950,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-recorded-at"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A01",
@@ -762,6 +980,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -780,6 +1001,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -798,6 +1022,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -815,6 +1042,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -832,6 +1062,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -849,6 +1082,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -866,6 +1102,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -883,6 +1122,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -900,6 +1142,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -917,6 +1162,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -934,6 +1182,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -951,6 +1202,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -968,6 +1222,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -986,6 +1243,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1005,6 +1265,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1024,6 +1287,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1043,6 +1309,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1062,6 +1331,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1081,6 +1353,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1100,6 +1375,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1118,6 +1396,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1134,18 +1415,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "audit-event-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "audit-event-missing-event-id"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D020",
@@ -1153,18 +1443,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "audit-event-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "audit-event-missing-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D021",
@@ -1174,6 +1473,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1192,6 +1494,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1210,6 +1515,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1228,6 +1536,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1246,6 +1557,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1264,6 +1578,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1282,6 +1599,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1300,6 +1620,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1318,6 +1641,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1336,6 +1662,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1354,6 +1683,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1372,6 +1704,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1390,6 +1725,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1408,6 +1746,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -1426,6 +1767,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1445,6 +1789,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "FRAMEWORK_PROFILE_REQUIRED",
@@ -1464,6 +1811,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "FRAMEWORK_PROFILE_REQUIRED",
@@ -1483,6 +1833,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST",
@@ -1501,6 +1854,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1520,6 +1876,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1537,18 +1896,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-empty-object-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D041",
@@ -1558,6 +1926,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1577,6 +1948,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1595,6 +1969,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1613,6 +1990,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1631,6 +2011,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1649,6 +2032,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1667,6 +2053,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -1684,6 +2073,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1702,6 +2094,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1720,6 +2115,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1739,6 +2137,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1758,6 +2159,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1776,6 +2180,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1794,6 +2201,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -1813,6 +2223,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1831,6 +2244,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -1848,6 +2264,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1866,6 +2285,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -1883,6 +2305,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -1900,6 +2325,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1919,6 +2347,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "FRAMEWORK_PROFILE_REQUIRED",
@@ -1938,6 +2369,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "FRAMEWORK_PROFILE_REQUIRED",
@@ -1956,6 +2390,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1974,6 +2411,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -1992,6 +2432,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2010,6 +2453,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2028,6 +2474,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2046,6 +2495,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2062,18 +2514,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "expectation-valid-due-time-only"
+      ],
+      "negative_fixture_refs": [
+        "expectation-missing-provenance"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D067",
@@ -2081,18 +2546,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "expectation-valid-due-time-only"
+      ],
+      "negative_fixture_refs": [
+        "expectation-missing-temporal-applicability"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D068",
@@ -2100,18 +2578,33 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "expectation-valid-due-time-only",
+        "expectation-valid-due-condition-only",
+        "expectation-valid-both-due-triggers"
+      ],
+      "negative_fixture_refs": [
+        "expectation-missing-both-due-triggers"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D069",
@@ -2119,18 +2612,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-sources"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D070",
@@ -2138,18 +2644,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-subject"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D071",
@@ -2157,18 +2676,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-filters"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D072",
@@ -2176,18 +2708,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-window"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D073",
@@ -2195,18 +2740,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-cutoff"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D074",
@@ -2214,18 +2772,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-evaluation-procedure-identity"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D075",
@@ -2233,18 +2804,31 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "PROJECTION_COVERED",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-evaluation-procedure-version"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D076",
@@ -2254,6 +2838,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2272,6 +2859,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2290,6 +2880,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -2309,6 +2902,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2327,6 +2923,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2345,6 +2944,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -2364,6 +2966,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -2381,18 +2986,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": []
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-empty-evidence-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D084",
@@ -2402,6 +3016,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -2419,18 +3036,26 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
+      "fixture_polarity_requirement": "POSITIVE_ONLY_NOT_REJECTABLE",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-management-refs-absent",
+        "omission-detected-valid-management-refs-present"
+      ],
       "negative_fixture_refs": [],
-      "test_refs": []
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D086",
@@ -2440,6 +3065,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -2459,6 +3087,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2477,6 +3108,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2495,6 +3129,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2513,6 +3150,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2531,6 +3171,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2549,6 +3192,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2567,6 +3213,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2585,6 +3234,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2603,6 +3255,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2621,6 +3276,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -2638,6 +3296,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -2655,6 +3316,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2673,6 +3337,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2691,6 +3358,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -2708,6 +3378,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "HUMAN_REVIEW_REQUIRED",
         "MISSING_TEST"
@@ -2725,6 +3398,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2743,6 +3419,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",
@@ -2761,6 +3440,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": false,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "NON_GATING_CAPABILITY"
       ],
@@ -2777,6 +3459,9 @@
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
       "findings": [
         "MISSING_POSITIVE_FIXTURE",
         "MISSING_NEGATIVE_FIXTURE",

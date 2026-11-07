@@ -34,5 +34,22 @@
     "CI",
     "CONFORMANCE_CLAIM",
     "PUBLICATION"
-  ]
+  ],
+  "schema_foundation": {
+    "status": "STRUCTURAL_PROFILE_FOUNDATION",
+    "json_schema_dialect": "2020-12",
+    "validator": {
+      "name": "ajv",
+      "version": "8.20.0",
+      "import": "ajv/dist/2020.js"
+    },
+    "direct_dependencies": {
+      "ajv": "8.20.0"
+    },
+    "schema_count": 6,
+    "fixture_case_count": 42,
+    "structurally_complete_requirements": 19,
+    "projection_covered_requirements": 10,
+    "conformance_claimed": false
+  }
 }

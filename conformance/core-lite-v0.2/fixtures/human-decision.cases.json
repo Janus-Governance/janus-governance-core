@@ -1,0 +1,369 @@
+{
+  "schema_version": "janus-core-conformance-fixtures-v1",
+  "fixture_family": "HUMAN_DECISION",
+  "cases": [
+    {
+      "case_id": "human-decision-valid-minimal",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D040",
+        "JN-CORE-0_2-REQ-L012-A01",
+        "JN-CORE-0_2-REQ-L012-A02",
+        "JN-CORE-0_2-REQ-L012-A03",
+        "JN-CORE-0_2-REQ-L012-A04",
+        "JN-CORE-0_2-REQ-L012-A05",
+        "JN-CORE-0_2-REQ-L012-A06",
+        "JN-CORE-0_2-REQ-L012-A07"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "human-decision-valid-optional-context",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A01",
+        "JN-CORE-0_2-REQ-L012-A02",
+        "JN-CORE-0_2-REQ-L012-A03",
+        "JN-CORE-0_2-REQ-L012-A04",
+        "JN-CORE-0_2-REQ-L012-A05",
+        "JN-CORE-0_2-REQ-L012-A06",
+        "JN-CORE-0_2-REQ-L012-A07"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token",
+        "evidence_refs": [
+          "evidence-1"
+        ],
+        "management_refs": [
+          "management-1"
+        ],
+        "schema_ref": "schema-1",
+        "context_refs": [
+          "profile-context-1"
+        ]
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "human-decision-valid-object-refs-order-a",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A05"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "MANAGEMENT_LOG:m1",
+          "AUDIT_LOG:a1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "human-decision-valid-object-refs-order-b",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A05"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:a1",
+          "MANAGEMENT_LOG:m1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "human-decision-missing-event-type",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A01"
+      ],
+      "instance": {
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-missing-event-id",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A02"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-missing-actor-ref",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A03"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-missing-scope-ref",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A04"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-missing-object-refs",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A05"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-missing-occurred-at",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A06"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-missing-recorded-at",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A07"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "human-decision-wrong-event-type",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L012-A01"
+      ],
+      "instance": {
+        "event_type": "OTHER_EVENT",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [
+          "AUDIT_LOG:event-1"
+        ],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "const",
+      "expected_instance_path": "/event_type",
+      "expected_schema_path_predicate": "ENDS_WITH:/const",
+      "allowed_keywords": [
+        "const"
+      ],
+      "allowed_instance_paths": [
+        "/event_type"
+      ]
+    },
+    {
+      "case_id": "human-decision-empty-object-refs",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D040",
+        "JN-CORE-0_2-REQ-L012-A05"
+      ],
+      "instance": {
+        "event_type": "HUMAN_DECISION",
+        "event_id": "event-hd-1",
+        "actor_ref": "authority-1",
+        "scope_ref": "scope-1",
+        "object_refs": [],
+        "occurred_at": "human-act-time-token",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "minItems",
+      "expected_instance_path": "/object_refs",
+      "expected_schema_path_predicate": "ENDS_WITH:/minItems",
+      "allowed_keywords": [
+        "minItems"
+      ],
+      "allowed_instance_paths": [
+        "/object_refs"
+      ]
+    }
+  ]
+}

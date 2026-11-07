@@ -1,0 +1,330 @@
+{
+  "schema_version": "janus-core-conformance-fixtures-v1",
+  "fixture_family": "OMISSION_DETECTED",
+  "cases": [
+    {
+      "case_id": "omission-detected-valid-minimal",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D083",
+        "JN-CORE-0_2-REQ-L020-A01",
+        "JN-CORE-0_2-REQ-L020-A02",
+        "JN-CORE-0_2-REQ-L020-A03",
+        "JN-CORE-0_2-REQ-L020-A04",
+        "JN-CORE-0_2-REQ-L020-A05",
+        "JN-CORE-0_2-REQ-L020-A06",
+        "JN-CORE-0_2-REQ-L020-A07"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "omission-detected-valid-management-refs-absent",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D085"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "omission-detected-valid-management-refs-present",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D085"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token",
+        "management_refs": [
+          "management-1"
+        ]
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "omission-detected-missing-event-type",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A01"
+      ],
+      "instance": {
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-missing-event-id",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A02"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-missing-expectation-ref",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A03"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-missing-scope-ref",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A04"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-missing-schema-ref",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A05"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-missing-evidence-refs",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A06"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-missing-recorded-at",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A07"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ]
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "omission-detected-wrong-event-type",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-L020-A01"
+      ],
+      "instance": {
+        "event_type": "OTHER_EVENT",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [
+          "observation-v1"
+        ],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "const",
+      "expected_instance_path": "/event_type",
+      "expected_schema_path_predicate": "ENDS_WITH:/const",
+      "allowed_keywords": [
+        "const"
+      ],
+      "allowed_instance_paths": [
+        "/event_type"
+      ]
+    },
+    {
+      "case_id": "omission-detected-empty-evidence-refs",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D083",
+        "JN-CORE-0_2-REQ-L020-A06"
+      ],
+      "instance": {
+        "event_type": "OMISSION_DETECTED",
+        "event_id": "event-omission-1",
+        "expectation_ref": "expectation-v1",
+        "scope_ref": "scope-v1",
+        "schema_ref": "schema-context-v1",
+        "evidence_refs": [],
+        "recorded_at": "recording-time-token"
+      },
+      "expected_keyword": "minItems",
+      "expected_instance_path": "/evidence_refs",
+      "expected_schema_path_predicate": "ENDS_WITH:/minItems",
+      "allowed_keywords": [
+        "minItems"
+      ],
+      "allowed_instance_paths": [
+        "/evidence_refs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "janus-core-conformance-fixtures-v1",
+  "fixture_family": "EXPECTATION_PROJECTION",
+  "cases": [
+    {
+      "case_id": "expectation-valid-due-time-only",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D066",
+        "JN-CORE-0_2-REQ-D067",
+        "JN-CORE-0_2-REQ-D068"
+      ],
+      "instance": {
+        "provenance": "recorded-provenance",
+        "temporal_applicability": "applicability-token",
+        "due": {
+          "due_time": "due-time-token"
+        }
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "expectation-valid-due-condition-only",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D068"
+      ],
+      "instance": {
+        "provenance": "recorded-provenance",
+        "temporal_applicability": "applicability-token",
+        "due": {
+          "due_condition": "condition-token"
+        }
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "expectation-valid-both-due-triggers",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D068"
+      ],
+      "instance": {
+        "provenance": "recorded-provenance",
+        "temporal_applicability": "applicability-token",
+        "due": {
+          "due_time": "due-time-token",
+          "due_condition": "condition-token"
+        }
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "expectation-missing-provenance",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D066"
+      ],
+      "instance": {
+        "temporal_applicability": "applicability-token",
+        "due": {
+          "due_time": "due-time-token"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "expectation-missing-temporal-applicability",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D067"
+      ],
+      "instance": {
+        "provenance": "recorded-provenance",
+        "due": {
+          "due_time": "due-time-token"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "expectation-missing-both-due-triggers",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D068"
+      ],
+      "instance": {
+        "provenance": "recorded-provenance",
+        "temporal_applicability": "applicability-token",
+        "due": {}
+      },
+      "expected_keyword": "anyOf",
+      "expected_instance_path": "/due",
+      "expected_schema_path_predicate": "ENDS_WITH:/anyOf",
+      "allowed_keywords": [
+        "required",
+        "anyOf"
+      ],
+      "allowed_instance_paths": [
+        "/due"
+      ]
+    }
+  ]
+}

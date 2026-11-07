@@ -405,7 +405,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-001"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-001",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A01",
@@ -445,7 +447,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A02",
@@ -485,7 +489,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L002-A03",
@@ -525,7 +531,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-002",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A01",
@@ -566,7 +574,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A02",
@@ -607,7 +617,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A03",
@@ -648,7 +660,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L003-A04",
@@ -689,7 +703,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-003",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L004-A01",
@@ -729,7 +745,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-004"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-004",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L005-A01",
@@ -770,7 +788,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-005"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-005",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L006-A01",
@@ -809,7 +829,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-006"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-006",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A01",
@@ -849,7 +871,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A02",
@@ -889,7 +913,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L007-A03",
@@ -929,7 +955,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-007",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L008-A01",
@@ -970,7 +998,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-008"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-008",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L008-A02",
@@ -1012,7 +1042,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-008"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-008",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L009-A01",
@@ -1051,7 +1083,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-009"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-009",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L010-A01",
@@ -1090,7 +1124,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-010"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-010",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L011-A01",
@@ -1130,7 +1166,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-011"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-011",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A01",
@@ -1152,17 +1190,22 @@
       "atomic_predicate": "include required field event_type",
       "governed_object": "event_type",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-event-type",
+        "human-decision-wrong-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1172,7 +1215,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A02",
@@ -1194,17 +1242,21 @@
       "atomic_predicate": "include required field event_id",
       "governed_object": "event_id",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-event-id"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1214,7 +1266,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A03",
@@ -1236,17 +1293,21 @@
       "atomic_predicate": "include required field actor_ref",
       "governed_object": "actor_ref",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-actor-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1256,7 +1317,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A04",
@@ -1278,17 +1344,21 @@
       "atomic_predicate": "include required field scope_ref",
       "governed_object": "scope_ref",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-scope-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1298,7 +1368,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A05",
@@ -1320,17 +1395,24 @@
       "atomic_predicate": "include required field object_refs",
       "governed_object": "object_refs",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context",
+        "human-decision-valid-object-refs-order-a",
+        "human-decision-valid-object-refs-order-b"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-empty-object-refs",
+        "human-decision-missing-object-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1340,7 +1422,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A06",
@@ -1362,17 +1449,21 @@
       "atomic_predicate": "include required field occurred_at",
       "governed_object": "occurred_at",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-occurred-at"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1382,7 +1473,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A07",
@@ -1404,17 +1500,21 @@
       "atomic_predicate": "include required field recorded_at",
       "governed_object": "recorded_at",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-missing-recorded-at"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1424,7 +1524,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-012",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L013-A01",
@@ -1465,7 +1570,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-013"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-013",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L014-A01",
@@ -1505,7 +1612,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-014"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-014",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L015-A01",
@@ -1545,7 +1654,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-015"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-015",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L016-A01",
@@ -1585,7 +1696,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-016"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-016",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L017-A01",
@@ -1625,7 +1738,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-017"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-017",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L018-A01",
@@ -1665,7 +1780,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-018"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-018",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L019-A01",
@@ -1705,7 +1822,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-019"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-019",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A01",
@@ -1727,17 +1846,21 @@
       "atomic_predicate": "include required field event_type",
       "governed_object": "event_type",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-event-type",
+        "omission-detected-wrong-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1746,7 +1869,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A02",
@@ -1768,17 +1896,20 @@
       "atomic_predicate": "include required field event_id",
       "governed_object": "event_id",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-event-id"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1787,7 +1918,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A03",
@@ -1809,17 +1945,20 @@
       "atomic_predicate": "include required field expectation_ref",
       "governed_object": "expectation_ref",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-expectation-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1828,7 +1967,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A04",
@@ -1850,17 +1994,20 @@
       "atomic_predicate": "include required field scope_ref",
       "governed_object": "scope_ref",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-scope-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1869,7 +2016,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A05",
@@ -1891,17 +2043,20 @@
       "atomic_predicate": "include required field schema_ref",
       "governed_object": "schema_ref",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-schema-ref"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1910,7 +2065,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A06",
@@ -1932,17 +2092,21 @@
       "atomic_predicate": "include required field evidence_refs",
       "governed_object": "evidence_refs",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-empty-evidence-refs",
+        "omission-detected-missing-evidence-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "evidence_refs must contain at least one reference.",
       "explicit_non_goals": [
@@ -1951,7 +2115,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A07",
@@ -1973,17 +2142,20 @@
       "atomic_predicate": "include required field recorded_at",
       "governed_object": "recorded_at",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-missing-recorded-at"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Field representation is not prescribed.",
       "explicit_non_goals": [
@@ -1992,7 +2164,12 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-020",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A01",
@@ -2032,7 +2209,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-021"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-021",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L021-A02",
@@ -2072,7 +2251,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-021"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-021",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L022-A01",
@@ -2111,7 +2292,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-022"
+      "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-022",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D001",
@@ -2150,7 +2333,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY"
+      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D002",
@@ -2189,7 +2374,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY"
+      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D003",
@@ -2228,7 +2415,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY"
+      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D004",
@@ -2267,7 +2456,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY"
+      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D005",
@@ -2306,7 +2497,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY"
+      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D006",
@@ -2345,7 +2538,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY"
+      "constraint_family": "NORMATIVE_SOURCE_HIERARCHY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D007",
@@ -2384,7 +2579,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "CANONICAL_LOG_ONTOLOGY"
+      "constraint_family": "CANONICAL_LOG_ONTOLOGY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D008",
@@ -2423,7 +2620,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "CANONICAL_LOG_ONTOLOGY"
+      "constraint_family": "CANONICAL_LOG_ONTOLOGY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D009",
@@ -2462,7 +2661,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "CANONICAL_LOG_ONTOLOGY"
+      "constraint_family": "CANONICAL_LOG_ONTOLOGY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D010",
@@ -2502,7 +2703,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "STORAGE_INDEPENDENCE"
+      "constraint_family": "STORAGE_INDEPENDENCE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D011",
@@ -2541,7 +2744,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D003"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D003",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D012",
@@ -2580,7 +2785,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "SCHEMA_LOG_CONTENT"
+      "constraint_family": "SCHEMA_LOG_CONTENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D013",
@@ -2619,7 +2826,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "SCHEMA_LOG_CONTENT"
+      "constraint_family": "SCHEMA_LOG_CONTENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D014",
@@ -2658,7 +2867,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "AUDIT_LOG_CONTENT"
+      "constraint_family": "AUDIT_LOG_CONTENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D015",
@@ -2697,7 +2908,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "AUDIT_LOG_CONTENT"
+      "constraint_family": "AUDIT_LOG_CONTENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D016",
@@ -2736,7 +2949,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "AUDIT_LOG_CONTENT"
+      "constraint_family": "AUDIT_LOG_CONTENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D017",
@@ -2774,7 +2989,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "COMPACTION_EQUIVALENT_APPEND_ONLY"
+      "constraint_family": "COMPACTION_EQUIVALENT_APPEND_ONLY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D018",
@@ -2812,7 +3029,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "COMPACTION_GOVERNANCE_VERIFIABILITY"
+      "constraint_family": "COMPACTION_GOVERNANCE_VERIFIABILITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D019",
@@ -2837,21 +3056,29 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json"
       ],
+      "positive_fixture_refs": [
+        "audit-event-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "audit-event-missing-event-id"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "AUDIT_EVENT_REQUIRED_EVENT_ID"
+      "constraint_family": "AUDIT_EVENT_REQUIRED_EVENT_ID",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D020",
@@ -2876,21 +3103,29 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json"
       ],
+      "positive_fixture_refs": [
+        "audit-event-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "audit-event-missing-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "AUDIT_EVENT_REQUIRED_EVENT_TYPE"
+      "constraint_family": "AUDIT_EVENT_REQUIRED_EVENT_TYPE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D021",
@@ -2928,7 +3163,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DOMAIN_GOVERNANCE_SEPARATION"
+      "constraint_family": "DOMAIN_GOVERNANCE_SEPARATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D022",
@@ -2966,7 +3203,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DOMAIN_GOVERNANCE_SEPARATION"
+      "constraint_family": "DOMAIN_GOVERNANCE_SEPARATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D023",
@@ -3004,7 +3243,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "GOVERNANCE_EVENT_NEVER_DELETED"
+      "constraint_family": "GOVERNANCE_EVENT_NEVER_DELETED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D024",
@@ -3042,7 +3283,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "GOVERNANCE_EVENT_NEVER_OVERWRITTEN"
+      "constraint_family": "GOVERNANCE_EVENT_NEVER_OVERWRITTEN",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D025",
@@ -3082,7 +3325,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "EVIDENCE_CLASS_MEANING"
+      "constraint_family": "EVIDENCE_CLASS_MEANING",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D026",
@@ -3122,7 +3367,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "EVIDENCE_CLASS_MEANING"
+      "constraint_family": "EVIDENCE_CLASS_MEANING",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D027",
@@ -3162,7 +3409,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY"
+      "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D028",
@@ -3202,7 +3451,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY"
+      "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D029",
@@ -3242,7 +3493,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION"
+      "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D030",
@@ -3282,7 +3535,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION"
+      "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D031",
@@ -3320,7 +3575,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY"
+      "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D032",
@@ -3358,7 +3615,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION"
+      "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D033",
@@ -3399,7 +3658,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "HUMAN_DECISION_AUDIT_LOG_PLACEMENT"
+      "constraint_family": "HUMAN_DECISION_AUDIT_LOG_PLACEMENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D034",
@@ -3439,7 +3700,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "HUMAN_DECISION_CANONICAL_UNIQUENESS"
+      "constraint_family": "HUMAN_DECISION_CANONICAL_UNIQUENESS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D035",
@@ -3481,7 +3744,9 @@
         "STATEFUL",
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "HUMAN_DECISION_PRIOR_HUMAN_ACT"
+      "constraint_family": "HUMAN_DECISION_PRIOR_HUMAN_ACT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D036-A",
@@ -3524,7 +3789,9 @@
         "HUMAN_REVIEW",
         "FRAMEWORK_PROFILE_REQUIRED"
       ],
-      "constraint_family": "ACTOR_REF_RESPONSIBLE_HUMAN_AUTHORITY"
+      "constraint_family": "ACTOR_REF_RESPONSIBLE_HUMAN_AUTHORITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D036-B",
@@ -3567,7 +3834,9 @@
         "HUMAN_REVIEW",
         "FRAMEWORK_PROFILE_REQUIRED"
       ],
-      "constraint_family": "ACTOR_REF_AUTHORITY_ROLE_NOT_WRITER_ROLE"
+      "constraint_family": "ACTOR_REF_AUTHORITY_ROLE_NOT_WRITER_ROLE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D037",
@@ -3608,7 +3877,9 @@
         "HUMAN_REVIEW",
         "FRAMEWORK_PROFILE_REQUIRED"
       ],
-      "constraint_family": "ACTOR_COMPETENCE_FRAMEWORK_BOUNDARY"
+      "constraint_family": "ACTOR_COMPETENCE_FRAMEWORK_BOUNDARY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D038",
@@ -3649,7 +3920,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D012"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D012",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D039",
@@ -3690,7 +3963,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D013"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D013",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D040",
@@ -3712,24 +3987,32 @@
       "atomic_predicate": "be non-empty",
       "governed_object": "object_refs cardinality",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
+      "positive_fixture_refs": [
+        "human-decision-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "human-decision-empty-object-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D014"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D014",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D041",
@@ -3770,7 +4053,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D015"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D015",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D042",
@@ -3808,7 +4093,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D016"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D016",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D043-A",
@@ -3851,7 +4138,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OBJECT_REF_CANONICAL_ORIGIN_LOG"
+      "constraint_family": "OBJECT_REF_CANONICAL_ORIGIN_LOG",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D043-B",
@@ -3894,7 +4183,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OBJECT_REF_STABLE_TARGET_IDENTITY"
+      "constraint_family": "OBJECT_REF_STABLE_TARGET_IDENTITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D044",
@@ -3932,7 +4223,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D018"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D018",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D045",
@@ -3970,7 +4263,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D019"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D019",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D046",
@@ -4007,7 +4302,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D020"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D020",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D047",
@@ -4045,7 +4342,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OBJECT_REFS_DERIVED_VIEW_EXCLUSION"
+      "constraint_family": "OBJECT_REFS_DERIVED_VIEW_EXCLUSION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D048",
@@ -4083,7 +4382,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OBJECT_REFS_EXTERNAL_EXCLUSION"
+      "constraint_family": "OBJECT_REFS_EXTERNAL_EXCLUSION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D049",
@@ -4122,7 +4423,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "REFERENCE_ROLE_EVIDENCE"
+      "constraint_family": "REFERENCE_ROLE_EVIDENCE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D050",
@@ -4161,7 +4464,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "REFERENCE_ROLE_MANAGEMENT"
+      "constraint_family": "REFERENCE_ROLE_MANAGEMENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-A",
@@ -4201,7 +4506,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "CONTEXT_REFS_DO_NOT_IDENTIFY_DECIDED_OBJECT"
+      "constraint_family": "CONTEXT_REFS_DO_NOT_IDENTIFY_DECIDED_OBJECT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-B",
@@ -4241,7 +4548,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "CONTEXT_REFS_DO_NOT_SUBSTITUTE_OBJECT_REFS"
+      "constraint_family": "CONTEXT_REFS_DO_NOT_SUBSTITUTE_OBJECT_REFS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D052",
@@ -4280,7 +4589,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "REFERENCE_ROLE_SCHEMA"
+      "constraint_family": "REFERENCE_ROLE_SCHEMA",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D053",
@@ -4318,7 +4629,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "REFERENCE_DUAL_ROLE"
+      "constraint_family": "REFERENCE_DUAL_ROLE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D054",
@@ -4355,7 +4668,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "REFERENCE_DUAL_ROLE_NO_SUFFICIENCY"
+      "constraint_family": "REFERENCE_DUAL_ROLE_NO_SUFFICIENCY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D055",
@@ -4393,7 +4708,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "EVENT_NO_SELF_REFERENCE"
+      "constraint_family": "EVENT_NO_SELF_REFERENCE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D056",
@@ -4435,7 +4752,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "REFERENCE_NO_CAUSALITY"
+      "constraint_family": "REFERENCE_NO_CAUSALITY",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D057",
@@ -4477,7 +4796,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "REFERENCE_NO_OCCURRED_AT_RELATION"
+      "constraint_family": "REFERENCE_NO_OCCURRED_AT_RELATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D058",
@@ -4515,7 +4836,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D026"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D026",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D059-A",
@@ -4558,7 +4881,9 @@
         "HUMAN_REVIEW",
         "FRAMEWORK_PROFILE_REQUIRED"
       ],
-      "constraint_family": "ACTOR_REF_RESOLUTION_FRAMEWORK_OWNED"
+      "constraint_family": "ACTOR_REF_RESOLUTION_FRAMEWORK_OWNED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D059-B",
@@ -4601,7 +4926,9 @@
         "HUMAN_REVIEW",
         "FRAMEWORK_PROFILE_REQUIRED"
       ],
-      "constraint_family": "COMPETENCE_EVALUATION_FRAMEWORK_OWNED"
+      "constraint_family": "COMPETENCE_EVALUATION_FRAMEWORK_OWNED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D060",
@@ -4639,7 +4966,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "REEVALUATION_EXISTING_EVENT_TYPE_EXCEPTION"
+      "constraint_family": "REEVALUATION_EXISTING_EVENT_TYPE_EXCEPTION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D061",
@@ -4677,7 +5006,9 @@
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
-      "constraint_family": "REEVALUATION_NOT_CANONICAL_EVENT"
+      "constraint_family": "REEVALUATION_NOT_CANONICAL_EVENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D062",
@@ -4715,7 +5046,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "E_MINUS_EXPECTATION_DEFINED"
+      "constraint_family": "E_MINUS_EXPECTATION_DEFINED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D063",
@@ -4753,7 +5086,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "E_MINUS_EXPECTATION_REFERENCEABLE"
+      "constraint_family": "E_MINUS_EXPECTATION_REFERENCEABLE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D064",
@@ -4791,7 +5126,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "E_MINUS_EXPECTATION_VERSION_PRIOR_TO_OBSERVATION"
+      "constraint_family": "E_MINUS_EXPECTATION_VERSION_PRIOR_TO_OBSERVATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D065",
@@ -4829,7 +5166,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "E_MINUS_EXPECTATION_VERSION_RECORDED"
+      "constraint_family": "E_MINUS_EXPECTATION_VERSION_RECORDED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D066",
@@ -4851,11 +5190,19 @@
       "atomic_predicate": "declare provenance",
       "governed_object": "expectation provenance",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "expectation-valid-due-time-only"
+      ],
+      "negative_fixture_refs": [
+        "expectation-missing-provenance"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -4868,7 +5215,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D029"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D029",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D067",
@@ -4890,11 +5241,19 @@
       "atomic_predicate": "declare temporal applicability",
       "governed_object": "expectation temporal applicability",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "expectation-valid-due-time-only"
+      ],
+      "negative_fixture_refs": [
+        "expectation-missing-temporal-applicability"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -4907,7 +5266,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D030"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D030",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D068",
@@ -4929,11 +5292,21 @@
       "atomic_predicate": "declare a due trigger expressed as a time or condition",
       "governed_object": "due trigger",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "expectation-valid-due-time-only",
+        "expectation-valid-due-condition-only",
+        "expectation-valid-both-due-triggers"
+      ],
+      "negative_fixture_refs": [
+        "expectation-missing-both-due-triggers"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -4946,7 +5319,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "E_MINUS_EXPECTATION_DUE_TRIGGER"
+      "constraint_family": "E_MINUS_EXPECTATION_DUE_TRIGGER",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D069",
@@ -4968,11 +5345,19 @@
       "atomic_predicate": "identify sources",
       "governed_object": "search sources",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-sources"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -4985,7 +5370,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D032"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D032",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D070",
@@ -5007,11 +5396,19 @@
       "atomic_predicate": "identify subject",
       "governed_object": "search subject",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-subject"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -5024,7 +5421,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D033"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D033",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D071",
@@ -5046,11 +5447,19 @@
       "atomic_predicate": "identify filters",
       "governed_object": "search filters",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-filters"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -5063,7 +5472,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D034"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D034",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D072",
@@ -5085,11 +5498,19 @@
       "atomic_predicate": "identify window",
       "governed_object": "search window",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-window"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -5102,7 +5523,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D035"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D035",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D073",
@@ -5124,11 +5549,19 @@
       "atomic_predicate": "identify cutoff (as-of)",
       "governed_object": "search cutoff",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-cutoff"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -5141,7 +5574,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D036"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D036",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D074",
@@ -5163,11 +5600,19 @@
       "atomic_predicate": "identify the evaluation procedure",
       "governed_object": "evaluation procedure identity",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-evaluation-procedure-identity"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -5180,7 +5625,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "E_MINUS_EVALUATION_PROCEDURE_IDENTITY"
+      "constraint_family": "E_MINUS_EVALUATION_PROCEDURE_IDENTITY",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D075",
@@ -5202,11 +5651,19 @@
       "atomic_predicate": "identify the evaluation procedure version",
       "governed_object": "evaluation procedure version",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "implementation_status": "PROJECTION_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "search-scope-valid-complete"
+      ],
+      "negative_fixture_refs": [
+        "search-scope-missing-evaluation-procedure-version"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "coverage_status": [
         "MISSING_SCHEMA",
         "MISSING_POSITIVE_FIXTURE",
@@ -5219,7 +5676,11 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "E_MINUS_EVALUATION_PROCEDURE_VERSION"
+      "constraint_family": "E_MINUS_EVALUATION_PROCEDURE_VERSION",
+      "coverage_markers": [
+        "PROJECTION_COVERED"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D076",
@@ -5257,7 +5718,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D038"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D038",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D077",
@@ -5295,7 +5758,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D039"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D039",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D078",
@@ -5336,7 +5801,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "OMISSION_CANONICAL_EVENT_TYPE"
+      "constraint_family": "OMISSION_CANONICAL_EVENT_TYPE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D079",
@@ -5376,7 +5843,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OMISSION_RECORDS_E_MINUS_INSTANCE"
+      "constraint_family": "OMISSION_RECORDS_E_MINUS_INSTANCE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D080",
@@ -5416,7 +5885,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OMISSION_REQUIRES_FULL_E_MINUS_QUALIFICATION"
+      "constraint_family": "OMISSION_REQUIRES_FULL_E_MINUS_QUALIFICATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D081",
@@ -5455,7 +5926,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D041"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D041",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D082",
@@ -5494,7 +5967,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D042"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D042",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D083",
@@ -5516,24 +5991,32 @@
       "atomic_predicate": "contain at least one reference",
       "governed_object": "OMISSION_DETECTED evidence",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-empty-evidence-refs"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D043"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D043",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D084",
@@ -5574,7 +6057,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D044"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D044",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D085",
@@ -5596,24 +6081,31 @@
       "atomic_predicate": "be optional",
       "governed_object": "OMISSION_DETECTED domain context",
       "verification_class": "SCHEMA",
-      "implementation_status": "NOT_IMPLEMENTED",
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
       ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-management-refs-absent",
+        "omission-detected-valid-management-refs-present"
+      ],
+      "negative_fixture_refs": [],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D045"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D045",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
+      "fixture_polarity_requirement": "POSITIVE_ONLY_NOT_REJECTABLE"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D086",
@@ -5652,7 +6144,9 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D046"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D046",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D087",
@@ -5690,7 +6184,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D047"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D047",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D088",
@@ -5728,7 +6224,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LATER_EVIDENCE_NO_MODIFICATION"
+      "constraint_family": "LATER_EVIDENCE_NO_MODIFICATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D089",
@@ -5766,7 +6264,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LATER_EVIDENCE_NO_REMOVAL"
+      "constraint_family": "LATER_EVIDENCE_NO_REMOVAL",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D090",
@@ -5804,7 +6304,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "LATER_EVIDENCE_REBUILT_VIEW_EFFECT"
+      "constraint_family": "LATER_EVIDENCE_REBUILT_VIEW_EFFECT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D091",
@@ -5842,7 +6344,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D049"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D049",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D092",
@@ -5880,7 +6384,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OMISSION_RESOLUTION_CORRESPONDING_EVIDENCE"
+      "constraint_family": "OMISSION_RESOLUTION_CORRESPONDING_EVIDENCE",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D093",
@@ -5918,7 +6424,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OMISSION_RESOLUTION_LATER_CUTOFF"
+      "constraint_family": "OMISSION_RESOLUTION_LATER_CUTOFF",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D094",
@@ -5956,7 +6464,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OMISSION_RESOLUTION_SAME_EXPECTATION_VERSION"
+      "constraint_family": "OMISSION_RESOLUTION_SAME_EXPECTATION_VERSION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D095",
@@ -5994,7 +6504,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D051"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D051",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D096",
@@ -6035,7 +6547,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "HUMAN_DECISION_NOT_E_MINUS"
+      "constraint_family": "HUMAN_DECISION_NOT_E_MINUS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D097",
@@ -6076,7 +6590,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "HUMAN_DECISION_NOT_E_PLUS"
+      "constraint_family": "HUMAN_DECISION_NOT_E_PLUS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D098",
@@ -6118,7 +6634,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "HUMAN_DECISION_OMISSION_EVENT_UNCHANGED"
+      "constraint_family": "HUMAN_DECISION_OMISSION_EVENT_UNCHANGED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D099",
@@ -6160,7 +6678,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "HUMAN_DECISION_OMISSION_EVIDENCE_UNCHANGED"
+      "constraint_family": "HUMAN_DECISION_OMISSION_EVIDENCE_UNCHANGED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D100",
@@ -6199,7 +6719,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "TRUTH_CONDITION_E_MINUS"
+      "constraint_family": "TRUTH_CONDITION_E_MINUS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D101",
@@ -6238,7 +6760,9 @@
       "verification_classes": [
         "HUMAN_REVIEW"
       ],
-      "constraint_family": "TRUTH_CONDITION_E_PLUS"
+      "constraint_family": "TRUTH_CONDITION_E_PLUS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D102",
@@ -6276,7 +6800,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "EVIDENCE_EVALUATION_THROUGH_GOVERNANCE_FLOWS"
+      "constraint_family": "EVIDENCE_EVALUATION_THROUGH_GOVERNANCE_FLOWS",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D103",
@@ -6314,7 +6840,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "OPTIONAL_OMISSION_AUDIT_LOG_PLACEMENT"
+      "constraint_family": "OPTIONAL_OMISSION_AUDIT_LOG_PLACEMENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D104",
@@ -6350,7 +6878,9 @@
       "verification_classes": [
         "NON_GATING_CAPABILITY"
       ],
-      "constraint_family": "OPTIONAL_OMISSION_PRODUCTION"
+      "constraint_family": "OPTIONAL_OMISSION_PRODUCTION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D105",
@@ -6388,7 +6918,9 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D055"
+      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D055",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH"
     }
   ],
   "anti_reinterpretation_rules": [

@@ -1,0 +1,267 @@
+{
+  "schema_version": "janus-core-conformance-fixtures-v1",
+  "fixture_family": "SEARCH_SCOPE_PROJECTION",
+  "cases": [
+    {
+      "case_id": "search-scope-valid-complete",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D069",
+        "JN-CORE-0_2-REQ-D070",
+        "JN-CORE-0_2-REQ-D071",
+        "JN-CORE-0_2-REQ-D072",
+        "JN-CORE-0_2-REQ-D073",
+        "JN-CORE-0_2-REQ-D074",
+        "JN-CORE-0_2-REQ-D075"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "subject": "subject-1",
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "window": {
+          "kind": "profile-window"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "identity": "procedure-1",
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "search-scope-missing-sources",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D069"
+      ],
+      "instance": {
+        "subject": "subject-1",
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "window": {
+          "kind": "profile-window"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "identity": "procedure-1",
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "search-scope-missing-subject",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D070"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "window": {
+          "kind": "profile-window"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "identity": "procedure-1",
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "search-scope-missing-filters",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D071"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "subject": "subject-1",
+        "window": {
+          "kind": "profile-window"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "identity": "procedure-1",
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "search-scope-missing-window",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D072"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "subject": "subject-1",
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "identity": "procedure-1",
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "search-scope-missing-cutoff",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D073"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "subject": "subject-1",
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "window": {
+          "kind": "profile-window"
+        },
+        "evaluation_procedure": {
+          "identity": "procedure-1",
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "search-scope-missing-evaluation-procedure-identity",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D074"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "subject": "subject-1",
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "window": {
+          "kind": "profile-window"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "version": "version-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "/evaluation_procedure",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        "/evaluation_procedure"
+      ]
+    },
+    {
+      "case_id": "search-scope-missing-evaluation-procedure-version",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D075"
+      ],
+      "instance": {
+        "sources": [
+          "source-1"
+        ],
+        "subject": "subject-1",
+        "filters": {
+          "kind": "profile-filter"
+        },
+        "window": {
+          "kind": "profile-window"
+        },
+        "cutoff": "cutoff-token",
+        "evaluation_procedure": {
+          "identity": "procedure-1"
+        }
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "/evaluation_procedure",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        "/evaluation_procedure"
+      ]
+    }
+  ]
+}

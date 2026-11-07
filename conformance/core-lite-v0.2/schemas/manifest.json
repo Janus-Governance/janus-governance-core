@@ -1,0 +1,38 @@
+{
+  "schema_version": "janus-core-conformance-schema-manifest-v1",
+  "profile": "CORE_LITE_V0_2_TEST_VECTOR_PROFILE",
+  "authority_boundary": "Janus JSON conformance test-vector profile subordinate to Core Lite v0.2. Not a universal Core serialization, new canonical semantics, replacement for Core, runtime contract, Framework identity or competence resolver, or proof of conformance.",
+  "json_schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "schemas": [
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json",
+      "path": "schemas/profile-defs.schema.json",
+      "role": "STRUCTURAL_PROFILE"
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json",
+      "path": "schemas/audit-event.schema.json",
+      "role": "STRUCTURAL_PROFILE"
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "path": "schemas/human-decision.schema.json",
+      "role": "STRUCTURAL_PROFILE"
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "path": "schemas/omission-detected.schema.json",
+      "role": "STRUCTURAL_PROFILE"
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+      "path": "schemas/expectation.schema.json",
+      "role": "PROJECTION_ONLY"
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+      "path": "schemas/search-scope.schema.json",
+      "role": "PROJECTION_ONLY"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json",
+  "title": "AUDIT_LOG event structural profile",
+  "$comment": "Janus JSON conformance test-vector profile subordinate to Core Lite v0.2. Not a universal Core serialization, new canonical semantics, replacement for Core, runtime contract, Framework identity or competence resolver, or proof of conformance.",
+  "type": "object",
+  "required": [
+    "event_type",
+    "event_id"
+  ],
+  "properties": {
+    "event_type": {
+      "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+    },
+    "event_id": {
+      "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+    }
+  }
+}

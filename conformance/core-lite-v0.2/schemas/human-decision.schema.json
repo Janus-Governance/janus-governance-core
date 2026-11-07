@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+  "title": "HUMAN_DECISION structural profile",
+  "$comment": "Janus JSON conformance test-vector profile subordinate to Core Lite v0.2. Not a universal Core serialization, new canonical semantics, replacement for Core, runtime contract, Framework identity or competence resolver, or proof of conformance.",
+  "allOf": [
+    {
+      "$ref": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "event_type",
+        "event_id",
+        "actor_ref",
+        "scope_ref",
+        "object_refs",
+        "occurred_at",
+        "recorded_at"
+      ],
+      "properties": {
+        "event_type": {
+          "const": "HUMAN_DECISION"
+        },
+        "event_id": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+        },
+        "actor_ref": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+        },
+        "scope_ref": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+        },
+        "object_refs": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/nonEmptyReferenceArray"
+        },
+        "occurred_at": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+        },
+        "recorded_at": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+        },
+        "evidence_refs": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/referenceArray"
+        },
+        "management_refs": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/referenceArray"
+        },
+        "schema_ref": {
+          "$ref": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json#/$defs/reference"
+        }
+      }
+    }
+  ]
+}

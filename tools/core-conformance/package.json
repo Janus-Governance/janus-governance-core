@@ -8,8 +8,11 @@
   },
   "scripts": {
     "baseline": "node run.mjs",
-    "test": "node --test test/baseline.test.mjs"
+    "check:schemas": "node check-schemas.mjs",
+    "test": "node --test test/*.test.mjs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ajv": "8.20.0"
+  },
   "devDependencies": {}
 }

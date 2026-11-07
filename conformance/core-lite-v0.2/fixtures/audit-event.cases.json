@@ -1,0 +1,64 @@
+{
+  "schema_version": "janus-core-conformance-fixtures-v1",
+  "fixture_family": "AUDIT_EVENT",
+  "cases": [
+    {
+      "case_id": "audit-event-valid-minimal",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json",
+      "polarity": "VALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D020",
+        "JN-CORE-0_2-REQ-D019"
+      ],
+      "instance": {
+        "event_type": "PROFILE_EVENT",
+        "event_id": "event-1"
+      },
+      "expected_keyword": null,
+      "expected_instance_path": null,
+      "expected_schema_path_predicate": "NO_ERRORS",
+      "allowed_keywords": [],
+      "allowed_instance_paths": []
+    },
+    {
+      "case_id": "audit-event-missing-event-id",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D019"
+      ],
+      "instance": {
+        "event_type": "PROFILE_EVENT"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    },
+    {
+      "case_id": "audit-event-missing-event-type",
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json",
+      "polarity": "INVALID",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D020"
+      ],
+      "instance": {
+        "event_id": "event-1"
+      },
+      "expected_keyword": "required",
+      "expected_instance_path": "",
+      "expected_schema_path_predicate": "ENDS_WITH:/required",
+      "allowed_keywords": [
+        "required"
+      ],
+      "allowed_instance_paths": [
+        ""
+      ]
+    }
+  ]
+}

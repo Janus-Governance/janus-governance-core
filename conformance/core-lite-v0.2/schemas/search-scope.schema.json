@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
+  "title": "E-minus search-scope test-vector projection",
+  "$comment": "Janus JSON conformance test-vector profile subordinate to Core Lite v0.2. Not a universal Core serialization, new canonical semantics, replacement for Core, runtime contract, Framework identity or competence resolver, or proof of conformance.",
+  "type": "object",
+  "required": [
+    "sources",
+    "subject",
+    "filters",
+    "window",
+    "cutoff",
+    "evaluation_procedure"
+  ],
+  "properties": {
+    "sources": {},
+    "subject": {},
+    "filters": {},
+    "window": {},
+    "cutoff": {},
+    "evaluation_procedure": {
+      "type": "object",
+      "required": [
+        "identity",
+        "version"
+      ],
+      "properties": {
+        "identity": {},
+        "version": {}
+      }
+    }
+  }
+}

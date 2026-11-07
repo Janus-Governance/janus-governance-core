@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { runSchemaFoundation,schemaFoundationOutput,validateDependencyLock } from '../lib/schema-validator.mjs';
+import { validateCatalog,structuralCoverageIds,projectionCoverageIds } from '../lib/contract.mjs';
+const toolDir=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),repoRoot=path.resolve(toolDir,'../..');
+test('exact dependency envelope and deterministic schema output',()=>{const lock=validateDependencyLock();assert.equal(lock.lockfileVersion,3);assert.deepEqual(lock.packages.map(x=>x.name),['ajv','fast-deep-equal','fast-uri','json-schema-traverse','require-from-string']);assert.equal(schemaFoundationOutput(),schemaFoundationOutput());});
+test('all manifest fixtures pass under strict Ajv 2020-12',()=>{const result=runSchemaFoundation();assert.equal(result.classification,'SCHEMA_FOUNDATION_PASS_NOT_CONFORMANCE');assert.equal(result.conformance_claimed,false);assert.equal(result.reciprocal_traceability,true);assert.equal(result.schema_count,6);assert.equal(result.fixture_count,42);assert.ok(result.results.every(x=>x.result==='PASS'));});
+test('fixture contract and coverage traceability are exact',()=>{const{catalog,matrix}=validateCatalog();const fixtureManifest=JSON.parse(fs.readFileSync(path.join(repoRoot,'conformance/core-lite-v0.2/fixtures/manifest.json'),'utf8'));assert.equal(fixtureManifest.authority,'AUTHORITATIVE_FOR_FIXTURE_EXECUTION');assert.equal(fixtureManifest.case_count,42);assert.equal(structuralCoverageIds.length,19);assert.equal(projectionCoverageIds.length,10);for(const id of [...structuralCoverageIds,...projectionCoverageIds]){const r=catalog.requirements.find(x=>x.requirement_id===id),e=matrix.entries.find(x=>x.requirement_id===id);assert.ok(r&&e&&r.schema_refs.length&&r.positive_fixture_refs.length&&r.test_refs.length);}});
+test('profile schemas do not claim forbidden Core semantics',()=>{const dir=path.join(repoRoot,'conformance/core-lite-v0.2/schemas');const text=fs.readdirSync(dir).filter(x=>x.endsWith('.schema.json')).map(x=>fs.readFileSync(path.join(dir,x),'utf8')).join('\n');for(const forbidden of ['HUMAN_VERDICT','AI_SUGGESTION','ACER','uniqueItems','additionalProperties'])assert.equal(text.includes(forbidden),false);assert.equal(text.includes('format'),false);});

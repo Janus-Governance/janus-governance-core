@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
+  "title": "E-minus expectation test-vector projection",
+  "$comment": "Janus JSON conformance test-vector profile subordinate to Core Lite v0.2. Not a universal Core serialization, new canonical semantics, replacement for Core, runtime contract, Framework identity or competence resolver, or proof of conformance.",
+  "type": "object",
+  "required": [
+    "provenance",
+    "temporal_applicability",
+    "due"
+  ],
+  "properties": {
+    "provenance": {},
+    "temporal_applicability": {},
+    "due": {
+      "type": "object",
+      "properties": {
+        "due_time": {},
+        "due_condition": {}
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "due_time": {}
+          },
+          "required": [
+            "due_time"
+          ]
+        },
+        {
+          "properties": {
+            "due_condition": {}
+          },
+          "required": [
+            "due_condition"
+          ]
+        }
+      ]
+    }
+  }
+}
