@@ -9,7 +9,10 @@
   },
   "node_version": "24.13.1",
   "module_system": "ESM",
-  "dependencies": [],
+  "dependencies": {
+    "ajv": "8.20.0"
+  },
+  "baseline_runner_dependencies": [],
   "inventory": {
     "lexical_must_occurrences": 22,
     "lexical_atomic_requirements": 43,
@@ -27,8 +30,6 @@
     "exit_code": 1
   },
   "excluded": [
-    "CONFORMANCE_EVENT_SCHEMAS",
-    "CONFORMANCE_FIXTURES",
     "RUNTIME_EXECUTION",
     "DEMO_EXECUTION",
     "CI",

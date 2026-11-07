@@ -448,7 +448,8 @@
         "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
       "positive_fixture_refs": [
-        "human-decision-valid-minimal"
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
       ],
       "negative_fixture_refs": [
         "human-decision-missing-event-type",
@@ -477,7 +478,8 @@
         "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
       "positive_fixture_refs": [
-        "human-decision-valid-minimal"
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
       ],
       "negative_fixture_refs": [
         "human-decision-missing-event-id"
@@ -505,7 +507,8 @@
         "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
       "positive_fixture_refs": [
-        "human-decision-valid-minimal"
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
       ],
       "negative_fixture_refs": [
         "human-decision-missing-actor-ref"
@@ -533,7 +536,8 @@
         "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
       "positive_fixture_refs": [
-        "human-decision-valid-minimal"
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
       ],
       "negative_fixture_refs": [
         "human-decision-missing-scope-ref"
@@ -562,10 +566,12 @@
       ],
       "positive_fixture_refs": [
         "human-decision-valid-minimal",
+        "human-decision-valid-optional-context",
         "human-decision-valid-object-refs-order-a",
         "human-decision-valid-object-refs-order-b"
       ],
       "negative_fixture_refs": [
+        "human-decision-empty-object-refs",
         "human-decision-missing-object-refs"
       ],
       "test_refs": [
@@ -591,7 +597,8 @@
         "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
       "positive_fixture_refs": [
-        "human-decision-valid-minimal"
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
       ],
       "negative_fixture_refs": [
         "human-decision-missing-occurred-at"
@@ -619,7 +626,8 @@
         "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json"
       ],
       "positive_fixture_refs": [
-        "human-decision-valid-minimal"
+        "human-decision-valid-minimal",
+        "human-decision-valid-optional-context"
       ],
       "negative_fixture_refs": [
         "human-decision-missing-recorded-at"
@@ -938,6 +946,7 @@
         "omission-detected-valid-minimal"
       ],
       "negative_fixture_refs": [
+        "omission-detected-empty-evidence-refs",
         "omission-detected-missing-evidence-refs"
       ],
       "test_refs": [
