@@ -312,6 +312,7 @@ test('linked terminal H2 preserving visible text fails', () => mutateSource('del
 
 test('manifest exact schema rejects extra keys', () => mutateManifest('manifest-extra-key', (value) => { value.extra = true; }));
 test('manifest entry exact schema rejects extra keys', () => mutateManifest('entry-extra-key', (value) => { value.outputs[0].extra = true; }));
+test('obsolete Gate 1 publication state is rejected', () => mutateManifest('obsolete-publication-state', (value) => { value.publication_state = 'BLOCKED_PENDING_GATE_1_HTML_RECONCILIATION'; }));
 test('duplicate route is rejected', () => mutateManifest('duplicate-route', (value) => { value.outputs[1].route = value.outputs[0].route; }));
 test('malformed route is rejected', () => mutateManifest('malformed-route', (value) => { value.outputs[0].route = '//demos.html'; }));
 test('route/output relation mismatch is rejected', () => mutateManifest('route-relation', (value) => { value.outputs[0].route = '/wrong.html'; }));

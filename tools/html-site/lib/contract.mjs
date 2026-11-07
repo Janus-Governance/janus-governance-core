@@ -341,7 +341,7 @@ export async function loadAndValidateAuthority(repoRoot, configuration) {
   exactKeys(manifest, TOP_LEVEL_MANIFEST_KEYS, 'source manifest');
   invariant(manifest.contract_version === configuration.contract.manifest_contract_version, 'source manifest contract mismatch');
   invariant(manifest.normative_authority_ref === 'core/lite/JANUS_CORE_LITE_v0.2.md' && manifest.normative_authority_status === 'DRAFT', 'normative authority mismatch');
-  invariant(manifest.publication_state === 'BLOCKED_PENDING_GATE_1_HTML_RECONCILIATION' && manifest.source_precedence === 'MARKDOWN_SOURCE_PREVAILS', 'publication or source precedence mismatch');
+  invariant(manifest.publication_state === 'BLOCKED_PENDING_PUBLICATION_GATE' && manifest.source_precedence === 'MARKDOWN_SOURCE_PREVAILS', 'publication or source precedence mismatch');
   invariant(JSON.stringify(manifest.excluded_assets) === JSON.stringify(['assets/diagrams/janus-governance-flow.svg']), 'excluded asset list differs');
   invariant(Array.isArray(manifest.outputs) && manifest.outputs.length === 22, 'manifest must contain 22 outputs');
 

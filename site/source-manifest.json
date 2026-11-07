@@ -2,7 +2,7 @@
   "contract_version": "janus-html-source-authority-v1",
   "normative_authority_ref": "core/lite/JANUS_CORE_LITE_v0.2.md",
   "normative_authority_status": "DRAFT",
-  "publication_state": "BLOCKED_PENDING_GATE_1_HTML_RECONCILIATION",
+  "publication_state": "BLOCKED_PENDING_PUBLICATION_GATE",
   "source_precedence": "MARKDOWN_SOURCE_PREVAILS",
   "excluded_assets": [
     "assets/diagrams/janus-governance-flow.svg"
@@ -16,7 +16,7 @@
       "page_family": "ACCESSIBLE_ALIAS",
       "document_status": "INFORMATIVE_ALIAS",
       "title": "Demos",
-      "description": "Accessible non-JavaScript alias whose future generated output provides a visible fallback link to the canonical demos index.",
+      "description": "Accessible non-JavaScript alias providing a visible fallback link to the canonical demos index.",
       "publication_state": "BLOCKED",
       "allowed_assets": [],
       "navigation_owner": "ROOT_NAVIGATION"
@@ -146,7 +146,7 @@
       "page_family": "ACCESSIBLE_ALIAS",
       "document_status": "INFORMATIVE_ALIAS",
       "title": "What is Janus?",
-      "description": "Accessible non-JavaScript alias whose future generated output provides a visible fallback link to the canonical explanation.",
+      "description": "Accessible non-JavaScript alias providing a visible fallback link to the canonical explanation.",
       "publication_state": "BLOCKED",
       "allowed_assets": [],
       "navigation_owner": "DOCS_NAVIGATION"

@@ -34,4 +34,4 @@ RFC 0001–0008 are Draft, nonnormative proposals. They may explain or propose i
 
 ## Publication boundary
 
-Tracked HTML mirrors remain unreconciled with these Markdown sources. Publication is blocked pending separate HTML reconciliation and review.
+Markdown sources and generated HTML outputs are technically reconciled. Deterministic generation and semantic and structural checks passed as `PASS_NOT_CONFORMANCE`. Gate 1 formal state is recorded only in the campaign ledger by an explicit HEAD decision; this document does not constitute or predict that decision. Publication remains **BLOCKED** pending Gate 6 and explicit HEAD authorization. This does not establish runtime, CI, standards, release, publication, or conformance status.

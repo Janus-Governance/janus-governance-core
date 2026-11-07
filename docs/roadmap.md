@@ -14,10 +14,14 @@ Roadmap milestones describe project sequencing only. No milestone constitutes a 
 
 - Core Lite v0.2 status: **Draft**.
 - Markdown source semantic reconciliation: locally committed.
-- HTML source authority: defined by the versioned source manifest under HEAD authorization; generator implementation, deterministic HTML output, and rendered-output review remain pending.
+- Markdown sources and generated HTML outputs: technically reconciled.
+- Deterministic generation and semantic and structural checks: passed as `PASS_NOT_CONFORMANCE`.
+- Gate 1 formal state is recorded only in the campaign ledger by an explicit HEAD decision; this roadmap does not constitute or predict that decision.
 - Runtime migration and validation: deferred to Gate 3.
-- Contract tests and CI enforcement: pending.
-- Publication: **BLOCKED** pending Gate 1 HTML reconciliation and later authorization.
+- Normative contract coverage and CI enforcement: deferred to Gate 2.
+- Human visual publication QA: deferred to Gate 6 and not claimed as complete here.
+- Publication: **BLOCKED** pending Gate 6 and explicit HEAD authorization.
+- This status does not establish runtime, CI, standards, release, publication, or conformance.
 
 ## Phase 3 — Ecosystem (pending)
 

@@ -6,4 +6,4 @@ No runtime currently proves conformance with Core Lite v0.2. The [Node demo](dem
 
 Framework owns runtime implementation work. Runtime migration and the conformance profile are deferred to Gate 3.
 
-Publication is **BLOCKED** pending Gate 1 HTML reconciliation and later authorization.
+Publication is **BLOCKED** pending Gate 6 and explicit HEAD authorization.

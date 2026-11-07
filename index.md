@@ -15,7 +15,7 @@ RFC 0001–0008 are Draft, nonnormative proposals subordinate to Core Lite v0.2.
 
 The [demo walkthrough](docs/demo-run.md) is illustrative. The [Node demo](runtimes/demo-node/README.md) is classified `LEGACY_NONCONFORMING_PENDING_GATE_3`; neither surface is executable proof or establishes Core conformance.
 
-Tracked HTML remains unreconciled with these Markdown corrections. Publication is blocked pending separate HTML reconciliation and review.
+Markdown sources and generated HTML outputs are technically reconciled. Deterministic generation and semantic and structural checks passed as `PASS_NOT_CONFORMANCE`. Gate 1 formal state is recorded only in the campaign ledger by an explicit HEAD decision; this document does not constitute or predict that decision. Publication remains **BLOCKED** pending Gate 6 and explicit HEAD authorization. This does not establish runtime, CI, standards, release, publication, or conformance status.
 
 ## Repository
 

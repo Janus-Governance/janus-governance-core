@@ -6,4 +6,4 @@ The current [Node demo](../runtimes/demo-node/README.md) has status `LEGACY_NONC
 
 Runtime migration and validation are deferred to Gate 3. The [illustrative walkthrough](../docs/demo-run.md) describes the bounded demonstration context without authorizing direct execution.
 
-Publication is **BLOCKED** pending Gate 1 HTML reconciliation and later authorization. This repository source does not assert that the future public directory route is currently available.
+Publication is **BLOCKED** pending Gate 6 and explicit HEAD authorization. This repository source does not assert that the future public directory route is currently available.

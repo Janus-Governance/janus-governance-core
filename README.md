@@ -42,7 +42,7 @@ Core defines canonical semantics. Framework owns operational profiles and runtim
 
 ## Status
 
-Core Lite v0.2 (Status: Draft) is the current internal normative baseline. Tracked HTML remains unreconciled and publication remains blocked. This Markdown reconciliation does not establish repository-wide, public-surface, runtime, standards, or publication alignment.
+Core Lite v0.2 (Status: Draft) is the current internal normative baseline. Markdown sources and generated HTML outputs are technically reconciled, and deterministic generation plus semantic and structural checks passed as `PASS_NOT_CONFORMANCE`. Gate 1 formal state is recorded only in the campaign ledger by an explicit HEAD decision; this document does not constitute or predict that decision. Publication remains **BLOCKED** pending Gate 6 and explicit HEAD authorization. This does not establish runtime, CI, standards, release, publication, or conformance status.
 
 ## License
 

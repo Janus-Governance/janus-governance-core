@@ -11,4 +11,4 @@
 - [RFC 0007 — Audit Writer Authority](0007-audit-writer-authority.md) — Draft
 - [RFC 0008 — Log Reference Model](0008-log-reference-model.md) — Draft
 
-No RFC is accepted or promoted, and no RFC has independent normative authority. Publication is **BLOCKED** pending Gate 1 HTML reconciliation and later authorization.
+No RFC is accepted or promoted, and no RFC has independent normative authority. Publication is **BLOCKED** pending Gate 6 and explicit HEAD authorization.
