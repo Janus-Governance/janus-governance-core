@@ -2053,16 +2053,20 @@
       "atomic_predicate": "determine due status from sources consulted up to the cutoff",
       "governed_object": "expectation due status",
       "verification_class": "STATEFUL",
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
       ],
-      "coverage_status": [],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "Consulted-source scope must be explicit.",
+      "dependencies_adapters": [
+        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+      ],
+      "ambiguity_notes": "Consulted-source scope must be explicit. The test-only oracle fields are preparatory and do not derive due status from consulted frozen sources.",
       "explicit_non_goals": [
         "external hidden state"
       ],
@@ -2071,8 +2075,7 @@
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-019",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
@@ -2085,7 +2088,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -3723,16 +3726,20 @@
       "atomic_predicate": "mean evidence derived from verified absence of an expected record or event",
       "governed_object": "omission evidence",
       "verification_class": "STATEFUL",
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
       ],
-      "coverage_status": [],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict.",
+      "dependencies_adapters": [
+        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+      ],
+      "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict. The test-only oracle fields are preparatory and do not verify absence by executing a search over frozen sources.",
       "explicit_non_goals": [
         "equating OMISSION_DETECTED with E−"
       ],
@@ -3741,8 +3748,7 @@
       ],
       "constraint_family": "EVIDENCE_CLASS_MEANING",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
@@ -3755,7 +3761,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -6486,24 +6492,27 @@
       "atomic_predicate": "use SCHEMA_LOG context applicable to every considered record/event through cutoff",
       "governed_object": "schema context",
       "verification_class": "STATEFUL",
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
       ],
-      "coverage_status": [],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "none",
+      "dependencies_adapters": [
+        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+      ],
+      "ambiguity_notes": "The test-only oracle fields are preparatory and do not enumerate considered records or calculate SCHEMA_LOG coverage over that set.",
       "explicit_non_goals": [],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D038",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
@@ -6516,7 +6525,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -6539,24 +6548,27 @@
       "atomic_predicate": "produce a reproducible observation relative to scope and cutoff",
       "governed_object": "observation",
       "verification_class": "STATEFUL",
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
       ],
-      "coverage_status": [],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "none",
+      "dependencies_adapters": [
+        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+      ],
+      "ambiguity_notes": "The test-only oracle fields are preparatory and do not reproduce the observation from frozen sources, scope, and cutoff.",
       "explicit_non_goals": [],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D039",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
@@ -6569,7 +6581,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -6639,16 +6651,20 @@
       "atomic_predicate": "record an E− instance",
       "governed_object": "E− instance",
       "verification_class": "STATEFUL",
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
       ],
-      "coverage_status": [],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "OMISSION_DETECTED is not E− itself.",
+      "dependencies_adapters": [
+        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+      ],
+      "ambiguity_notes": "OMISSION_DETECTED is not E− itself. The test-only oracle fields are preparatory and do not establish a verified E− instance.",
       "explicit_non_goals": [
         "equating event with evidence class"
       ],
@@ -6657,8 +6673,7 @@
       ],
       "constraint_family": "OMISSION_RECORDS_E_MINUS_INSTANCE",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
@@ -6671,7 +6686,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {

@@ -21,9 +21,9 @@
   ],
   "finding_counts": {
     "MISSING_SCHEMA": 29,
-    "MISSING_POSITIVE_FIXTURE": 86,
-    "MISSING_NEGATIVE_FIXTURE": 86,
-    "MISSING_TEST": 115,
+    "MISSING_POSITIVE_FIXTURE": 75,
+    "MISSING_NEGATIVE_FIXTURE": 75,
+    "MISSING_TEST": 104,
     "HUMAN_REVIEW_REQUIRED": 29,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 2
@@ -31,9 +31,9 @@
   "coverage_marker_counts": {
     "STRUCTURAL_SCHEMA_COVERED": 19,
     "PROJECTION_COVERED": 10,
-    "STATEFUL_SCENARIO_COVERED": 20,
-    "STATEFUL_PROJECTION_COVERED": 2,
-    "REQUIREMENT_COMPLETE": 39
+    "STATEFUL_SCENARIO_COVERED": 31,
+    "STATEFUL_PROJECTION_COVERED": 7,
+    "REQUIREMENT_COMPLETE": 50
   },
   "entries": [
     {
@@ -1021,21 +1021,22 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
-      "findings": [],
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
-      ],
+      "test_refs": [],
       "stateful_positive_scenario_refs": [
         "accept-fully-qualified-omission"
       ],
@@ -1046,7 +1047,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -1984,21 +1985,22 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
-      "findings": [],
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
-      ],
+      "test_refs": [],
       "stateful_positive_scenario_refs": [
         "accept-fully-qualified-omission"
       ],
@@ -2009,7 +2011,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -3633,21 +3635,22 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
-      "findings": [],
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
-      ],
+      "test_refs": [],
       "stateful_positive_scenario_refs": [
         "accept-fully-qualified-omission"
       ],
@@ -3658,7 +3661,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -3667,21 +3670,22 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
-      "findings": [],
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
-      ],
+      "test_refs": [],
       "stateful_positive_scenario_refs": [
         "accept-fully-qualified-omission"
       ],
@@ -3692,7 +3696,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {
@@ -3727,21 +3731,22 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
       "mandatory": true,
-      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_state": "STATEFUL_PROJECTION_COVERED",
       "coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED",
-        "REQUIREMENT_COMPLETE"
+        "STATEFUL_PROJECTION_COVERED"
       ],
       "fixture_polarity_requirement": "BOTH",
-      "findings": [],
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
-      ],
+      "test_refs": [],
       "stateful_positive_scenario_refs": [
         "accept-fully-qualified-omission"
       ],
@@ -3752,7 +3757,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_SCENARIO_COVERED"
+        "STATEFUL_PROJECTION_COVERED"
       ]
     },
     {

@@ -70,8 +70,8 @@
       "CHECK_OBJECT_REFS",
       "ORIGINATE_HUMAN_DECISION"
     ],
-    "statefully_complete_requirements": 36,
-    "projection_covered_requirements": 2,
+    "statefully_complete_requirements": 31,
+    "projection_covered_requirements": 7,
     "human_decision_origin": "NOT_MODELED_UNSUPPORTED_OPERATION",
     "boundary_guard": "DEPENDENCY_FREE_TEST_PROFILE_NOT_JSON_SCHEMA_SUBSTITUTE",
     "audit_writer_authorization": "DEEP_FROZEN_EXTERNAL_TEST_PRECONDITION_ONLY",
