@@ -58,6 +58,22 @@
     "reject-audit-event-identity-event-id-mismatch",
     "reject-audit-event-missing-event-id",
     "reject-audit-event-missing-event-type",
-    "reject-human-decision-empty-object-refs"
+    "reject-human-decision-empty-object-refs",
+    "accept-fully-qualified-omission",
+    "reject-expectation-nonexistent",
+    "reject-expectation-unresolved",
+    "reject-expectation-version-absent",
+    "reject-expectation-after-observation",
+    "reject-due-status-indeterminate",
+    "reject-cutoff-before-due",
+    "reject-scope-incomplete-or-unresolved",
+    "reject-procedure-absent-or-wrong-version",
+    "reject-schema-context-missing-or-inapplicable",
+    "reject-observation-nonreproducible",
+    "recognize-expectation-satisfied",
+    "reject-evidence-unresolved",
+    "reject-evidence-version-mismatch",
+    "reject-event-refs-mismatch-or-outside-boundary",
+    "reject-omission-wrong-log-or-writer-bypass"
   ]
 }

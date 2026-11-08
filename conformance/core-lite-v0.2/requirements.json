@@ -1998,16 +1998,14 @@
       "atomic_predicate": "ensure cutoff does not precede expectation due time",
       "governed_object": "cutoff",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Does not invent occurred_at ordering.",
       "explicit_non_goals": [
@@ -2017,12 +2015,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-018",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-cutoff-before-due"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L019-A01",
@@ -2044,16 +2053,14 @@
       "atomic_predicate": "determine due status from sources consulted up to the cutoff",
       "governed_object": "expectation due status",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Consulted-source scope must be explicit.",
       "explicit_non_goals": [
@@ -2063,12 +2070,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-019",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-due-status-indeterminate"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L020-A01",
@@ -3705,16 +3723,14 @@
       "atomic_predicate": "mean evidence derived from verified absence of an expected record or event",
       "governed_object": "omission evidence",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict.",
       "explicit_non_goals": [
@@ -3724,12 +3740,23 @@
         "STATEFUL"
       ],
       "constraint_family": "EVIDENCE_CLASS_MEANING",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "recognize-expectation-satisfied"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D026",
@@ -3843,16 +3870,14 @@
       "atomic_predicate": "identify immutable artifact versions through its evidence references",
       "governed_object": "artifact versions",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict.",
       "explicit_non_goals": [
@@ -3862,12 +3887,23 @@
         "STATEFUL"
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-evidence-version-mismatch"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D029",
@@ -3935,16 +3971,14 @@
       "atomic_predicate": "be invoked through resolvable evidence references",
       "governed_object": "evidence references",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict.",
       "explicit_non_goals": [
@@ -3954,12 +3988,23 @@
         "STATEFUL"
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-evidence-unresolved"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D031",
@@ -3984,26 +4029,35 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-evidence-version-mismatch"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D032",
@@ -4028,26 +4082,35 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
       "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-evidence-unresolved"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D033",
@@ -5659,16 +5722,14 @@
       "atomic_predicate": "be defined",
       "governed_object": "expectation definition",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Version must declare provenance, temporal applicability, and due time/condition.",
       "explicit_non_goals": [],
@@ -5676,12 +5737,23 @@
         "STATEFUL"
       ],
       "constraint_family": "E_MINUS_EXPECTATION_DEFINED",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-expectation-nonexistent"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D063",
@@ -5703,16 +5775,14 @@
       "atomic_predicate": "be referenceable",
       "governed_object": "expectation referenceability",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Version must declare provenance, temporal applicability, and due time/condition.",
       "explicit_non_goals": [],
@@ -5720,12 +5790,23 @@
         "STATEFUL"
       ],
       "constraint_family": "E_MINUS_EXPECTATION_REFERENCEABLE",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-expectation-unresolved"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D064",
@@ -5747,16 +5828,14 @@
       "atomic_predicate": "have its version recorded before observation",
       "governed_object": "observation ordering",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Version must declare provenance, temporal applicability, and due time/condition.",
       "explicit_non_goals": [],
@@ -5764,12 +5843,23 @@
         "STATEFUL"
       ],
       "constraint_family": "E_MINUS_EXPECTATION_VERSION_PRIOR_TO_OBSERVATION",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-expectation-after-observation"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D065",
@@ -5791,16 +5881,14 @@
       "atomic_predicate": "have a recorded version",
       "governed_object": "expectation version",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "Version must declare provenance, temporal applicability, and due time/condition.",
       "explicit_non_goals": [],
@@ -5808,12 +5896,23 @@
         "STATEFUL"
       ],
       "constraint_family": "E_MINUS_EXPECTATION_VERSION_RECORDED",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-expectation-version-absent"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D066",
@@ -6387,16 +6486,14 @@
       "atomic_predicate": "use SCHEMA_LOG context applicable to every considered record/event through cutoff",
       "governed_object": "schema context",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -6404,12 +6501,23 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D038",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-schema-context-missing-or-inapplicable"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D077",
@@ -6431,16 +6539,14 @@
       "atomic_predicate": "produce a reproducible observation relative to scope and cutoff",
       "governed_object": "observation",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -6448,12 +6554,23 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D039",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-observation-nonreproducible"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D078",
@@ -6522,16 +6639,14 @@
       "atomic_predicate": "record an E− instance",
       "governed_object": "E− instance",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "OMISSION_DETECTED is not E− itself.",
       "explicit_non_goals": [
@@ -6541,12 +6656,23 @@
         "STATEFUL"
       ],
       "constraint_family": "OMISSION_RECORDS_E_MINUS_INSTANCE",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "recognize-expectation-satisfied"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D080",
@@ -6897,16 +7023,14 @@
       "atomic_predicate": "assert absence only within recorded scope and up to recorded cutoff",
       "governed_object": "omission assertion boundary",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -6914,12 +7038,23 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D047",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-event-refs-mismatch-or-outside-boundary"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D088",
@@ -7617,16 +7752,14 @@
       "atomic_predicate": "record any produced OMISSION_DETECTED in AUDIT_LOG",
       "governed_object": "OMISSION_DETECTED placement",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "none",
       "explicit_non_goals": [],
@@ -7634,12 +7767,23 @@
         "STATEFUL"
       ],
       "constraint_family": "OPTIONAL_OMISSION_AUDIT_LOG_PLACEMENT",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "accept-fully-qualified-omission"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-omission-wrong-log-or-writer-bypass"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D104",

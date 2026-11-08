@@ -54,7 +54,7 @@
     "conformance_claimed": false
   },
   "stateful_history_reference_foundation": {
-    "status": "CORRECTED_DETERMINISTIC_IN_MEMORY_TEST_PROFILE",
+    "status": "E_MINUS_OMISSION_DETERMINISTIC_IN_MEMORY_TEST_PROFILE",
     "canonical_serialization": false,
     "runtime_implementation": false,
     "logs": [
@@ -70,12 +70,15 @@
       "CHECK_OBJECT_REFS",
       "ORIGINATE_HUMAN_DECISION"
     ],
-    "statefully_complete_requirements": 20,
+    "statefully_complete_requirements": 36,
     "projection_covered_requirements": 2,
     "human_decision_origin": "NOT_MODELED_UNSUPPORTED_OPERATION",
     "boundary_guard": "DEPENDENCY_FREE_TEST_PROFILE_NOT_JSON_SCHEMA_SUBSTITUTE",
     "audit_writer_authorization": "DEEP_FROZEN_EXTERNAL_TEST_PRECONDITION_ONLY",
     "reference_aliases": "DEEP_FROZEN_NONCANONICAL_TEST_ADAPTER_ONLY",
+    "e_minus_preconditions": "DEEP_FROZEN_CLONED_EXPLICIT_TEST_ARTIFACTS_ONLY",
+    "logical_ordinals": "TEST_ADAPTERS_NOT_CANONICAL_TIME",
+    "omission_event_placement": "AUDIT_LOG_VIA_AUTHORIZED_AUDIT_WRITER_ONLY",
     "automatic_object_refs_resolution": "HUMAN_DECISION_ONLY_WHERE_CORE_DEFINED",
     "human_identity_authority_or_competence_inference": false,
     "conformance_claimed": false
