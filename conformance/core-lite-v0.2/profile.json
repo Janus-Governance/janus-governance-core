@@ -16,8 +16,8 @@
   "inventory": {
     "lexical_must_occurrences": 22,
     "lexical_atomic_requirements": 43,
-    "declarative_constraints": 109,
-    "atomic_requirements_total": 152,
+    "declarative_constraints": 110,
+    "atomic_requirements_total": 153,
     "non_gating_capabilities": 1
   },
   "gate_state": {

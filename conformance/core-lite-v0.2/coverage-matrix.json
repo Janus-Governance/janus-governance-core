@@ -21,9 +21,9 @@
   ],
   "finding_counts": {
     "MISSING_SCHEMA": 29,
-    "MISSING_POSITIVE_FIXTURE": 85,
-    "MISSING_NEGATIVE_FIXTURE": 85,
-    "MISSING_TEST": 113,
+    "MISSING_POSITIVE_FIXTURE": 86,
+    "MISSING_NEGATIVE_FIXTURE": 86,
+    "MISSING_TEST": 114,
     "HUMAN_REVIEW_REQUIRED": 28,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 1
@@ -4269,6 +4269,31 @@
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D105",
+      "verification_class": "STATEFUL",
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "implementation_status": "NOT_IMPLEMENTED",
+      "mandatory": true,
+      "coverage_state": "UNRESOLVED",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": [],
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D106",
       "verification_class": "STATEFUL",
       "verification_classes": [
         "STATEFUL"

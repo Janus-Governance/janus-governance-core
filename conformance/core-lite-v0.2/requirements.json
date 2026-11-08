@@ -363,9 +363,9 @@
       "modality": "MUST"
     }
   ],
-  "declarative_constraint_count": 109,
+  "declarative_constraint_count": 110,
   "lexical_atomic_requirement_count": 43,
-  "atomic_requirement_count": 152,
+  "atomic_requirement_count": 153,
   "requirements": [
     {
       "requirement_id": "JN-CORE-0_2-REQ-L001-A01",
@@ -7722,6 +7722,52 @@
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D055",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D106",
+      "parent_occurrence_id": null,
+      "declarative_parent_id": "JN-CORE-0_2-DECL-106",
+      "source_path": "core/lite/JANUS_CORE_LITE_v0.2.md",
+      "core_commit": "8aae702a1bb11032f86a8a32e164e3a68fc961da",
+      "core_sha256": "709279f32abe18d792c68299b080c349e1ed0c45780775581aacf32484e78b0b",
+      "section_anchor": "§4 Invariants — Append-only logs",
+      "exact_quote": "the canonical append-only representation, or a derived value. In `AUDIT_LOG`,\nthat identity is `event_id`, and every canonical event carries `event_type` and\n`event_id`.",
+      "line_span": {
+        "start": 86,
+        "end": 88
+      },
+      "clause_sha256": "87069246192904ecfd30390dbe4ffd5f0e24fe9cc30b20a9c2ac8b48de95327b",
+      "modality": "REQUIRED_CONDITION",
+      "subject": "canonical AUDIT_LOG event",
+      "condition": "When a canonical event is incorporated in AUDIT_LOG.",
+      "atomic_predicate": "use event_id as canonical log identity",
+      "governed_object": "canonical AUDIT_LOG identity",
+      "verification_class": "STATEFUL",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "dependencies_adapters": [],
+      "ambiguity_notes": "late inventory recovery; no semantic change to Core v0.2",
+      "explicit_non_goals": [
+        "changing Core Lite v0.2 semantics"
+      ],
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "constraint_family": "AUDIT_EVENT_IDENTITY_EQUALS_EVENT_ID",
       "coverage_markers": [],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [],
