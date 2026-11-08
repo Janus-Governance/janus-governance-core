@@ -54,7 +54,7 @@
     "conformance_claimed": false
   },
   "stateful_history_reference_foundation": {
-    "status": "E_MINUS_OMISSION_DETERMINISTIC_IN_MEMORY_TEST_PROFILE",
+    "status": "E_MINUS_CONSTITUTIVE_EVALUATOR_PREPARED_TEST_PROFILE",
     "canonical_serialization": false,
     "runtime_implementation": false,
     "logs": [
@@ -78,6 +78,11 @@
     "reference_aliases": "DEEP_FROZEN_NONCANONICAL_TEST_ADAPTER_ONLY",
     "e_minus_preconditions": "DEEP_FROZEN_CLONED_EXPLICIT_TEST_ARTIFACTS_ONLY",
     "logical_ordinals": "TEST_ADAPTERS_NOT_CANONICAL_TIME",
+    "source_completeness": "FROZEN_CAPTURE_METADATA_NOT_UNIVERSAL_COMPLETENESS",
+    "constitutive_evaluator": "PURE_DATA_ONLY_DERIVED_DUE_SEARCH_SCHEMA_COVERAGE_AND_REPLAY",
+    "caller_oracles": "REJECTED_NOT_TRUSTED_OR_IGNORED",
+    "deterministic_representation": "TEST_PROFILE_ONLY_NOT_CANONICAL_SERIALIZATION",
+    "audit_writer_boundary": "VERIFIES_PREPARED_PROOF_AND_REFERENCES_DOES_NOT_SEARCH",
     "omission_event_placement": "AUDIT_LOG_VIA_AUTHORIZED_AUDIT_WRITER_ONLY",
     "automatic_object_refs_resolution": "HUMAN_DECISION_ONLY_WHERE_CORE_DEFINED",
     "human_identity_authority_or_competence_inference": false,

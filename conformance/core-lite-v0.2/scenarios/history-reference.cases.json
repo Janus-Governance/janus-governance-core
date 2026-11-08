@@ -5,68 +5,82 @@
   "omission_foundation_preconditions": {
     "authorized_audit_writer_refs": ["writer-tech-1"],
     "reference_aliases": [],
-    "expectations": [{
-      "expectation_ref": "expected-record-1",
-      "version": "v1",
-      "referenceable": true,
-      "resolvable": true,
-      "recorded_ordinal": 10,
-      "provenance_ref": "policy-source-1",
-      "temporal_applicability": {"from_ordinal": 10, "through_ordinal": 100},
-      "due": {"kind": "ORDINAL", "ordinal": 20},
-      "due_status_determinable": true
-    }],
-    "scopes": [{
-      "scope_ref": "scope-1",
-      "resolvable": true,
-      "sources": ["MANAGEMENT_LOG"],
-      "subject_ref": "subject-1",
-      "filters": {"record_kind": "expected-kind"},
-      "window": {"from_ordinal": 10, "through_ordinal": 40},
-      "cutoff_ordinal": 40,
-      "procedure_ref": "procedure-1",
-      "procedure_version": "v1",
-      "schema_context_refs": ["schema-context-1"]
-    }],
-    "procedures": [{"procedure_ref": "procedure-1", "version": "v1"}],
-    "schema_contexts": [{
-      "schema_context_ref": "schema-context-1",
-      "source_log": "SCHEMA_LOG",
-      "covers_considered_records": true,
-      "applicable_through_ordinal": 40
-    }],
-    "observations": [{
+    "constitutive_evaluations": [{
+      "profile_version": "E_MINUS_CONSTITUTIVE_TEST_PROFILE_V1",
+      "evaluation_ref": "evaluation-1",
       "observation_ref": "observation-1",
+      "expectation_ref": "expected-record-1",
+      "expectation_version": "v1",
       "scope_ref": "scope-1",
-      "cutoff_ordinal": 40,
-      "procedure_ref": "procedure-1",
-      "procedure_version": "v1",
-      "observation_ordinal": 50,
-      "reproducible": true,
-      "outcome": "ABSENT",
-      "evidence_refs": [{"evidence_ref": "observation-artifact-1", "version": "v1"}]
+      "scope_version": "v1",
+      "snapshot": {
+        "snapshot_ref": "snapshot-observation-1",
+        "version": "v1",
+        "predecessor_snapshot_refs": [{"snapshot_ref": "snapshot-expectation-1", "version": "v1", "digest": "c8499a674d6af3c249d85e8ab8aadcd8293bfcb6b51f4335aaec44d85060ff0b"}],
+        "sources": [{
+          "source_ref": "MANAGEMENT_LOG",
+          "complete_through_ordinal": 50,
+          "records": [
+            {"identity": "noise-1", "ordinal": 12, "subject_ref": "other-subject", "fields": {"record_kind": "other-kind"}},
+            {"identity": "after-cutoff-match", "ordinal": 45, "subject_ref": "subject-1", "fields": {"record_kind": "expected-kind"}}
+          ]
+        }]
+      },
+      "prior_snapshots": [{
+        "snapshot_ref": "snapshot-expectation-1",
+        "version": "v1",
+        "digest": "c8499a674d6af3c249d85e8ab8aadcd8293bfcb6b51f4335aaec44d85060ff0b",
+        "expectation_records": [{
+          "expectation_ref": "expected-record-1",
+          "expectation_version": "v1",
+          "record_position": {"source_ref": "POLICY_LOG", "ordinal": 10},
+          "provenance_ref": "policy-source-1",
+          "provenance_version": "v1"
+        }]
+      }],
+      "expectations": [{
+        "expectation_ref": "expected-record-1",
+        "version": "v1",
+        "referenceable": true,
+        "registered_snapshot_ref": "snapshot-expectation-1",
+        "registered_snapshot_version": "v1",
+        "record_position": {"source_ref": "POLICY_LOG", "ordinal": 10},
+        "provenance_ref": "policy-source-1",
+        "provenance_version": "v1",
+        "temporal_applicability": {"source_ref": "MANAGEMENT_LOG", "from_ordinal": 10, "through_ordinal": 100},
+        "due": {"kind": "SOURCE_LOCAL_ORDINAL_AT_LEAST_V1", "source_ref": "MANAGEMENT_LOG", "ordinal": 20}
+      }],
+      "provenance_artifacts": [{"provenance_ref": "policy-source-1", "version": "v1", "digest": "provenance-digest-1"}],
+      "scopes": [{
+        "scope_ref": "scope-1",
+        "version": "v1",
+        "sources": [{"source_ref": "MANAGEMENT_LOG", "window": {"from_ordinal": 10, "through_ordinal": 40}, "cutoff_ordinal": 40}],
+        "subject_ref": "subject-1",
+        "filters": {"record_kind": "expected-kind"},
+        "procedure_ref": "procedure-1",
+        "procedure_version": "v1",
+        "schema_ref": "schema-context-1",
+        "schema_version": "v1",
+        "schema_context_refs": ["schema-context-1"]
+      }],
+      "procedures": [{"procedure_ref": "procedure-1", "version": "v1", "kind": "EXACT_SUBJECT_AND_FILTERS_V1"}],
+      "schema_history": [{"schema_context_ref": "schema-context-1", "version": "v1", "source_ref": "MANAGEMENT_LOG", "applicable_from_ordinal": 10, "applicable_through_ordinal": 40, "digest": "b296fa7986ba90b9e6dc987137dbf16be274510923fde1829b1bf438abaf89b0"}]
     }],
     "evidence_artifacts": [{
-      "evidence_ref": "observation-artifact-1",
+      "evidence_ref": "observation-1",
       "version": "v1",
       "resolvable": true,
       "immutable": true,
-      "artifact_class": "OBSERVATION"
+      "artifact_class": "CONSTITUTIVE_OBSERVATION",
+      "digest": "775ac4ca0eea4228127351538513fe8ec9cfc9591f9fff01f3078dfc96d34e1b"
     }]
   },
   "omission_foundation_event": {
     "event_type": "OMISSION_DETECTED",
     "event_id": "omission-event-template",
-    "expectation_ref": "expected-record-1",
-    "expectation_version": "v1",
-    "scope_ref": "scope-1",
-    "cutoff_ordinal": 40,
-    "procedure_ref": "procedure-1",
-    "procedure_version": "v1",
-    "schema_context_refs": ["schema-context-1"],
-    "observation_ref": "observation-1",
-    "evidence_refs": [{"evidence_ref": "observation-artifact-1", "version": "v1"}],
-    "assertion_boundary": {"scope_ref": "scope-1", "cutoff_ordinal": 40}
+    "evaluation_ref": "evaluation-1",
+    "schema_ref": "schema-context-1",
+    "recorded_at": "2026-11-08T00:00:00Z"
   },
   "scenarios": [
     {
@@ -2172,47 +2186,47 @@
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-qualified"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}}]
     },
     {
-      "scenario_id": "reject-expectation-nonexistent", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D062"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"expectations": []},
+      "scenario_id": "reject-expectation-nonexistent", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D062"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "EXPECTATION_NOT_FOUND"},
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-no-expectation"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-expectation-unresolved", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D063"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"expectations": [{"expectation_ref": "expected-record-1", "referenceable": false, "resolvable": false}]},
+      "scenario_id": "reject-expectation-unresolved", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D063"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "EXPECTATION_UNRESOLVED"},
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-unresolved-expectation"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_UNRESOLVED", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-expectation-version-absent", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D065"], "foundation_profile": "E_MINUS_OMISSION_V1",
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-version-absent", "payload_overrides": {"expectation_version": null}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_VERSION_REQUIRED", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-expectation-version-absent", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D065"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "EXPECTATION_VERSION_NOT_FOUND"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-version-absent"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_VERSION_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-expectation-after-observation", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D064"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"expectations": [{"expectation_ref": "expected-record-1", "version": "v1", "referenceable": true, "resolvable": true, "recorded_ordinal": 60}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-late-expectation"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_VERSION_NOT_PRIOR_TO_OBSERVATION", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-expectation-after-observation", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D064"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "EXPECTATION_AFTER_OBSERVATION"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-late-expectation"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "PRIOR_SNAPSHOT_REFERENCE_MISMATCH", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-due-status-indeterminate", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-L019-A01"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"expectations": [{"expectation_ref": "expected-record-1", "version": "v1", "referenceable": true, "resolvable": true, "recorded_ordinal": 10, "provenance_ref": "policy-source-1", "temporal_applicability": {"from_ordinal": 10, "through_ordinal": 100}, "due": {"kind": "ORDINAL", "ordinal": 20}, "due_status_determinable": false}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-due-indeterminate"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "DUE_STATUS_INDETERMINATE", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-due-status-indeterminate", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-L019-A01"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "DUE_INDETERMINATE"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-due-indeterminate"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_QUALIFICATION_INCOMPLETE", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-cutoff-before-due", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-L018-A01"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"expectations": [{"expectation_ref": "expected-record-1", "version": "v1", "referenceable": true, "resolvable": true, "recorded_ordinal": 10, "provenance_ref": "policy-source-1", "temporal_applicability": {"from_ordinal": 10, "through_ordinal": 100}, "due": {"kind": "ORDINAL", "ordinal": 50}, "due_status_determinable": true}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-early-cutoff"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "CUTOFF_PRECEDES_EXPECTATION_DUE", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-cutoff-before-due", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-L018-A01"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "NOT_DUE"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-early-cutoff"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_NOT_DUE", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-scope-incomplete-or-unresolved", "classification": "NEGATIVE", "requirement_ids": [], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"scopes": [{"scope_ref": "scope-incomplete", "resolvable": true}, {"scope_ref": "scope-unresolved", "resolvable": false}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-scope-incomplete", "payload_overrides": {"scope_ref": "scope-incomplete"}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCOPE_INCOMPLETE", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-scope-unresolved", "payload_overrides": {"scope_ref": "scope-unresolved"}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCOPE_UNRESOLVED", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-scope-incomplete-or-unresolved", "classification": "NEGATIVE", "requirement_ids": [], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "SCOPE_INCOMPLETE"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-scope-incomplete"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCOPE_INCOMPLETE", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-scope-unresolved"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCOPE_INCOMPLETE", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-procedure-absent-or-wrong-version", "classification": "NEGATIVE", "requirement_ids": [], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"scopes": [{"scope_ref": "scope-no-procedure", "resolvable": true, "sources": ["MANAGEMENT_LOG"], "subject_ref": "subject-1", "filters": {"record_kind": "expected-kind"}, "window": {"from_ordinal": 10, "through_ordinal": 40}, "cutoff_ordinal": 40, "procedure_ref": "procedure-missing", "procedure_version": "v1", "schema_context_refs": ["schema-context-1"]}, {"scope_ref": "scope-wrong-procedure-version", "resolvable": true, "sources": ["MANAGEMENT_LOG"], "subject_ref": "subject-1", "filters": {"record_kind": "expected-kind"}, "window": {"from_ordinal": 10, "through_ordinal": 40}, "cutoff_ordinal": 40, "procedure_ref": "procedure-versioned", "procedure_version": "v1", "schema_context_refs": ["schema-context-1"]}], "procedures": [{"procedure_ref": "procedure-versioned", "version": "v2"}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-procedure-absent", "payload_overrides": {"scope_ref": "scope-no-procedure"}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "PROCEDURE_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-procedure-version", "payload_overrides": {"scope_ref": "scope-wrong-procedure-version"}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "PROCEDURE_VERSION_MISMATCH", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-procedure-absent-or-wrong-version", "classification": "NEGATIVE", "requirement_ids": [], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "PROCEDURE_NOT_FOUND"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-procedure-absent"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "PROCEDURE_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-procedure-version"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "PROCEDURE_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-schema-context-missing-or-inapplicable", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D076"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"scopes": [{"scope_ref": "scope-schema-missing", "resolvable": true, "sources": ["MANAGEMENT_LOG"], "subject_ref": "subject-1", "filters": {"record_kind": "expected-kind"}, "window": {"from_ordinal": 10, "through_ordinal": 40}, "cutoff_ordinal": 40, "procedure_ref": "procedure-1", "procedure_version": "v1", "schema_context_refs": ["schema-missing"]}, {"scope_ref": "scope-schema-inapplicable", "resolvable": true, "sources": ["MANAGEMENT_LOG"], "subject_ref": "subject-1", "filters": {"record_kind": "expected-kind"}, "window": {"from_ordinal": 10, "through_ordinal": 40}, "cutoff_ordinal": 40, "procedure_ref": "procedure-1", "procedure_version": "v1", "schema_context_refs": ["schema-inapplicable"]}], "schema_contexts": [{"schema_context_ref": "schema-inapplicable", "source_log": "SCHEMA_LOG", "covers_considered_records": false, "applicable_through_ordinal": 40}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-schema-missing", "payload_overrides": {"scope_ref": "scope-schema-missing", "procedure_ref": "procedure-1", "procedure_version": "v1"}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCHEMA_CONTEXT_MISSING", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-schema-inapplicable", "payload_overrides": {"scope_ref": "scope-schema-inapplicable", "procedure_ref": "procedure-1", "procedure_version": "v1"}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCHEMA_CONTEXT_INAPPLICABLE", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-schema-context-missing-or-inapplicable", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D076"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "SCHEMA_INAPPLICABLE"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-schema-missing"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCHEMA_ROOT_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-schema-inapplicable"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SCHEMA_ROOT_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-observation-nonreproducible", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D077"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"observations": [{"observation_ref": "observation-1", "scope_ref": "scope-1", "cutoff_ordinal": 40, "procedure_ref": "procedure-1", "procedure_version": "v1", "observation_ordinal": 50, "reproducible": false, "outcome": "ABSENT", "evidence_refs": [{"evidence_ref": "observation-artifact-1", "version": "v1"}]}]},
-      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-nonreproducible"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "OBSERVATION_NOT_REPRODUCIBLE", "history_delta": 0, "before_equals_after": true}}]
+      "scenario_id": "reject-observation-nonreproducible", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D077"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "SNAPSHOT_INCOMPLETE"},
+      "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-nonreproducible"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "SOURCE_INCOMPLETE", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "recognize-expectation-satisfied", "classification": "POSITIVE_NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D025", "JN-CORE-0_2-REQ-D079"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"observations": [{"observation_ref": "observation-1", "scope_ref": "scope-1", "cutoff_ordinal": 40, "procedure_ref": "procedure-1", "procedure_version": "v1", "observation_ordinal": 50, "reproducible": true, "outcome": "PRESENT", "evidence_refs": [{"evidence_ref": "observation-artifact-1", "version": "v1"}]}]},
+      "scenario_id": "recognize-expectation-satisfied", "classification": "POSITIVE_NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D025", "JN-CORE-0_2-REQ-D079"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"constitutive_case": "PRESENT"},
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-presence-found"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EXPECTATION_SATISFIED", "history_delta": 0, "before_equals_after": true}}]
     },
     {
@@ -2220,7 +2234,7 @@
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-evidence-unresolved"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EVIDENCE_UNRESOLVED", "history_delta": 0, "before_equals_after": true}}]
     },
     {
-      "scenario_id": "reject-evidence-version-mismatch", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D028", "JN-CORE-0_2-REQ-D031"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"evidence_artifacts": [{"evidence_ref": "observation-artifact-1", "version": "v2", "resolvable": true, "immutable": true}, {"evidence_ref": "mutable-artifact", "version": "v1", "resolvable": true, "immutable": false}]},
+      "scenario_id": "reject-evidence-version-mismatch", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D028", "JN-CORE-0_2-REQ-D031"], "foundation_profile": "E_MINUS_OMISSION_V1", "preconditions": {"evidence_artifacts": [{"evidence_ref": "observation-1", "version": "v2", "resolvable": true, "immutable": true, "digest": "wrong-version-digest"}, {"evidence_ref": "mutable-artifact", "version": "v1", "resolvable": true, "immutable": false, "digest": "mutable-digest"}]},
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-evidence-version"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EVIDENCE_VERSION_MISMATCH", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-evidence-mutable", "payload_overrides": {"evidence_refs": [{"evidence_ref": "mutable-artifact", "version": "v1"}]}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "EVIDENCE_NOT_IMMUTABLE", "history_delta": 0, "before_equals_after": true}}]
     },
     {

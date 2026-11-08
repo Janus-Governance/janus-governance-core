@@ -2064,9 +2064,9 @@
         "MISSING_TEST"
       ],
       "dependencies_adapters": [
-        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+        "TEST_ONLY_CONSTITUTIVE_E_MINUS_EVALUATOR_PREPARED: frozen snapshots, source-local cutoffs, fixed versioned procedures, derived due status, enumerated considered records, derived schema coverage, deterministic replay digest"
       ],
-      "ambiguity_notes": "Consulted-source scope must be explicit. The test-only oracle fields are preparatory and do not derive due status from consulted frozen sources.",
+      "ambiguity_notes": "Consulted-source scope must be explicit. The test-only evaluator derives due status from frozen source-local cutoffs; this remains preparatory technical evidence and does not promote the requirement.",
       "explicit_non_goals": [
         "external hidden state"
       ],
@@ -3737,9 +3737,9 @@
         "MISSING_TEST"
       ],
       "dependencies_adapters": [
-        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+        "TEST_ONLY_CONSTITUTIVE_E_MINUS_EVALUATOR_PREPARED: frozen snapshots, source-local cutoffs, fixed versioned procedures, derived due status, enumerated considered records, derived schema coverage, deterministic replay digest"
       ],
-      "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict. The test-only oracle fields are preparatory and do not verify absence by executing a search over frozen sources.",
+      "ambiguity_notes": "E− is not a Boolean, reference, event, or verdict. The test-only evaluator derives PRESENT, ABSENT, NOT_DUE, or INDETERMINATE by searching frozen sources; ABSENT is only preparatory technical evidence.",
       "explicit_non_goals": [
         "equating OMISSION_DETECTED with E−"
       ],
@@ -6503,9 +6503,9 @@
         "MISSING_TEST"
       ],
       "dependencies_adapters": [
-        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+        "TEST_ONLY_CONSTITUTIVE_E_MINUS_EVALUATOR_PREPARED: frozen snapshots, source-local cutoffs, fixed versioned procedures, derived due status, enumerated considered records, derived schema coverage, deterministic replay digest"
       ],
-      "ambiguity_notes": "The test-only oracle fields are preparatory and do not enumerate considered records or calculate SCHEMA_LOG coverage over that set.",
+      "ambiguity_notes": "The test-only evaluator enumerates every considered record and derives exactly one applicable schema binding per record plus interval coverage; this remains a technical projection.",
       "explicit_non_goals": [],
       "verification_classes": [
         "STATEFUL"
@@ -6559,9 +6559,9 @@
         "MISSING_TEST"
       ],
       "dependencies_adapters": [
-        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+        "TEST_ONLY_CONSTITUTIVE_E_MINUS_EVALUATOR_PREPARED: frozen snapshots, source-local cutoffs, fixed versioned procedures, derived due status, enumerated considered records, derived schema coverage, deterministic replay digest"
       ],
-      "ambiguity_notes": "The test-only oracle fields are preparatory and do not reproduce the observation from frozen sources, scope, and cutoff.",
+      "ambiguity_notes": "The test-only evaluator reexecutes from frozen inputs and compares deterministic test-profile bytes and replay digest without consuming a stored outcome; this remains a technical projection.",
       "explicit_non_goals": [],
       "verification_classes": [
         "STATEFUL"
@@ -6662,9 +6662,9 @@
         "MISSING_TEST"
       ],
       "dependencies_adapters": [
-        "TEST_ONLY_NON_CONSTITUTIVE_ORACLES: observation.outcome, observation.reproducible, expectation.due_status_determinable, schema_context.covers_considered_records"
+        "TEST_ONLY_CONSTITUTIVE_E_MINUS_EVALUATOR_PREPARED: frozen snapshots, source-local cutoffs, fixed versioned procedures, derived due status, enumerated considered records, derived schema coverage, deterministic replay digest"
       ],
-      "ambiguity_notes": "OMISSION_DETECTED is not E− itself. The test-only oracle fields are preparatory and do not establish a verified E− instance.",
+      "ambiguity_notes": "OMISSION_DETECTED is not E− itself. The test-only evaluator produces only an unincorporated omission candidate; Audit Writer verification and later incorporation do not promote this requirement.",
       "explicit_non_goals": [
         "equating event with evidence class"
       ],
