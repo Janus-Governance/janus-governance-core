@@ -2586,7 +2586,7 @@
         "MISSING_TEST"
       ],
       "dependencies_adapters": [],
-      "ambiguity_notes": "The framework determines when interpretation is required.",
+      "ambiguity_notes": "Core Lite does not define what determines when human interpretation is required. When interpretation is required, the human act is recorded through HUMAN_DECISION.",
       "explicit_non_goals": [
         "treating HUMAN_DECISION as E+"
       ],
@@ -3641,7 +3641,7 @@
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
-        "append-correction-with-back-reference"
+        "reject-delete"
       ],
       "stateful_negative_scenario_refs": [
         "reject-delete"
@@ -7632,14 +7632,15 @@
       "condition": "When the quoted Core condition and subject apply.",
       "atomic_predicate": "be supported when E− verified omission exists",
       "governed_object": "E− support",
-      "verification_class": "HUMAN_REVIEW",
+      "verification_class": "STATEFUL",
       "implementation_status": "NOT_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
       "test_refs": [],
       "coverage_status": [
-        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
       "dependencies_adapters": [],
@@ -7648,7 +7649,7 @@
         "treating E+/E− as exhaustive verdicts"
       ],
       "verification_classes": [
-        "HUMAN_REVIEW"
+        "STATEFUL"
       ],
       "constraint_family": "TRUTH_CONDITION_E_MINUS",
       "coverage_markers": [],
@@ -7677,14 +7678,15 @@
       "condition": "When the quoted Core condition and subject apply.",
       "atomic_predicate": "be supported when E+ recorded evidence exists",
       "governed_object": "E+ support",
-      "verification_class": "HUMAN_REVIEW",
+      "verification_class": "STATEFUL",
       "implementation_status": "NOT_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
       "test_refs": [],
       "coverage_status": [
-        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
       "dependencies_adapters": [],
@@ -7693,7 +7695,7 @@
         "treating E+/E− as exhaustive verdicts"
       ],
       "verification_classes": [
-        "HUMAN_REVIEW"
+        "STATEFUL"
       ],
       "constraint_family": "TRUTH_CONDITION_E_PLUS",
       "coverage_markers": [],

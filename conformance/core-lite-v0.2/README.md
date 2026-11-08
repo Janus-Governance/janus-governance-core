@@ -12,7 +12,7 @@ The corrected deterministic in-memory stateful history/reference test profile co
 
 D024 is evidenced by an authorized Audit Writer incorporating a governance event into `AUDIT_LOG`, followed by an atomically rejected replacement that preserves the event byte-equivalently. The Phase A scenario set retains the same 41 scenario identities.
 
-Recorded P2 follow-ups remain outside this transaction: subject-correct positive evidence for D023, the inferred Framework note in L022-A01, and verification classification of D100/D101.
+The retained Gate 2 semantic debt is resolved without changing completeness counts: `reject-delete` is dual-polarity, subject-correct evidence that a governance event incorporated in `AUDIT_LOG` cannot be deleted; L022-A01 no longer infers who or what determines when human interpretation is required; and D100/D101 are stateful but remain `NOT_IMPLEMENTED` until constitutive E− and claim-linked E+ evidence exist.
 
 The E−/omission foundation appends `OMISSION_DETECTED` only for a fully qualified, reproducible absence within the recorded scope and cutoff, and only to `AUDIT_LOG` through the authorized Audit Writer. A presence result is the technical outcome `EXPECTATION_SATISFIED`; it is neither E− nor `HUMAN_DECISION`. D080 deliberately remains incomplete because this bounded foundation does not independently evidence every §5 condition.
 

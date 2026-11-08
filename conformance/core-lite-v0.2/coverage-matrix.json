@@ -21,10 +21,10 @@
   ],
   "finding_counts": {
     "MISSING_SCHEMA": 29,
-    "MISSING_POSITIVE_FIXTURE": 75,
-    "MISSING_NEGATIVE_FIXTURE": 75,
+    "MISSING_POSITIVE_FIXTURE": 77,
+    "MISSING_NEGATIVE_FIXTURE": 77,
     "MISSING_TEST": 104,
-    "HUMAN_REVIEW_REQUIRED": 29,
+    "HUMAN_REVIEW_REQUIRED": 27,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 2
   },
@@ -1933,7 +1933,7 @@
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
       "stateful_positive_scenario_refs": [
-        "append-correction-with-back-reference"
+        "reject-delete"
       ],
       "stateful_negative_scenario_refs": [
         "reject-delete"
@@ -4286,9 +4286,9 @@
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D100",
-      "verification_class": "HUMAN_REVIEW",
+      "verification_class": "STATEFUL",
       "verification_classes": [
-        "HUMAN_REVIEW"
+        "STATEFUL"
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
@@ -4296,7 +4296,8 @@
       "coverage_markers": [],
       "fixture_polarity_requirement": "BOTH",
       "findings": [
-        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
       "schema_refs": [],
@@ -4310,9 +4311,9 @@
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D101",
-      "verification_class": "HUMAN_REVIEW",
+      "verification_class": "STATEFUL",
       "verification_classes": [
-        "HUMAN_REVIEW"
+        "STATEFUL"
       ],
       "implementation_status": "NOT_IMPLEMENTED",
       "mandatory": true,
@@ -4320,7 +4321,8 @@
       "coverage_markers": [],
       "fixture_polarity_requirement": "BOTH",
       "findings": [
-        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
         "MISSING_TEST"
       ],
       "schema_refs": [],

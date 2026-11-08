@@ -358,7 +358,7 @@
     },
     {
       "scenario_id": "reject-delete",
-      "classification": "NEGATIVE",
+      "classification": "POSITIVE_NEGATIVE",
       "preconditions": {
         "authorized_audit_writer_refs": [
           "writer-tech-1"
@@ -632,8 +632,7 @@
       ],
       "requirement_ids": [
         "JN-CORE-0_2-REQ-L004-A01",
-        "JN-CORE-0_2-REQ-L005-A01",
-        "JN-CORE-0_2-REQ-D023"
+        "JN-CORE-0_2-REQ-L005-A01"
       ]
     },
     {
