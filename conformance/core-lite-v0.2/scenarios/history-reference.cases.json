@@ -1,7 +1,7 @@
 {
   "schema_version": "janus-stateful-history-reference-cases-v1",
   "manifest_ref": "JN-CORE-LITE-0_2-STATEFUL-HISTORY-REFERENCE-001",
-  "scenario_count": 37,
+  "scenario_count": 41,
   "scenarios": [
     {
       "scenario_id": "append-management-record",
@@ -85,7 +85,7 @@
             "operation": "APPEND",
             "log": "AUDIT_LOG",
             "record": {
-              "identity": "decision-1",
+              "identity": "decision-candidate",
               "payload": {
                 "event_type": "HUMAN_DECISION",
                 "event_id": "decision-candidate",
@@ -120,7 +120,8 @@
         "JN-CORE-0_2-REQ-L014-A01",
         "JN-CORE-0_2-REQ-L015-A01",
         "JN-CORE-0_2-REQ-L016-A01",
-        "JN-CORE-0_2-REQ-D033"
+        "JN-CORE-0_2-REQ-D033",
+        "JN-CORE-0_2-REQ-D106"
       ],
       "preconditions": {
         "authorized_audit_writer_refs": [
@@ -132,11 +133,96 @@
     {
       "scenario_id": "reject-reset",
       "classification": "NEGATIVE",
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
       "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "MANAGEMENT_LOG",
+            "record": {
+              "identity": "reset-management-prior",
+              "payload": {}
+            }
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "SCHEMA_LOG",
+            "record": {
+              "identity": "reset-schema-prior",
+              "payload": {}
+            }
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "reset-audit-prior",
+              "payload": {
+                "event_type": "AUDIT_EVENT",
+                "event_id": "reset-audit-prior"
+              }
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
         {
           "operation": {
             "operation": "RESET",
             "log": "MANAGEMENT_LOG"
+          },
+          "expected": {
+            "accepted": false,
+            "code": "FORBIDDEN_MUTATION",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        },
+        {
+          "operation": {
+            "operation": "RESET",
+            "log": "SCHEMA_LOG"
+          },
+          "expected": {
+            "accepted": false,
+            "code": "FORBIDDEN_MUTATION",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        },
+        {
+          "operation": {
+            "operation": "RESET",
+            "log": "AUDIT_LOG"
           },
           "expected": {
             "accepted": false,
@@ -156,6 +242,22 @@
       "scenario_id": "reject-replace",
       "classification": "NEGATIVE",
       "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "SCHEMA_LOG",
+            "record": {
+              "identity": "schema-1",
+              "payload": {}
+            }
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
         {
           "operation": {
             "operation": "REPLACE",
@@ -178,7 +280,36 @@
     {
       "scenario_id": "reject-delete",
       "classification": "NEGATIVE",
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
       "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "audit-1",
+              "payload": {
+                "event_type": "AUDIT_EVENT",
+                "event_id": "audit-1"
+              }
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
         {
           "operation": {
             "operation": "DELETE",
@@ -246,20 +377,16 @@
       "steps": [
         {
           "operation": {
-            "operation": "APPEND",
-            "log": "MANAGEMENT_LOG",
-            "record": {
-              "identity": "retry-token",
-              "payload": {
-                "object_refs": [
-                  {
-                    "origin_log": "MANAGEMENT_LOG",
-                    "identity": "missing",
-                    "ref_type": "CANONICAL"
-                  }
-                ]
+            "operation": "CHECK_OBJECT_REFS",
+            "origin_log": "MANAGEMENT_LOG",
+            "identity": "retry-token",
+            "object_refs": [
+              {
+                "origin_log": "MANAGEMENT_LOG",
+                "identity": "missing",
+                "ref_type": "CANONICAL"
               }
-            }
+            ]
           },
           "expected": {
             "accepted": false,
@@ -327,8 +454,7 @@
         }
       ],
       "requirement_ids": [
-        "JN-CORE-0_2-REQ-L003-A02",
-        "JN-CORE-0_2-REQ-D042"
+        "JN-CORE-0_2-REQ-L003-A02"
       ]
     },
     {
@@ -435,13 +561,19 @@
     {
       "scenario_id": "resolve-prior-object-reference",
       "classification": "POSITIVE",
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
       "steps": [
         {
           "operation": {
             "operation": "APPEND",
-            "log": "SCHEMA_LOG",
+            "log": "MANAGEMENT_LOG",
             "record": {
-              "identity": "target",
+              "identity": "management-target",
               "payload": {}
             }
           },
@@ -454,25 +586,63 @@
         },
         {
           "operation": {
-            "operation": "CHECK_OBJECT_REFS",
-            "object_refs": [
-              {
-                "origin_log": "SCHEMA_LOG",
-                "identity": "target",
-                "ref_type": "CANONICAL"
-              }
-            ]
+            "operation": "APPEND",
+            "log": "SCHEMA_LOG",
+            "record": {
+              "identity": "schema-target",
+              "payload": {}
+            }
           },
           "expected": {
             "accepted": true,
-            "code": "REFERENCES_RESOLVED",
-            "history_delta": 0,
-            "before_equals_after": true
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "decision-references-prior-targets",
+              "payload": {
+                "event_type": "HUMAN_DECISION",
+                "event_id": "decision-references-prior-targets",
+                "actor_ref": "opaque-actor-ref",
+                "scope_ref": "opaque-scope-ref",
+                "object_refs": [
+                  {
+                    "origin_log": "MANAGEMENT_LOG",
+                    "identity": "management-target",
+                    "ref_type": "CANONICAL"
+                  },
+                  {
+                    "origin_log": "SCHEMA_LOG",
+                    "identity": "schema-target",
+                    "ref_type": "CANONICAL"
+                  }
+                ],
+                "occurred_at": "2026-11-07T12:00:00Z",
+                "recorded_at": "2026-11-07T12:00:01Z"
+              }
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
           }
         }
       ],
       "requirement_ids": [
         "JN-CORE-0_2-REQ-L013-A01",
+        "JN-CORE-0_2-REQ-D042",
         "JN-CORE-0_2-REQ-D043-A",
         "JN-CORE-0_2-REQ-D043-B",
         "JN-CORE-0_2-REQ-D044",
@@ -483,17 +653,39 @@
     {
       "scenario_id": "reject-unresolved-reference",
       "classification": "NEGATIVE",
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
       "steps": [
         {
           "operation": {
-            "operation": "CHECK_OBJECT_REFS",
-            "object_refs": [
-              {
-                "origin_log": "MANAGEMENT_LOG",
-                "identity": "absent",
-                "ref_type": "CANONICAL"
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "decision-unresolved-general",
+              "payload": {
+                "event_type": "HUMAN_DECISION",
+                "event_id": "decision-unresolved-general",
+                "actor_ref": "opaque-actor-ref",
+                "scope_ref": "opaque-scope-ref",
+                "object_refs": [
+                  {
+                    "origin_log": "MANAGEMENT_LOG",
+                    "identity": "absent",
+                    "ref_type": "CANONICAL"
+                  }
+                ],
+                "occurred_at": "2026-11-07T12:00:00Z",
+                "recorded_at": "2026-11-07T12:00:01Z"
               }
-            ]
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
           },
           "expected": {
             "accepted": false,
@@ -513,20 +705,16 @@
       "steps": [
         {
           "operation": {
-            "operation": "APPEND",
-            "log": "MANAGEMENT_LOG",
-            "record": {
-              "identity": "referrer",
-              "payload": {
-                "object_refs": [
-                  {
-                    "origin_log": "MANAGEMENT_LOG",
-                    "identity": "future-target",
-                    "ref_type": "CANONICAL"
-                  }
-                ]
+            "operation": "CHECK_OBJECT_REFS",
+            "origin_log": "MANAGEMENT_LOG",
+            "identity": "referrer",
+            "object_refs": [
+              {
+                "origin_log": "MANAGEMENT_LOG",
+                "identity": "future-target",
+                "ref_type": "CANONICAL"
               }
-            }
+            ]
           },
           "expected": {
             "accepted": false,
@@ -560,20 +748,16 @@
       "steps": [
         {
           "operation": {
-            "operation": "APPEND",
-            "log": "SCHEMA_LOG",
-            "record": {
-              "identity": "self",
-              "payload": {
-                "object_refs": [
-                  {
-                    "origin_log": "SCHEMA_LOG",
-                    "identity": "self",
-                    "ref_type": "CANONICAL"
-                  }
-                ]
+            "operation": "CHECK_OBJECT_REFS",
+            "origin_log": "SCHEMA_LOG",
+            "identity": "self",
+            "object_refs": [
+              {
+                "origin_log": "SCHEMA_LOG",
+                "identity": "self",
+                "ref_type": "CANONICAL"
               }
-            }
+            ]
           },
           "expected": {
             "accepted": false,
@@ -583,9 +767,7 @@
           }
         }
       ],
-      "requirement_ids": [
-        "JN-CORE-0_2-REQ-D055"
-      ]
+      "requirement_ids": []
     },
     {
       "scenario_id": "reject-duplicate-target-aliases",
@@ -698,7 +880,13 @@
                 "event_id": "wrong-log-decision",
                 "actor_ref": "opaque-actor-ref",
                 "scope_ref": "opaque-scope-ref",
-                "object_refs": [],
+                "object_refs": [
+                  {
+                    "ref_type": "CANONICAL",
+                    "origin_log": "MANAGEMENT_LOG",
+                    "identity": "opaque-target"
+                  }
+                ],
                 "occurred_at": "2026-11-07T12:00:00Z",
                 "recorded_at": "2026-11-07T12:00:01Z"
               }
@@ -979,8 +1167,9 @@
                 "scope_ref": "opaque-scope-ref",
                 "object_refs": [
                   {
-                    "ref_type": "ALIAS",
-                    "alias": "decision-self-alias"
+                    "ref_type": "CANONICAL",
+                    "origin_log": "AUDIT_LOG",
+                    "identity": "decision-self"
                   }
                 ],
                 "occurred_at": "2026-11-07T12:00:00Z",
@@ -1007,16 +1196,7 @@
         "authorized_audit_writer_refs": [
           "writer-tech-1"
         ],
-        "reference_aliases": [
-          {
-            "alias": "decision-self-alias",
-            "target": {
-              "ref_type": "CANONICAL",
-              "origin_log": "AUDIT_LOG",
-              "identity": "decision-self"
-            }
-          }
-        ]
+        "reference_aliases": []
       }
     },
     {
@@ -1034,7 +1214,13 @@
                 "event_id": "decision-wrong-log",
                 "actor_ref": "opaque-actor-ref",
                 "scope_ref": "opaque-scope-ref",
-                "object_refs": [],
+                "object_refs": [
+                  {
+                    "ref_type": "CANONICAL",
+                    "origin_log": "MANAGEMENT_LOG",
+                    "identity": "opaque-target"
+                  }
+                ],
                 "occurred_at": "2026-11-07T12:00:00Z",
                 "recorded_at": "2026-11-07T12:00:01Z"
               }
@@ -1206,6 +1392,12 @@
     {
       "scenario_id": "reject-wrong-origin-log",
       "classification": "NEGATIVE",
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
       "steps": [
         {
           "operation": {
@@ -1225,14 +1417,30 @@
         },
         {
           "operation": {
-            "operation": "CHECK_OBJECT_REFS",
-            "object_refs": [
-              {
-                "origin_log": "SCHEMA_LOG",
-                "identity": "origin-target",
-                "ref_type": "CANONICAL"
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "decision-wrong-origin",
+              "payload": {
+                "event_type": "HUMAN_DECISION",
+                "event_id": "decision-wrong-origin",
+                "actor_ref": "opaque-actor-ref",
+                "scope_ref": "opaque-scope-ref",
+                "object_refs": [
+                  {
+                    "origin_log": "SCHEMA_LOG",
+                    "identity": "origin-target",
+                    "ref_type": "CANONICAL"
+                  }
+                ],
+                "occurred_at": "2026-11-07T12:00:00Z",
+                "recorded_at": "2026-11-07T12:00:01Z"
               }
-            ]
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
           },
           "expected": {
             "accepted": false,
@@ -1330,9 +1538,7 @@
           }
         }
       ],
-      "requirement_ids": [
-        "JN-CORE-0_2-REQ-L013-A01"
-      ]
+      "requirement_ids": []
     },
     {
       "scenario_id": "reject-alias-chain",
@@ -1631,7 +1837,7 @@
               "identity": "event-without-record-class",
               "payload": {
                 "event_type": "AUDIT_EVENT",
-                "event_id": "audit-event-1",
+                "event_id": "event-without-record-class",
                 "object_refs": []
               }
             }
@@ -1726,6 +1932,155 @@
           "expected": {
             "accepted": false,
             "code": "DUPLICATE_ALIAS_KEY",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "reject-audit-event-identity-event-id-mismatch",
+      "classification": "NEGATIVE",
+      "requirement_ids": [
+        "JN-CORE-0_2-REQ-D106"
+      ],
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
+      "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "audit-record-identity",
+              "payload": {
+                "event_type": "AUDIT_EVENT",
+                "event_id": "audit-payload-event-id"
+              }
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
+          },
+          "expected": {
+            "accepted": false,
+            "code": "AUDIT_EVENT_IDENTITY_MISMATCH",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "reject-audit-event-missing-event-id",
+      "classification": "NEGATIVE",
+      "requirement_ids": [],
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
+      "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "audit-missing-event-id",
+              "payload": {
+                "event_type": "AUDIT_EVENT"
+              }
+            }
+          },
+          "context": {
+            "channel": "DIRECT",
+            "writer_ref": "writer-unlisted"
+          },
+          "expected": {
+            "accepted": false,
+            "code": "AUDIT_EVENT_ID_REQUIRED",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "reject-audit-event-missing-event-type",
+      "classification": "NEGATIVE",
+      "requirement_ids": [],
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
+      "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "audit-missing-event-type",
+              "payload": {
+                "event_id": "audit-missing-event-type"
+              }
+            }
+          },
+          "context": {
+            "channel": "DIRECT",
+            "writer_ref": "writer-unlisted"
+          },
+          "expected": {
+            "accepted": false,
+            "code": "AUDIT_EVENT_TYPE_REQUIRED",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "reject-human-decision-empty-object-refs",
+      "classification": "NEGATIVE",
+      "requirement_ids": [],
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
+      "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "decision-empty-object-refs",
+              "payload": {
+                "event_type": "HUMAN_DECISION",
+                "event_id": "decision-empty-object-refs",
+                "actor_ref": "opaque-actor-ref",
+                "scope_ref": "opaque-scope-ref",
+                "object_refs": [],
+                "occurred_at": "2026-11-07T12:00:00Z",
+                "recorded_at": "2026-11-07T12:00:01Z"
+              }
+            }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
+          },
+          "expected": {
+            "accepted": false,
+            "code": "INVALID_HUMAN_DECISION_SHAPE",
             "history_delta": 0,
             "before_equals_after": true
           }

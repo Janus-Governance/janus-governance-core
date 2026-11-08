@@ -54,6 +54,10 @@
     "reject-writer-registry-override",
     "require-audit-writer-for-event-type-without-record-class",
     "reject-alias-target-not-found",
-    "reject-duplicate-alias-key"
+    "reject-duplicate-alias-key",
+    "reject-audit-event-identity-event-id-mismatch",
+    "reject-audit-event-missing-event-id",
+    "reject-audit-event-missing-event-type",
+    "reject-human-decision-empty-object-refs"
   ]
 }

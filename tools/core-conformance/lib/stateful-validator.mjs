@@ -7,10 +7,11 @@ const sort=value=>Array.isArray(value)?value.map(sort):value&&typeof value==='ob
 export const stable=value=>JSON.stringify(sort(value))+'\n';
 const hash=value=>crypto.createHash('sha256').update(stable(value),'utf8').digest('hex');
 const clone=value=>structuredClone(value);
+const deepFreeze=value=>{if(value&&typeof value==='object'&&!Object.isFrozen(value)){for(const child of Object.values(value))deepFreeze(child);Object.freeze(value);}return value;};
 
-export const createState=(preconditions={})=>({logs:Object.fromEntries(logNames.map(name=>[name,[]])),preconditions:{authorized_audit_writer_refs:clone(preconditions.authorized_audit_writer_refs??[]),reference_aliases:clone(preconditions.reference_aliases??[])}});
+export const createState=(preconditions={})=>deepFreeze({logs:Object.fromEntries(logNames.map(name=>[name,[]])),preconditions:{authorized_audit_writer_refs:clone(preconditions.authorized_audit_writer_refs??[]),reference_aliases:clone(preconditions.reference_aliases??[])}});
 export const historyHash=state=>hash(state);
-function result(state,beforeHash,accepted,code,historyDelta){const nextState=clone(state);return{accepted,code,before_hash:beforeHash,after_hash:historyHash(nextState),history_delta:historyDelta,next_state:nextState};}
+function result(state,beforeHash,accepted,code,historyDelta){const nextState=deepFreeze(clone(state));return{accepted,code,before_hash:beforeHash,after_hash:historyHash(nextState),history_delta:historyDelta,next_state:nextState};}
 const reject=(state,beforeHash,code)=>result(state,beforeHash,false,code,0);
 
 function aliasRegistry(state){
@@ -34,25 +35,36 @@ function validateObjectRefs(state,refs,{selfLog=null,selfIdentity=null}={}){
  for(const ref of refs){const canonical=canonicalizeRef(ref,registry);if(!canonical.ok)return canonical;const{origin_log,identity}=canonical.target,key=`${origin_log}\u0000${identity}`;if(origin_log===selfLog&&identity===selfIdentity)return{ok:false,code:'SELF_REFERENCE'};if(resolved.has(key))return{ok:false,code:'DUPLICATE_TARGET'};resolved.add(key);if(!state.logs[origin_log].some(record=>record.identity===identity))return{ok:false,code:'UNRESOLVED_REFERENCE'};}
  return{ok:true,code:'REFERENCES_RESOLVED'};
 }
-function humanDecisionShape(payload){const fields=['event_type','event_id','actor_ref','scope_ref','object_refs','occurred_at','recorded_at'];if(fields.some(field=>!(field in payload))||payload.event_type!=='HUMAN_DECISION'||typeof payload.event_id!=='string'||!payload.event_id.length||!Array.isArray(payload.object_refs)||typeof payload.occurred_at!=='string'||typeof payload.recorded_at!=='string')return false;return payload.actor_ref!==null&&payload.scope_ref!==null;}
+function humanDecisionShape(payload){const fields=['event_type','event_id','actor_ref','scope_ref','object_refs','occurred_at','recorded_at'];if(fields.some(field=>!(field in payload))||payload.event_type!=='HUMAN_DECISION'||typeof payload.event_id!=='string'||!payload.event_id.length||!Array.isArray(payload.object_refs)||!payload.object_refs.length||typeof payload.occurred_at!=='string'||typeof payload.recorded_at!=='string')return false;return payload.actor_ref!==null&&payload.scope_ref!==null;}
 
 export function applyOperation(state,operation,context={}){
  const beforeHash=historyHash(state);
  if(!operation||typeof operation!=='object'||!operationNames.includes(operation.operation))return reject(state,beforeHash,'INVALID_OPERATION');
  if(operation.operation==='ORIGINATE_HUMAN_DECISION')return reject(state,beforeHash,'UNSUPPORTED_HUMAN_ORIGINATION');
- if('authorized_audit_writer_refs' in operation||'reference_aliases' in operation)return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');
- if('authorized_audit_writer_refs' in context||'reference_aliases' in context)return reject(state,beforeHash,'CONTEXT_PRECONDITION_OVERRIDE_FORBIDDEN');
  if(['RESET','REPLACE','DELETE'].includes(operation.operation))return reject(state,beforeHash,'FORBIDDEN_MUTATION');
- if(operation.operation==='CHECK_OBJECT_REFS'){const checked=validateObjectRefs(state,operation.object_refs??[],{selfLog:operation.origin_log??null,selfIdentity:operation.identity??null});return checked.ok?result(state,beforeHash,true,checked.code,0):reject(state,beforeHash,checked.code);}
+ if(operation.operation==='CHECK_OBJECT_REFS'){if('authorized_audit_writer_refs' in operation||'reference_aliases' in operation)return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');if('authorized_audit_writer_refs' in context||'reference_aliases' in context)return reject(state,beforeHash,'CONTEXT_PRECONDITION_OVERRIDE_FORBIDDEN');const checked=validateObjectRefs(state,operation.object_refs??[],{selfLog:operation.origin_log??null,selfIdentity:operation.identity??null});return checked.ok?result(state,beforeHash,true,checked.code,0):reject(state,beforeHash,checked.code);}
  const{log,record}=operation;if(!logNames.includes(log))return reject(state,beforeHash,'INVALID_LOG');
  if(!record||typeof record!=='object'||typeof record.identity!=='string'||!record.identity.length||!record.payload||typeof record.payload!=='object'||Array.isArray(record.payload))return reject(state,beforeHash,'INVALID_RECORD_WRAPPER');
+ if('authorized_audit_writer_refs' in operation||'reference_aliases' in operation)return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');
+ if('authorized_audit_writer_refs' in context||'reference_aliases' in context)return reject(state,beforeHash,'CONTEXT_PRECONDITION_OVERRIDE_FORBIDDEN');
+ if(log==='AUDIT_LOG'){
+  if(typeof record.payload.event_type!=='string'||!record.payload.event_type.length)return reject(state,beforeHash,'AUDIT_EVENT_TYPE_REQUIRED');
+  if(typeof record.payload.event_id!=='string'||!record.payload.event_id.length)return reject(state,beforeHash,'AUDIT_EVENT_ID_REQUIRED');
+  if(record.identity!==record.payload.event_id)return reject(state,beforeHash,'AUDIT_EVENT_IDENTITY_MISMATCH');
+ }
+ const isHumanDecision=record.payload.event_type==='HUMAN_DECISION';
+ if(isHumanDecision&&!humanDecisionShape(record.payload))return reject(state,beforeHash,'INVALID_HUMAN_DECISION_SHAPE');
+ if(isHumanDecision&&log!=='AUDIT_LOG')return reject(state,beforeHash,'HUMAN_DECISION_WRONG_LOG');
+ if(record.payload.event_type==='OMISSION_DETECTED'&&log!=='AUDIT_LOG')return reject(state,beforeHash,'OMISSION_DETECTED_WRONG_LOG');
+ if(log==='AUDIT_LOG'){
+  if(context.channel!=='AUDIT_WRITER')return reject(state,beforeHash,'AUDIT_WRITER_BYPASS');
+  const writers=state.preconditions?.authorized_audit_writer_refs;if(typeof context.writer_ref!=='string'||!Array.isArray(writers)||!writers.includes(context.writer_ref))return reject(state,beforeHash,'AUDIT_WRITER_NOT_AUTHORIZED');
+ }
+ if(isHumanDecision){const checked=validateObjectRefs(state,record.payload.object_refs,{selfLog:log,selfIdentity:record.identity});if(!checked.ok)return reject(state,beforeHash,checked.code);}
+ if(['CORRECTION','SUPERSESSION','VOID'].includes(record.payload.kind)){if(!record.payload.antecedent_ref)return reject(state,beforeHash,'REVISION_REQUIRES_ANTECEDENT_REF');const antecedent=validateObjectRefs(state,[record.payload.antecedent_ref],{selfLog:log,selfIdentity:record.identity});if(!antecedent.ok)return reject(state,beforeHash,antecedent.code);}
  if(state.logs[log].some(item=>item.identity===record.identity))return reject(state,beforeHash,'IDENTITY_ALREADY_USED_IN_LOG');
  const registry=aliasRegistry(state);if(!registry.ok)return reject(state,beforeHash,registry.code);if(registry.byAlias.has(record.identity))return reject(state,beforeHash,'ALIAS_SHADOWING_FORBIDDEN');
- const isHumanDecision=record.payload.event_type==='HUMAN_DECISION';if(isHumanDecision&&!humanDecisionShape(record.payload))return reject(state,beforeHash,'INVALID_HUMAN_DECISION_SHAPE');if(isHumanDecision&&log!=='AUDIT_LOG')return reject(state,beforeHash,'HUMAN_DECISION_WRONG_LOG');
- if(log==='AUDIT_LOG'&&'event_type' in record.payload){if(context.channel!=='AUDIT_WRITER')return reject(state,beforeHash,'AUDIT_WRITER_BYPASS');const writers=state.preconditions?.authorized_audit_writer_refs;if(typeof context.writer_ref!=='string'||!Array.isArray(writers)||!writers.includes(context.writer_ref))return reject(state,beforeHash,'AUDIT_WRITER_NOT_AUTHORIZED');}
- const objectRefs=record.payload.object_refs??[],checked=validateObjectRefs(state,objectRefs,{selfLog:log,selfIdentity:record.identity});if(!checked.ok)return reject(state,beforeHash,checked.code);
- if(['CORRECTION','SUPERSESSION','VOID'].includes(record.payload.kind)){if(!record.payload.antecedent_ref)return reject(state,beforeHash,'REVISION_REQUIRES_ANTECEDENT_REF');const antecedent=validateObjectRefs(state,[record.payload.antecedent_ref],{selfLog:log,selfIdentity:record.identity});if(!antecedent.ok)return reject(state,beforeHash,antecedent.code);}
- const nextState=clone(state);nextState.logs[log].push(clone(record));return{accepted:true,code:'APPENDED',before_hash:beforeHash,after_hash:historyHash(nextState),history_delta:1,next_state:nextState};
+ const nextState=clone(state);nextState.logs[log].push(clone(record));deepFreeze(nextState);return{accepted:true,code:'APPENDED',before_hash:beforeHash,after_hash:historyHash(nextState),history_delta:1,next_state:nextState};
 }
 
 export function runScenario(scenario){

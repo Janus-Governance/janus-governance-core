@@ -1756,8 +1756,7 @@
         "resolve-prior-object-reference"
       ],
       "stateful_negative_scenario_refs": [
-        "reject-unresolved-reference",
-        "reject-missing-alias"
+        "reject-unresolved-reference"
       ],
       "stateful_test_refs": [
         "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
@@ -4578,7 +4577,7 @@
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
-        "same-token-isolated-across-logs"
+        "resolve-prior-object-reference"
       ],
       "stateful_negative_scenario_refs": [
         "reject-wrong-origin-log"
@@ -5305,7 +5304,6 @@
         "resolve-prior-object-reference"
       ],
       "stateful_negative_scenario_refs": [
-        "reject-self-reference",
         "reject-audit-writer-self-reference"
       ],
       "stateful_test_refs": [
@@ -7749,16 +7747,14 @@
       "atomic_predicate": "use event_id as canonical log identity",
       "governed_object": "canonical AUDIT_LOG identity",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "late inventory recovery; no semantic change to Core v0.2",
       "explicit_non_goals": [
@@ -7768,12 +7764,23 @@
         "STATEFUL"
       ],
       "constraint_family": "AUDIT_EVENT_IDENTITY_EQUALS_EVENT_ID",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "append-external-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-audit-event-identity-event-id-mismatch"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     }
   ],
   "anti_reinterpretation_rules": [
