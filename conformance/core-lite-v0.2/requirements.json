@@ -363,9 +363,9 @@
       "modality": "MUST"
     }
   ],
-  "declarative_constraint_count": 110,
+  "declarative_constraint_count": 113,
   "lexical_atomic_requirement_count": 43,
-  "atomic_requirement_count": 153,
+  "atomic_requirement_count": 156,
   "requirements": [
     {
       "requirement_id": "JN-CORE-0_2-REQ-L001-A01",
@@ -3673,7 +3673,7 @@
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
-        "append-correction-with-back-reference"
+        "reject-replace"
       ],
       "stateful_negative_scenario_refs": [
         "reject-replace"
@@ -7781,6 +7781,142 @@
       "stateful_coverage_markers": [
         "STATEFUL_SCENARIO_COVERED"
       ]
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D107",
+      "parent_occurrence_id": null,
+      "declarative_parent_id": "JN-CORE-0_2-DECL-107",
+      "source_path": "core/lite/JANUS_CORE_LITE_v0.2.md",
+      "core_commit": "8aae702a1bb11032f86a8a32e164e3a68fc961da",
+      "core_sha256": "709279f32abe18d792c68299b080c349e1ed0c45780775581aacf32484e78b0b",
+      "section_anchor": "§5 Evidence Model — E+ explicit evidence",
+      "exact_quote": "E+ indicates that a claim or event is supported by a recorded artifact.",
+      "line_span": {
+        "start": 192,
+        "end": 192
+      },
+      "clause_sha256": "49bca585c30ce6f2b771acac285198ba277bb6c8447621155ae3d6782951f17f",
+      "modality": "NORMATIVE_DEFINITION",
+      "subject": "claim or event",
+      "condition": "When E+ applies.",
+      "atomic_predicate": "be supported by a recorded artifact",
+      "governed_object": "E+ support",
+      "verification_class": "STATEFUL",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": [],
+      "coverage_status": [
+        "MISSING_POSITIVE_FIXTURE",
+        "MISSING_NEGATIVE_FIXTURE",
+        "MISSING_TEST"
+      ],
+      "dependencies_adapters": [],
+      "ambiguity_notes": "late inventory recovery; no semantic change to Core v0.2",
+      "explicit_non_goals": [
+        "implementing E+ in this transaction"
+      ],
+      "verification_classes": [
+        "STATEFUL"
+      ],
+      "constraint_family": "E_PLUS_RECORDED_ARTIFACT_SUPPORT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D108",
+      "parent_occurrence_id": null,
+      "declarative_parent_id": "JN-CORE-0_2-DECL-108",
+      "source_path": "core/lite/JANUS_CORE_LITE_v0.2.md",
+      "core_commit": "8aae702a1bb11032f86a8a32e164e3a68fc961da",
+      "core_sha256": "709279f32abe18d792c68299b080c349e1ed0c45780775581aacf32484e78b0b",
+      "section_anchor": "§5 Evidence Model — E− omission evidence",
+      "exact_quote": "E− is not counter-argumentation.",
+      "line_span": {
+        "start": 210,
+        "end": 210
+      },
+      "clause_sha256": "7b2107959b61097c3ff05c4958bc0fc6ac0e95e83100f831b9c09d2a6a4a0ac0",
+      "modality": "NORMATIVE_DEFINITION",
+      "subject": "E− omission evidence",
+      "condition": "When E− applies.",
+      "atomic_predicate": "not be counter-argumentation",
+      "governed_object": "E− interpretation boundary",
+      "verification_class": "HUMAN_REVIEW",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": [],
+      "coverage_status": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MISSING_TEST"
+      ],
+      "dependencies_adapters": [],
+      "ambiguity_notes": "late inventory recovery; no semantic change to Core v0.2",
+      "explicit_non_goals": [
+        "classifying arguments or counter-arguments"
+      ],
+      "verification_classes": [
+        "HUMAN_REVIEW"
+      ],
+      "constraint_family": "E_MINUS_NOT_COUNTER_ARGUMENTATION",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
+    },
+    {
+      "requirement_id": "JN-CORE-0_2-REQ-D109",
+      "parent_occurrence_id": null,
+      "declarative_parent_id": "JN-CORE-0_2-DECL-109",
+      "source_path": "core/lite/JANUS_CORE_LITE_v0.2.md",
+      "core_commit": "8aae702a1bb11032f86a8a32e164e3a68fc961da",
+      "core_sha256": "709279f32abe18d792c68299b080c349e1ed0c45780775581aacf32484e78b0b",
+      "section_anchor": "§7 Truth Condition",
+      "exact_quote": "Interpretation, escalation, and accountability MAY require human judgment.",
+      "line_span": {
+        "start": 255,
+        "end": 255
+      },
+      "clause_sha256": "5027b4d391ea75037ffac80d52f75e142986a571071c708f4fb091fde658da5a",
+      "modality": "NON_GATING_CAPABILITY",
+      "subject": "interpretation, escalation, and accountability",
+      "condition": "When the quoted Core capability applies.",
+      "atomic_predicate": "optionally require human judgment",
+      "governed_object": "human judgment capability",
+      "verification_class": "NON_GATING_CAPABILITY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "schema_refs": [],
+      "positive_fixture_refs": [],
+      "negative_fixture_refs": [],
+      "test_refs": [],
+      "coverage_status": [
+        "NON_GATING_CAPABILITY"
+      ],
+      "dependencies_adapters": [],
+      "ambiguity_notes": "late inventory recovery; no semantic change to Core v0.2",
+      "explicit_non_goals": [
+        "originating human judgment",
+        "making an automated human decision"
+      ],
+      "verification_classes": [
+        "NON_GATING_CAPABILITY"
+      ],
+      "constraint_family": "OPTIONAL_HUMAN_JUDGMENT",
+      "coverage_markers": [],
+      "fixture_polarity_requirement": "BOTH",
+      "stateful_positive_scenario_refs": [],
+      "stateful_negative_scenario_refs": [],
+      "stateful_test_refs": [],
+      "stateful_coverage_markers": []
     }
   ],
   "anti_reinterpretation_rules": [
@@ -7792,6 +7928,7 @@
     "NO_CLOSED_FUTURE_EVENT_TYPE_SET",
     "E_PLUS_AND_E_MINUS_NOT_BOOLEAN_EXHAUSTIVE_EVENTS_OR_VERDICTS",
     "HUMAN_DECISION_NOT_E_PLUS",
+    "HUMAN_DECISION_NOT_E_MINUS",
     "OMISSION_DETECTED_NOT_E_MINUS",
     "V0_3_CANDIDATES_EXCLUDED",
     "ACTOR_COMPETENCE_FRAMEWORK_OWNED",

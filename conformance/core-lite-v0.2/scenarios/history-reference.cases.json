@@ -240,16 +240,29 @@
     },
     {
       "scenario_id": "reject-replace",
-      "classification": "NEGATIVE",
+      "classification": "POSITIVE_NEGATIVE",
+      "preconditions": {
+        "authorized_audit_writer_refs": [
+          "writer-tech-1"
+        ],
+        "reference_aliases": []
+      },
       "steps": [
         {
           "operation": {
             "operation": "APPEND",
-            "log": "SCHEMA_LOG",
+            "log": "AUDIT_LOG",
             "record": {
-              "identity": "schema-1",
-              "payload": {}
+              "identity": "governance-event-replace-target",
+              "payload": {
+                "event_type": "AUDIT_EVENT",
+                "event_id": "governance-event-replace-target"
+              }
             }
+          },
+          "context": {
+            "channel": "AUDIT_WRITER",
+            "writer_ref": "writer-tech-1"
           },
           "expected": {
             "accepted": true,
@@ -261,8 +274,8 @@
         {
           "operation": {
             "operation": "REPLACE",
-            "log": "SCHEMA_LOG",
-            "identity": "schema-1"
+            "log": "AUDIT_LOG",
+            "identity": "governance-event-replace-target"
           },
           "expected": {
             "accepted": false,
@@ -554,8 +567,7 @@
       "requirement_ids": [
         "JN-CORE-0_2-REQ-L004-A01",
         "JN-CORE-0_2-REQ-L005-A01",
-        "JN-CORE-0_2-REQ-D023",
-        "JN-CORE-0_2-REQ-D024"
+        "JN-CORE-0_2-REQ-D023"
       ]
     },
     {
