@@ -1,0 +1,280 @@
+name: Gate 2 evidence — PASS_NOT_CONFORMANCE
+
+on:
+  push:
+    branches:
+      - codex/gate-2-conformance-contract
+    paths:
+      - .github/workflows/gate-2-evidence.yml
+      - tools/core-conformance/ci-gate2-evidence.mjs
+      - tools/core-conformance/test/ci-gate2-evidence.test.mjs
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gate-2-evidence-${{ github.sha }}
+  cancel-in-progress: false
+
+env:
+  EXPECTED_PARENT: b7d1ba43e0a37b742df0d8fc26ac6812a2e04aa6
+  EXPECTED_PACKAGE_SHA256: b50141359f0380a74470d539cbf98b75687136a5d8f03992a2ea58d904e647da
+  EXPECTED_LOCK_SHA256: ae93b00963c5fa185d4c55413b96f7f743f15b2c70e8c1d149b31b934cd9b9cf
+
+jobs:
+  preflight_authority:
+    name: Preflight authority
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      workflow-sha256: ${{ steps.hashes.outputs.workflow_sha256 }}
+      runner-sha256: ${{ steps.hashes.outputs.runner_sha256 }}
+      test-sha256: ${{ steps.hashes.outputs.test_sha256 }}
+      tree: ${{ steps.hashes.outputs.tree }}
+    steps:
+      - name: Reject unauthorized event or rerun
+        shell: bash
+        env:
+          EVENT_BEFORE: ${{ github.event.before }}
+          EVENT_AFTER: ${{ github.event.after }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_EVENT_NAME" = "push"
+          test "$GITHUB_REF" = "refs/heads/codex/gate-2-conformance-contract"
+          test "$GITHUB_RUN_ATTEMPT" = "1"
+          test "$EVENT_BEFORE" = "$EXPECTED_PARENT"
+          test "$EVENT_AFTER" = "$GITHUB_SHA"
+          test "$GITHUB_WORKFLOW_SHA" = "$GITHUB_SHA"
+
+      - name: Checkout exact triggering commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Verify governed implementation envelope
+        id: hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git rev-list --count "$EXPECTED_PARENT..$GITHUB_SHA")" = "1"
+          test "$(git rev-list --parents -n 1 "$GITHUB_SHA" | wc -w | tr -d ' ')" = "2"
+          test "$(git rev-parse HEAD^)" = "$EXPECTED_PARENT"
+
+          git diff --name-only "$EXPECTED_PARENT" "$GITHUB_SHA" > "$RUNNER_TEMP/changed-paths.txt"
+          mapfile -t changed < "$RUNNER_TEMP/changed-paths.txt"
+          test "${#changed[@]}" = "3"
+          test "${changed[0]}" = ".github/workflows/gate-2-evidence.yml"
+          test "${changed[1]}" = "tools/core-conformance/ci-gate2-evidence.mjs"
+          test "${changed[2]}" = "tools/core-conformance/test/ci-gate2-evidence.test.mjs"
+
+          package_sha="$(sha256sum tools/core-conformance/package.json | cut -d ' ' -f 1)"
+          lock_sha="$(sha256sum tools/core-conformance/package-lock.json | cut -d ' ' -f 1)"
+          test "$package_sha" = "$EXPECTED_PACKAGE_SHA256"
+          test "$lock_sha" = "$EXPECTED_LOCK_SHA256"
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
+
+          workflow_sha="$(sha256sum .github/workflows/gate-2-evidence.yml | cut -d ' ' -f 1)"
+          runner_sha="$(sha256sum tools/core-conformance/ci-gate2-evidence.mjs | cut -d ' ' -f 1)"
+          test_sha="$(sha256sum tools/core-conformance/test/ci-gate2-evidence.test.mjs | cut -d ' ' -f 1)"
+          tree="$(git rev-parse "${GITHUB_SHA}^{tree}")"
+          printf 'workflow_sha256=%s\n' "$workflow_sha" >> "$GITHUB_OUTPUT"
+          printf 'runner_sha256=%s\n' "$runner_sha" >> "$GITHUB_OUTPUT"
+          printf 'test_sha256=%s\n' "$test_sha" >> "$GITHUB_OUTPUT"
+          printf 'tree=%s\n' "$tree" >> "$GITHUB_OUTPUT"
+
+  replica_1:
+    name: replica-1
+    needs: preflight_authority
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      artifact-digest: ${{ steps.upload.outputs.artifact-digest }}
+    steps:
+      - name: Reject rerun directly
+        shell: bash
+        run: test "$GITHUB_RUN_ATTEMPT" = "1"
+      - name: Checkout exact triggering commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set up exact Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.13.1
+          check-latest: false
+          package-manager-cache: false
+      - name: Execute clean replica
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/core-conformance/ci-gate2-evidence.mjs replica \
+            --replica replica-1 \
+            --source "$GITHUB_WORKSPACE" \
+            --work-root "$RUNNER_TEMP/gate-2-replica-1" \
+            --evidence "$RUNNER_TEMP/gate-2-evidence-replica-1" \
+            --expected-workflow-sha '${{ needs.preflight_authority.outputs.workflow-sha256 }}' \
+            --expected-runner-sha '${{ needs.preflight_authority.outputs.runner-sha256 }}' \
+            --expected-test-sha '${{ needs.preflight_authority.outputs.test-sha256 }}' \
+            --expected-tree '${{ needs.preflight_authority.outputs.tree }}'
+      - name: Upload replica evidence
+        id: upload
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: gate-2-evidence-${{ github.run_id }}-${{ github.run_attempt }}-replica-1
+          path: ${{ runner.temp }}/gate-2-evidence-replica-1
+          retention-days: 30
+          if-no-files-found: error
+          include-hidden-files: false
+          overwrite: false
+      - name: Record upload digest
+        if: ${{ always() }}
+        shell: bash
+        run: printf 'artifact-digest=%s\n' '${{ steps.upload.outputs.artifact-digest }}' >> "$GITHUB_STEP_SUMMARY"
+
+  replica_2:
+    name: replica-2
+    needs: preflight_authority
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      artifact-digest: ${{ steps.upload.outputs.artifact-digest }}
+    steps:
+      - name: Reject rerun directly
+        shell: bash
+        run: test "$GITHUB_RUN_ATTEMPT" = "1"
+      - name: Checkout exact triggering commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set up exact Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.13.1
+          check-latest: false
+          package-manager-cache: false
+      - name: Execute clean replica
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/core-conformance/ci-gate2-evidence.mjs replica \
+            --replica replica-2 \
+            --source "$GITHUB_WORKSPACE" \
+            --work-root "$RUNNER_TEMP/gate-2-replica-2" \
+            --evidence "$RUNNER_TEMP/gate-2-evidence-replica-2" \
+            --expected-workflow-sha '${{ needs.preflight_authority.outputs.workflow-sha256 }}' \
+            --expected-runner-sha '${{ needs.preflight_authority.outputs.runner-sha256 }}' \
+            --expected-test-sha '${{ needs.preflight_authority.outputs.test-sha256 }}' \
+            --expected-tree '${{ needs.preflight_authority.outputs.tree }}'
+      - name: Upload replica evidence
+        id: upload
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: gate-2-evidence-${{ github.run_id }}-${{ github.run_attempt }}-replica-2
+          path: ${{ runner.temp }}/gate-2-evidence-replica-2
+          retention-days: 30
+          if-no-files-found: error
+          include-hidden-files: false
+          overwrite: false
+      - name: Record upload digest
+        if: ${{ always() }}
+        shell: bash
+        run: printf 'artifact-digest=%s\n' '${{ steps.upload.outputs.artifact-digest }}' >> "$GITHUB_STEP_SUMMARY"
+
+  compare_evidence:
+    name: Compare replicas
+    if: ${{ always() }}
+    needs:
+      - preflight_authority
+      - replica_1
+      - replica_2
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Reject rerun directly
+        shell: bash
+        run: test "$GITHUB_RUN_ATTEMPT" = "1"
+      - name: Checkout exact comparison runner
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set up exact Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.13.1
+          check-latest: false
+          package-manager-cache: false
+      - name: Download replica-1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: gate-2-evidence-${{ github.run_id }}-${{ github.run_attempt }}-replica-1
+          path: ${{ runner.temp }}/downloaded/replica-1
+      - name: Download replica-2
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: gate-2-evidence-${{ github.run_id }}-${{ github.run_attempt }}-replica-2
+          path: ${{ runner.temp }}/downloaded/replica-2
+      - name: Compare retained evidence
+        shell: bash
+        env:
+          REPLICA_1_RESULT: ${{ needs.replica_1.result }}
+          REPLICA_2_RESULT: ${{ needs.replica_2.result }}
+          REPLICA_1_DIGEST: ${{ needs.replica_1.outputs.artifact-digest }}
+          REPLICA_2_DIGEST: ${{ needs.replica_2.outputs.artifact-digest }}
+        run: |
+          set -euo pipefail
+          node tools/core-conformance/ci-gate2-evidence.mjs compare \
+            --replica-1 "$RUNNER_TEMP/downloaded/replica-1" \
+            --replica-2 "$RUNNER_TEMP/downloaded/replica-2" \
+            --replica-1-result "$REPLICA_1_RESULT" \
+            --replica-2-result "$REPLICA_2_RESULT" \
+            --replica-1-digest "$REPLICA_1_DIGEST" \
+            --replica-2-digest "$REPLICA_2_DIGEST" \
+            --expected-runner-sha '${{ needs.preflight_authority.outputs.runner-sha256 }}' \
+            --output "$RUNNER_TEMP/gate-2-evidence-comparison"
+      - name: Upload comparison evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: gate-2-evidence-${{ github.run_id }}-${{ github.run_attempt }}-comparison
+          path: ${{ runner.temp }}/gate-2-evidence-comparison
+          retention-days: 30
+          if-no-files-found: error
+          include-hidden-files: false
+          overwrite: false
+
+  gate_2_evidence:
+    name: Gate 2 evidence — PASS_NOT_CONFORMANCE
+    if: ${{ always() }}
+    needs:
+      - preflight_authority
+      - replica_1
+      - replica_2
+      - compare_evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Accept only complete run evidence
+        shell: bash
+        env:
+          PREFLIGHT_RESULT: ${{ needs.preflight_authority.result }}
+          REPLICA_1_RESULT: ${{ needs.replica_1.result }}
+          REPLICA_2_RESULT: ${{ needs.replica_2.result }}
+          COMPARISON_RESULT: ${{ needs.compare_evidence.result }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_RUN_ATTEMPT" = "1"
+          test "$PREFLIGHT_RESULT" = "success"
+          test "$REPLICA_1_RESULT" = "success"
+          test "$REPLICA_2_RESULT" = "success"
+          test "$COMPARISON_RESULT" = "success"
