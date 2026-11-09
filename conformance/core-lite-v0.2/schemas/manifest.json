@@ -5,34 +5,58 @@
   "json_schema_dialect": "https://json-schema.org/draft/2020-12/schema",
   "schemas": [
     {
-      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json",
-      "path": "schemas/profile-defs.schema.json",
-      "role": "STRUCTURAL_PROFILE"
-    },
-    {
       "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/audit-event.schema.json",
       "path": "schemas/audit-event.schema.json",
-      "role": "STRUCTURAL_PROFILE"
-    },
-    {
-      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
-      "path": "schemas/human-decision.schema.json",
-      "role": "STRUCTURAL_PROFILE"
-    },
-    {
-      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
-      "path": "schemas/omission-detected.schema.json",
-      "role": "STRUCTURAL_PROFILE"
+      "role": "STRUCTURAL_PROFILE",
+      "dialect": "https://json-schema.org/draft/2020-12/schema",
+      "algorithm": "sha256",
+      "digest": "2c0a856517f5314da5595ebf268a8179d7876544ee9c136f1bf94d01c937f92b",
+      "size_bytes": 820
     },
     {
       "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/expectation.schema.json",
       "path": "schemas/expectation.schema.json",
-      "role": "PROJECTION_ONLY"
+      "role": "PROJECTION_ONLY",
+      "dialect": "https://json-schema.org/draft/2020-12/schema",
+      "algorithm": "sha256",
+      "digest": "526bdf1fed8004c3dcb49b4c2418aefcbe639aafe573f4501f2f615e814d9e0e",
+      "size_bytes": 1096
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/human-decision.schema.json",
+      "path": "schemas/human-decision.schema.json",
+      "role": "STRUCTURAL_PROFILE",
+      "dialect": "https://json-schema.org/draft/2020-12/schema",
+      "algorithm": "sha256",
+      "digest": "dcee1d1efc4fe8a227253f6a7b810f4741253cd72cfcd274bb0a190e1e7beab3",
+      "size_bytes": 2241
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
+      "path": "schemas/omission-detected.schema.json",
+      "role": "STRUCTURAL_PROFILE",
+      "dialect": "https://json-schema.org/draft/2020-12/schema",
+      "algorithm": "sha256",
+      "digest": "501a782f143dfa5913afd77590b56519f1fc8ef561dcad868c105c23a9e22a86",
+      "size_bytes": 1964
+    },
+    {
+      "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/profile-defs.schema.json",
+      "path": "schemas/profile-defs.schema.json",
+      "role": "STRUCTURAL_PROFILE",
+      "dialect": "https://json-schema.org/draft/2020-12/schema",
+      "algorithm": "sha256",
+      "digest": "2ba03e788e8199f7bfa5490d1e1ce5f80b50459e97c6b6e8e26170e76937f118",
+      "size_bytes": 874
     },
     {
       "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/search-scope.schema.json",
       "path": "schemas/search-scope.schema.json",
-      "role": "PROJECTION_ONLY"
+      "role": "PROJECTION_ONLY",
+      "dialect": "https://json-schema.org/draft/2020-12/schema",
+      "algorithm": "sha256",
+      "digest": "430cd279d3a0065302e6e1d7814928cf33f03e2c8e36433691a8439241f21f4c",
+      "size_bytes": 928
     }
   ]
 }
