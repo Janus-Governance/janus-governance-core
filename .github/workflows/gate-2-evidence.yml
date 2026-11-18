@@ -10,11 +10,14 @@ on:
       - conformance/core-lite-v0.2/fixtures/omission-detected.cases.json
       - conformance/core-lite-v0.2/profile.json
       - conformance/core-lite-v0.2/requirements.json
+      - conformance/core-lite-v0.2/scenarios/history-reference.cases.json
+      - conformance/core-lite-v0.2/scenarios/manifest.json
       - tools/core-conformance/ci-gate2-evidence.mjs
       - tools/core-conformance/lib/contract.mjs
       - tools/core-conformance/test/baseline.test.mjs
       - tools/core-conformance/test/ci-gate2-evidence.test.mjs
       - tools/core-conformance/test/schema-foundation.test.mjs
+      - tools/core-conformance/test/stateful-history-reference.test.mjs
 
 permissions:
   contents: read
