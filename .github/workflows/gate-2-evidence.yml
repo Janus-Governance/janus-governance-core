@@ -6,10 +6,15 @@ on:
       - codex/gate-2-conformance-contract
     paths:
       - .github/workflows/gate-2-evidence.yml
+      - conformance/core-lite-v0.2/coverage-matrix.json
+      - conformance/core-lite-v0.2/fixtures/omission-detected.cases.json
+      - conformance/core-lite-v0.2/profile.json
+      - conformance/core-lite-v0.2/requirements.json
       - tools/core-conformance/ci-gate2-evidence.mjs
-      - tools/core-conformance/lib/e-minus-schema-binding-integration.mjs
+      - tools/core-conformance/lib/contract.mjs
+      - tools/core-conformance/test/baseline.test.mjs
       - tools/core-conformance/test/ci-gate2-evidence.test.mjs
-      - tools/core-conformance/test/e-minus-schema-binding-integration.test.mjs
+      - tools/core-conformance/test/schema-foundation.test.mjs
 
 permissions:
   contents: read
@@ -19,7 +24,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  EXPECTED_PARENT: d9707887589d16963c87ee0b79484fe7b246faba
   EXPECTED_PACKAGE_SHA256: b50141359f0380a74470d539cbf98b75687136a5d8f03992a2ea58d904e647da
   EXPECTED_LOCK_SHA256: ae93b00963c5fa185d4c55413b96f7f743f15b2c70e8c1d149b31b934cd9b9cf
 
@@ -46,7 +50,6 @@ jobs:
           test "$GITHUB_EVENT_NAME" = "push"
           test "$GITHUB_REF" = "refs/heads/codex/gate-2-conformance-contract"
           test "$GITHUB_RUN_ATTEMPT" = "1"
-          test "$EVENT_BEFORE" = "$EXPECTED_PARENT"
           test "$EVENT_AFTER" = "$GITHUB_SHA"
           test "$GITHUB_WORKFLOW_SHA" = "$GITHUB_SHA"
 
@@ -57,22 +60,37 @@ jobs:
           fetch-depth: 2
           persist-credentials: false
 
+      - name: Set up exact Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.13.1
+          check-latest: false
+          package-manager-cache: false
+
       - name: Verify governed implementation envelope
         id: hashes
         shell: bash
+        env:
+          EVENT_BEFORE: ${{ github.event.before }}
+          EVENT_AFTER: ${{ github.event.after }}
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
-          test "$(git rev-list --count "$EXPECTED_PARENT..$GITHUB_SHA")" = "1"
-          test "$(git rev-list --parents -n 1 "$GITHUB_SHA" | wc -w | tr -d ' ')" = "2"
-          test "$(git rev-parse HEAD^)" = "$EXPECTED_PARENT"
-
-          git diff --name-only "$EXPECTED_PARENT" "$GITHUB_SHA" > "$RUNNER_TEMP/changed-paths.txt"
-          mapfile -t changed < "$RUNNER_TEMP/changed-paths.txt"
-          test "${#changed[@]}" = "3"
-          test "${changed[0]}" = ".github/workflows/gate-2-evidence.yml"
-          test "${changed[1]}" = "tools/core-conformance/ci-gate2-evidence.mjs"
-          test "${changed[2]}" = "tools/core-conformance/test/ci-gate2-evidence.test.mjs"
+          [[ "$EVENT_BEFORE" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$EVENT_AFTER" =~ ^[0-9a-f]{40}$ ]]
+          test "$EVENT_BEFORE" != "0000000000000000000000000000000000000000"
+          git diff --no-renames --name-only -z "$EVENT_BEFORE" "$EVENT_AFTER" -- > "$RUNNER_TEMP/changed-paths.bin"
+          node tools/core-conformance/ci-gate2-evidence.mjs envelope \
+            --source "$GITHUB_WORKSPACE" \
+            --observed-paths-file "$RUNNER_TEMP/changed-paths.bin" \
+            --runner-temp "$RUNNER_TEMP" \
+            --event-name "$GITHUB_EVENT_NAME" \
+            --ref "$GITHUB_REF" \
+            --run-attempt "$GITHUB_RUN_ATTEMPT" \
+            --run-id "$GITHUB_RUN_ID" \
+            --before "$EVENT_BEFORE" \
+            --after "$EVENT_AFTER" \
+            --github-sha "$GITHUB_SHA" \
+            --output "$RUNNER_TEMP/change-envelope.json"
 
           package_sha="$(sha256sum tools/core-conformance/package.json | cut -d ' ' -f 1)"
           lock_sha="$(sha256sum tools/core-conformance/package-lock.json | cut -d ' ' -f 1)"
@@ -108,7 +126,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.sha }}
-          fetch-depth: 1
+          fetch-depth: 2
           persist-credentials: false
       - name: Set up exact Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -118,11 +136,27 @@ jobs:
           package-manager-cache: false
       - name: Execute clean replica
         shell: bash
+        env:
+          EVENT_BEFORE: ${{ github.event.before }}
+          EVENT_AFTER: ${{ github.event.after }}
         run: |
           set -euo pipefail
+          [[ "$EVENT_BEFORE" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$EVENT_AFTER" =~ ^[0-9a-f]{40}$ ]]
+          test "$EVENT_BEFORE" != "0000000000000000000000000000000000000000"
+          git diff --no-renames --name-only -z "$EVENT_BEFORE" "$EVENT_AFTER" -- > "$RUNNER_TEMP/changed-paths.bin"
           node tools/core-conformance/ci-gate2-evidence.mjs replica \
             --replica replica-1 \
             --source "$GITHUB_WORKSPACE" \
+            --observed-paths-file "$RUNNER_TEMP/changed-paths.bin" \
+            --runner-temp "$RUNNER_TEMP" \
+            --event-name "$GITHUB_EVENT_NAME" \
+            --ref "$GITHUB_REF" \
+            --run-attempt "$GITHUB_RUN_ATTEMPT" \
+            --run-id "$GITHUB_RUN_ID" \
+            --before "$EVENT_BEFORE" \
+            --after "$EVENT_AFTER" \
+            --github-sha "$GITHUB_SHA" \
             --work-root "$RUNNER_TEMP/gate-2-replica-1" \
             --evidence "$RUNNER_TEMP/gate-2-evidence-replica-1" \
             --expected-workflow-sha '${{ needs.preflight_authority.outputs.workflow-sha256 }}' \
@@ -162,7 +196,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.sha }}
-          fetch-depth: 1
+          fetch-depth: 2
           persist-credentials: false
       - name: Set up exact Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -172,11 +206,27 @@ jobs:
           package-manager-cache: false
       - name: Execute clean replica
         shell: bash
+        env:
+          EVENT_BEFORE: ${{ github.event.before }}
+          EVENT_AFTER: ${{ github.event.after }}
         run: |
           set -euo pipefail
+          [[ "$EVENT_BEFORE" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$EVENT_AFTER" =~ ^[0-9a-f]{40}$ ]]
+          test "$EVENT_BEFORE" != "0000000000000000000000000000000000000000"
+          git diff --no-renames --name-only -z "$EVENT_BEFORE" "$EVENT_AFTER" -- > "$RUNNER_TEMP/changed-paths.bin"
           node tools/core-conformance/ci-gate2-evidence.mjs replica \
             --replica replica-2 \
             --source "$GITHUB_WORKSPACE" \
+            --observed-paths-file "$RUNNER_TEMP/changed-paths.bin" \
+            --runner-temp "$RUNNER_TEMP" \
+            --event-name "$GITHUB_EVENT_NAME" \
+            --ref "$GITHUB_REF" \
+            --run-attempt "$GITHUB_RUN_ATTEMPT" \
+            --run-id "$GITHUB_RUN_ID" \
+            --before "$EVENT_BEFORE" \
+            --after "$EVENT_AFTER" \
+            --github-sha "$GITHUB_SHA" \
             --work-root "$RUNNER_TEMP/gate-2-replica-2" \
             --evidence "$RUNNER_TEMP/gate-2-evidence-replica-2" \
             --expected-workflow-sha '${{ needs.preflight_authority.outputs.workflow-sha256 }}' \
