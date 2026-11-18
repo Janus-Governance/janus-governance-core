@@ -7,7 +7,9 @@ on:
     paths:
       - .github/workflows/gate-2-evidence.yml
       - tools/core-conformance/ci-gate2-evidence.mjs
+      - tools/core-conformance/lib/e-minus-schema-binding-integration.mjs
       - tools/core-conformance/test/ci-gate2-evidence.test.mjs
+      - tools/core-conformance/test/e-minus-schema-binding-integration.test.mjs
 
 permissions:
   contents: read
@@ -17,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  EXPECTED_PARENT: 4d2d827228dd206172268753a4813d70585dc547
+  EXPECTED_PARENT: a6355ab84b8b6a2aaf5696b6714a2178cfa3f6ac
   EXPECTED_PACKAGE_SHA256: b50141359f0380a74470d539cbf98b75687136a5d8f03992a2ea58d904e647da
   EXPECTED_LOCK_SHA256: ae93b00963c5fa185d4c55413b96f7f743f15b2c70e8c1d149b31b934cd9b9cf
 
@@ -30,6 +32,8 @@ jobs:
       workflow-sha256: ${{ steps.hashes.outputs.workflow_sha256 }}
       runner-sha256: ${{ steps.hashes.outputs.runner_sha256 }}
       test-sha256: ${{ steps.hashes.outputs.test_sha256 }}
+      integration-module-sha256: ${{ steps.hashes.outputs.integration_module_sha256 }}
+      integration-test-sha256: ${{ steps.hashes.outputs.integration_test_sha256 }}
       tree: ${{ steps.hashes.outputs.tree }}
     steps:
       - name: Reject unauthorized event or rerun
@@ -65,10 +69,12 @@ jobs:
 
           git diff --name-only "$EXPECTED_PARENT" "$GITHUB_SHA" > "$RUNNER_TEMP/changed-paths.txt"
           mapfile -t changed < "$RUNNER_TEMP/changed-paths.txt"
-          test "${#changed[@]}" = "3"
+          test "${#changed[@]}" = "5"
           test "${changed[0]}" = ".github/workflows/gate-2-evidence.yml"
           test "${changed[1]}" = "tools/core-conformance/ci-gate2-evidence.mjs"
-          test "${changed[2]}" = "tools/core-conformance/test/ci-gate2-evidence.test.mjs"
+          test "${changed[2]}" = "tools/core-conformance/lib/e-minus-schema-binding-integration.mjs"
+          test "${changed[3]}" = "tools/core-conformance/test/ci-gate2-evidence.test.mjs"
+          test "${changed[4]}" = "tools/core-conformance/test/e-minus-schema-binding-integration.test.mjs"
 
           package_sha="$(sha256sum tools/core-conformance/package.json | cut -d ' ' -f 1)"
           lock_sha="$(sha256sum tools/core-conformance/package-lock.json | cut -d ' ' -f 1)"
@@ -79,10 +85,14 @@ jobs:
           workflow_sha="$(sha256sum .github/workflows/gate-2-evidence.yml | cut -d ' ' -f 1)"
           runner_sha="$(sha256sum tools/core-conformance/ci-gate2-evidence.mjs | cut -d ' ' -f 1)"
           test_sha="$(sha256sum tools/core-conformance/test/ci-gate2-evidence.test.mjs | cut -d ' ' -f 1)"
+          integration_module_sha="$(sha256sum tools/core-conformance/lib/e-minus-schema-binding-integration.mjs | cut -d ' ' -f 1)"
+          integration_test_sha="$(sha256sum tools/core-conformance/test/e-minus-schema-binding-integration.test.mjs | cut -d ' ' -f 1)"
           tree="$(git rev-parse "${GITHUB_SHA}^{tree}")"
           printf 'workflow_sha256=%s\n' "$workflow_sha" >> "$GITHUB_OUTPUT"
           printf 'runner_sha256=%s\n' "$runner_sha" >> "$GITHUB_OUTPUT"
           printf 'test_sha256=%s\n' "$test_sha" >> "$GITHUB_OUTPUT"
+          printf 'integration_module_sha256=%s\n' "$integration_module_sha" >> "$GITHUB_OUTPUT"
+          printf 'integration_test_sha256=%s\n' "$integration_test_sha" >> "$GITHUB_OUTPUT"
           printf 'tree=%s\n' "$tree" >> "$GITHUB_OUTPUT"
 
   replica_1:
@@ -120,6 +130,8 @@ jobs:
             --expected-workflow-sha '${{ needs.preflight_authority.outputs.workflow-sha256 }}' \
             --expected-runner-sha '${{ needs.preflight_authority.outputs.runner-sha256 }}' \
             --expected-test-sha '${{ needs.preflight_authority.outputs.test-sha256 }}' \
+            --expected-integration-module-sha '${{ needs.preflight_authority.outputs.integration-module-sha256 }}' \
+            --expected-integration-test-sha '${{ needs.preflight_authority.outputs.integration-test-sha256 }}' \
             --expected-tree '${{ needs.preflight_authority.outputs.tree }}'
       - name: Upload replica evidence
         id: upload
@@ -172,6 +184,8 @@ jobs:
             --expected-workflow-sha '${{ needs.preflight_authority.outputs.workflow-sha256 }}' \
             --expected-runner-sha '${{ needs.preflight_authority.outputs.runner-sha256 }}' \
             --expected-test-sha '${{ needs.preflight_authority.outputs.test-sha256 }}' \
+            --expected-integration-module-sha '${{ needs.preflight_authority.outputs.integration-module-sha256 }}' \
+            --expected-integration-test-sha '${{ needs.preflight_authority.outputs.integration-test-sha256 }}' \
             --expected-tree '${{ needs.preflight_authority.outputs.tree }}'
       - name: Upload replica evidence
         id: upload
