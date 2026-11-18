@@ -7097,29 +7097,42 @@
       "atomic_predicate": "not modify historical OMISSION_DETECTED",
       "governed_object": "historical event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": "none",
-      "explicit_non_goals": [],
+      "ambiguity_notes": "CORRECTION is an existing deterministic test-profile token, not a claimed canonical Core serialization.",
+      "explicit_non_goals": [
+        "rebuilt-view semantics",
+        "omission resolution or supersession",
+        "runtime persistence"
+      ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "LATER_EVIDENCE_NO_MODIFICATION",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_negative_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D089",
@@ -7141,29 +7154,42 @@
       "atomic_predicate": "not remove historical OMISSION_DETECTED",
       "governed_object": "historical event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": "none",
-      "explicit_non_goals": [],
+      "ambiguity_notes": "CORRECTION is an existing deterministic test-profile token, not a claimed canonical Core serialization.",
+      "explicit_non_goals": [
+        "rebuilt-view semantics",
+        "omission resolution or supersession",
+        "runtime persistence"
+      ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "LATER_EVIDENCE_NO_REMOVAL",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_negative_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D090",

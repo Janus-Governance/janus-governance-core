@@ -1,7 +1,7 @@
 {
   "schema_version": "janus-stateful-history-reference-cases-v1",
   "manifest_ref": "JN-CORE-LITE-0_2-STATEFUL-HISTORY-REFERENCE-001",
-  "scenario_count": 57,
+  "scenario_count": 58,
   "omission_foundation_preconditions": {
     "authorized_audit_writer_refs": ["writer-tech-1"],
     "reference_aliases": [],
@@ -2244,6 +2244,18 @@
     {
       "scenario_id": "reject-omission-wrong-log-or-writer-bypass", "classification": "NEGATIVE", "requirement_ids": ["JN-CORE-0_2-REQ-D103"], "foundation_profile": "E_MINUS_OMISSION_V1",
       "steps": [{"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "MANAGEMENT_LOG", "identity": "omission-wrong-log"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "OMISSION_DETECTED_WRONG_LOG", "history_delta": 0, "before_equals_after": true}}, {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-writer-bypass"}, "context": {"channel": "DIRECT", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "AUDIT_WRITER_BYPASS", "history_delta": 0, "before_equals_after": true}}]
+    },
+    {
+      "scenario_id": "preserve-omission-under-later-corrective-action",
+      "classification": "POSITIVE_NEGATIVE",
+      "requirement_ids": ["JN-CORE-0_2-REQ-D088", "JN-CORE-0_2-REQ-D089"],
+      "foundation_profile": "E_MINUS_OMISSION_V1",
+      "steps": [
+        {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-history-target"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}},
+        {"operation": {"operation": "APPEND", "log": "MANAGEMENT_LOG", "record": {"identity": "omission-later-corrective-action", "payload": {"kind": "CORRECTION", "antecedent_ref": {"ref_type": "CANONICAL", "origin_log": "AUDIT_LOG", "identity": "omission-history-target"}}}}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}},
+        {"operation": {"operation": "REPLACE", "log": "AUDIT_LOG", "identity": "omission-history-target"}, "expected": {"accepted": false, "code": "FORBIDDEN_MUTATION", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "DELETE", "log": "AUDIT_LOG", "identity": "omission-history-target"}, "expected": {"accepted": false, "code": "FORBIDDEN_MUTATION", "history_delta": 0, "before_equals_after": true}}
+      ]
     }
   ]
 }

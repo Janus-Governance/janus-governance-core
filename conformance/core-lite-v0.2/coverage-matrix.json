@@ -21,9 +21,9 @@
   ],
   "finding_counts": {
     "MISSING_SCHEMA": 28,
-    "MISSING_POSITIVE_FIXTURE": 76,
-    "MISSING_NEGATIVE_FIXTURE": 76,
-    "MISSING_TEST": 103,
+    "MISSING_POSITIVE_FIXTURE": 74,
+    "MISSING_NEGATIVE_FIXTURE": 74,
+    "MISSING_TEST": 101,
     "HUMAN_REVIEW_REQUIRED": 27,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 2
@@ -31,9 +31,9 @@
   "coverage_marker_counts": {
     "STRUCTURAL_SCHEMA_COVERED": 20,
     "PROJECTION_COVERED": 10,
-    "STATEFUL_SCENARIO_COVERED": 31,
+    "STATEFUL_SCENARIO_COVERED": 33,
     "STATEFUL_PROJECTION_COVERED": 7,
-    "REQUIREMENT_COMPLETE": 51
+    "REQUIREMENT_COMPLETE": 53
   },
   "entries": [
     {
@@ -3998,24 +3998,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
+      ],
+      "stateful_positive_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_negative_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D089",
@@ -4023,24 +4032,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
+      ],
+      "stateful_positive_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_negative_scenario_refs": [
+        "preserve-omission-under-later-corrective-action"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D088-D089-omission-history-immutability"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D090",

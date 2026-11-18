@@ -74,6 +74,7 @@
     "reject-evidence-unresolved",
     "reject-evidence-version-mismatch",
     "reject-event-refs-mismatch-or-outside-boundary",
-    "reject-omission-wrong-log-or-writer-bypass"
+    "reject-omission-wrong-log-or-writer-bypass",
+    "preserve-omission-under-later-corrective-action"
   ]
 }
