@@ -7,6 +7,7 @@
       "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
       "polarity": "VALID",
       "requirement_ids": [
+        "JN-CORE-0_2-REQ-D078",
         "JN-CORE-0_2-REQ-D083",
         "JN-CORE-0_2-REQ-L020-A01",
         "JN-CORE-0_2-REQ-L020-A02",
@@ -276,6 +277,7 @@
       "schema_id": "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json",
       "polarity": "INVALID",
       "requirement_ids": [
+        "JN-CORE-0_2-REQ-D078",
         "JN-CORE-0_2-REQ-L020-A01"
       ],
       "instance": {

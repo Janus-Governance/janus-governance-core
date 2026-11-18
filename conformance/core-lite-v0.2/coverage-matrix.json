@@ -20,20 +20,20 @@
     "REQUIREMENT_COMPLETE"
   ],
   "finding_counts": {
-    "MISSING_SCHEMA": 29,
-    "MISSING_POSITIVE_FIXTURE": 77,
-    "MISSING_NEGATIVE_FIXTURE": 77,
-    "MISSING_TEST": 104,
+    "MISSING_SCHEMA": 28,
+    "MISSING_POSITIVE_FIXTURE": 76,
+    "MISSING_NEGATIVE_FIXTURE": 76,
+    "MISSING_TEST": 103,
     "HUMAN_REVIEW_REQUIRED": 27,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 2
   },
   "coverage_marker_counts": {
-    "STRUCTURAL_SCHEMA_COVERED": 19,
+    "STRUCTURAL_SCHEMA_COVERED": 20,
     "PROJECTION_COVERED": 10,
     "STATEFUL_SCENARIO_COVERED": 31,
     "STATEFUL_PROJECTION_COVERED": 7,
-    "REQUIREMENT_COMPLETE": 50
+    "REQUIREMENT_COMPLETE": 51
   },
   "entries": [
     {
@@ -3705,21 +3705,27 @@
       "verification_classes": [
         "SCHEMA"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STRUCTURAL_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_SCHEMA",
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STRUCTURAL_SCHEMA_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
-      "schema_refs": [],
-      "positive_fixture_refs": [],
-      "negative_fixture_refs": [],
-      "test_refs": [],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
+      "schema_refs": [
+        "https://janus.invalid/conformance/core-lite-v0.2/omission-detected.schema.json"
+      ],
+      "positive_fixture_refs": [
+        "omission-detected-valid-minimal"
+      ],
+      "negative_fixture_refs": [
+        "omission-detected-wrong-event-type"
+      ],
+      "test_refs": [
+        "tools/core-conformance/test/schema-foundation.test.mjs#fixture-contract"
+      ],
       "stateful_positive_scenario_refs": [],
       "stateful_negative_scenario_refs": [],
       "stateful_test_refs": [],

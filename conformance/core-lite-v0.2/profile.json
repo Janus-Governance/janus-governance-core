@@ -49,7 +49,7 @@
     },
     "schema_count": 6,
     "fixture_case_count": 42,
-    "structurally_complete_requirements": 19,
+    "structurally_complete_requirements": 20,
     "projection_covered_requirements": 10,
     "conformance_claimed": false
   },
