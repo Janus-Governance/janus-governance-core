@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  EXPECTED_PARENT: a6355ab84b8b6a2aaf5696b6714a2178cfa3f6ac
+  EXPECTED_PARENT: d9707887589d16963c87ee0b79484fe7b246faba
   EXPECTED_PACKAGE_SHA256: b50141359f0380a74470d539cbf98b75687136a5d8f03992a2ea58d904e647da
   EXPECTED_LOCK_SHA256: ae93b00963c5fa185d4c55413b96f7f743f15b2c70e8c1d149b31b934cd9b9cf
 
@@ -69,12 +69,10 @@ jobs:
 
           git diff --name-only "$EXPECTED_PARENT" "$GITHUB_SHA" > "$RUNNER_TEMP/changed-paths.txt"
           mapfile -t changed < "$RUNNER_TEMP/changed-paths.txt"
-          test "${#changed[@]}" = "5"
+          test "${#changed[@]}" = "3"
           test "${changed[0]}" = ".github/workflows/gate-2-evidence.yml"
           test "${changed[1]}" = "tools/core-conformance/ci-gate2-evidence.mjs"
-          test "${changed[2]}" = "tools/core-conformance/lib/e-minus-schema-binding-integration.mjs"
-          test "${changed[3]}" = "tools/core-conformance/test/ci-gate2-evidence.test.mjs"
-          test "${changed[4]}" = "tools/core-conformance/test/e-minus-schema-binding-integration.test.mjs"
+          test "${changed[2]}" = "tools/core-conformance/test/ci-gate2-evidence.test.mjs"
 
           package_sha="$(sha256sum tools/core-conformance/package.json | cut -d ' ' -f 1)"
           lock_sha="$(sha256sum tools/core-conformance/package-lock.json | cut -d ' ' -f 1)"
