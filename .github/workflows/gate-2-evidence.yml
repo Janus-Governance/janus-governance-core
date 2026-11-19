@@ -157,6 +157,14 @@ jobs:
           [[ "$EVENT_AFTER" =~ ^[0-9a-f]{40}$ ]]
           test "$EVENT_BEFORE" != "0000000000000000000000000000000000000000"
           git diff --no-renames --name-only -z "$EVENT_BEFORE" "$EVENT_AFTER" -- > "$RUNNER_TEMP/changed-paths.bin"
+          for governed_path in \
+            .github/workflows/gate-2-evidence.yml \
+            tools/core-conformance/ci-gate2-evidence.mjs \
+            tools/core-conformance/test/ci-gate2-evidence.test.mjs
+          do
+            test -f "$governed_path"
+            test ! -L "$governed_path"
+          done
           node tools/core-conformance/ci-gate2-evidence.mjs replica \
             --replica replica-1 \
             --source "$GITHUB_WORKSPACE" \
@@ -227,6 +235,14 @@ jobs:
           [[ "$EVENT_AFTER" =~ ^[0-9a-f]{40}$ ]]
           test "$EVENT_BEFORE" != "0000000000000000000000000000000000000000"
           git diff --no-renames --name-only -z "$EVENT_BEFORE" "$EVENT_AFTER" -- > "$RUNNER_TEMP/changed-paths.bin"
+          for governed_path in \
+            .github/workflows/gate-2-evidence.yml \
+            tools/core-conformance/ci-gate2-evidence.mjs \
+            tools/core-conformance/test/ci-gate2-evidence.test.mjs
+          do
+            test -f "$governed_path"
+            test ! -L "$governed_path"
+          done
           node tools/core-conformance/ci-gate2-evidence.mjs replica \
             --replica replica-2 \
             --source "$GITHUB_WORKSPACE" \
