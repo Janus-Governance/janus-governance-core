@@ -4947,29 +4947,40 @@
       "atomic_predicate": "exclude derived views",
       "governed_object": "admissible objects",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": "none",
-      "explicit_non_goals": [],
+      "ambiguity_notes": "DERIVED_VIEW is a deterministic rejection token in this test profile, not a claimed canonical Core serialization.",
+      "explicit_non_goals": [
+        "defining a universal serialization for derived views"
+      ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "OBJECT_REFS_DERIVED_VIEW_EXCLUSION",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D048",
@@ -4991,29 +5002,40 @@
       "atomic_predicate": "exclude external artifacts",
       "governed_object": "admissible objects",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": "none",
-      "explicit_non_goals": [],
+      "ambiguity_notes": "EXTERNAL_ARTIFACT is a deterministic rejection token in this test profile, not a claimed canonical Core serialization.",
+      "explicit_non_goals": [
+        "defining a universal serialization for external artifacts"
+      ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "OBJECT_REFS_EXTERNAL_EXCLUSION",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D049",
@@ -5125,31 +5147,41 @@
       "atomic_predicate": "not identify the object decided",
       "governed_object": "decided object identity",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": "The same target may independently appear in object_refs and evidence_refs.",
+      "ambiguity_notes": "Only object_refs participates in decided-object resolution in this test profile; populated management_refs, evidence_refs, and schema_ref remain opaque context and cannot rescue an unresolved object target.",
       "explicit_non_goals": [
-        "do not prohibit allowed dual-role target equality"
+        "do not prohibit allowed dual-role target equality",
+        "do not infer semantic truth or evidentiary sufficiency from context fields"
       ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "CONTEXT_REFS_DO_NOT_IDENTIFY_DECIDED_OBJECT",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-B",
@@ -5171,31 +5203,41 @@
       "atomic_predicate": "not substitute for required object_refs",
       "governed_object": "required object_refs",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
       "ambiguity_notes": "A HUMAN_DECISION with missing or empty object_refs remains invalid even when context references are populated.",
       "explicit_non_goals": [
-        "do not prohibit the same target from independently appearing in object_refs and evidence_refs"
+        "do not prohibit the same target from independently appearing in object_refs and evidence_refs",
+        "do not claim D053, D054, or evidentiary sufficiency"
       ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "CONTEXT_REFS_DO_NOT_SUBSTITUTE_OBJECT_REFS",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D052",

@@ -21,9 +21,9 @@
   ],
   "finding_counts": {
     "MISSING_SCHEMA": 28,
-    "MISSING_POSITIVE_FIXTURE": 72,
-    "MISSING_NEGATIVE_FIXTURE": 72,
-    "MISSING_TEST": 99,
+    "MISSING_POSITIVE_FIXTURE": 68,
+    "MISSING_NEGATIVE_FIXTURE": 68,
+    "MISSING_TEST": 95,
     "HUMAN_REVIEW_REQUIRED": 27,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 2
@@ -31,9 +31,9 @@
   "coverage_marker_counts": {
     "STRUCTURAL_SCHEMA_COVERED": 20,
     "PROJECTION_COVERED": 10,
-    "STATEFUL_SCENARIO_COVERED": 35,
+    "STATEFUL_SCENARIO_COVERED": 39,
     "STATEFUL_PROJECTION_COVERED": 7,
-    "REQUIREMENT_COMPLETE": 55
+    "REQUIREMENT_COMPLETE": 59
   },
   "entries": [
     {
@@ -2701,24 +2701,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D048",
@@ -2726,24 +2735,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D049",
@@ -2803,24 +2821,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D051-B",
@@ -2828,24 +2855,33 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "UNRESOLVED",
-      "coverage_markers": [],
-      "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "coverage_state": "REQUIREMENT_COMPLETE",
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
+      "fixture_polarity_requirement": "BOTH",
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D052",
