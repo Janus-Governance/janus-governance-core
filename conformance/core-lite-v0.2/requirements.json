@@ -1294,17 +1294,17 @@
       "atomic_predicate": "not originate HUMAN_DECISION",
       "governed_object": "HUMAN_DECISION",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_SCENARIO_COVERED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#bounded-human-decision-non-origination"
       ],
-      "dependencies_adapters": [],
+      "coverage_status": [],
+      "dependencies_adapters": [
+        "TEST_ONLY_AUTHENTICATED_AUDIT_WRITER_BOUNDARY"
+      ],
       "ambiguity_notes": "The event represents a prior human act.",
       "explicit_non_goals": [
         "treating technical recording as human authority"
@@ -1313,12 +1313,23 @@
         "STATEFUL"
       ],
       "constraint_family": "LEXICAL_JN-CORE-0_2-MUST-011",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "reject-automatic-human-decision-origin"
+      ],
+      "stateful_negative_scenario_refs": [
+        "reject-automatic-human-decision-origin"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#bounded-human-decision-non-origination"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-L012-A01",
@@ -7960,29 +7971,43 @@
       "atomic_predicate": "not originate HUMAN_DECISION",
       "governed_object": "human authority boundary",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_SCENARIO_COVERED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#bounded-human-decision-non-origination"
       ],
-      "dependencies_adapters": [],
+      "coverage_status": [],
+      "dependencies_adapters": [
+        "TEST_ONLY_PRIVATE_E_MINUS_FLOW_PROVENANCE"
+      ],
       "ambiguity_notes": "none",
-      "explicit_non_goals": [],
+      "explicit_non_goals": [
+        "generalizing the modeled E-minus route to unmodeled governance flows",
+        "proving human identity authority competence intent or a prior human act"
+      ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D055",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "governance-evaluation-flow-cannot-originate-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "governance-evaluation-flow-cannot-originate-human-decision"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#bounded-human-decision-non-origination"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D106",

@@ -7,6 +7,7 @@ export const operationNames=Object.freeze(['APPEND','RESET','REPLACE','DELETE','
 
 const preconditionKeys=Object.freeze(['authorized_audit_writer_refs','reference_aliases','constitutive_evaluations','evidence_artifacts']);
 const trustedStates=new WeakSet();
+const governanceFlowOperations=new WeakSet();
 const fail=code=>{throw new TypeError(code);};
 const ownDescriptor=(value,key)=>Object.getOwnPropertyDescriptor(value,key);
 const descriptorHasValue=descriptor=>ownDescriptor(descriptor,'value')!==undefined;
@@ -94,10 +95,16 @@ function validateOmission(state,payload){
 
 export function applyOperation(state,operation,context={}){
  assertTrustedState(state);
+ const governanceFlow=governanceFlowOperations.has(operation);
  operation=normalizeData(operation,'INVALID_OPERATION_DATA');context=normalizeData(context,'INVALID_CONTEXT_DATA');
  const beforeHash=trustedHash(state);
  if(!operation||typeof operation!=='object'||!operationNames.includes(operation.operation))return reject(state,beforeHash,'INVALID_OPERATION');
- if(operation.operation==='ORIGINATE_HUMAN_DECISION')return reject(state,beforeHash,'UNSUPPORTED_HUMAN_ORIGINATION');
+ if(operation.operation==='ORIGINATE_HUMAN_DECISION'){
+  if(context.channel!=='AUDIT_WRITER')return reject(state,beforeHash,'AUDIT_WRITER_BYPASS');
+  const writers=state.preconditions?.authorized_audit_writer_refs;if(typeof context.writer_ref!=='string'||!Array.isArray(writers)||!writers.includes(context.writer_ref))return reject(state,beforeHash,'AUDIT_WRITER_NOT_AUTHORIZED');
+  if(!humanDecisionShape(operation.candidate))return reject(state,beforeHash,'INVALID_HUMAN_DECISION_SHAPE');
+  return reject(state,beforeHash,'AUDIT_WRITER_HUMAN_ORIGINATION_FORBIDDEN');
+ }
  if(['RESET','REPLACE','DELETE'].includes(operation.operation))return reject(state,beforeHash,'FORBIDDEN_MUTATION');
  if(operation.operation==='CHECK_OBJECT_REFS'){if(hasPreconditionOverride(operation))return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');if(hasPreconditionOverride(context))return reject(state,beforeHash,'CONTEXT_PRECONDITION_OVERRIDE_FORBIDDEN');const checked=validateObjectRefs(state,operation.object_refs??[],{selfLog:operation.origin_log??null,selfIdentity:operation.identity??null});return checked.ok?result(state,beforeHash,true,checked.code,0):reject(state,beforeHash,checked.code);}
  const{log,record}=operation;if(!logNames.includes(log))return reject(state,beforeHash,'INVALID_LOG');
@@ -109,6 +116,7 @@ export function applyOperation(state,operation,context={}){
   if(typeof record.payload.event_id!=='string'||!record.payload.event_id.length)return reject(state,beforeHash,'AUDIT_EVENT_ID_REQUIRED');
   if(record.identity!==record.payload.event_id)return reject(state,beforeHash,'AUDIT_EVENT_IDENTITY_MISMATCH');
  }
+ if(governanceFlow&&record.payload.event_type==='HUMAN_DECISION')return reject(state,beforeHash,'GOVERNANCE_FLOW_HUMAN_ORIGINATION_FORBIDDEN');
  const isHumanDecision=record.payload.event_type==='HUMAN_DECISION';
  if(isHumanDecision&&!humanDecisionShape(record.payload))return reject(state,beforeHash,'INVALID_HUMAN_DECISION_SHAPE');
  if(isHumanDecision&&log!=='AUDIT_LOG')return reject(state,beforeHash,'HUMAN_DECISION_WRONG_LOG');
@@ -126,7 +134,7 @@ export function applyOperation(state,operation,context={}){
 }
 
 function mergeData(left,right){const merged=Object.create(null);for(const source of [left,right]){const descriptors=Object.getOwnPropertyDescriptors(source);for(const key of Reflect.ownKeys(descriptors)){const descriptor=ownValue(descriptors,key);if(typeof key==='symbol'||!descriptor||!descriptorHasValue(descriptor))fail('INVALID_MERGE_DATA');defineData(merged,key,clone(descriptorValue(descriptor)));}}return merged;}
-function materializeOperation(operation,foundationEvent,state){if(operation?.omission_event_profile!=='QUALIFIED_E_MINUS_V1')return clone(operation);const overrides=ownValue(operation,'payload_overrides',Object.create(null)),evaluationRef=ownValue(overrides,'evaluation_ref',ownValue(foundationEvent,'evaluation_ref')),prepared=state.preconditions.e_minus_proofs.find(item=>item?.evaluation_ref===evaluationRef),derived=prepared?.candidate??Object.create(null),payload=mergeData(mergeData(derived,foundationEvent),overrides),identity=operation.identity;defineData(payload,'event_id',identity);return nullObject([['operation','APPEND'],['log',operation.log],['record',nullObject([['identity',identity],['payload',payload]])]]);}
+function materializeOperation(operation,foundationEvent,state){if(operation?.omission_event_profile!=='QUALIFIED_E_MINUS_V1')return clone(operation);const overrides=ownValue(operation,'payload_overrides',Object.create(null)),evaluationRef=ownValue(overrides,'evaluation_ref',ownValue(foundationEvent,'evaluation_ref')),prepared=state.preconditions.e_minus_proofs.find(item=>item?.evaluation_ref===evaluationRef),derived=prepared?.candidate??Object.create(null),payload=mergeData(mergeData(derived,foundationEvent),overrides),identity=operation.identity;defineData(payload,'event_id',identity);const materialized=nullObject([['operation','APPEND'],['log',operation.log],['record',nullObject([['identity',identity],['payload',payload]])]]);governanceFlowOperations.add(materialized);return materialized;}
 export function runScenario(scenario,foundationPreconditions={},foundationEvent={}){
  scenario=normalizeData(scenario,'INVALID_SCENARIO_DATA');foundationPreconditions=normalizeData(foundationPreconditions,'INVALID_FOUNDATION_PRECONDITIONS_DATA');foundationEvent=normalizeData(foundationEvent,'INVALID_FOUNDATION_EVENT_DATA');
  const scenarioPreconditions=ownValue(scenario,'preconditions',Object.create(null)),mergedPreconditions=scenario.foundation_profile==='E_MINUS_OMISSION_V1'?mergeData(foundationPreconditions,scenarioPreconditions):scenarioPreconditions;let state=createState(mergedPreconditions);const results=[];

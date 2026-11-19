@@ -34,6 +34,7 @@
     "reject-self-reference",
     "reject-duplicate-target-aliases",
     "reject-automatic-human-decision-origin",
+    "governance-evaluation-flow-cannot-originate-human-decision",
     "reject-human-decision-wrong-log",
     "reject-unauthorized-audit-writer",
     "reject-direct-audit-writer-bypass",

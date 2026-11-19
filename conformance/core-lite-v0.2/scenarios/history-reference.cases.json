@@ -1,7 +1,7 @@
 {
   "schema_version": "janus-stateful-history-reference-cases-v1",
   "manifest_ref": "JN-CORE-LITE-0_2-STATEFUL-HISTORY-REFERENCE-001",
-  "scenario_count": 60,
+  "scenario_count": 61,
   "omission_foundation_preconditions": {
     "authorized_audit_writer_refs": ["writer-tech-1"],
     "reference_aliases": [],
@@ -923,37 +923,151 @@
     },
     {
       "scenario_id": "reject-automatic-human-decision-origin",
-      "classification": "NEGATIVE",
+      "classification": "POSITIVE_NEGATIVE",
       "steps": [
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "MANAGEMENT_LOG",
+            "record": {
+              "identity": "human-decision-origin-target",
+              "payload": {}
+            }
+          },
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
+        {
+          "operation": {
+            "operation": "APPEND",
+            "log": "AUDIT_LOG",
+            "record": {
+              "identity": "externally-supplied-human-decision",
+              "payload": {
+                "event_type": "HUMAN_DECISION",
+                "event_id": "externally-supplied-human-decision",
+                "actor_ref": "opaque-actor-ref",
+                "scope_ref": "opaque-scope-ref",
+                "object_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "human-decision-origin-target"}],
+                "occurred_at": "2026-11-07T12:00:00Z",
+                "recorded_at": "2026-11-07T12:00:01Z"
+              }
+            }
+          },
+          "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"},
+          "expected": {
+            "accepted": true,
+            "code": "APPENDED",
+            "history_delta": 1,
+            "before_equals_after": false
+          }
+        },
         {
           "operation": {
             "operation": "ORIGINATE_HUMAN_DECISION",
             "candidate": {
               "event_type": "HUMAN_DECISION",
-              "event_id": "unsupported-origin",
+              "event_id": "writer-origin-attempt",
               "actor_ref": "opaque-actor-ref",
               "scope_ref": "opaque-scope-ref",
-              "object_refs": [],
+              "object_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "human-decision-origin-target"}],
               "occurred_at": "2026-11-07T12:00:00Z",
               "recorded_at": "2026-11-07T12:00:01Z"
             }
           },
+          "context": {"channel": "DIRECT", "writer_ref": "writer-tech-1"},
           "expected": {
             "accepted": false,
-            "code": "UNSUPPORTED_HUMAN_ORIGINATION",
+            "code": "AUDIT_WRITER_BYPASS",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        },
+        {
+          "operation": {
+            "operation": "ORIGINATE_HUMAN_DECISION",
+            "candidate": {
+              "event_type": "HUMAN_DECISION",
+              "event_id": "writer-origin-attempt",
+              "actor_ref": "opaque-actor-ref",
+              "scope_ref": "opaque-scope-ref",
+              "object_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "human-decision-origin-target"}],
+              "occurred_at": "2026-11-07T12:00:00Z",
+              "recorded_at": "2026-11-07T12:00:01Z"
+            }
+          },
+          "context": {"channel": "AUDIT_WRITER", "writer_ref": "unknown-writer"},
+          "expected": {
+            "accepted": false,
+            "code": "AUDIT_WRITER_NOT_AUTHORIZED",
+            "history_delta": 0,
+            "before_equals_after": true
+          }
+        },
+        {
+          "operation": {
+            "operation": "ORIGINATE_HUMAN_DECISION",
+            "candidate": {
+              "event_type": "HUMAN_DECISION",
+              "event_id": "writer-origin-attempt",
+              "actor_ref": "opaque-actor-ref",
+              "scope_ref": "opaque-scope-ref",
+              "object_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "human-decision-origin-target"}],
+              "occurred_at": "2026-11-07T12:00:00Z",
+              "recorded_at": "2026-11-07T12:00:01Z"
+            }
+          },
+          "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"},
+          "expected": {
+            "accepted": false,
+            "code": "AUDIT_WRITER_HUMAN_ORIGINATION_FORBIDDEN",
             "history_delta": 0,
             "before_equals_after": true
           }
         }
       ],
-      "requirement_ids": [],
+      "requirement_ids": ["JN-CORE-0_2-REQ-L011-A01"],
       "preconditions": {
-        "authorized_audit_writer_refs": [],
+        "authorized_audit_writer_refs": ["writer-tech-1"],
         "reference_aliases": []
-      },
-      "excluded_requirement_ids": [
-        "JN-CORE-0_2-REQ-L011-A01",
-        "JN-CORE-0_2-REQ-D105"
+      }
+    },
+    {
+      "scenario_id": "governance-evaluation-flow-cannot-originate-human-decision",
+      "classification": "POSITIVE_NEGATIVE",
+      "requirement_ids": ["JN-CORE-0_2-REQ-D105"],
+      "foundation_profile": "E_MINUS_OMISSION_V1",
+      "steps": [
+        {
+          "operation": {"operation": "APPEND", "log": "MANAGEMENT_LOG", "record": {"identity": "flow-human-origin-target", "payload": {}}},
+          "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}
+        },
+        {
+          "operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "flow-qualified-omission"},
+          "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"},
+          "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}
+        },
+        {
+          "operation": {
+            "omission_event_profile": "QUALIFIED_E_MINUS_V1",
+            "log": "AUDIT_LOG",
+            "identity": "flow-human-origin-attempt",
+            "payload_overrides": {
+              "event_type": "HUMAN_DECISION",
+              "actor_ref": "opaque-actor-ref",
+              "scope_ref": "opaque-scope-ref",
+              "object_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "flow-human-origin-target"}],
+              "occurred_at": "2026-11-07T12:00:00Z",
+              "recorded_at": "2026-11-07T12:00:01Z"
+            }
+          },
+          "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"},
+          "expected": {"accepted": false, "code": "GOVERNANCE_FLOW_HUMAN_ORIGINATION_FORBIDDEN", "history_delta": 0, "before_equals_after": true}
+        }
       ]
     },
     {
