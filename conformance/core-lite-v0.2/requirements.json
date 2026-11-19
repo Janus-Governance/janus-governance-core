@@ -5223,7 +5223,7 @@
       "ambiguity_notes": "A HUMAN_DECISION with missing or empty object_refs remains invalid even when context references are populated.",
       "explicit_non_goals": [
         "do not prohibit the same target from independently appearing in object_refs and evidence_refs",
-        "do not claim D053, D054, or evidentiary sufficiency"
+        "do not claim D054 or evidentiary sufficiency"
       ],
       "verification_classes": [
         "STATEFUL"
@@ -5312,29 +5312,40 @@
       "atomic_predicate": "permit the same target to appear in object_refs and evidence_refs with independent roles",
       "governed_object": "dual-role target",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": "none",
-      "explicit_non_goals": [],
+      "ambiguity_notes": "The exact same canonical test-profile tuple is retained independently in object_refs and evidence_refs. Acceptance proves only that the dual role is permitted; the surrounding unresolved-object rejection proves fail-closed object resolution and is not itself constitutive evidence for this permission.",
+      "explicit_non_goals": [
+        "deriving E+, truth, evidentiary sufficiency, D058, human authority, or evidence-reference resolution"
+      ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "REFERENCE_DUAL_ROLE",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_negative_scenario_refs": [
+        "enforce-human-decision-object-role-boundaries"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D047-D048-D051-object-role-boundaries"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D054",
