@@ -18,9 +18,11 @@ export const CONFORMANCE_CONTENT_PATHS=Object.freeze(['conformance/core-lite-v0.
 export const STATEFUL_HISTORY_CONTENT_PATHS=Object.freeze(['conformance/core-lite-v0.2/coverage-matrix.json','conformance/core-lite-v0.2/profile.json','conformance/core-lite-v0.2/requirements.json','conformance/core-lite-v0.2/scenarios/history-reference.cases.json','conformance/core-lite-v0.2/scenarios/manifest.json','tools/core-conformance/lib/contract.mjs','tools/core-conformance/test/baseline.test.mjs','tools/core-conformance/test/stateful-history-reference.test.mjs']);
 export const BOUNDED_CONSTITUTIVE_CONTENT_PATHS=Object.freeze(['conformance/core-lite-v0.2/coverage-matrix.json','conformance/core-lite-v0.2/profile.json','conformance/core-lite-v0.2/requirements.json','conformance/core-lite-v0.2/scenarios/history-reference.cases.json','conformance/core-lite-v0.2/scenarios/manifest.json','tools/core-conformance/lib/contract.mjs','tools/core-conformance/lib/stateful-validator.mjs','tools/core-conformance/test/baseline.test.mjs','tools/core-conformance/test/stateful-history-reference.test.mjs']);
 export const E_PLUS_CONSTITUTIVE_CONTENT_PATHS=Object.freeze(['conformance/core-lite-v0.2/coverage-matrix.json','conformance/core-lite-v0.2/profile.json','conformance/core-lite-v0.2/requirements.json','conformance/core-lite-v0.2/scenarios/history-reference.cases.json','conformance/core-lite-v0.2/scenarios/manifest.json','tools/core-conformance/lib/contract.mjs','tools/core-conformance/lib/e-plus-evaluator.mjs','tools/core-conformance/lib/stateful-validator.mjs','tools/core-conformance/test/baseline.test.mjs','tools/core-conformance/test/e-plus-evaluator.test.mjs','tools/core-conformance/test/stateful-history-reference.test.mjs']);
+export const D053_SINGLETON_CONTENT_PATHS=Object.freeze(['conformance/core-lite-v0.2/coverage-matrix.json','conformance/core-lite-v0.2/profile.json','conformance/core-lite-v0.2/requirements.json','conformance/core-lite-v0.2/scenarios/history-reference.cases.json','tools/core-conformance/lib/contract.mjs','tools/core-conformance/test/baseline.test.mjs','tools/core-conformance/test/stateful-history-reference.test.mjs']);
 export const CONTENT_EPOCHS=Object.freeze({
  E_PLUS_006:Object.freeze({identity_sha256:'18a0cc82ebd37af45446148aeeb0c16edabc2e90813cb2e4247f0fe5efc8da43',scenario_count:63,statefully_complete_requirements:46,stateful_tap:38}),
- D092_D095_009:Object.freeze({identity_sha256:'8b76cddbedf5e3bb84855f3d9ae69e7eae4882b85125c7074a79c08df7509366',scenario_count:64,statefully_complete_requirements:50,stateful_tap:39})
+ D092_D095_009:Object.freeze({identity_sha256:'8b76cddbedf5e3bb84855f3d9ae69e7eae4882b85125c7074a79c08df7509366',scenario_count:64,statefully_complete_requirements:50,stateful_tap:39}),
+ D053_SINGLETON:Object.freeze({identity_sha256:'5ac15e45d9fcdcf0133ea4dd6f77f7eb1d913868751460746c6dfc6b1e170dda',scenario_count:64,statefully_complete_requirements:51,stateful_tap:39})
 });
 const EXPECTED_BRANCH_REF='refs/heads/codex/gate-2-conformance-contract';
 const ZERO_OID='0'.repeat(40);
@@ -93,19 +95,19 @@ export function parseChangedPathStream(buffer){
  if(!paths.length)fail('CHANGED_PATHS_EMPTY');if(new Set(paths).size!==paths.length)fail('CHANGED_PATH_DUPLICATE');const ordered=[...paths].sort(byteCompare),canonical=Buffer.concat(ordered.flatMap(value=>[Buffer.from(value,'utf8'),Buffer.from([0])]));return{observed:paths,ordered,digest:sha256(canonical),canonical};
 }
 export function classifyChangedPaths(paths){
- if(!Array.isArray(paths)||!paths.length||paths.some(value=>typeof value!=='string')||new Set(paths).size!==paths.length)fail('CHANGE_PROFILE_EMPTY');const ordered=[...paths].sort(byteCompare),maintenance=[...CI_MAINTENANCE_PATHS].sort(byteCompare),d078=[...CONFORMANCE_CONTENT_PATHS].sort(byteCompare),stateful=[...STATEFUL_HISTORY_CONTENT_PATHS].sort(byteCompare),bounded=[...BOUNDED_CONSTITUTIVE_CONTENT_PATHS].sort(byteCompare),ePlus=[...E_PLUS_CONSTITUTIVE_CONTENT_PATHS].sort(byteCompare);
+ if(!Array.isArray(paths)||!paths.length||paths.some(value=>typeof value!=='string')||new Set(paths).size!==paths.length)fail('CHANGE_PROFILE_EMPTY');const ordered=[...paths].sort(byteCompare),maintenance=[...CI_MAINTENANCE_PATHS].sort(byteCompare),d078=[...CONFORMANCE_CONTENT_PATHS].sort(byteCompare),stateful=[...STATEFUL_HISTORY_CONTENT_PATHS].sort(byteCompare),bounded=[...BOUNDED_CONSTITUTIVE_CONTENT_PATHS].sort(byteCompare),ePlus=[...E_PLUS_CONSTITUTIVE_CONTENT_PATHS].sort(byteCompare),d053=[...D053_SINGLETON_CONTENT_PATHS].sort(byteCompare);
  if(stable(ordered)===stable(maintenance))return'CI_MAINTENANCE';
- if(stable(ordered)===stable(d078)||stable(ordered)===stable(stateful)||stable(ordered)===stable(bounded)||stable(ordered)===stable(ePlus))return'CONFORMANCE_CONTENT';
+ if(stable(ordered)===stable(d078)||stable(ordered)===stable(stateful)||stable(ordered)===stable(bounded)||stable(ordered)===stable(ePlus)||stable(ordered)===stable(d053))return'CONFORMANCE_CONTENT';
  fail('CHANGE_PROFILE_FORBIDDEN');
 }
 const isPathSet=(envelope,paths)=>stable(envelope.changed_paths)===stable([...paths].sort(byteCompare));
-const commandsForEnvelope=envelope=>['E_PLUS_006','D092_D095_009'].includes(envelope.content_epoch)?[...BASE_COMMANDS.slice(0,5),E_PLUS_COMMAND,...BASE_COMMANDS.slice(5)]:BASE_COMMANDS;
+const commandsForEnvelope=envelope=>Object.hasOwn(CONTENT_EPOCHS,envelope.content_epoch)?[...BASE_COMMANDS.slice(0,5),E_PLUS_COMMAND,...BASE_COMMANDS.slice(5)]:BASE_COMMANDS;
 const governedCommandIds=envelope=>commandsForEnvelope(envelope).map(command=>command.id);
 const allCommandIds=envelope=>[...OPERATION_COMMAND_IDS,...governedCommandIds(envelope)];
 const tapCommandIds=envelope=>new Set(commandsForEnvelope(envelope).filter(command=>command.kind==='tap').map(command=>command.id));
 export function expectedResultsForEnvelope(envelope){
- const epoch=CONTENT_EPOCHS[envelope.content_epoch],maintenance=isPathSet(envelope,CI_MAINTENANCE_PATHS),ePlus=isPathSet(envelope,E_PLUS_CONSTITUTIVE_CONTENT_PATHS),bounded=isPathSet(envelope,BOUNDED_CONSTITUTIVE_CONTENT_PATHS);
- if(!epoch||(!maintenance&&!(ePlus&&envelope.content_epoch==='E_PLUS_006')&&!(bounded&&envelope.content_epoch==='D092_D095_009')))fail('CONTENT_EPOCH_PROFILE_MISMATCH');
+ const epoch=CONTENT_EPOCHS[envelope.content_epoch],maintenance=isPathSet(envelope,CI_MAINTENANCE_PATHS),ePlus=isPathSet(envelope,E_PLUS_CONSTITUTIVE_CONTENT_PATHS),bounded=isPathSet(envelope,BOUNDED_CONSTITUTIVE_CONTENT_PATHS),d053=isPathSet(envelope,D053_SINGLETON_CONTENT_PATHS);
+ if(!epoch||(!maintenance&&!(ePlus&&envelope.content_epoch==='E_PLUS_006')&&!(bounded&&envelope.content_epoch==='D092_D095_009')&&!(d053&&envelope.content_epoch==='D053_SINGLETON')))fail('CONTENT_EPOCH_PROFILE_MISMATCH');
  return{tap:{...BASE_EXPECTED_TAP,'stateful-history-reference':epoch.stateful_tap,'e-plus-evaluator':24},scenario_count:epoch.scenario_count,statefully_complete_requirements:epoch.statefully_complete_requirements};
 }
 function regularJson(source,relative,code){const file=path.join(source,relative),stat=fs.lstatSync(file);if(stat.isSymbolicLink()||!stat.isFile())fail(code,relative);return readJson(file);}

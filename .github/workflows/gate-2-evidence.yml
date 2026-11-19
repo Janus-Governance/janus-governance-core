@@ -2,6 +2,7 @@ name: Gate 2 evidence — PASS_NOT_CONFORMANCE
 
 on:
   push:
+    # Closed content epochs are derived by the runner; workflow inputs never select one.
     branches:
       - codex/gate-2-conformance-contract
     paths:
