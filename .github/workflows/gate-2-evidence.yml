@@ -44,6 +44,8 @@ jobs:
       test-sha256: ${{ steps.hashes.outputs.test_sha256 }}
       integration-module-sha256: ${{ steps.hashes.outputs.integration_module_sha256 }}
       integration-test-sha256: ${{ steps.hashes.outputs.integration_test_sha256 }}
+      stateful-module-sha256: ${{ steps.hashes.outputs.stateful_module_sha256 }}
+      stateful-test-sha256: ${{ steps.hashes.outputs.stateful_test_sha256 }}
       tree: ${{ steps.hashes.outputs.tree }}
     steps:
       - name: Reject unauthorized event or rerun
@@ -107,6 +109,8 @@ jobs:
           for governed_path in \
             .github/workflows/gate-2-evidence.yml \
             tools/core-conformance/ci-gate2-evidence.mjs \
+            tools/core-conformance/lib/stateful-validator.mjs \
+            tools/core-conformance/test/stateful-history-reference.test.mjs \
             tools/core-conformance/test/ci-gate2-evidence.test.mjs
           do
             test -f "$governed_path"
@@ -118,12 +122,16 @@ jobs:
           test_sha="$(sha256sum tools/core-conformance/test/ci-gate2-evidence.test.mjs | cut -d ' ' -f 1)"
           integration_module_sha="$(sha256sum tools/core-conformance/lib/e-minus-schema-binding-integration.mjs | cut -d ' ' -f 1)"
           integration_test_sha="$(sha256sum tools/core-conformance/test/e-minus-schema-binding-integration.test.mjs | cut -d ' ' -f 1)"
+          stateful_module_sha="$(sha256sum tools/core-conformance/lib/stateful-validator.mjs | cut -d ' ' -f 1)"
+          stateful_test_sha="$(sha256sum tools/core-conformance/test/stateful-history-reference.test.mjs | cut -d ' ' -f 1)"
           tree="$(git rev-parse "${GITHUB_SHA}^{tree}")"
           printf 'workflow_sha256=%s\n' "$workflow_sha" >> "$GITHUB_OUTPUT"
           printf 'runner_sha256=%s\n' "$runner_sha" >> "$GITHUB_OUTPUT"
           printf 'test_sha256=%s\n' "$test_sha" >> "$GITHUB_OUTPUT"
           printf 'integration_module_sha256=%s\n' "$integration_module_sha" >> "$GITHUB_OUTPUT"
           printf 'integration_test_sha256=%s\n' "$integration_test_sha" >> "$GITHUB_OUTPUT"
+          printf 'stateful_module_sha256=%s\n' "$stateful_module_sha" >> "$GITHUB_OUTPUT"
+          printf 'stateful_test_sha256=%s\n' "$stateful_test_sha" >> "$GITHUB_OUTPUT"
           printf 'tree=%s\n' "$tree" >> "$GITHUB_OUTPUT"
 
   replica_1:
@@ -163,6 +171,8 @@ jobs:
           for governed_path in \
             .github/workflows/gate-2-evidence.yml \
             tools/core-conformance/ci-gate2-evidence.mjs \
+            tools/core-conformance/lib/stateful-validator.mjs \
+            tools/core-conformance/test/stateful-history-reference.test.mjs \
             tools/core-conformance/test/ci-gate2-evidence.test.mjs
           do
             test -f "$governed_path"
@@ -187,6 +197,8 @@ jobs:
             --expected-test-sha '${{ needs.preflight_authority.outputs.test-sha256 }}' \
             --expected-integration-module-sha '${{ needs.preflight_authority.outputs.integration-module-sha256 }}' \
             --expected-integration-test-sha '${{ needs.preflight_authority.outputs.integration-test-sha256 }}' \
+            --expected-stateful-module-sha '${{ needs.preflight_authority.outputs.stateful-module-sha256 }}' \
+            --expected-stateful-test-sha '${{ needs.preflight_authority.outputs.stateful-test-sha256 }}' \
             --expected-tree '${{ needs.preflight_authority.outputs.tree }}'
       - name: Upload replica evidence
         id: upload
@@ -241,6 +253,8 @@ jobs:
           for governed_path in \
             .github/workflows/gate-2-evidence.yml \
             tools/core-conformance/ci-gate2-evidence.mjs \
+            tools/core-conformance/lib/stateful-validator.mjs \
+            tools/core-conformance/test/stateful-history-reference.test.mjs \
             tools/core-conformance/test/ci-gate2-evidence.test.mjs
           do
             test -f "$governed_path"
@@ -265,6 +279,8 @@ jobs:
             --expected-test-sha '${{ needs.preflight_authority.outputs.test-sha256 }}' \
             --expected-integration-module-sha '${{ needs.preflight_authority.outputs.integration-module-sha256 }}' \
             --expected-integration-test-sha '${{ needs.preflight_authority.outputs.integration-test-sha256 }}' \
+            --expected-stateful-module-sha '${{ needs.preflight_authority.outputs.stateful-module-sha256 }}' \
+            --expected-stateful-test-sha '${{ needs.preflight_authority.outputs.stateful-test-sha256 }}' \
             --expected-tree '${{ needs.preflight_authority.outputs.tree }}'
       - name: Upload replica evidence
         id: upload
