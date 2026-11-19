@@ -69,9 +69,10 @@
       "DELETE",
       "CHECK_OBJECT_REFS",
       "CHECK_E_PLUS_SUPPORT",
+      "CHECK_OMISSION_RESOLUTION",
       "ORIGINATE_HUMAN_DECISION"
     ],
-    "statefully_complete_requirements": 46,
+    "statefully_complete_requirements": 50,
     "projection_covered_requirements": 7,
     "human_decision_origin": "MODELED_TECHNICAL_ORIGINATION_REJECTED_WITHOUT_HUMAN_AUTHORITY_INFERENCE",
     "boundary_guard": "DEPENDENCY_FREE_TEST_PROFILE_NOT_JSON_SCHEMA_SUBSTITUTE",
@@ -87,6 +88,7 @@
     "deterministic_representation": "TEST_PROFILE_ONLY_NOT_CANONICAL_SERIALIZATION",
     "audit_writer_boundary": "VERIFIES_PREPARED_PROOF_AND_REFERENCES_DOES_NOT_SEARCH",
     "omission_event_placement": "AUDIT_LOG_VIA_AUTHORIZED_AUDIT_WRITER_ONLY",
+    "omission_resolution_boundary": "READ_ONLY_SAME_MATERIAL_EXPECTATION_VERSION_LATER_CUTOFF_PREFIX_CONTINUITY_AND_DERIVED_EVIDENCE_TEST_PROFILE_ONLY",
     "automatic_object_refs_resolution": "HUMAN_DECISION_ONLY_WHERE_CORE_DEFINED",
     "human_identity_authority_or_competence_inference": false,
     "conformance_claimed": false

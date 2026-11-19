@@ -1,7 +1,7 @@
 {
   "schema_version": "janus-stateful-history-reference-cases-v1",
   "manifest_ref": "JN-CORE-LITE-0_2-STATEFUL-HISTORY-REFERENCE-001",
-  "scenario_count": 63,
+  "scenario_count": 64,
   "omission_foundation_preconditions": {
     "authorized_audit_writer_refs": ["writer-tech-1"],
     "reference_aliases": [],
@@ -2416,6 +2416,20 @@
       "steps": [
         {"operation": {"operation": "CHECK_E_PLUS_SUPPORT", "governance_event_ref": "governance-event-event-1", "subject_type": "EVENT", "subject_ref": "supported-event-1"}, "expected": {"accepted": true, "code": "E_PLUS_ARTIFACT_SUPPORT_VERIFIED", "history_delta": 0, "before_equals_after": true}},
         {"operation": {"operation": "CHECK_E_PLUS_SUPPORT", "governance_event_ref": "missing-governance-event", "subject_type": "EVENT", "subject_ref": "supported-event-1"}, "expected": {"accepted": false, "code": "E_PLUS_GOVERNANCE_EVENT_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}
+      ]
+    },
+    {
+      "scenario_id": "resolve-omission-by-later-same-version-evaluation",
+      "classification": "POSITIVE_NEGATIVE",
+      "requirement_ids": ["JN-CORE-0_2-REQ-D092", "JN-CORE-0_2-REQ-D093", "JN-CORE-0_2-REQ-D094", "JN-CORE-0_2-REQ-D095"],
+      "foundation_profile": "E_MINUS_RESOLUTION_V1",
+      "steps": [
+        {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-resolution-target"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}},
+        {"operation": {"operation": "CHECK_OMISSION_RESOLUTION", "omission_event_id": "omission-resolution-target", "resolution_evaluation_ref": "resolution-evaluation-v1"}, "expected": {"accepted": true, "code": "OMISSION_RESOLUTION_VERIFIED", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "CHECK_OMISSION_RESOLUTION", "omission_event_id": "omission-resolution-target", "resolution_evaluation_ref": "resolution-evaluation-v2"}, "expected": {"accepted": false, "code": "RESOLUTION_EXPECTATION_VERSION_MISMATCH", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "CHECK_OMISSION_RESOLUTION", "omission_event_id": "omission-resolution-target", "resolution_evaluation_ref": "resolution-evaluation-material-mutant"}, "expected": {"accepted": false, "code": "RESOLUTION_EXPECTATION_MATERIAL_MISMATCH", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "CHECK_OMISSION_RESOLUTION", "omission_event_id": "omission-resolution-target", "resolution_evaluation_ref": "resolution-evaluation-equal-cutoff"}, "expected": {"accepted": false, "code": "RESOLUTION_CUTOFF_NOT_LATER", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "CHECK_OMISSION_RESOLUTION", "omission_event_id": "omission-resolution-target", "resolution_evaluation_ref": "resolution-evaluation-missing-evidence"}, "expected": {"accepted": false, "code": "RESOLUTION_EVIDENCE_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}
       ]
     }
   ]
