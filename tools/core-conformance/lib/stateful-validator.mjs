@@ -1,11 +1,12 @@
 import crypto from 'node:crypto';
 import { types } from 'node:util';
 import { evaluateConstitutiveEMinus,replayConstitutiveEMinus } from './e-minus-evaluator.mjs';
+import { evaluateConstitutiveEPlus } from './e-plus-evaluator.mjs';
 
 export const logNames=Object.freeze(['MANAGEMENT_LOG','SCHEMA_LOG','AUDIT_LOG']);
-export const operationNames=Object.freeze(['APPEND','RESET','REPLACE','DELETE','CHECK_OBJECT_REFS','ORIGINATE_HUMAN_DECISION']);
+export const operationNames=Object.freeze(['APPEND','RESET','REPLACE','DELETE','CHECK_OBJECT_REFS','CHECK_E_PLUS_SUPPORT','ORIGINATE_HUMAN_DECISION']);
 
-const preconditionKeys=Object.freeze(['authorized_audit_writer_refs','reference_aliases','constitutive_evaluations','evidence_artifacts']);
+const preconditionKeys=Object.freeze(['authorized_audit_writer_refs','reference_aliases','constitutive_evaluations','evidence_artifacts','e_plus_registry']);
 const trustedStates=new WeakSet();
 const governanceFlowOperations=new WeakSet();
 const fail=code=>{throw new TypeError(code);};
@@ -16,11 +17,12 @@ const ownValue=(value,key,fallback=undefined)=>{const descriptor=ownDescriptor(v
 const hasOwnData=(value,key)=>{const descriptor=ownDescriptor(value,key);return Boolean(descriptor&&descriptorHasValue(descriptor));};
 function defineData(target,key,value){Object.defineProperty(target,key,{value,enumerable:true,writable:true,configurable:true});return target;}
 function nullObject(entries=[]){const value=Object.create(null);for(const [key,entry] of entries)defineData(value,key,entry);return value;}
-function normalizeData(value,code='INVALID_DATA',seen=new Set()){
+function normalizeData(value,code='INVALID_DATA',tracker={seen:new Set(),nodes:0},depth=0){
+ if(depth>64)fail(code+'_DEPTH_LIMIT');tracker.nodes++;if(tracker.nodes>20000)fail(code+'_NODE_LIMIT');
  if(value===null||typeof value==='string'||typeof value==='boolean')return value;
  if(typeof value==='number'){if(Number.isFinite(value))return value;fail(code);}
  if(typeof value!=='object'||types.isProxy(value))fail(code);
- if(seen.has(value))fail(code);seen.add(value);
+ if(tracker.seen.has(value))fail(code);tracker.seen.add(value);
  const isArray=Array.isArray(value),prototype=Object.getPrototypeOf(value);
  if(isArray?prototype!==Array.prototype:prototype!==Object.prototype&&prototype!==null)fail(code);
  const descriptors=Object.getOwnPropertyDescriptors(value),keys=Reflect.ownKeys(descriptors),normalized=isArray?new Array(value.length):Object.create(null);
@@ -30,10 +32,10 @@ function normalizeData(value,code='INVALID_DATA',seen=new Set()){
   if(typeof key==='symbol')fail(code);
   const descriptor=ownValue(descriptors,key);if(!descriptor||!descriptorHasValue(descriptor)||ownDescriptor(descriptor,'get')!==undefined||ownDescriptor(descriptor,'set')!==undefined||ownValue(descriptor,'enumerable')!==true)fail(code);
   if(isArray&&(!/^(0|[1-9]\d*)$/.test(key)||Number(key)>=value.length))fail(code);
-  defineData(normalized,key,normalizeData(descriptorValue(descriptor),code,seen));
+  defineData(normalized,key,normalizeData(descriptorValue(descriptor),code,tracker,depth+1));
  }
  if(isArray&&Object.keys(descriptors).filter(key=>key!=='length').length!==value.length)fail(code);
- seen.delete(value);return normalized;
+ tracker.seen.delete(value);return normalized;
 }
 const clone=value=>normalizeData(value);
 function deepFreeze(value){if(value&&typeof value==='object'&&!Object.isFrozen(value)){const descriptors=Object.getOwnPropertyDescriptors(value);for(const key of Reflect.ownKeys(descriptors)){if(Array.isArray(value)&&key==='length')continue;const descriptor=ownValue(descriptors,key);if(descriptor&&descriptorHasValue(descriptor))deepFreeze(descriptorValue(descriptor));}Object.freeze(value);}return value;}
@@ -49,7 +51,7 @@ function trustState(state){deepFreeze(state);trustedStates.add(state);return sta
 function trustedHash(state){assertTrustedState(state);if(!Object.isFrozen(state))throw new TypeError('UNTRUSTED_STATE');return crypto.createHash('sha256').update(stableTrusted(state),'utf8').digest('hex');}
 
 function applyConstitutiveCase(evaluations,caseName){if(caseName===undefined)return evaluations;if(typeof caseName!=='string'||evaluations.length!==1)fail('INVALID_CONSTITUTIVE_FIXTURE_CASE');const input=evaluations[0],expectation=input.expectations?.[0],scope=input.scopes?.[0],source=scope?.sources?.[0],snapshotSource=input.snapshot?.sources?.[0];switch(caseName){case'EXPECTATION_NOT_FOUND':input.expectations=[];break;case'EXPECTATION_VERSION_NOT_FOUND':input.expectation_version='missing-version';break;case'EXPECTATION_UNRESOLVED':expectation.referenceable=false;break;case'EXPECTATION_AFTER_OBSERVATION':input.snapshot.predecessor_snapshot_refs=[];break;case'DUE_INDETERMINATE':expectation.due.kind='UNSUPPORTED_DUE_RULE';break;case'NOT_DUE':source.cutoff_ordinal=15;source.window.through_ordinal=15;break;case'SCOPE_INCOMPLETE':delete scope.subject_ref;break;case'PROCEDURE_NOT_FOUND':input.procedures=[];break;case'SCHEMA_INAPPLICABLE':input.schema_history=[];break;case'SNAPSHOT_INCOMPLETE':delete snapshotSource.complete_through_ordinal;break;case'PRESENT':snapshotSource.records.push(nullObject([['identity','matching-record'],['ordinal',30],['subject_ref',scope.subject_ref],['fields',clone(scope.filters)]]));break;default:fail('UNKNOWN_CONSTITUTIVE_FIXTURE_CASE');}return evaluations;}
-export function createState(preconditions={}){const safe=normalizeData(preconditions,'INVALID_PRECONDITIONS_DATA');for(const forbidden of ['expectations','scopes','procedures','schema_contexts','observations','e_minus_proofs'])if(hasOwnData(safe,forbidden))fail('LEGACY_E_MINUS_ORACLE_INPUT_FORBIDDEN');const logs=nullObject(),normalizedPreconditions=nullObject();for(const name of logNames)defineData(logs,name,[]);for(const key of preconditionKeys)defineData(normalizedPreconditions,key,clone(ownValue(safe,key,[])));const evaluations=applyConstitutiveCase(normalizedPreconditions.constitutive_evaluations,ownValue(safe,'constitutive_case'));if(!Array.isArray(evaluations))fail('INVALID_CONSTITUTIVE_EVALUATIONS');const proofs=[];for(const input of evaluations){const evaluated=evaluateConstitutiveEMinus(input),expected=evaluated.proof?.replay_digest??null,replay=expected?replayConstitutiveEMinus(input,expected):null;proofs.push(nullObject([['evaluation_ref',evaluated.evaluation_ref],['status',evaluated.status],['code',evaluated.code],['observation',evaluated.observation??null],['proof',evaluated.proof??null],['candidate',evaluated.candidate??null],['replay_verified',replay?.matches===true]]));}defineData(normalizedPreconditions,'e_minus_proofs',proofs);const state=nullObject([['logs',logs],['preconditions',normalizedPreconditions]]);return trustState(normalizeData(state,'INVALID_INTERNAL_STATE'));}
+export function createState(preconditions={}){const safe=normalizeData(preconditions,'INVALID_PRECONDITIONS_DATA');for(const forbidden of ['expectations','scopes','procedures','schema_contexts','observations','e_minus_proofs'])if(hasOwnData(safe,forbidden))fail('LEGACY_E_MINUS_ORACLE_INPUT_FORBIDDEN');const logs=nullObject(),normalizedPreconditions=nullObject();for(const name of logNames)defineData(logs,name,[]);for(const key of preconditionKeys)if(key!=='e_plus_registry'||hasOwnData(safe,key))defineData(normalizedPreconditions,key,clone(ownValue(safe,key,[])));const evaluations=applyConstitutiveCase(normalizedPreconditions.constitutive_evaluations,ownValue(safe,'constitutive_case'));if(!Array.isArray(evaluations))fail('INVALID_CONSTITUTIVE_EVALUATIONS');const proofs=[];for(const input of evaluations){const evaluated=evaluateConstitutiveEMinus(input),expected=evaluated.proof?.replay_digest??null,replay=expected?replayConstitutiveEMinus(input,expected):null;proofs.push(nullObject([['evaluation_ref',evaluated.evaluation_ref],['status',evaluated.status],['code',evaluated.code],['observation',evaluated.observation??null],['proof',evaluated.proof??null],['candidate',evaluated.candidate??null],['replay_verified',replay?.matches===true]]));}defineData(normalizedPreconditions,'e_minus_proofs',proofs);const state=nullObject([['logs',logs],['preconditions',normalizedPreconditions]]);return trustState(normalizeData(state,'INVALID_INTERNAL_STATE'));}
 export const historyHash=state=>trustedHash(state);
 function result(state,beforeHash,accepted,code,historyDelta){assertTrustedState(state);const nextState=trustState(clone(state));return{accepted,code,before_hash:beforeHash,after_hash:trustedHash(nextState),history_delta:historyDelta,next_state:nextState};}
 const reject=(state,beforeHash,code)=>result(state,beforeHash,false,code,0);
@@ -107,6 +109,13 @@ export function applyOperation(state,operation,context={}){
  }
  if(['RESET','REPLACE','DELETE'].includes(operation.operation))return reject(state,beforeHash,'FORBIDDEN_MUTATION');
  if(operation.operation==='CHECK_OBJECT_REFS'){if(hasPreconditionOverride(operation))return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');if(hasPreconditionOverride(context))return reject(state,beforeHash,'CONTEXT_PRECONDITION_OVERRIDE_FORBIDDEN');const checked=validateObjectRefs(state,operation.object_refs??[],{selfLog:operation.origin_log??null,selfIdentity:operation.identity??null});return checked.ok?result(state,beforeHash,true,checked.code,0):reject(state,beforeHash,checked.code);}
+ if(operation.operation==='CHECK_E_PLUS_SUPPORT'){
+  if(hasPreconditionOverride(operation))return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');if(hasPreconditionOverride(context))return reject(state,beforeHash,'CONTEXT_PRECONDITION_OVERRIDE_FORBIDDEN');
+  if(Object.keys(context).length)return reject(state,beforeHash,'E_PLUS_CONTEXT_FIELDS');
+  const allowed=['governance_event_ref','operation','subject_ref','subject_type'];if(Object.keys(operation).some(key=>!allowed.includes(key))||allowed.some(key=>!hasOwnData(operation,key)))return reject(state,beforeHash,'E_PLUS_OPERATION_FIELDS');
+  const evaluated=evaluateConstitutiveEPlus({registry:state.preconditions.e_plus_registry,governance_event_ref:operation.governance_event_ref,subject_type:operation.subject_type,subject_ref:operation.subject_ref});
+  return evaluated.status==='SUPPORTED'?result(state,beforeHash,true,evaluated.code,0):reject(state,beforeHash,evaluated.code);
+ }
  const{log,record}=operation;if(!logNames.includes(log))return reject(state,beforeHash,'INVALID_LOG');
  if(!record||typeof record!=='object'||typeof record.identity!=='string'||!record.identity.length||!record.payload||typeof record.payload!=='object'||Array.isArray(record.payload))return reject(state,beforeHash,'INVALID_RECORD_WRAPPER');
  if(hasPreconditionOverride(operation))return reject(state,beforeHash,'OPERATION_PRECONDITION_OVERRIDE_FORBIDDEN');

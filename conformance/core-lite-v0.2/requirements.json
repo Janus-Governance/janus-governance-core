@@ -3795,18 +3795,17 @@
       "atomic_predicate": "mean evidence explicitly recorded in a system of record",
       "governed_object": "explicit evidence",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/e-plus-evaluator.test.mjs#constitutive-e-plus",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"
       ],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "E+ is not a Boolean or reference.",
+      "coverage_status": [],
+      "dependencies_adapters": ["TEST_ONLY_CONSTITUTIVE_E_PLUS_EVALUATOR"],
+      "ambiguity_notes": "E+ is demonstrated only from a frozen data-only capture in which a pre-existing governance event supplies one evidence reference that resolves to exact raw artifact octets; this does not establish truth, sufficiency, authority, canonical serialization, or runtime persistence.",
       "explicit_non_goals": [
         "treating HUMAN_DECISION as E+"
       ],
@@ -3814,12 +3813,12 @@
         "STATEFUL"
       ],
       "constraint_family": "EVIDENCE_CLASS_MEANING",
-      "coverage_markers": [],
+      "coverage_markers": ["STATEFUL_SCENARIO_COVERED", "REQUIREMENT_COMPLETE"],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_negative_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_test_refs": ["tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"],
+      "stateful_coverage_markers": ["STATEFUL_SCENARIO_COVERED"]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D027",
@@ -3841,18 +3840,17 @@
       "atomic_predicate": "identify immutable artifact versions through its evidence references",
       "governed_object": "artifact versions",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/e-plus-evaluator.test.mjs#constitutive-e-plus",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"
       ],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "E+ is not a Boolean or reference.",
+      "coverage_status": [],
+      "dependencies_adapters": ["TEST_ONLY_CONSTITUTIVE_E_PLUS_EVALUATOR"],
+      "ambiguity_notes": "Immutability is bounded to exact raw artifact octets and the version/digest tuple supplied by a captured pre-existing governance event in this in-memory test profile; no runtime persistence is claimed.",
       "explicit_non_goals": [
         "treating HUMAN_DECISION as E+"
       ],
@@ -3860,12 +3858,12 @@
         "STATEFUL"
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_IMMUTABILITY",
-      "coverage_markers": [],
+      "coverage_markers": ["STATEFUL_SCENARIO_COVERED", "REQUIREMENT_COMPLETE"],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_negative_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_test_refs": ["tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"],
+      "stateful_coverage_markers": ["STATEFUL_SCENARIO_COVERED"]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D028",
@@ -3942,18 +3940,17 @@
       "atomic_predicate": "be invoked through resolvable evidence references",
       "governed_object": "evidence references",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/e-plus-evaluator.test.mjs#constitutive-e-plus",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"
       ],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "E+ is not a Boolean or reference.",
+      "coverage_status": [],
+      "dependencies_adapters": ["TEST_ONLY_CONSTITUTIVE_E_PLUS_EVALUATOR"],
+      "ambiguity_notes": "Resolution starts from the captured pre-existing governance event's sole evidence reference and requires one exact system-of-record/artifact/version tuple plus a digest matching the resolved raw octets; a caller-supplied reference alone is not E+.",
       "explicit_non_goals": [
         "treating HUMAN_DECISION as E+"
       ],
@@ -3961,12 +3958,12 @@
         "STATEFUL"
       ],
       "constraint_family": "GOVERNANCE_EVIDENCE_REFERENCE_RESOLUTION",
-      "coverage_markers": [],
+      "coverage_markers": ["STATEFUL_SCENARIO_COVERED", "REQUIREMENT_COMPLETE"],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_negative_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_test_refs": ["tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"],
+      "stateful_coverage_markers": ["STATEFUL_SCENARIO_COVERED"]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D030",
@@ -7786,18 +7783,17 @@
       "atomic_predicate": "be supported when E+ recorded evidence exists",
       "governed_object": "E+ support",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/e-plus-evaluator.test.mjs#constitutive-e-plus",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"
       ],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "The alternatives are evidence classes, not Boolean labels.",
+      "coverage_status": [],
+      "dependencies_adapters": ["TEST_ONLY_CONSTITUTIVE_E_PLUS_EVALUATOR"],
+      "ambiguity_notes": "The claim scenario proves only exact reciprocal CLAIM subject links from the captured pre-existing governance event to the resolved artifact; it does not prove the claim true, sufficient, exhaustive, or human-authorized.",
       "explicit_non_goals": [
         "treating E+/E− as exhaustive verdicts"
       ],
@@ -7805,12 +7801,12 @@
         "STATEFUL"
       ],
       "constraint_family": "TRUTH_CONDITION_E_PLUS",
-      "coverage_markers": [],
+      "coverage_markers": ["STATEFUL_SCENARIO_COVERED", "REQUIREMENT_COMPLETE"],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": ["evaluate-e-plus-claim-support"],
+      "stateful_negative_scenario_refs": ["evaluate-e-plus-claim-support"],
+      "stateful_test_refs": ["tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"],
+      "stateful_coverage_markers": ["STATEFUL_SCENARIO_COVERED"]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D102",
@@ -8084,31 +8080,30 @@
       "atomic_predicate": "be supported by a recorded artifact",
       "governed_object": "E+ support",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/e-plus-evaluator.test.mjs#constitutive-e-plus",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"
       ],
-      "dependencies_adapters": [],
-      "ambiguity_notes": "late inventory recovery; no semantic change to Core v0.2",
+      "coverage_status": [],
+      "dependencies_adapters": ["TEST_ONLY_CONSTITUTIVE_E_PLUS_EVALUATOR"],
+      "ambiguity_notes": "Support is bounded to a captured pre-existing governance event, its exact evidence-reference tuple, matching raw artifact octets, and mandatory reciprocal CLAIM or EVENT subject links; no truth or sufficiency follows.",
       "explicit_non_goals": [
-        "implementing E+ in this transaction"
+        "asserting truth, sufficiency, authority, or runtime persistence from E+"
       ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "E_PLUS_RECORDED_ARTIFACT_SUPPORT",
-      "coverage_markers": [],
+      "coverage_markers": ["STATEFUL_SCENARIO_COVERED", "REQUIREMENT_COMPLETE"],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_negative_scenario_refs": ["evaluate-e-plus-claim-support", "evaluate-e-plus-event-support"],
+      "stateful_test_refs": ["tools/core-conformance/test/stateful-history-reference.test.mjs#E-plus-support-integration"],
+      "stateful_coverage_markers": ["STATEFUL_SCENARIO_COVERED"]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D108",

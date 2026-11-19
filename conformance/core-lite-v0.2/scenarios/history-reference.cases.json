@@ -1,7 +1,7 @@
 {
   "schema_version": "janus-stateful-history-reference-cases-v1",
   "manifest_ref": "JN-CORE-LITE-0_2-STATEFUL-HISTORY-REFERENCE-001",
-  "scenario_count": 61,
+  "scenario_count": 63,
   "omission_foundation_preconditions": {
     "authorized_audit_writer_refs": ["writer-tech-1"],
     "reference_aliases": [],
@@ -2396,6 +2396,26 @@
         {"operation": {"operation": "APPEND", "log": "AUDIT_LOG", "record": {"identity": "decision-unresolved-object-with-context", "payload": {"event_type": "HUMAN_DECISION", "event_id": "decision-unresolved-object-with-context", "actor_ref": "opaque-actor", "scope_ref": "opaque-scope", "object_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "missing-decided-object"}], "management_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "context-only-target"}], "evidence_refs": [{"opaque_evidence_ref": "context-only-target"}], "schema_ref": "opaque-schema-context", "occurred_at": "2026-11-07T12:03:00Z", "recorded_at": "2026-11-07T12:03:01Z"}}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "UNRESOLVED_REFERENCE", "history_delta": 0, "before_equals_after": true}},
         {"operation": {"operation": "APPEND", "log": "AUDIT_LOG", "record": {"identity": "decision-empty-object-refs-with-context", "payload": {"event_type": "HUMAN_DECISION", "event_id": "decision-empty-object-refs-with-context", "actor_ref": "opaque-actor", "scope_ref": "opaque-scope", "object_refs": [], "management_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "context-only-target"}], "evidence_refs": [{"opaque_evidence_ref": "context-only-target"}], "schema_ref": "opaque-schema-context", "occurred_at": "2026-11-07T12:04:00Z", "recorded_at": "2026-11-07T12:04:01Z"}}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "INVALID_HUMAN_DECISION_SHAPE", "history_delta": 0, "before_equals_after": true}},
         {"operation": {"operation": "APPEND", "log": "AUDIT_LOG", "record": {"identity": "decision-missing-object-refs-with-context", "payload": {"event_type": "HUMAN_DECISION", "event_id": "decision-missing-object-refs-with-context", "actor_ref": "opaque-actor", "scope_ref": "opaque-scope", "management_refs": [{"ref_type": "CANONICAL", "origin_log": "MANAGEMENT_LOG", "identity": "context-only-target"}], "evidence_refs": [{"opaque_evidence_ref": "context-only-target"}], "schema_ref": "opaque-schema-context", "occurred_at": "2026-11-07T12:05:00Z", "recorded_at": "2026-11-07T12:05:01Z"}}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": false, "code": "INVALID_HUMAN_DECISION_SHAPE", "history_delta": 0, "before_equals_after": true}}
+      ]
+    },
+    {
+      "scenario_id": "evaluate-e-plus-claim-support",
+      "classification": "POSITIVE_NEGATIVE",
+      "requirement_ids": ["JN-CORE-0_2-REQ-D026", "JN-CORE-0_2-REQ-D027", "JN-CORE-0_2-REQ-D029", "JN-CORE-0_2-REQ-D101", "JN-CORE-0_2-REQ-D107"],
+      "preconditions": {"e_plus_registry": {"artifacts": [{"system_of_record_ref": "governance-records-1", "artifact_ref": "claim-artifact-1", "version": "v1", "digest": "ca328aee73b28da81da6459459a3101f1b6c90325745ee6dc7d133e10dd79363", "content_base64": "Y2xhaW0tYXJ0aWZhY3QtYnl0ZXMtdjE=", "subject_refs": [{"subject_type": "CLAIM", "subject_ref": "claim-1"}]}], "governance_events": [{"event_ref": "governance-event-claim-1", "evidence_refs": [{"system_of_record_ref": "governance-records-1", "artifact_ref": "claim-artifact-1", "version": "v1", "digest": "ca328aee73b28da81da6459459a3101f1b6c90325745ee6dc7d133e10dd79363"}], "subject_refs": [{"subject_type": "CLAIM", "subject_ref": "claim-1"}]}]}},
+      "steps": [
+        {"operation": {"operation": "CHECK_E_PLUS_SUPPORT", "governance_event_ref": "governance-event-claim-1", "subject_type": "CLAIM", "subject_ref": "claim-1"}, "expected": {"accepted": true, "code": "E_PLUS_ARTIFACT_SUPPORT_VERIFIED", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "CHECK_E_PLUS_SUPPORT", "governance_event_ref": "governance-event-claim-1", "subject_type": "CLAIM", "subject_ref": "other-claim"}, "expected": {"accepted": false, "code": "E_PLUS_EVENT_SUBJECT_LINK_MISMATCH", "history_delta": 0, "before_equals_after": true}}
+      ]
+    },
+    {
+      "scenario_id": "evaluate-e-plus-event-support",
+      "classification": "POSITIVE_NEGATIVE",
+      "requirement_ids": ["JN-CORE-0_2-REQ-D026", "JN-CORE-0_2-REQ-D027", "JN-CORE-0_2-REQ-D029", "JN-CORE-0_2-REQ-D107"],
+      "preconditions": {"e_plus_registry": {"artifacts": [{"system_of_record_ref": "governance-records-1", "artifact_ref": "event-artifact-1", "version": "v1", "digest": "11d461eb4084117e1ad1051ade7a511baee4cba47c8874ae1f7c51361408bfc7", "content_base64": "ZXZlbnQtYXJ0aWZhY3QtYnl0ZXMtdjE=", "subject_refs": [{"subject_type": "EVENT", "subject_ref": "supported-event-1"}]}], "governance_events": [{"event_ref": "governance-event-event-1", "evidence_refs": [{"system_of_record_ref": "governance-records-1", "artifact_ref": "event-artifact-1", "version": "v1", "digest": "11d461eb4084117e1ad1051ade7a511baee4cba47c8874ae1f7c51361408bfc7"}], "subject_refs": [{"subject_type": "EVENT", "subject_ref": "supported-event-1"}]}]}},
+      "steps": [
+        {"operation": {"operation": "CHECK_E_PLUS_SUPPORT", "governance_event_ref": "governance-event-event-1", "subject_type": "EVENT", "subject_ref": "supported-event-1"}, "expected": {"accepted": true, "code": "E_PLUS_ARTIFACT_SUPPORT_VERIFIED", "history_delta": 0, "before_equals_after": true}},
+        {"operation": {"operation": "CHECK_E_PLUS_SUPPORT", "governance_event_ref": "missing-governance-event", "subject_type": "EVENT", "subject_ref": "supported-event-1"}, "expected": {"accepted": false, "code": "E_PLUS_GOVERNANCE_EVENT_NOT_FOUND", "history_delta": 0, "before_equals_after": true}}
       ]
     }
   ]
