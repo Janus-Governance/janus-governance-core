@@ -7569,33 +7569,44 @@
       "atomic_predicate": "leave the omission event unchanged",
       "governed_object": "omission event",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D098-D099-human-decision-omission-invariance"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": [
-        "none"
-      ],
+      "ambiguity_notes": "HUMAN_DECISION is externally originated opaque test input; mutation-shaped extra fields remain inert, while malformed hostile containers are rejected fail-closed.",
       "explicit_non_goals": [
-        "treating HUMAN_DECISION as evidence"
+        "treating HUMAN_DECISION as evidence",
+        "classifying HUMAN_DECISION as E+ or E−",
+        "originating or validating human authority",
+        "rebuilt-view, resolution, or supersession semantics",
+        "runtime persistence"
       ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "HUMAN_DECISION_OMISSION_EVENT_UNCHANGED",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "preserve-omission-and-evidence-under-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "preserve-omission-and-evidence-under-human-decision"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D098-D099-human-decision-omission-invariance"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D099",
@@ -7617,33 +7628,44 @@
       "atomic_predicate": "leave omission evidence unchanged",
       "governed_object": "omission evidence",
       "verification_class": "STATEFUL",
-      "implementation_status": "NOT_IMPLEMENTED",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D098-D099-human-decision-omission-invariance"
       ],
+      "coverage_status": [],
       "dependencies_adapters": [],
-      "ambiguity_notes": [
-        "none"
-      ],
+      "ambiguity_notes": "Evidence invariance covers evidence_refs and every uniquely resolved artifact/version by bytes, digest, registry position, cardinality, and resolution identity; HUMAN_DECISION remains opaque input.",
       "explicit_non_goals": [
-        "treating HUMAN_DECISION as evidence"
+        "treating HUMAN_DECISION as evidence",
+        "classifying HUMAN_DECISION as E+ or E−",
+        "originating or validating human authority",
+        "rebuilt-view, resolution, or supersession semantics",
+        "runtime persistence"
       ],
       "verification_classes": [
         "STATEFUL"
       ],
       "constraint_family": "HUMAN_DECISION_OMISSION_EVIDENCE_UNCHANGED",
-      "coverage_markers": [],
+      "coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
+      ],
       "fixture_polarity_requirement": "BOTH",
-      "stateful_positive_scenario_refs": [],
-      "stateful_negative_scenario_refs": [],
-      "stateful_test_refs": [],
-      "stateful_coverage_markers": []
+      "stateful_positive_scenario_refs": [
+        "preserve-omission-and-evidence-under-human-decision"
+      ],
+      "stateful_negative_scenario_refs": [
+        "preserve-omission-and-evidence-under-human-decision"
+      ],
+      "stateful_test_refs": [
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D098-D099-human-decision-omission-invariance"
+      ],
+      "stateful_coverage_markers": [
+        "STATEFUL_SCENARIO_COVERED"
+      ]
     },
     {
       "requirement_id": "JN-CORE-0_2-REQ-D100",

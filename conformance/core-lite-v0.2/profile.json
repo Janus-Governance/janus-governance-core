@@ -70,7 +70,7 @@
       "CHECK_OBJECT_REFS",
       "ORIGINATE_HUMAN_DECISION"
     ],
-    "statefully_complete_requirements": 33,
+    "statefully_complete_requirements": 35,
     "projection_covered_requirements": 7,
     "human_decision_origin": "NOT_MODELED_UNSUPPORTED_OPERATION",
     "boundary_guard": "DEPENDENCY_FREE_TEST_PROFILE_NOT_JSON_SCHEMA_SUBSTITUTE",

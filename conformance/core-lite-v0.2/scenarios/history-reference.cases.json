@@ -1,7 +1,7 @@
 {
   "schema_version": "janus-stateful-history-reference-cases-v1",
   "manifest_ref": "JN-CORE-LITE-0_2-STATEFUL-HISTORY-REFERENCE-001",
-  "scenario_count": 58,
+  "scenario_count": 59,
   "omission_foundation_preconditions": {
     "authorized_audit_writer_refs": ["writer-tech-1"],
     "reference_aliases": [],
@@ -2255,6 +2255,17 @@
         {"operation": {"operation": "APPEND", "log": "MANAGEMENT_LOG", "record": {"identity": "omission-later-corrective-action", "payload": {"kind": "CORRECTION", "antecedent_ref": {"ref_type": "CANONICAL", "origin_log": "AUDIT_LOG", "identity": "omission-history-target"}}}}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}},
         {"operation": {"operation": "REPLACE", "log": "AUDIT_LOG", "identity": "omission-history-target"}, "expected": {"accepted": false, "code": "FORBIDDEN_MUTATION", "history_delta": 0, "before_equals_after": true}},
         {"operation": {"operation": "DELETE", "log": "AUDIT_LOG", "identity": "omission-history-target"}, "expected": {"accepted": false, "code": "FORBIDDEN_MUTATION", "history_delta": 0, "before_equals_after": true}}
+      ]
+    },
+    {
+      "scenario_id": "preserve-omission-and-evidence-under-human-decision",
+      "classification": "POSITIVE_NEGATIVE",
+      "requirement_ids": ["JN-CORE-0_2-REQ-D098", "JN-CORE-0_2-REQ-D099"],
+      "foundation_profile": "E_MINUS_OMISSION_V1",
+      "steps": [
+        {"operation": {"omission_event_profile": "QUALIFIED_E_MINUS_V1", "log": "AUDIT_LOG", "identity": "omission-human-decision-target"}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}},
+        {"operation": {"operation": "APPEND", "log": "AUDIT_LOG", "record": {"identity": "human-decision-about-omission", "payload": {"event_type": "HUMAN_DECISION", "event_id": "human-decision-about-omission", "actor_ref": "opaque-actor", "scope_ref": "opaque-scope", "object_refs": [{"ref_type": "CANONICAL", "origin_log": "AUDIT_LOG", "identity": "omission-human-decision-target"}], "occurred_at": "2026-11-07T12:00:00Z", "recorded_at": "2026-11-07T12:00:01Z"}}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}},
+        {"operation": {"operation": "APPEND", "log": "AUDIT_LOG", "record": {"identity": "human-decision-mutation-shaped", "payload": {"event_type": "HUMAN_DECISION", "event_id": "human-decision-mutation-shaped", "actor_ref": "opaque-actor", "scope_ref": "opaque-scope", "object_refs": [{"ref_type": "CANONICAL", "origin_log": "AUDIT_LOG", "identity": "omission-human-decision-target"}], "occurred_at": "2026-11-07T12:01:00Z", "recorded_at": "2026-11-07T12:01:01Z", "attempted_event_replacement": {"identity": "omission-human-decision-target", "event_type": "REPLACED"}, "attempted_evidence_replacement": {"evidence_ref": "observation-1", "version": "v1", "digest": "mutated"}}}}, "context": {"channel": "AUDIT_WRITER", "writer_ref": "writer-tech-1"}, "expected": {"accepted": true, "code": "APPENDED", "history_delta": 1, "before_equals_after": false}}
       ]
     }
   ]
