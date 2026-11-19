@@ -101,6 +101,15 @@ jobs:
           test "$lock_sha" = "$EXPECTED_LOCK_SHA256"
           test -z "$(git status --porcelain=v1 --untracked-files=all)"
 
+          for governed_path in \
+            .github/workflows/gate-2-evidence.yml \
+            tools/core-conformance/ci-gate2-evidence.mjs \
+            tools/core-conformance/test/ci-gate2-evidence.test.mjs
+          do
+            test -f "$governed_path"
+            test ! -L "$governed_path"
+          done
+
           workflow_sha="$(sha256sum .github/workflows/gate-2-evidence.yml | cut -d ' ' -f 1)"
           runner_sha="$(sha256sum tools/core-conformance/ci-gate2-evidence.mjs | cut -d ' ' -f 1)"
           test_sha="$(sha256sum tools/core-conformance/test/ci-gate2-evidence.test.mjs | cut -d ' ' -f 1)"
