@@ -19,6 +19,7 @@ on:
       - tools/core-conformance/lib/stateful-validator.mjs
       - tools/core-conformance/test/baseline.test.mjs
       - tools/core-conformance/test/ci-gate2-evidence.test.mjs
+      - tools/core-conformance/test/e-minus-evaluator.test.mjs
       - tools/core-conformance/test/e-plus-evaluator.test.mjs
       - tools/core-conformance/test/schema-foundation.test.mjs
       - tools/core-conformance/test/stateful-history-reference.test.mjs
