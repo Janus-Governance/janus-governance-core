@@ -14,11 +14,14 @@ on:
       - conformance/core-lite-v0.2/scenarios/history-reference.cases.json
       - conformance/core-lite-v0.2/scenarios/manifest.json
       - tools/core-conformance/ci-gate2-evidence.mjs
+      - tools/core-conformance/gate-2-status.mjs
+      - tools/core-conformance/lib/gate-2-controller.mjs
       - tools/core-conformance/lib/contract.mjs
       - tools/core-conformance/lib/e-plus-evaluator.mjs
       - tools/core-conformance/lib/stateful-validator.mjs
       - tools/core-conformance/test/baseline.test.mjs
       - tools/core-conformance/test/ci-gate2-evidence.test.mjs
+      - tools/core-conformance/test/gate-2-controller.test.mjs
       - tools/core-conformance/test/e-minus-evaluator.test.mjs
       - tools/core-conformance/test/e-plus-evaluator.test.mjs
       - tools/core-conformance/test/schema-foundation.test.mjs
