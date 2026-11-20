@@ -21,9 +21,9 @@
   ],
   "finding_counts": {
     "MISSING_SCHEMA": 28,
-    "MISSING_POSITIVE_FIXTURE": 56,
-    "MISSING_NEGATIVE_FIXTURE": 56,
-    "MISSING_TEST": 83,
+    "MISSING_POSITIVE_FIXTURE": 55,
+    "MISSING_NEGATIVE_FIXTURE": 55,
+    "MISSING_TEST": 82,
     "HUMAN_REVIEW_REQUIRED": 27,
     "FRAMEWORK_PROFILE_REQUIRED": 5,
     "NON_GATING_CAPABILITY": 2
@@ -31,9 +31,9 @@
   "coverage_marker_counts": {
     "STRUCTURAL_SCHEMA_COVERED": 20,
     "PROJECTION_COVERED": 10,
-    "STATEFUL_SCENARIO_COVERED": 51,
-    "STATEFUL_PROJECTION_COVERED": 7,
-    "REQUIREMENT_COMPLETE": 71
+    "STATEFUL_SCENARIO_COVERED": 52,
+    "STATEFUL_PROJECTION_COVERED": 6,
+    "REQUIREMENT_COMPLETE": 72
   },
   "entries": [
     {
@@ -3712,22 +3712,22 @@
       "verification_classes": [
         "STATEFUL"
       ],
-      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "mandatory": true,
-      "coverage_state": "STATEFUL_PROJECTION_COVERED",
+      "coverage_state": "REQUIREMENT_COMPLETE",
       "coverage_markers": [
-        "STATEFUL_PROJECTION_COVERED"
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
       "fixture_polarity_requirement": "BOTH",
-      "findings": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
-      ],
+      "findings": [],
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
+      "test_refs": [
+        "tools/core-conformance/test/e-minus-evaluator.test.mjs#D077-reproducible-observation",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D077-reproducible-observation-binding"
+      ],
       "stateful_positive_scenario_refs": [
         "accept-fully-qualified-omission"
       ],
@@ -3735,10 +3735,11 @@
         "reject-observation-nonreproducible"
       ],
       "stateful_test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+        "tools/core-conformance/test/e-minus-evaluator.test.mjs#D077-reproducible-observation",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D077-reproducible-observation-binding"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_PROJECTION_COVERED"
+        "STATEFUL_SCENARIO_COVERED"
       ]
     },
     {

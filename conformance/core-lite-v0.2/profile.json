@@ -72,8 +72,8 @@
       "CHECK_OMISSION_RESOLUTION",
       "ORIGINATE_HUMAN_DECISION"
     ],
-    "statefully_complete_requirements": 51,
-    "projection_covered_requirements": 7,
+    "statefully_complete_requirements": 52,
+    "projection_covered_requirements": 6,
     "human_decision_origin": "MODELED_TECHNICAL_ORIGINATION_REJECTED_WITHOUT_HUMAN_AUTHORITY_INFERENCE",
     "boundary_guard": "DEPENDENCY_FREE_TEST_PROFILE_NOT_JSON_SCHEMA_SUBSTITUTE",
     "audit_writer_authorization": "DEEP_FROZEN_EXTERNAL_TEST_PRECONDITION_ONLY",

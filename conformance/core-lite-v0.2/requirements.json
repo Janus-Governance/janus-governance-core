@@ -6609,27 +6609,27 @@
       "atomic_predicate": "produce a reproducible observation relative to scope and cutoff",
       "governed_object": "observation",
       "verification_class": "STATEFUL",
-      "implementation_status": "STATEFUL_TECHNICAL_PROJECTION",
+      "implementation_status": "STATEFUL_TEST_PROFILE_IMPLEMENTED",
       "schema_refs": [],
       "positive_fixture_refs": [],
       "negative_fixture_refs": [],
-      "test_refs": [],
-      "coverage_status": [
-        "MISSING_POSITIVE_FIXTURE",
-        "MISSING_NEGATIVE_FIXTURE",
-        "MISSING_TEST"
+      "test_refs": [
+        "tools/core-conformance/test/e-minus-evaluator.test.mjs#D077-reproducible-observation",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D077-reproducible-observation-binding"
       ],
-      "dependencies_adapters": [
-        "TEST_ONLY_CONSTITUTIVE_E_MINUS_EVALUATOR_PREPARED: frozen snapshots, source-local cutoffs, fixed versioned procedures, derived due status, enumerated considered records, derived schema coverage, deterministic replay digest"
+      "coverage_status": [],
+      "dependencies_adapters": [],
+      "ambiguity_notes": "Constitutive evidence is limited to byte-identical deterministic test-profile observation output for explicit frozen scope and source-local cutoffs, literal precomputed component/observation/replay digests, fail-closed incomplete input, and replay mismatch for material in-cutoff changes.",
+      "explicit_non_goals": [
+        "canonical Core serialization, runtime persistence, universal observation truth, E-minus truth or sufficiency, SCHEMA_LOG provenance, due semantics beyond the frozen adapter, human authority, Framework conformance, or Gate 2 closure"
       ],
-      "ambiguity_notes": "The test-only evaluator reexecutes from frozen inputs and compares deterministic test-profile bytes and replay digest without consuming a stored outcome; this remains a technical projection.",
-      "explicit_non_goals": [],
       "verification_classes": [
         "STATEFUL"
       ],
-      "constraint_family": "DECLARATIVE_JN-CORE-0_2-REQ-D039",
+      "constraint_family": "E_MINUS_REPRODUCIBLE_OBSERVATION",
       "coverage_markers": [
-        "STATEFUL_PROJECTION_COVERED"
+        "STATEFUL_SCENARIO_COVERED",
+        "REQUIREMENT_COMPLETE"
       ],
       "fixture_polarity_requirement": "BOTH",
       "stateful_positive_scenario_refs": [
@@ -6639,10 +6639,11 @@
         "reject-observation-nonreproducible"
       ],
       "stateful_test_refs": [
-        "tools/core-conformance/test/stateful-history-reference.test.mjs#scenario-bundle"
+        "tools/core-conformance/test/e-minus-evaluator.test.mjs#D077-reproducible-observation",
+        "tools/core-conformance/test/stateful-history-reference.test.mjs#D077-reproducible-observation-binding"
       ],
       "stateful_coverage_markers": [
-        "STATEFUL_PROJECTION_COVERED"
+        "STATEFUL_SCENARIO_COVERED"
       ]
     },
     {
